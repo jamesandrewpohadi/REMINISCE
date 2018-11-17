@@ -1,0 +1,19 @@
+module shift (
+    input alufn[6],
+    input a[16],
+    input b[16],
+    output c[16]
+  ) {
+
+  always {
+    c = 8b1;
+    case (alufn[1:0]) {
+      b00:
+        c = a << b[3:0]; // shift left
+      b01:
+        c = a >> b[3:0]; // shift right
+      b11:
+        c = $signed(a) >>> b[3:0]; // shift right with signed extension
+    }
+  }
+}

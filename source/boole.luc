@@ -1,0 +1,27 @@
+module boole (
+    input alufn[6],
+    input a[16],
+    input b[16],
+    output c[16]
+  ) {
+  var n;
+  var in;
+
+  always {
+    c = 16b0;
+    for (n=0; n<16; n++) {
+      in = c{b[n],a[n]};
+      // create a mux to select output
+      case (in) {
+        2b00: // select first
+          c[n] = alufn[0];
+        2b01: // select second
+          c[n] = alufn[1];
+        2b10: // select third
+          c[n] = alufn[2];
+        2b11: // select fourth
+          c[n] = alufn[3];
+      }
+    }
+  }
+}

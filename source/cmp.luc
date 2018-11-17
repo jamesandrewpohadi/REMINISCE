@@ -1,0 +1,20 @@
+module cmp (
+    input alufn[6],
+    input z,
+    input v,
+    input n,
+    output c[16]
+  ) {
+
+  always {
+    c = 16b0;
+    case (alufn[2:1]) {
+      b01:
+        c[0] = z; // compare equal
+      b10:
+        c[0] = n ^ v; // compare less than
+      b11:
+        c[0] = z | (n ^ v) ; // compare less than or equal
+    }
+  }
+}

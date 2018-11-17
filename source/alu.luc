@@ -1,0 +1,62 @@
+module alu (
+    input a[16],
+    input b[16],
+    input alufn[6],
+    output c[16],
+    //output f[2],
+    output z,
+    output v,
+    output n
+  ) {
+  
+  add myAdd;
+  cmp myCmp;
+  boole myBoole;
+  shift myShift;
+
+  always {
+    z = 1b0;
+    v = 1b0;
+    n = 1b0;
+    
+    // assign input of adder
+    myAdd.alufn = alufn;
+    myAdd.a = a;
+    myAdd.b = b;
+    c = 16b0;
+    
+    // assign input of cmp
+    myCmp.alufn = alufn;
+    myCmp.z = myAdd.z;
+    myCmp.v = myAdd.v;
+    myCmp.n = myAdd.n;
+    
+    // assign input of boole
+    myBoole.alufn = alufn;
+    myBoole.a = a;
+    myBoole.b = b;
+    
+    // assign input of shift
+    myShift.alufn = alufn;
+    myShift.a = a;
+    myShift.b = b;
+    
+    //created a mux to select appropriate output
+    case (alufn[5:4]) {
+      b00: // choose add
+        c = myAdd.c;
+        z = myAdd.z;
+        v = myAdd.v;
+        n = myAdd.n;
+      b01: // choose boolean
+        c = myBoole.c;
+      b10: // choose shift
+        c = myShift.c;
+      b11: // choose compare
+        c = myCmp.c;
+      default:
+        c = 16b0;
+    }
+    
+  }
+}
