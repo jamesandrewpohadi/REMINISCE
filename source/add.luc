@@ -6,10 +6,9 @@ module add (
     output c[16],
     output z,
     output v,
-    output n,
+    output n
   ) {
   sig sum[16];
-  //var f[2];
 
   always {
     c=16b0;

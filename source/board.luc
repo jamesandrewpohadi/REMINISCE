@@ -1,0 +1,39 @@
+module board (
+    input b[16],
+    output p0,
+    output p1,
+    output p2,
+    output p3,
+    output p4,
+    output p5,
+    output p6,
+    output p7,
+    output p8,
+    output p9,
+    output p10,
+    output p11,
+    output p12,
+    output p13,
+    output p14,
+    output p15
+  ) {
+
+  always {
+    p0 = b[0];
+    p1 = b[1];
+    p2 = b[2];
+    p3 = b[3];
+    p4 = b[4];
+    p5 = b[5];
+    p6 = b[6];
+    p7 = b[7];
+    p8 = b[8] ^ 1;
+    p9 = b[9] ^ 1;
+    p10 = b[10] ^ 1;
+    p11 = b[11] ^ 1;
+    p12 = b[12] ^ 1;
+    p13 = b[13] ^ 1;
+    p14 = b[14] ^ 1;
+    p15 = b[15] ^ 1;
+  }
+}
