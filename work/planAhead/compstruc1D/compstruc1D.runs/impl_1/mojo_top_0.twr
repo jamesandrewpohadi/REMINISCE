@@ -2,8 +2,9 @@
 Release 14.7 Trace  (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-C:\Xilinx\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -o
-mojo_top_0.twr -v 30 -l 30 mojo_top_0_routed.ncd mojo_top_0.pcf
+E:\Xilinx_ISE_DS_14.7_1015_1\14.7\ISE_DS\ISE\bin\nt\unwrapped\trce.exe
+-intstyle ise -o mojo_top_0.twr -v 30 -l 30 mojo_top_0_routed.ncd
+mojo_top_0.pcf
 
 Design file:              mojo_top_0_routed.ncd
 Physical constraint file: mojo_top_0.pcf
@@ -35,21 +36,19 @@ Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-io_dip[0]      |io_led[3]      |   11.221|
-io_dip[0]      |io_led[12]     |   12.078|
-io_dip[0]      |p0             |    8.850|
-io_dip[1]      |io_led[3]      |   11.559|
-io_dip[1]      |io_led[12]     |   12.416|
-io_dip[1]      |p1             |    8.686|
-io_dip[2]      |io_led[3]      |   11.389|
-io_dip[2]      |io_led[12]     |   12.246|
-io_dip[2]      |p2             |    8.745|
+button_level_1 |io_led[16]     |   11.872|
+button_level_1 |io_led[20]     |   11.660|
+button_level_1 |io_led[21]     |   11.561|
+button_level_1 |io_led[22]     |   11.591|
+io_dip[0]      |p0             |    8.608|
+io_dip[1]      |p1             |    8.678|
+io_dip[2]      |p2             |    8.736|
 io_dip[3]      |p3             |    9.207|
 io_dip[4]      |p4             |    9.874|
 io_dip[5]      |p5             |    9.707|
 io_dip[6]      |p6             |   10.237|
 io_dip[7]      |p7             |   10.114|
-io_dip[8]      |p8             |    9.569|
+io_dip[8]      |p8             |    9.854|
 io_dip[9]      |p9             |    9.305|
 io_dip[10]     |p10            |    9.626|
 io_dip[11]     |p11            |    9.299|
@@ -60,7 +59,7 @@ io_dip[15]     |p15            |   10.435|
 ---------------+---------------+---------+
 
 
-Analysis completed Sat Nov 24 22:10:36 2018 
+Analysis completed Sun Nov 25 03:31:09 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
