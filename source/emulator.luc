@@ -1,10 +1,72 @@
 module emulator (
     input clk,  // clock
     input rst,  // reset
-    output out
+    input alufn[6],
+    input wb,
+    input wl,
+    input ws,
+    input rstb,
+    input rstl,
+    input rsts,
+    input bsel,
+    input asel[3],
+    output display[16]
   ) {
-
+  mux_2 muxBoard;
+  mux_2 muxLevel;
+  mux_2 muxSequence;
+  mux_5 muxA;
+  mux_2 muxB;
+  rom myRom;
+  alu myalu;
+  .clk(clk) {
+    .rst(rst) {
+      register board;
+      register level;
+      register sequence;
+    }
+  }
+  
   always {
-    out = 0;
+    muxA.a = myRom.out;
+    muxA.b = 16b1;
+    muxA.c = 16100;
+    muxA.d = 16b0;
+    muxA.e = 16b0;
+    muxA.sel = asel;
+    
+    muxB.a = board.out;
+    muxB.b = sequence.out;
+    muxB.sel = bsel;
+    
+    myalu.a = muxA.out;
+    myalu.b = muxB.out;
+    myalu.alufn = alufn;
+    
+    muxBoard.a = myalu.c;
+    muxBoard.b = 16b0;
+    muxBoard.sel = rstb;
+    
+    muxLevel.a = myalu.c;
+    muxLevel.b = 16b0;
+    muxLevel.sel = rstl;
+    
+    muxSequence.a = myalu.c;
+    muxSequence.b = 16b0;
+    muxSequence.sel = rsts;
+    
+    board.write = wb;
+    board.value = muxBoard.out;
+    
+    level.write = wl;
+    level.value = muxLevel.out;
+    
+    sequence.write = ws;
+    sequence.value = muxSequence.out;
+    
+    myRom.address = c{level.out,sequence.out};
+    
+    display = board.out;
+    
   }
 }

@@ -1,8 +1,8 @@
 module register (
     input clk,
+    input rst,
     input write[16],  // clock
     input value[16],
-    input rst,  // reset
     output out[16]
   ) {
   dff reg[16](.clk(clk), .rst(rst));

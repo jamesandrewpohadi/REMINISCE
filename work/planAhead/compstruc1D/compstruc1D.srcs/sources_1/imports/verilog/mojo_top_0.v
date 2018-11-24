@@ -21,7 +21,23 @@ module mojo_top_0 (
     output reg [7:0] io_seg,
     output reg [3:0] io_sel,
     input [4:0] io_button,
-    input [23:0] io_dip
+    input [23:0] io_dip,
+    output reg p0,
+    output reg p1,
+    output reg p2,
+    output reg p3,
+    output reg p4,
+    output reg p5,
+    output reg p6,
+    output reg p7,
+    output reg p8,
+    output reg p9,
+    output reg p10,
+    output reg p11,
+    output reg p12,
+    output reg p13,
+    output reg p14,
+    output reg p15
   );
   
   
@@ -73,6 +89,17 @@ module mojo_top_0 (
     .p15(M_myBoard_p15)
   );
   
+  wire [16-1:0] M_myRom_out;
+  reg [3-1:0] M_myRom_address;
+  rom_3 myRom (
+    .address(M_myRom_address),
+    .out(M_myRom_out)
+  );
+  
+  reg [1:0] level;
+  
+  reg [3:0] sequence;
+  
   always @* begin
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
@@ -85,5 +112,26 @@ module mojo_top_0 (
     io_sel = 4'hf;
     M_myBoard_b[0+7-:8] = io_dip[0+7-:8];
     M_myBoard_b[8+7-:8] = io_dip[8+7-:8];
+    p0 = M_myBoard_p0;
+    p1 = M_myBoard_p1;
+    p2 = M_myBoard_p2;
+    p3 = M_myBoard_p3;
+    p4 = M_myBoard_p4;
+    p5 = M_myBoard_p5;
+    p6 = M_myBoard_p6;
+    p7 = M_myBoard_p7;
+    p8 = M_myBoard_p8;
+    p9 = M_myBoard_p9;
+    p10 = M_myBoard_p10;
+    p11 = M_myBoard_p11;
+    p12 = M_myBoard_p12;
+    p13 = M_myBoard_p13;
+    p14 = M_myBoard_p14;
+    p15 = M_myBoard_p15;
+    level = io_dip[0+4+1-:2];
+    sequence = io_dip[0+0+3-:4];
+    M_myRom_address = {level, sequence};
+    io_led[8+7-:8] = M_myRom_out[8+7-:8];
+    io_led[0+7-:8] = M_myRom_out[0+7-:8];
   end
 endmodule

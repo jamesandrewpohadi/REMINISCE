@@ -1,0 +1,28 @@
+module mux_5 (
+    input a[16],
+    input b[16],
+    input c[16],
+    input d[16],
+    input e[16],
+    input sel[3],
+    output out[16]
+  ) {
+
+  always {
+    out = 0;
+    case (sel) {
+      000:
+        out = a;
+      001:
+        out = b;
+      010:
+        out = c;
+      011:
+        out = d;
+      100:
+        out = e;
+      default:
+        out = 16b0;
+    }
+  }
+}

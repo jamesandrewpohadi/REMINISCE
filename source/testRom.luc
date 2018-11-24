@@ -1,0 +1,11 @@
+module testRom (
+    input level[2],  // clock
+    input sequence[4],  // reset
+    output out[16]
+  ) {
+  
+
+  always {
+    out = 16b0;
+  }
+}

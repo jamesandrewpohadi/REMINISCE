@@ -15,7 +15,23 @@ module mojo_top (
     output io_seg [8],      // 7-segment LEDs on IO Shield
     output io_sel [4],      // Digit select on IO Shield
     input io_button [5],    // 5 buttons on IO Shield
-    input io_dip [3][8]     // DIP switches on IO Shield
+    input io_dip [3][8],
+    output p0,
+    output p1,
+    output p2,
+    output p3,
+    output p4,
+    output p5,
+    output p6,
+    output p7,
+    output p8,
+    output p9,
+    output p10,
+    output p11,
+    output p12,
+    output p13,
+    output p14,
+    output p15
   ) {
   
   sig rst;                  // reset signal
@@ -24,8 +40,14 @@ module mojo_top (
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
+    .rst(rst) {
+      
+    }
   }
   board myBoard;
+  rom myRom;
+  sig level[2];
+  sig sequence[4];
   
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
@@ -41,5 +63,35 @@ module mojo_top (
     io_sel = 4hf;           // select no digits
     myBoard.b[7:0] = io_dip[0];
     myBoard.b[15:8] = io_dip[1];
+    p0 = myBoard.p0;
+    p1 = myBoard.p1;
+    p2 = myBoard.p2;
+    p3 = myBoard.p3;
+    p4 = myBoard.p4;
+    p5 = myBoard.p5;
+    p6 = myBoard.p6;
+    p7 = myBoard.p7;
+    p8 = myBoard.p8;
+    p9 = myBoard.p9;
+    p10 = myBoard.p10;
+    p11 = myBoard.p11;
+    p12 = myBoard.p12;
+    p13 = myBoard.p13;
+    p14 = myBoard.p14;
+    p15 = myBoard.p15;
+    
+    //io_led[2][0] = io_button[0];
+    //io_led[2][1] = io_button[1];
+    //io_led[2][2] = io_button[2];
+    //io_led[2][3] = io_button[3];
+    //io_led[2][4] = io_button[4];
+    //io_led[1][3] = io_button[3];
+    
+    level = io_dip[0][5:4];
+    sequence = io_dip[0][3:0];
+    myRom.address = c{level,sequence};
+    io_led[1] = myRom.out[15:8];
+    io_led[0] = myRom.out[7:0];
+    
   }
 }

@@ -5,7 +5,7 @@ set device xc6slx9-2tqg144
 if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
 create_project $projName "$projDir/$projName" -part $device
 set_property design_mode RTL [get_filesets sources_1]
-set verilogSources [list "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/verilog/mojo_top_0.v" "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/verilog/reset_conditioner_1.v" "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/verilog/board_2.v"]
+set verilogSources [list "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/verilog/mojo_top_0.v" "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/verilog/reset_conditioner_1.v" "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/verilog/board_2.v" "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/verilog/rom_3.v"]
 import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
 set ucfSources [list "C:/Users/PERSONAL/Documents/mojo/compstruc1D/constraint/additional.ucf" "C:/Program\ Files/Mojo\ IDE/library/components/io_shield.ucf" "C:/Program\ Files/Mojo\ IDE/library/components/mojo.ucf"]
 import_files -fileset [get_filesets constrs_1] -force -norecurse $ucfSources

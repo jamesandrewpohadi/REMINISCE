@@ -29,18 +29,45 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 
 Data Sheet report:
 -----------------
-No constraints were found to generate data for the Data Sheet Report section.
-Use the Advanced Analysis (-a) option or generate global constraints for each
-clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+All values displayed in nanoseconds (ns)
 
-Analysis completed Mon Nov 19 11:16:45 2018 
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+io_dip[0]      |io_led[3]      |   11.221|
+io_dip[0]      |io_led[12]     |   12.078|
+io_dip[0]      |p0             |    8.850|
+io_dip[1]      |io_led[3]      |   11.559|
+io_dip[1]      |io_led[12]     |   12.416|
+io_dip[1]      |p1             |    8.686|
+io_dip[2]      |io_led[3]      |   11.389|
+io_dip[2]      |io_led[12]     |   12.246|
+io_dip[2]      |p2             |    8.745|
+io_dip[3]      |p3             |    9.207|
+io_dip[4]      |p4             |    9.874|
+io_dip[5]      |p5             |    9.707|
+io_dip[6]      |p6             |   10.237|
+io_dip[7]      |p7             |   10.114|
+io_dip[8]      |p8             |    9.569|
+io_dip[9]      |p9             |    9.305|
+io_dip[10]     |p10            |    9.626|
+io_dip[11]     |p11            |    9.299|
+io_dip[12]     |p12            |   10.764|
+io_dip[13]     |p13            |   10.524|
+io_dip[14]     |p14            |   10.604|
+io_dip[15]     |p15            |   10.435|
+---------------+---------------+---------+
+
+
+Analysis completed Sat Nov 24 22:10:36 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 167 MB
+Peak Memory Usage: 168 MB
 
 
 
