@@ -8,6 +8,7 @@
     <src>cmp.luc</src>
     <src>boole.luc</src>
     <src top="true">mojo_top.luc</src>
+    <src>mux_2.luc</src>
     <src>rom.luc</src>
     <ucf>additional.ucf</ucf>
     <ucf lib="true">io_shield.ucf</ucf>
