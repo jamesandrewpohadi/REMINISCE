@@ -22,6 +22,9 @@ module mojo_top_0 (
     output reg [3:0] io_sel,
     input [4:0] io_button,
     input [23:0] io_dip,
+    input button_level_1,
+    input button_level_2,
+    input button_level_3,
     output reg p0,
     output reg p1,
     output reg p2,
@@ -90,10 +93,21 @@ module mojo_top_0 (
   );
   
   wire [16-1:0] M_myRom_out;
-  reg [3-1:0] M_myRom_address;
+  reg [6-1:0] M_myRom_address;
   rom_3 myRom (
     .address(M_myRom_address),
     .out(M_myRom_out)
+  );
+  
+  wire [16-1:0] M_mux2_out;
+  reg [16-1:0] M_mux2_a;
+  reg [16-1:0] M_mux2_b;
+  reg [1-1:0] M_mux2_sel;
+  mux_2_4 mux2 (
+    .a(M_mux2_a),
+    .b(M_mux2_b),
+    .sel(M_mux2_sel),
+    .out(M_mux2_out)
   );
   
   reg [1:0] level;
@@ -128,10 +142,12 @@ module mojo_top_0 (
     p13 = M_myBoard_p13;
     p14 = M_myBoard_p14;
     p15 = M_myBoard_p15;
-    level = io_dip[0+4+1-:2];
-    sequence = io_dip[0+0+3-:4];
+    level = io_dip[16+4+1-:2];
+    sequence = io_dip[16+0+3-:4];
     M_myRom_address = {level, sequence};
-    io_led[8+7-:8] = M_myRom_out[8+7-:8];
-    io_led[0+7-:8] = M_myRom_out[0+7-:8];
+    M_mux2_a = 50'h3f28cb71571c7;
+    M_mux2_b = 1'h0;
+    M_mux2_sel = button_level_1 ^ 1'h1;
+    io_led[16+7-:8] = M_mux2_out[8+7-:8];
   end
 endmodule

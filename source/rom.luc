@@ -1,5 +1,5 @@
 module rom (
-    input address[3],  // address
+    input address[6],  // address
     output out[16]
   ) {
 
