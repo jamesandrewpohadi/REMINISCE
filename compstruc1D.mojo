@@ -17,15 +17,15 @@
     <src>boole.luc</src>
     <src>mux_2.luc</src>
     <src>rom.luc</src>
-    <ucf>additional.ucf</ucf>
     <ucf lib="true">io_shield.ucf</ucf>
+    <ucf>additional.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
     <component>reg_interface.luc</component>
     <component>spi_slave.luc</component>
     <component>uart_rx.luc</component>
     <component>cclk_detector.luc</component>
     <component>reset_conditioner.luc</component>
-    <component>avr_interface.luc</component>
     <component>uart_tx.luc</component>
+    <component>avr_interface.luc</component>
   </files>
 </project>
