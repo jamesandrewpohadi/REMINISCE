@@ -11,15 +11,15 @@ module mux_5 (
   always {
     out = 0;
     case (sel) {
-      000:
+      3b000:
         out = a;
-      001:
+      3b001:
         out = b;
-      010:
+      3b010:
         out = c;
-      011:
+      3b011:
         out = d;
-      100:
+      3b100:
         out = e;
       default:
         out = 16b0;
