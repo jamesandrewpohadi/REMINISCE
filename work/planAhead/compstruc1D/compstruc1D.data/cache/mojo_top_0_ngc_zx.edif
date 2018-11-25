@@ -4,7 +4,7 @@
   (keywordMap (keywordLevel 0))
   (status
     (written
-      (timestamp 2018 11 24 22 9 48)
+      (timestamp 2018 11 25 16 48 31)
       (program "Xilinx ngc2edif" (version "P.20131013"))
       (author "Xilinx. Inc ")
       (comment "This EDIF netlist is to be used within supported synthesis tools")
@@ -75,26 +75,6 @@
               (direction INPUT)
             )
             (port T
-              (direction INPUT)
-            )
-            (port O
-              (direction OUTPUT)
-            )
-          )
-      )
-    )
-    (cell LUT3
-      (cellType GENERIC)
-        (view view_1
-          (viewType NETLIST)
-          (interface
-            (port I0
-              (direction INPUT)
-            )
-            (port I1
-              (direction INPUT)
-            )
-            (port I2
               (direction INPUT)
             )
             (port O
@@ -303,69 +283,6 @@
               (joined
                 (portRef p8)
                 (portRef O (instanceRef p81_INV_0))
-              )
-            )
-          )
-      )
-    )
-    (cell (rename rom_3_myRom "rom_3")
-      (cellType GENERIC)
-        (view view_1
-          (viewType NETLIST)
-          (interface
-            (port (rename out_3__ "out<3>")
-              (direction OUTPUT)
-            )
-            (port (rename out_12__ "out<12>")
-              (direction OUTPUT)
-            )
-            (port (array (rename address "address<2:0>") 3)
-              (direction INPUT))
-          )
-          (contents
-            (instance (rename address_2__GND_4_o_equal_1_o_2_1 "address[2]_GND_4_o_equal_1_o<2>1")
-              (viewRef view_1 (cellRef LUT3 (libraryRef UNISIMS)))
-              (property XSTLIB (boolean (true)) (owner "Xilinx"))
-              (property PK_HLUTNM (string "___XLNM___0___myRom/address[2]_GND_4_o_equal_1_o<2>1") (owner "Xilinx"))
-              (property INIT (string "01") (owner "Xilinx"))
-            )
-            (instance (rename address_2__GND_4_o_equal_2_o_2_1 "address[2]_GND_4_o_equal_2_o<2>1")
-              (viewRef view_1 (cellRef LUT3 (libraryRef UNISIMS)))
-              (property XSTLIB (boolean (true)) (owner "Xilinx"))
-              (property PK_HLUTNM (string "___XLNM___0___myRom/address[2]_GND_4_o_equal_1_o<2>1") (owner "Xilinx"))
-              (property INIT (string "10") (owner "Xilinx"))
-            )
-            (net (rename address_2_ "address<2>")
-              (joined
-                (portRef (member address 0))
-                (portRef I0 (instanceRef address_2__GND_4_o_equal_1_o_2_1))
-                (portRef I0 (instanceRef address_2__GND_4_o_equal_2_o_2_1))
-              )
-            )
-            (net (rename address_1_ "address<1>")
-              (joined
-                (portRef (member address 1))
-                (portRef I1 (instanceRef address_2__GND_4_o_equal_1_o_2_1))
-                (portRef I1 (instanceRef address_2__GND_4_o_equal_2_o_2_1))
-              )
-            )
-            (net (rename address_0_ "address<0>")
-              (joined
-                (portRef (member address 2))
-                (portRef I2 (instanceRef address_2__GND_4_o_equal_1_o_2_1))
-                (portRef I2 (instanceRef address_2__GND_4_o_equal_2_o_2_1))
-              )
-            )
-            (net (rename out_3__ "out<3>")
-              (joined
-                (portRef out_3__)
-                (portRef O (instanceRef address_2__GND_4_o_equal_1_o_2_1))
-              )
-            )
-            (net (rename out_12__ "out<12>")
-              (joined
-                (portRef out_12__)
-                (portRef O (instanceRef address_2__GND_4_o_equal_2_o_2_1))
               )
             )
           )
@@ -697,7 +614,7 @@
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
-            (instance io_led_0_OBUF
+            (instance (rename io_led_0_OBUF_renamed_16 "io_led_0_OBUF")
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
@@ -789,49 +706,42 @@
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
-            (instance (rename p8_OBUF_renamed_16 "p8_OBUF")
+            (instance (rename p8_OBUF_renamed_17 "p8_OBUF")
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
-            (instance (rename p9_OBUF_renamed_17 "p9_OBUF")
+            (instance (rename p9_OBUF_renamed_18 "p9_OBUF")
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
-            (instance (rename p10_OBUF_renamed_18 "p10_OBUF")
+            (instance (rename p10_OBUF_renamed_19 "p10_OBUF")
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
-            (instance (rename p11_OBUF_renamed_19 "p11_OBUF")
+            (instance (rename p11_OBUF_renamed_20 "p11_OBUF")
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
-            (instance (rename p12_OBUF_renamed_20 "p12_OBUF")
+            (instance (rename p12_OBUF_renamed_21 "p12_OBUF")
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
-            (instance (rename p13_OBUF_renamed_21 "p13_OBUF")
+            (instance (rename p13_OBUF_renamed_22 "p13_OBUF")
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
-            (instance (rename p14_OBUF_renamed_22 "p14_OBUF")
+            (instance (rename p14_OBUF_renamed_23 "p14_OBUF")
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
             )
-            (instance (rename p15_OBUF_renamed_23 "p15_OBUF")
+            (instance (rename p15_OBUF_renamed_24 "p15_OBUF")
               (viewRef view_1 (cellRef OBUF (libraryRef UNISIMS)))
               (property XSTLIB (boolean (true)) (owner "Xilinx"))
-            )
-            (instance myRom
-              (viewRef view_1 (cellRef rom_3_myRom (libraryRef mojo_top_0_lib)))
-              (property BUS_INFO (string "3:INPUT:address<2:0>") (owner "Xilinx"))
-              (property NLW_UNIQUE_ID (integer 0) (owner "Xilinx"))
-              (property NLW_MACRO_TAG (integer 1) (owner "Xilinx"))
-              (property NLW_MACRO_ALIAS (string "rom_3_myRom") (owner "Xilinx"))
             )
             (instance myBoard
               (viewRef view_1 (cellRef board_2_myBoard (libraryRef mojo_top_0_lib)))
               (property NLW_UNIQUE_ID (integer 0) (owner "Xilinx"))
-              (property NLW_MACRO_TAG (integer 2) (owner "Xilinx"))
+              (property NLW_MACRO_TAG (integer 1) (owner "Xilinx"))
               (property NLW_MACRO_ALIAS (string "board_2_myBoard") (owner "Xilinx"))
             )
             (net io_dip_15_IBUF
@@ -916,84 +826,69 @@
               (joined
                 (portRef O (instanceRef io_dip_2_IBUF_renamed_13))
                 (portRef I (instanceRef p2_OBUF))
-                (portRef (member address 0) (instanceRef myRom))
               )
             )
             (net io_dip_1_IBUF
               (joined
                 (portRef O (instanceRef io_dip_1_IBUF_renamed_14))
                 (portRef I (instanceRef p1_OBUF))
-                (portRef (member address 1) (instanceRef myRom))
               )
             )
             (net io_dip_0_IBUF
               (joined
                 (portRef O (instanceRef io_dip_0_IBUF_renamed_15))
                 (portRef I (instanceRef p0_OBUF))
-                (portRef (member address 2) (instanceRef myRom))
               )
             )
             (net p8_OBUF
               (joined
-                (portRef I (instanceRef p8_OBUF_renamed_16))
+                (portRef I (instanceRef p8_OBUF_renamed_17))
                 (portRef p8 (instanceRef myBoard))
               )
             )
             (net p9_OBUF
               (joined
-                (portRef I (instanceRef p9_OBUF_renamed_17))
+                (portRef I (instanceRef p9_OBUF_renamed_18))
                 (portRef p9 (instanceRef myBoard))
               )
             )
             (net p10_OBUF
               (joined
-                (portRef I (instanceRef p10_OBUF_renamed_18))
+                (portRef I (instanceRef p10_OBUF_renamed_19))
                 (portRef p10 (instanceRef myBoard))
               )
             )
             (net p11_OBUF
               (joined
-                (portRef I (instanceRef p11_OBUF_renamed_19))
+                (portRef I (instanceRef p11_OBUF_renamed_20))
                 (portRef p11 (instanceRef myBoard))
               )
             )
             (net p12_OBUF
               (joined
-                (portRef I (instanceRef p12_OBUF_renamed_20))
+                (portRef I (instanceRef p12_OBUF_renamed_21))
                 (portRef p12 (instanceRef myBoard))
               )
             )
             (net p13_OBUF
               (joined
-                (portRef I (instanceRef p13_OBUF_renamed_21))
+                (portRef I (instanceRef p13_OBUF_renamed_22))
                 (portRef p13 (instanceRef myBoard))
               )
             )
             (net p14_OBUF
               (joined
-                (portRef I (instanceRef p14_OBUF_renamed_22))
+                (portRef I (instanceRef p14_OBUF_renamed_23))
                 (portRef p14 (instanceRef myBoard))
               )
             )
             (net p15_OBUF
               (joined
-                (portRef I (instanceRef p15_OBUF_renamed_23))
+                (portRef I (instanceRef p15_OBUF_renamed_24))
                 (portRef p15 (instanceRef myBoard))
               )
             )
-            (net (rename M_myRom_out_12__ "M_myRom_out<12>")
-              (joined
-                (portRef I (instanceRef io_led_12_OBUF))
-                (portRef out_12__ (instanceRef myRom))
-              )
-            )
-            (net (rename M_myRom_out_3__ "M_myRom_out<3>")
-              (joined
-                (portRef I (instanceRef io_led_3_OBUF))
-                (portRef out_3__ (instanceRef myRom))
-              )
-            )
-            (net (rename M_myRom_out_0__ "M_myRom_out<0>")
+            (net io_led_0_OBUF
               (joined
                 (portRef G (instanceRef XST_GND))
                 (portRef I (instanceRef led_7_OBUF))
@@ -1019,6 +914,7 @@
                 (portRef I (instanceRef io_led_15_OBUF))
                 (portRef I (instanceRef io_led_14_OBUF))
                 (portRef I (instanceRef io_led_13_OBUF))
+                (portRef I (instanceRef io_led_12_OBUF))
                 (portRef I (instanceRef io_led_11_OBUF))
                 (portRef I (instanceRef io_led_10_OBUF))
                 (portRef I (instanceRef io_led_9_OBUF))
@@ -1027,9 +923,10 @@
                 (portRef I (instanceRef io_led_6_OBUF))
                 (portRef I (instanceRef io_led_5_OBUF))
                 (portRef I (instanceRef io_led_4_OBUF))
+                (portRef I (instanceRef io_led_3_OBUF))
                 (portRef I (instanceRef io_led_2_OBUF))
                 (portRef I (instanceRef io_led_1_OBUF))
-                (portRef I (instanceRef io_led_0_OBUF))
+                (portRef I (instanceRef io_led_0_OBUF_renamed_16))
                 (portRef I (instanceRef spi_miso_OBUFT))
                 (portRef I (instanceRef avr_rx_OBUFT))
               )
@@ -1070,7 +967,7 @@
                 (portRef O (instanceRef avr_rx_OBUFT))
               )
             )
-            (net (rename io_led_16__inv "io_led<16>_inv")
+            (net (rename io_led_0__inv "io_led<0>_inv")
               (joined
                 (portRef P (instanceRef XST_VCC))
                 (portRef T (instanceRef spi_channel_3_OBUFT))
@@ -1378,7 +1275,7 @@
             (net (rename io_led_0_ "io_led<0>")
               (joined
                 (portRef (member io_led 23))
-                (portRef O (instanceRef io_led_0_OBUF))
+                (portRef O (instanceRef io_led_0_OBUF_renamed_16))
               )
             )
             (net (rename io_seg_7_ "io_seg<7>")
@@ -1504,49 +1401,49 @@
             (net p8
               (joined
                 (portRef p8)
-                (portRef O (instanceRef p8_OBUF_renamed_16))
+                (portRef O (instanceRef p8_OBUF_renamed_17))
               )
             )
             (net p9
               (joined
                 (portRef p9)
-                (portRef O (instanceRef p9_OBUF_renamed_17))
+                (portRef O (instanceRef p9_OBUF_renamed_18))
               )
             )
             (net p10
               (joined
                 (portRef p10)
-                (portRef O (instanceRef p10_OBUF_renamed_18))
+                (portRef O (instanceRef p10_OBUF_renamed_19))
               )
             )
             (net p11
               (joined
                 (portRef p11)
-                (portRef O (instanceRef p11_OBUF_renamed_19))
+                (portRef O (instanceRef p11_OBUF_renamed_20))
               )
             )
             (net p12
               (joined
                 (portRef p12)
-                (portRef O (instanceRef p12_OBUF_renamed_20))
+                (portRef O (instanceRef p12_OBUF_renamed_21))
               )
             )
             (net p13
               (joined
                 (portRef p13)
-                (portRef O (instanceRef p13_OBUF_renamed_21))
+                (portRef O (instanceRef p13_OBUF_renamed_22))
               )
             )
             (net p14
               (joined
                 (portRef p14)
-                (portRef O (instanceRef p14_OBUF_renamed_22))
+                (portRef O (instanceRef p14_OBUF_renamed_23))
               )
             )
             (net p15
               (joined
                 (portRef p15)
-                (portRef O (instanceRef p15_OBUF_renamed_23))
+                (portRef O (instanceRef p15_OBUF_renamed_24))
               )
             )
           )

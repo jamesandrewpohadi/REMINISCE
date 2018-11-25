@@ -89,11 +89,11 @@ module mojo_top_0 (
     .p15(M_myBoard_p15)
   );
   
-  wire [16-1:0] M_myRom_out;
-  reg [3-1:0] M_myRom_address;
-  rom_3 myRom (
-    .address(M_myRom_address),
-    .out(M_myRom_out)
+  wire [24-1:0] M_myRom_io_led;
+  reg [24-1:0] M_myRom_io_dip;
+  testRom_3 myRom (
+    .io_dip(M_myRom_io_dip),
+    .io_led(M_myRom_io_led)
   );
   
   reg [1:0] level;
@@ -128,10 +128,6 @@ module mojo_top_0 (
     p13 = M_myBoard_p13;
     p14 = M_myBoard_p14;
     p15 = M_myBoard_p15;
-    level = io_dip[0+4+1-:2];
-    sequence = io_dip[0+0+3-:4];
-    M_myRom_address = {level, sequence};
-    io_led[8+7-:8] = M_myRom_out[8+7-:8];
-    io_led[0+7-:8] = M_myRom_out[0+7-:8];
+    M_myRom_io_dip = io_dip;
   end
 endmodule

@@ -35,15 +35,9 @@ Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-io_dip[0]      |io_led[3]      |   11.221|
-io_dip[0]      |io_led[12]     |   12.078|
-io_dip[0]      |p0             |    8.850|
-io_dip[1]      |io_led[3]      |   11.559|
-io_dip[1]      |io_led[12]     |   12.416|
-io_dip[1]      |p1             |    8.686|
-io_dip[2]      |io_led[3]      |   11.389|
-io_dip[2]      |io_led[12]     |   12.246|
-io_dip[2]      |p2             |    8.745|
+io_dip[0]      |p0             |    8.608|
+io_dip[1]      |p1             |    8.678|
+io_dip[2]      |p2             |    8.736|
 io_dip[3]      |p3             |    9.207|
 io_dip[4]      |p4             |    9.874|
 io_dip[5]      |p5             |    9.707|
@@ -60,14 +54,14 @@ io_dip[15]     |p15            |   10.435|
 ---------------+---------------+---------+
 
 
-Analysis completed Sat Nov 24 22:10:36 2018 
+Analysis completed Sun Nov 25 16:48:57 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 168 MB
+Peak Memory Usage: 167 MB
 
 
 
