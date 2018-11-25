@@ -42,6 +42,22 @@ NET "p14" IOSTANDARD = LVTTL;
 NET "p15" LOC = P144;
 NET "p15" IOSTANDARD = LVTTL;
 
+NET "l1" LOC = P17;
+NET "l1" IOSTANDARD = LVTTL;
+NET "l2" LOC = P22;
+NET "l2" IOSTANDARD = LVTTL;
+NET "l3" LOC = P24;
+NET "l3" IOSTANDARD = LVTTL;
+NET "bl" LOC = P27;
+NET "bl" IOSTANDARD = LVTTL;
+NET "bo" LOC = P30;
+NET "bo" IOSTANDARD = LVTTL;
+NET "br" LOC = P33;
+NET "br" IOSTANDARD = LVTTL;
+NET "bu" LOC = P35;
+NET "bu" IOSTANDARD = LVTTL;
+NET "bd" LOC = P41;
+NET "bd" IOSTANDARD = LVTTL;
 
 ####################################################################################
 # Constraints from file : 'io_shield.ucf'
@@ -85,15 +101,12 @@ NET "io_led[16]" LOC = P15;
 NET "io_led[16]" IOSTANDARD = LVTTL;
 NET "io_led[17]" LOC = P16;
 NET "io_led[17]" IOSTANDARD = LVTTL;
-NET "io_led[18]" LOC = P17;
 NET "io_led[18]" IOSTANDARD = LVTTL;
 NET "io_led[19]" LOC = P21;
 NET "io_led[19]" IOSTANDARD = LVTTL;
-NET "io_led[20]" LOC = P22;
 NET "io_led[20]" IOSTANDARD = LVTTL;
 NET "io_led[21]" LOC = P23;
 NET "io_led[21]" IOSTANDARD = LVTTL;
-NET "io_led[22]" LOC = P24;
 NET "io_led[22]" IOSTANDARD = LVTTL;
 NET "io_led[23]" LOC = P26;
 NET "io_led[23]" IOSTANDARD = LVTTL;

@@ -37,20 +37,20 @@ module mojo_top_0 (
     output reg p12,
     output reg p13,
     output reg p14,
-    output reg p15
+    output reg p15,
+    input l1,
+    input l2,
+    input l3,
+    input bl,
+    input br,
+    input bu,
+    input bd,
+    input bo
   );
   
   
   
   reg rst;
-  
-  wire [1-1:0] M_reset_cond_out;
-  reg [1-1:0] M_reset_cond_in;
-  reset_conditioner_1 reset_cond (
-    .clk(clk),
-    .in(M_reset_cond_in),
-    .out(M_reset_cond_out)
-  );
   
   wire [1-1:0] M_myBoard_p0;
   wire [1-1:0] M_myBoard_p1;
@@ -69,7 +69,7 @@ module mojo_top_0 (
   wire [1-1:0] M_myBoard_p14;
   wire [1-1:0] M_myBoard_p15;
   reg [16-1:0] M_myBoard_b;
-  board_2 myBoard (
+  board_1 myBoard (
     .b(M_myBoard_b),
     .p0(M_myBoard_p0),
     .p1(M_myBoard_p1),
@@ -89,16 +89,13 @@ module mojo_top_0 (
     .p15(M_myBoard_p15)
   );
   
-  wire [24-1:0] M_myRom_io_led;
-  reg [24-1:0] M_myRom_io_dip;
-  testRom_3 myRom (
-    .io_dip(M_myRom_io_dip),
-    .io_led(M_myRom_io_led)
+  wire [1-1:0] M_reset_cond_out;
+  reg [1-1:0] M_reset_cond_in;
+  reset_conditioner_2 reset_cond (
+    .clk(clk),
+    .in(M_reset_cond_in),
+    .out(M_reset_cond_out)
   );
-  
-  reg [1:0] level;
-  
-  reg [3:0] sequence;
   
   always @* begin
     M_reset_cond_in = ~rst_n;
@@ -128,6 +125,13 @@ module mojo_top_0 (
     p13 = M_myBoard_p13;
     p14 = M_myBoard_p14;
     p15 = M_myBoard_p15;
-    M_myRom_io_dip = io_dip;
+    io_led[16+7+0-:1] = l1;
+    io_led[16+6+0-:1] = l2;
+    io_led[16+5+0-:1] = l3;
+    io_led[16+4+0-:1] = bl;
+    io_led[16+3+0-:1] = bo;
+    io_led[16+2+0-:1] = br;
+    io_led[16+1+0-:1] = bu;
+    io_led[16+0+0-:1] = bd;
   end
 endmodule

@@ -50,14 +50,11 @@ To see the details of these <arg fmt="%s" index="4">info</arg> messages, please 
 <msg type="info" file="Pack" num="1720" delta="new" >Initializing voltage to <arg fmt="%0.3f" index="1">1.140</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">1.140</arg> to <arg fmt="%0.3f" index="3">1.260</arg> Volts)
 </msg>
 
-<msg type="info" file="Map" num="215" delta="new" >The Interim Design Summary has been generated in the MAP Report (.mrp).
+<msg type="error" file="Pack" num="2309" delta="new" >Too many bonded comps of type &quot;<arg fmt="%s" index="1">IOB</arg>&quot; found to fit this device.
 </msg>
 
-<msg type="info" file="Place" num="834" delta="new" >Only a subset of IOs are locked. Out of <arg fmt="%d" index="1">96</arg> IOs, <arg fmt="%d" index="2">81</arg> are locked and <arg fmt="%d" index="3">15</arg> are not locked. <arg fmt="%s" index="4">If you would like to print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1.</arg> 
-</msg>
-
-<msg type="info" file="Pack" num="1650" delta="new" >Map created a placed design.
-</msg>
+<msg type="error" file="Map" num="237" delta="new" >The design is too large to fit the device.  Please check the Design Summary section to see which resource requirement for your design exceeds the resources available in the device. Note that the number of slices reported may not be reflected accurately as their packing might not have been completed.
+ </msg>
 
 </messages>
 

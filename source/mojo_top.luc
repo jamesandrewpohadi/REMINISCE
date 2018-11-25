@@ -31,10 +31,19 @@ module mojo_top (
     output p12,
     output p13,
     output p14,
-    output p15
+    output p15,
+    input l1,
+    input l2,
+    input l3,
+    input bl,
+    input br,
+    input bu,
+    input bd,
+    input bo
   ) {
   
   sig rst;                  // reset signal
+  board myBoard;
   
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
@@ -44,10 +53,6 @@ module mojo_top (
       
     }
   }
-  board myBoard;
-  testRom myRom;
-  sig level[2];
-  sig sequence[4];
   
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
@@ -87,7 +92,14 @@ module mojo_top (
     //io_led[2][4] = io_button[4];
     //io_led[1][3] = io_button[3];
     
-    
+    io_led[2][7] = l1;
+    io_led[2][6] = l2;
+    io_led[2][5] = l3;
+    io_led[2][4] = bl;
+    io_led[2][3] = bo;
+    io_led[2][2] = br;
+    io_led[2][1] = bu;
+    io_led[2][0] = bd;
     
   }
 }

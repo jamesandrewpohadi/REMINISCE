@@ -64,7 +64,7 @@ module emulator (
     sequence.write = ws;
     sequence.value = muxSequence.out;
     
-    myRom.address = c{level.out,sequence.out};
+    myRom.address = c{level.out[1:0],sequence.out[3:0]};
     
     display = board.out;
     
