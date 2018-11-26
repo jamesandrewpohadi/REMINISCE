@@ -278,14 +278,14 @@ module mojo_top_0 (
         end
       end
       PRE_L1_state: begin
-        io_led[16+7-:8] = 8'h03;
+        io_led[16+7-:8] = 8'h10;
         if (!io_dip[16+7+0-:1]) begin
           M_counter_d = 1'h0;
           M_state_d = L1_state;
         end
       end
       L1_state: begin
-        io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
+        io_led[16+7-:8] = 8'h10;
         if (M_counter_q[27+0-:1] == 1'h1) begin
           M_myGame_alufn = 6'h00;
           M_myGame_asel = 3'h1;
@@ -297,7 +297,7 @@ module mojo_top_0 (
         end
       end
       L1_DS1_state: begin
-        io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
+        io_led[16+7-:8] = 8'h11;
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 1'h0;
@@ -315,7 +315,7 @@ module mojo_top_0 (
         end
       end
       L1_DS2_state: begin
-        io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
+        io_led[16+7-:8] = 8'h12;
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 1'h0;
@@ -333,7 +333,7 @@ module mojo_top_0 (
         end
       end
       L1_DS3_state: begin
-        io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
+        io_led[16+7-:8] = 8'h13;
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 1'h0;
@@ -351,7 +351,7 @@ module mojo_top_0 (
         end
       end
       L1_DS4_state: begin
-        io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
+        io_led[16+7-:8] = 8'h14;
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 1'h0;

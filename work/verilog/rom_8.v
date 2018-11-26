@@ -63,7 +63,7 @@ module rom_8 (
         out = 16'h0000;
       end
       6'h10: begin
-        out = 16'h0008;
+        out = 16'h0000;
       end
       6'h11: begin
         out = 16'h1000;

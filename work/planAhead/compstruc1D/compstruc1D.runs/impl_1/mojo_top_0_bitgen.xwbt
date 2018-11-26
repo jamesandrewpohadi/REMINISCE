@@ -1,0 +1,8 @@
+INTSTYLE=pa
+INFILE=C:\Users\Wang Zijia\Documents\GitHub\compstruc1D\work\planAhead\compstruc1D\compstruc1D.runs\impl_1\mojo_top_0_routed.ncd
+OUTFILE=C:\Users\Wang Zijia\Documents\GitHub\compstruc1D\work\planAhead\compstruc1D\compstruc1D.runs\impl_1\mojo_top_0.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=C:\Users\Wang Zijia\Documents\GitHub\compstruc1D\work\planAhead\compstruc1D\compstruc1D.runs\impl_1
+LICENSE=WebPack
+USER_INFO=211594622_0_0_619
