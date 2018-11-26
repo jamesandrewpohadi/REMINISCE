@@ -3,7 +3,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: mojo_top_0.prj
 
@@ -53,14 +53,28 @@ Netlist Hierarchy                  : rebuilt
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_4.v" into library work
-Parsing module <rom_4>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/testRom_3.v" into library work
-Parsing module <testRom_3>.
+Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/shift_16.v" into library work
+Parsing module <shift_16>.
+Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/cmp_14.v" into library work
+Parsing module <cmp_14>.
+Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/boole_15.v" into library work
+Parsing module <boole_15>.
+Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/add_13.v" into library work
+Parsing module <add_13>.
+Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" into library work
+Parsing module <rom_8>.
+Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/register_10.v" into library work
+Parsing module <register_10>.
+Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_6.v" into library work
+Parsing module <mux_5_6>.
+Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_2_3.v" into library work
+Parsing module <mux_2_3>.
+Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" into library work
+Parsing module <alu_9>.
 Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
 Parsing module <reset_conditioner_1>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/board_2.v" into library work
-Parsing module <board_2>.
+Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" into library work
+Parsing module <emulator_2>.
 Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
 Parsing module <mojo_top_0>.
 
@@ -72,18 +86,35 @@ Elaborating module <mojo_top_0>.
 
 Elaborating module <reset_conditioner_1>.
 
-Elaborating module <board_2>.
+Elaborating module <emulator_2>.
 
-Elaborating module <testRom_3>.
+Elaborating module <mux_2_3>.
 
-Elaborating module <rom_4>.
-WARNING:HDLCompiler:295 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_4.v" Line 53: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_4.v" Line 86: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_4.v" Line 89: case condition never applies
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 96: Assignment to M_myRom_io_led ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 103: Assignment to rst ignored, since the identifier is never used
-WARNING:Xst:2972 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 49. All outputs of instance <reset_cond> of block <reset_conditioner_1> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
-WARNING:Xst:2972 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 94. All outputs of instance <myRom> of block <testRom_3> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
+Elaborating module <mux_5_6>.
+
+Elaborating module <rom_8>.
+WARNING:HDLCompiler:295 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" Line 53: case condition never applies
+WARNING:HDLCompiler:295 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" Line 86: case condition never applies
+WARNING:HDLCompiler:295 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" Line 89: case condition never applies
+
+Elaborating module <alu_9>.
+
+Elaborating module <add_13>.
+WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" Line 31: Assignment to M_myAdd_led ignored, since the identifier is never used
+
+Elaborating module <cmp_14>.
+
+Elaborating module <boole_15>.
+
+Elaborating module <shift_16>.
+WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 107: Assignment to M_myalu_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 108: Assignment to M_myalu_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 109: Assignment to M_myalu_n ignored, since the identifier is never used
+
+Elaborating module <register_10>.
+WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 98: Assignment to M_myGame_display ignored, since the identifier is never used
+WARNING:Xst:2972 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 33. All outputs of instance <reset_cond> of block <reset_conditioner_1> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
+WARNING:Xst:2972 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 86. All outputs of instance <myGame> of block <emulator_2> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -91,36 +122,130 @@ WARNING:Xst:2972 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/
 
 Synthesizing Unit <mojo_top_0>.
     Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v".
-WARNING:Xst:647 - Input <io_button> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <io_dip<20:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 49: Output port <out> of the instance <reset_cond> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 94: Output port <io_led> of the instance <myRom> is unconnected or connected to loadless signal.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 103
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 103
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 103
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 103
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 103
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 103
+INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 86: Output port <display> of the instance <myGame> is unconnected or connected to loadless signal.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 104
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 104
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 104
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 104
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 104
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 104
     Summary:
 	inferred   6 Tristate(s).
 Unit <mojo_top_0> synthesized.
 
-Synthesizing Unit <board_2>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/board_2.v".
+Synthesizing Unit <mux_2_3>.
+    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_2_3.v".
     Summary:
 	no macro.
-Unit <board_2> synthesized.
+Unit <mux_2_3> synthesized.
 
-Synthesizing Unit <rom_4>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_4.v".
+Synthesizing Unit <mux_5_6>.
+    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_6.v".
     Summary:
 	no macro.
-Unit <rom_4> synthesized.
+Unit <mux_5_6> synthesized.
+
+Synthesizing Unit <rom_8>.
+    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v".
+    Summary:
+	no macro.
+Unit <rom_8> synthesized.
+
+Synthesizing Unit <alu_9>.
+    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v".
+INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" line 27: Output port <led> of the instance <myAdd> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <alu_9> synthesized.
+
+Synthesizing Unit <add_13>.
+    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/add_13.v".
+WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <led<5:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 16-bit subtractor for signal <a[15]_b[15]_sub_2_OUT> created at line 36.
+    Found 16-bit adder for signal <a[15]_b[15]_add_0_OUT> created at line 32.
+    Found 16x16-bit multiplier for signal <n0029> created at line 40.
+    Found 16-bit 4-to-1 multiplexer for signal <c> created at line 30.
+    Found 1-bit 3-to-1 multiplexer for signal <v> created at line 30.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Multiplexer(s).
+Unit <add_13> synthesized.
+
+Synthesizing Unit <cmp_14>.
+    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/cmp_14.v".
+WARNING:Xst:647 - Input <alufn<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <alufn<5:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit 4-to-1 multiplexer for signal <c> created at line 20.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <cmp_14> synthesized.
+
+Synthesizing Unit <boole_15>.
+    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/boole_15.v".
+WARNING:Xst:647 - Input <alufn<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit 4-to-1 multiplexer for signal <c<0>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<1>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<2>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<3>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<4>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<5>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<6>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<7>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<8>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<9>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<10>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<11>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<12>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<13>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<14>> created at line 11.
+    Found 1-bit 4-to-1 multiplexer for signal <c<15>> created at line 11.
+    Summary:
+	inferred  16 Multiplexer(s).
+Unit <boole_15> synthesized.
+
+Synthesizing Unit <shift_16>.
+    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/shift_16.v".
+WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <b<15:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 16-bit shifter logical left for signal <a[15]_b[3]_shift_left_0_OUT> created at line 21
+    Found 16-bit shifter logical right for signal <a[15]_b[3]_shift_right_1_OUT> created at line 24
+    Found 16-bit shifter arithmetic right for signal <a[15]_b[3]_shift_right_2_OUT> created at line 27
+    Found 16-bit 4-to-1 multiplexer for signal <c> created at line 19.
+    Summary:
+	inferred   1 Multiplexer(s).
+	inferred   3 Combinational logic shifter(s).
+Unit <shift_16> synthesized.
+
+Synthesizing Unit <register_10>.
+    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/register_10.v".
+    Found 1-bit register for signal <M_reg_q<15>>.
+    Found 1-bit register for signal <M_reg_q<14>>.
+    Found 1-bit register for signal <M_reg_q<13>>.
+    Found 1-bit register for signal <M_reg_q<12>>.
+    Found 1-bit register for signal <M_reg_q<11>>.
+    Found 1-bit register for signal <M_reg_q<10>>.
+    Found 1-bit register for signal <M_reg_q<9>>.
+    Found 1-bit register for signal <M_reg_q<8>>.
+    Found 1-bit register for signal <M_reg_q<7>>.
+    Found 1-bit register for signal <M_reg_q<6>>.
+    Found 1-bit register for signal <M_reg_q<5>>.
+    Found 1-bit register for signal <M_reg_q<4>>.
+    Found 1-bit register for signal <M_reg_q<3>>.
+    Found 1-bit register for signal <M_reg_q<2>>.
+    Found 1-bit register for signal <M_reg_q<1>>.
+    Found 1-bit register for signal <M_reg_q<0>>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <register_10> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -179,13 +304,11 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 10
+# BELS                             : 2
 #      GND                         : 1
-#      INV                         : 8
 #      VCC                         : 1
-# IO Buffers                       : 82
-#      IBUF                        : 16
-#      OBUF                        : 60
+# IO Buffers                       : 50
+#      OBUF                        : 44
 #      OBUFT                       : 6
 
 Device utilization summary:
@@ -195,19 +318,17 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice LUTs:                    8  out of   5720     0%  
-    Number used as Logic:                 8  out of   5720     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:      8
-   Number with an unused Flip Flop:       8  out of      8   100%  
-   Number with an unused LUT:             0  out of      8     0%  
-   Number of fully used LUT-FF pairs:     0  out of      8     0%  
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
    Number of unique control sets:         0
 
 IO Utilization: 
- Number of IOs:                         103
- Number of bonded IOBs:                  82  out of    102    80%  
+ Number of IOs:                          87
+ Number of bonded IOBs:                  50  out of    102    49%  
 
 Specific Feature Utilization:
 
@@ -242,32 +363,11 @@ Speed Grade: -2
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: 5.857ns
+   Maximum combinational path delay: No path found
 
 Timing Details:
 ---------------
 All values displayed in nanoseconds (ns)
-
-=========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 16 / 16
--------------------------------------------------------------------------
-Delay:               5.857ns (Levels of Logic = 4)
-  Source:            io_dip<8> (PAD)
-  Destination:       p8 (PAD)
-
-  Data Path: io_dip<8> to p8
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  io_dip_8_IBUF (io_dip_8_IBUF)
-     begin scope: 'myBoard:b<8>'
-     INV:I->O              1   0.255   0.681  p81_INV_0 (p8)
-     end scope: 'myBoard:p8'
-     OBUF:I->O                 2.912          p8_OBUF (p8)
-    ----------------------------------------
-    Total                      5.857ns (4.495ns logic, 1.362ns route)
-                                       (76.7% logic, 23.3% route)
 
 =========================================================================
 
@@ -278,13 +378,13 @@ Cross Clock Domains Report:
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.32 secs
+Total CPU time to Xst completion: 4.59 secs
  
 --> 
 
-Total memory usage is 247008 kilobytes
+Total memory usage is 249056 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   14 (   0 filtered)
+Number of warnings :   24 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 

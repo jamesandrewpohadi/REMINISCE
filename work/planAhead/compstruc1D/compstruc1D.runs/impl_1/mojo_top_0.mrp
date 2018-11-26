@@ -8,7 +8,7 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Sun Nov 25 16:48:43 2018
+Mapped Date    : Mon Nov 26 09:27:18 2018
 
 Design Summary
 --------------
@@ -24,8 +24,8 @@ Slice Logic Distribution:
   Number of LUT Flip Flop pairs used:            0
 
 IO Utilization:
-  Number of bonded IOBs:                        96 out of     102   94%
-    Number of LOCed IOBs:                       81 out of      96   84%
+  Number of bonded IOBs:                        81 out of     102   79%
+    Number of LOCed IOBs:                       81 out of      81  100%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of      32    0%
@@ -50,9 +50,9 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-Average Fanout of Non-Clock Nets:                0.44
+Average Fanout of Non-Clock Nets:                0.00
 
-Peak Memory Usage:  295 MB
+Peak Memory Usage:  294 MB
 Total REAL time to MAP completion:  4 secs 
 Total CPU time to MAP completion (all processors):   4 secs 
 
@@ -95,14 +95,14 @@ Section 3 - Informational
 INFO:Map:284 - Map is running with the multi-threading option on. Map currently
    supports the use of up to 2 processors. Based on the the user options and
    machine load, Map will use 2 processors during this run.
-INFO:LIT:243 - Logical network io_button(3) has no load.
-INFO:LIT:395 - The above info message is repeated 20 more times for the
+INFO:LIT:243 - Logical network rst_n_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 36 more times for the
    following (max. 5 shown):
-   rst_n_IBUF,
    avr_rx_busy_IBUF,
    io_dip(23)_IBUF,
    io_dip(22)_IBUF,
-   io_dip(21)_IBUF
+   io_dip(21)_IBUF,
+   io_dip(20)_IBUF
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
@@ -114,9 +114,6 @@ INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
    1.260 Volts)
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
-INFO:Place:834 - Only a subset of IOs are locked. Out of 96 IOs, 81 are locked
-   and 15 are not locked. If you would like to print the names of these IOs,
-   please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
 INFO:Pack:1650 - Map created a placed design.
 
 Section 4 - Removed Logic Summary
@@ -157,9 +154,6 @@ TYPE 		BLOCK
 GND 		XST_GND
 VCC 		XST_VCC
 
-To enable printing of redundant blocks removed and signals merged, set the
-detailed map report option and rerun map.
-
 Section 6 - IOB Properties
 --------------------------
 
@@ -174,7 +168,24 @@ Section 6 - IOB Properties
 | io_button(0)                       | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
 | io_button(1)                       | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
 | io_button(2)                       | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_button(3)                       | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
 | io_button(4)                       | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(0)                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(1)                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(2)                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(3)                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(4)                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(5)                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(6)                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(7)                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(8)                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(9)                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(10)                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(11)                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(12)                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(13)                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(14)                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
+| io_dip(15)                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
 | io_dip(16)                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
 | io_dip(17)                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
 | io_dip(18)                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
@@ -183,22 +194,6 @@ Section 6 - IOB Properties
 | io_dip(21)                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
 | io_dip(22)                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
 | io_dip(23)                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[0]                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[1]                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[2]                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[3]                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[4]                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[5]                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[6]                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[7]                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[8]                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[9]                          | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[10]                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[11]                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[12]                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[13]                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[14]                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
-| io_dip[15]                         | IOB              | INPUT     | LVTTL                |       |          |      |              | PULLDOWN |          |
 | io_led[0]                          | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | io_led[1]                          | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | io_led[2]                          | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
@@ -243,22 +238,6 @@ Section 6 - IOB Properties
 | led[5]                             | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | led[6]                             | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | led[7]                             | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p0                                 | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p1                                 | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p2                                 | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p3                                 | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p4                                 | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p5                                 | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p6                                 | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p7                                 | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p8                                 | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p9                                 | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p10                                | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p11                                | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p12                                | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p13                                | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p14                                | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
-| p15                                | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
 | rst_n                              | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | spi_mosi                           | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
 | spi_sck                            | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |

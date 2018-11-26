@@ -10,7 +10,11 @@ module emulator (
     input rsts,
     input bsel,
     input asel[3],
-    output display[16]
+    output display[16],
+    output sqc[4],
+    output lvl[2],
+    output eq[16]
+    
   ) {
   mux_2 muxBoard;
   mux_2 muxLevel;
@@ -43,6 +47,8 @@ module emulator (
     myalu.b = muxB.out;
     myalu.alufn = alufn;
     
+    eq = myalu.c;
+    
     muxBoard.a = myalu.c;
     muxBoard.b = 16b0;
     muxBoard.sel = rstb;
@@ -61,8 +67,12 @@ module emulator (
     level.write = wl;
     level.value = muxLevel.out;
     
+    lvl = level.out[1:0];
+    
     sequence.write = ws;
     sequence.value = muxSequence.out;
+    
+    sqc = sequence.out[3:0];
     
     myRom.address = c{level.out[1:0],sequence.out[3:0]};
     

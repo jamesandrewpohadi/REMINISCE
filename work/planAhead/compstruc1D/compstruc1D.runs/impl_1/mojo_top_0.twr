@@ -29,32 +29,11 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 
 Data Sheet report:
 -----------------
-All values displayed in nanoseconds (ns)
+No constraints were found to generate data for the Data Sheet Report section.
+Use the Advanced Analysis (-a) option or generate global constraints for each
+clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
 
-Pad to Pad
----------------+---------------+---------+
-Source Pad     |Destination Pad|  Delay  |
----------------+---------------+---------+
-io_dip[0]      |p0             |    8.608|
-io_dip[1]      |p1             |    8.678|
-io_dip[2]      |p2             |    8.736|
-io_dip[3]      |p3             |    9.207|
-io_dip[4]      |p4             |    9.874|
-io_dip[5]      |p5             |    9.707|
-io_dip[6]      |p6             |   10.237|
-io_dip[7]      |p7             |   10.114|
-io_dip[8]      |p8             |    9.569|
-io_dip[9]      |p9             |    9.305|
-io_dip[10]     |p10            |    9.626|
-io_dip[11]     |p11            |    9.299|
-io_dip[12]     |p12            |   10.764|
-io_dip[13]     |p13            |   10.524|
-io_dip[14]     |p14            |   10.604|
-io_dip[15]     |p15            |   10.435|
----------------+---------------+---------+
-
-
-Analysis completed Sun Nov 25 16:48:57 2018 
+Analysis completed Mon Nov 26 09:27:39 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:

@@ -4,159 +4,20 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="2">
-<DesignStatistics TimeStamp="Sun Nov 25 16:49:07 2018"><group name="NetStatistics">
-<item name="NumNets_Active" rev="2">
-<attrib name="value" value="132"/></item>
-<item name="NumNets_Gnd" rev="2">
-<attrib name="value" value="1"/></item>
-<item name="NumNets_Vcc" rev="2">
-<attrib name="value" value="1"/></item>
-<item name="NumNodesOfType_Active_DOUBLE" rev="2">
-<attrib name="value" value="19"/></item>
-<item name="NumNodesOfType_Active_GENERIC" rev="2">
-<attrib name="value" value="48"/></item>
-<item name="NumNodesOfType_Active_IOBIN2OUT" rev="2">
-<attrib name="value" value="32"/></item>
-<item name="NumNodesOfType_Active_IOBOUTPUT" rev="2">
-<attrib name="value" value="32"/></item>
-<item name="NumNodesOfType_Active_OUTBOUND" rev="2">
-<attrib name="value" value="32"/></item>
-<item name="NumNodesOfType_Active_PADINPUT" rev="2">
-<attrib name="value" value="16"/></item>
-<item name="NumNodesOfType_Active_PADOUTPUT" rev="2">
-<attrib name="value" value="16"/></item>
-<item name="NumNodesOfType_Active_PINBOUNCE" rev="2">
-<attrib name="value" value="2"/></item>
-<item name="NumNodesOfType_Active_PINFEED" rev="2">
-<attrib name="value" value="16"/></item>
-<item name="NumNodesOfType_Active_QUAD" rev="2">
-<attrib name="value" value="41"/></item>
-<item name="NumNodesOfType_Active_SINGLE" rev="2">
-<attrib name="value" value="17"/></item>
-<item name="NumNodesOfType_Gnd_DOUBLE" rev="2">
-<attrib name="value" value="13"/></item>
-<item name="NumNodesOfType_Gnd_GENERIC" rev="2">
-<attrib name="value" value="32"/></item>
-<item name="NumNodesOfType_Gnd_IOBIN2OUT" rev="2">
-<attrib name="value" value="32"/></item>
-<item name="NumNodesOfType_Gnd_IOBOUTPUT" rev="2">
-<attrib name="value" value="32"/></item>
-<item name="NumNodesOfType_Gnd_OUTBOUND" rev="2">
-<attrib name="value" value="15"/></item>
-<item name="NumNodesOfType_Gnd_OUTPUT" rev="2">
-<attrib name="value" value="19"/></item>
-<item name="NumNodesOfType_Gnd_PADINPUT" rev="2">
-<attrib name="value" value="32"/></item>
-<item name="NumNodesOfType_Gnd_PINFEED" rev="2">
-<attrib name="value" value="32"/></item>
-<item name="NumNodesOfType_Gnd_SINGLE" rev="2">
-<attrib name="value" value="24"/></item>
-<item name="NumNodesOfType_Vcc_GENERIC" rev="2">
-<attrib name="value" value="12"/></item>
-<item name="NumNodesOfType_Vcc_HVCCOUT" rev="2">
-<attrib name="value" value="7"/></item>
-<item name="NumNodesOfType_Vcc_IOBIN2OUT" rev="2">
-<attrib name="value" value="12"/></item>
-<item name="NumNodesOfType_Vcc_IOBOUTPUT" rev="2">
-<attrib name="value" value="12"/></item>
-<item name="NumNodesOfType_Vcc_PADINPUT" rev="2">
-<attrib name="value" value="12"/></item>
-<item name="NumNodesOfType_Vcc_PINFEED" rev="2">
-<attrib name="value" value="12"/></item>
-</group>
-<group name="MiscellaneousStatistics">
+<DeviceUsageSummary rev="1">
+<DesignStatistics TimeStamp="Mon Nov 26 09:27:23 2018"><group name="MiscellaneousStatistics">
 <item name="AGG_BONDED_IO" rev="1">
-<attrib name="value" value="96"/></item>
+<attrib name="value" value="81"/></item>
 <item name="AGG_IO" rev="1">
-<attrib name="value" value="96"/></item>
+<attrib name="value" value="81"/></item>
 <item name="AGG_LOCED_IO" rev="1">
 <attrib name="value" value="81"/></item>
 <item name="NUM_BONDED_IOB" rev="1">
-<attrib name="value" value="96"/></item>
+<attrib name="value" value="81"/></item>
 <item name="NUM_LOCED_IOB" rev="1">
 <attrib name="value" value="81"/></item>
 </group>
-<group name="SiteStatistics">
-<item name="IOB-IOBM" rev="2">
-<attrib name="value" value="48"/></item>
-<item name="IOB-IOBS" rev="2">
-<attrib name="value" value="48"/></item>
-</group>
 </DesignStatistics>
-<DeviceUsage TimeStamp="Sun Nov 25 16:49:07 2018"><group name="SiteSummary">
-<item name="INVERTER" rev="2">
-<attrib name="total" value="1000000"/><attrib name="used" value="8"/></item>
-<item name="IOB" rev="2">
-<attrib name="total" value="1000000"/><attrib name="used" value="96"/></item>
-<item name="IOB_IMUX" rev="2">
-<attrib name="total" value="1000000"/><attrib name="used" value="36"/></item>
-<item name="IOB_INBUF" rev="2">
-<attrib name="total" value="1000000"/><attrib name="used" value="36"/></item>
-<item name="IOB_OUTBUF" rev="2">
-<attrib name="total" value="1000000"/><attrib name="used" value="60"/></item>
-<item name="PAD" rev="2">
-<attrib name="total" value="1000000"/><attrib name="used" value="96"/></item>
-<item name="PULL_OR_KEEP1" rev="2">
-<attrib name="total" value="1000000"/><attrib name="used" value="28"/></item>
-</group>
-</DeviceUsage>
-<ReportConfigData TimeStamp="Sun Nov 25 16:49:07 2018"><group name="IOB_OUTBUF">
-<item name="DRIVEATTRBOX" rev="2">
-<attrib name="12" value="60"/></item>
-<item name="SLEW" rev="2">
-<attrib name="SLOW" value="60"/></item>
-<item name="SUSPEND" rev="2">
-<attrib name="3STATE" value="60"/></item>
-</group>
-<group name="PULL_OR_KEEP1">
-<item name="PULLTYPE" rev="2">
-<attrib name="PULLDOWN" value="28"/></item>
-</group>
-</ReportConfigData>
-<ReportPinData TimeStamp="Sun Nov 25 16:49:07 2018"><group name="IOB_OUTBUF">
-<item name="IN" rev="2">
-<attrib name="value" value="60"/></item>
-<item name="OUT" rev="2">
-<attrib name="value" value="60"/></item>
-</group>
-<group name="PAD">
-<item name="PAD" rev="2">
-<attrib name="value" value="96"/></item>
-</group>
-<group name="IOB_INBUF">
-<item name="OUT" rev="2">
-<attrib name="value" value="36"/></item>
-<item name="PAD" rev="2">
-<attrib name="value" value="36"/></item>
-</group>
-<group name="PULL_OR_KEEP1">
-<item name="PAD" rev="2">
-<attrib name="value" value="28"/></item>
-</group>
-<group name="INVERTER">
-<item name="IN" rev="2">
-<attrib name="value" value="8"/></item>
-<item name="OUT" rev="2">
-<attrib name="value" value="8"/></item>
-</group>
-<group name="IOB_IMUX">
-<item name="I" rev="2">
-<attrib name="value" value="28"/></item>
-<item name="I_B" rev="2">
-<attrib name="value" value="8"/></item>
-<item name="OUT" rev="2">
-<attrib name="value" value="36"/></item>
-</group>
-<group name="IOB">
-<item name="I" rev="2">
-<attrib name="value" value="36"/></item>
-<item name="O" rev="2">
-<attrib name="value" value="60"/></item>
-<item name="PAD" rev="2">
-<attrib name="value" value="96"/></item>
-</group>
-</ReportPinData>
 <CmdHistory>
 </CmdHistory>
 </DeviceUsageSummary>

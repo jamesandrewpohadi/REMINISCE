@@ -5,45 +5,6 @@
 
 
 ####################################################################################
-# Constraints from file : 'additional.ucf'
-####################################################################################
-
-NET "p0" LOC = P123;
-NET "p0" IOSTANDARD = LVTTL;
-NET "p1" LOC = P124;
-NET "p1" IOSTANDARD = LVTTL;
-NET "p2" LOC = P126;
-NET "p2" IOSTANDARD = LVTTL;
-NET "p3" LOC = P127;
-NET "p3" IOSTANDARD = LVTTL;
-NET "p4" LOC = P1;
-NET "p4" IOSTANDARD = LVTTL;
-NET "p5" LOC = P2;
-NET "p5" IOSTANDARD = LVTTL;
-NET "p6" LOC = P5;
-NET "p6" IOSTANDARD = LVTTL;
-NET "p7" LOC = P6;
-NET "p7" IOSTANDARD = LVTTL;
-
-NET "p8" LOC = P131;
-NET "p8" IOSTANDARD = LVTTL;
-NET "p9" LOC = P132;
-NET "p9" IOSTANDARD = LVTTL;
-NET "p10" LOC = P133;
-NET "p10" IOSTANDARD = LVTTL;
-NET "p11" LOC = P134;
-NET "p11" IOSTANDARD = LVTTL;
-NET "p12" LOC = P141;
-NET "p12" IOSTANDARD = LVTTL;
-NET "p13" LOC = P142;
-NET "p13" IOSTANDARD = LVTTL;
-NET "p14" LOC = P143;
-NET "p14" IOSTANDARD = LVTTL;
-NET "p15" LOC = P144;
-NET "p15" IOSTANDARD = LVTTL;
-
-
-####################################################################################
 # Constraints from file : 'io_shield.ucf'
 ####################################################################################
 
@@ -98,14 +59,21 @@ NET "io_led[22]" IOSTANDARD = LVTTL;
 NET "io_led[23]" LOC = P26;
 NET "io_led[23]" IOSTANDARD = LVTTL;
 
+NET "io_seg[0]" LOC = P5;
 NET "io_seg[0]" IOSTANDARD = LVTTL;
 NET "io_seg[1]" LOC = P8;
 NET "io_seg[1]" IOSTANDARD = LVTTL;
+NET "io_seg[2]" LOC = P144;
 NET "io_seg[2]" IOSTANDARD = LVTTL;
+NET "io_seg[3]" LOC = P143;
 NET "io_seg[3]" IOSTANDARD = LVTTL;
+NET "io_seg[4]" LOC = P2;
 NET "io_seg[4]" IOSTANDARD = LVTTL;
+NET "io_seg[5]" LOC = P6;
 NET "io_seg[5]" IOSTANDARD = LVTTL;
+NET "io_seg[6]" LOC = P1;
 NET "io_seg[6]" IOSTANDARD = LVTTL;
+NET "io_seg[7]" LOC = P141;
 NET "io_seg[7]" IOSTANDARD = LVTTL;
 
 NET "io_sel[0]" LOC = P9;
@@ -127,6 +95,7 @@ NET "io_button[1]" PULLDOWN;
 NET "io_button[2]" LOC = P139;
 NET "io_button[2]" IOSTANDARD = LVTTL;
 NET "io_button[2]" PULLDOWN;
+NET "io_button[3]" LOC = P142;
 NET "io_button[3]" IOSTANDARD = LVTTL;
 NET "io_button[3]" PULLDOWN;
 NET "io_button[4]" LOC = P138;
@@ -223,13 +192,21 @@ NET "rst_n" IOSTANDARD = LVTTL;
 NET "cclk" LOC = P70;
 NET "cclk" IOSTANDARD = LVTTL;
 
+NET "led[0]" LOC = P134;
 NET "led[0]" IOSTANDARD = LVTTL;
+NET "led[1]" LOC = P133;
 NET "led[1]" IOSTANDARD = LVTTL;
+NET "led[2]" LOC = P132;
 NET "led[2]" IOSTANDARD = LVTTL;
+NET "led[3]" LOC = P131;
 NET "led[3]" IOSTANDARD = LVTTL;
+NET "led[4]" LOC = P127;
 NET "led[4]" IOSTANDARD = LVTTL;
+NET "led[5]" LOC = P126;
 NET "led[5]" IOSTANDARD = LVTTL;
+NET "led[6]" LOC = P124;
 NET "led[6]" IOSTANDARD = LVTTL;
+NET "led[7]" LOC = P123;
 NET "led[7]" IOSTANDARD = LVTTL;
 
 NET "spi_mosi" LOC = P44;

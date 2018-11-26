@@ -15,23 +15,7 @@ module mojo_top (
     output io_seg [8],      // 7-segment LEDs on IO Shield
     output io_sel [4],      // Digit select on IO Shield
     input io_button [5],    // 5 buttons on IO Shield
-    input io_dip [3][8],
-    output p0,
-    output p1,
-    output p2,
-    output p3,
-    output p4,
-    output p5,
-    output p6,
-    output p7,
-    output p8,
-    output p9,
-    output p10,
-    output p11,
-    output p12,
-    output p13,
-    output p14,
-    output p15
+    input io_dip [3][8]
   ) {
   
   sig rst;                  // reset signal
@@ -41,13 +25,11 @@ module mojo_top (
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
     .rst(rst) {
-      
+      fsm state(#INIT(IDLE)) = {IDLE, CHECK, INCR, PRE_L, PRE_R, PRE_U, PRE_D, PRE_O, L, R, U, D, O, PRE_L1, L1, PRE_L2, L2, PRE_L3, L3, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, DF};
     }
   }
-  board myBoard;
-  testRom myRom;
-  sig level[2];
-  sig sequence[4];
+  dff counter[28](.clk(clk), .rst(rst)); // Define the counter
+  emulator myGame(.clk(clk), .rst(rst)); // define our device
   
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
@@ -61,33 +43,313 @@ module mojo_top (
     io_led = 3x{{8h00}};    // turn LEDs off
     io_seg = 8hff;          // turn segments off
     io_sel = 4hf;           // select no digits
-    myBoard.b[7:0] = io_dip[0];
-    myBoard.b[15:8] = io_dip[1];
-    p0 = myBoard.p0;
-    p1 = myBoard.p1;
-    p2 = myBoard.p2;
-    p3 = myBoard.p3;
-    p4 = myBoard.p4;
-    p5 = myBoard.p5;
-    p6 = myBoard.p6;
-    p7 = myBoard.p7;
-    p8 = myBoard.p8;
-    p9 = myBoard.p9;
-    p10 = myBoard.p10;
-    p11 = myBoard.p11;
-    p12 = myBoard.p12;
-    p13 = myBoard.p13;
-    p14 = myBoard.p14;
-    p15 = myBoard.p15;
     
-    //io_led[2][0] = io_button[0];
-    //io_led[2][1] = io_button[1];
-    //io_led[2][2] = io_button[2];
-    //io_led[2][3] = io_button[3];
-    //io_led[2][4] = io_button[4];
-    //io_led[1][3] = io_button[3];
+    myGame.wb = 0;
+    myGame.wl = 0;
+    myGame.ws = 0;
+    myGame.rstb = 0;
+    myGame.rstl = 0;
+    myGame.rsts = 0;
+    myGame.bsel = 0;
+    myGame.asel = 3b0;
+    myGame.alufn = 6b0;
     
-    
+    case (state.q) {
+      state.IDLE:
+        if (io_dip[2][7]) {
+          state.d = state.PRE_L1;
+        }
+        if (io_dip[2][6]) {
+          state.d = state.PRE_L2;
+        }
+        if (io_dip[2][5]) {
+          state.d = state.PRE_L3;
+        }
+      state.PRE_U:
+        if (!io_button[0]) {
+          state.d = state.U;
+        }
+      state.U:
+        myGame.wb = 1; // write = true
+        myGame.rstb = 0; // reset=false
+        myGame.asel = 3b010; // a=4
+        myGame.bsel = 0; // b=board
+        myGame.alufn = 6b100000; // shl
+        if (c{myGame.lvl,myGame.sqc} == 6b010001) {
+          state.d = state.L1_P1;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
+          state.d = state.L1_P2;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
+          state.d = state.L1_P3;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010100) {
+          state.d = state.L1_P4;
+        }
+      state.PRE_D:
+        if (!io_button[2]) {
+          state.d = state.U;
+        }
+      state.D:
+        myGame.wb = 1; // write = true
+        myGame.rstb = 0; // reset=false
+        myGame.asel = 3b010; // a=4
+        myGame.bsel = 0; // b=board
+        myGame.alufn = 6b100001; // shl
+        if (c{myGame.lvl,myGame.sqc} == 6b010001) {
+          state.d = state.L1_P1;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
+          state.d = state.L1_P2;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
+          state.d = state.L1_P3;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010100) {
+          state.d = state.L1_P4;
+        }
+      state.PRE_L:
+        if (!io_button[3]) {
+          state.d = state.U;
+        }
+      state.L:
+        myGame.wb = 1; // write = true
+        myGame.rstb = 0; // reset=false
+        myGame.asel = 3b001; // a=4
+        myGame.bsel = 0; // b=board
+        myGame.alufn = 6b100000; // shl
+        if (c{myGame.lvl,myGame.sqc} == 6b010001) {
+          state.d = state.L1_P1;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
+          state.d = state.L1_P2;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
+          state.d = state.L1_P3;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010100) {
+          state.d = state.L1_P4;
+        }
+      state.PRE_R:
+        if (!io_button[4]) {
+          state.d = state.U;
+        }
+      state.R:
+        myGame.wb = 1; // write = true
+        myGame.rstb = 0; // reset=false
+        myGame.asel = 3b001; // a=4
+        myGame.bsel = 0; // b=board
+        myGame.alufn = 6b100000; // shl
+        if (c{myGame.lvl,myGame.sqc} == 6b010001) {
+          state.d = state.L1_P1;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
+          state.d = state.L1_P2;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
+          state.d = state.L1_P3;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010100) {
+          state.d = state.L1_P4;
+        }
+      state.CHECK:
+        if (!io_button[1]) {
+          // check the board and sequence. If equal, go to INCR, else go to DF
+          myGame.asel = 3b0;
+          myGame.bsel = 0;
+          myGame.alufn = 6b110011;
+          if (myGame.eq[0]) {
+            state.d = state.INCR;
+          } else {
+            state.d = state.DF;
+          }
+        }
+      state.INCR:
+        // increment the sequence and continue the game state
+        myGame.alufn = 6b0; // add
+        myGame.asel = 3b001; // a=1
+        myGame.bsel = 1; // b=sequence
+        myGame.ws = 1; // write = true
+        myGame.rsts = 0; // reset = false
+        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
+          state.d = state.L1_P2;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
+          state.d = state.L1_P3;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010100) {
+          state.d = state.L1_P4;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010101) {
+          state.d = state.L1_PW;
+        }
+      state.DF:
+        if (io_button[0]) {
+          state.d = state.IDLE;
+        }
+      state.PRE_L1:
+        // if button L1 released, go to state L1
+        if (!io_dip[2][7]) {
+          state.d = state.L1;
+          counter.d = 0;
+        }
+      state.L1:
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS1
+          myGame.alufn = 6b0; // add
+          myGame.asel = 3b001; // a=1
+          myGame.bsel = 1; // b=sequence
+          myGame.ws = 1; // write = true
+          myGame.rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L1_DS1;
+        }
+      state.L1_DS1:
+      // load sequence 1
+        myGame.asel = 3b0;
+        myGame.alufn = 6b011010;
+        myGame.rstb = 0;
+        myGame.wb = 1;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS2
+          myGame.alufn = 6b0; // add
+          myGame.asel = 3b001; // a=1
+          myGame.bsel = 1; // b=sequence
+          myGame.ws = 1; // write = true
+          myGame.rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L1_DS2;
+        }
+      state.L1_DS2:
+      // load sequence 2
+        myGame.asel = 3b0;
+        myGame.alufn = 6b011010;
+        myGame.rstb = 0;
+        myGame.wb = 1;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS3
+          myGame.alufn = 6b0; // add
+          myGame.asel = 3b001; // a=1
+          myGame.bsel = 1; // b=sequence
+          myGame.ws = 1; // write = true
+          myGame.rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L1_DS3;
+        }
+      state.L1_DS3:
+      // load sequence 3
+        myGame.asel = 3b0;
+        myGame.alufn = 6b011010;
+        myGame.rstb = 0;
+        myGame.wb = 1;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS4
+          myGame.alufn = 6b0; // add
+          myGame.asel = 3b001; // a=1
+          myGame.bsel = 1; // b=sequence
+          myGame.ws = 1; // write = true
+          myGame.rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L1_DS4;
+        }
+      state.L1_DS4:
+        // load sequence 4
+        myGame.asel = 3b0;
+        myGame.alufn = 6b011010;
+        myGame.rstb = 0;
+        myGame.wb = 1;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DSW
+          myGame.alufn = 6b0; // add
+          myGame.asel = 3b001; // a=1
+          myGame.bsel = 1; // b=sequence
+          myGame.ws = 1; // write = true
+          myGame.rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L1_DSW;
+        }
+      state.L1_DSW:
+      // load sequence win
+        myGame.asel = 3b0;
+        myGame.alufn = 6b011010;
+        myGame.rstb = 0;
+        myGame.wb = 1;
+        if (counter.q[27]==1) {
+          // reset sequence, the next state is L1_P1
+          myGame.rsts = 1;
+          myGame.ws = 1;
+          state.d = state.L1_P1;
+        }
+      state.L1_P1:
+        if (io_button[1]) {
+          state.d = state.CHECK;
+        }
+        if (io_button[0]) {
+          state.d = state.PRE_U;
+        }
+        if (io_button[2]) {
+          state.d = state.PRE_D;
+        }
+        if (io_button[3]) {
+          state.d = state.PRE_L;
+        }
+        if (io_button[4]) {
+          state.d = state.PRE_R;
+        }
+      state.L1_P2:
+        if (io_button[1]) {
+          state.d = state.CHECK;
+        }
+        if (io_button[0]) {
+          state.d = state.PRE_U;
+        }
+        if (io_button[2]) {
+          state.d = state.PRE_D;
+        }
+        if (io_button[3]) {
+          state.d = state.PRE_L;
+        }
+        if (io_button[4]) {
+          state.d = state.PRE_R;
+        }
+      state.L1_P3:
+        if (io_button[1]) {
+          state.d = state.CHECK;
+        }
+        if (io_button[0]) {
+          state.d = state.PRE_U;
+        }
+        if (io_button[2]) {
+          state.d = state.PRE_D;
+        }
+        if (io_button[3]) {
+          state.d = state.PRE_L;
+        }
+        if (io_button[4]) {
+          state.d = state.PRE_R;
+        }
+      state.L1_P4:
+        if (io_button[1]) {
+          state.d = state.CHECK;
+        }
+        if (io_button[0]) {
+          state.d = state.PRE_U;
+        }
+        if (io_button[2]) {
+          state.d = state.PRE_D;
+        }
+        if (io_button[3]) {
+          state.d = state.PRE_L;
+        }
+        if (io_button[4]) {
+          state.d = state.PRE_R;
+        }
+      state.L1_PW:
+        if (io_button[1]) {
+          state.d = state.IDLE;
+        }
+    }
     
   }
 }
