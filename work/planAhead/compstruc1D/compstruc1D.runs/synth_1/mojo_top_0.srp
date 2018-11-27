@@ -65,8 +65,8 @@ Analyzing Verilog file "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/pl
 Parsing module <rom_8>.
 Analyzing Verilog file "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/register_10.v" into library work
 Parsing module <register_10>.
-Analyzing Verilog file "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_4.v" into library work
-Parsing module <mux_5_4>.
+Analyzing Verilog file "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_6.v" into library work
+Parsing module <mux_5_6>.
 Analyzing Verilog file "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_2_3.v" into library work
 Parsing module <mux_2_3>.
 Analyzing Verilog file "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" into library work
@@ -90,7 +90,7 @@ Elaborating module <emulator_2>.
 
 Elaborating module <mux_2_3>.
 
-Elaborating module <mux_5_4>.
+Elaborating module <mux_5_6>.
 
 Elaborating module <rom_8>.
 WARNING:HDLCompiler:295 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" Line 53: case condition never applies
@@ -107,13 +107,13 @@ Elaborating module <cmp_14>.
 Elaborating module <boole_15>.
 
 Elaborating module <shift_16>.
-WARNING:HDLCompiler:1127 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 113: Assignment to M_myalu_z ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 114: Assignment to M_myalu_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 115: Assignment to M_myalu_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 107: Assignment to M_myalu_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 108: Assignment to M_myalu_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 109: Assignment to M_myalu_n ignored, since the identifier is never used
 
 Elaborating module <register_10>.
-WARNING:HDLCompiler:413 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 138: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 143: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 139: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 144: Result of 2-bit expression is truncated to fit in 1-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -122,14 +122,15 @@ WARNING:HDLCompiler:413 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work
 Synthesizing Unit <mojo_top_0>.
     Related source file is "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v".
 WARNING:Xst:647 - Input <io_dip<20:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <address> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 5-bit register for signal <M_state_q>.
     Found 28-bit register for signal <M_counter_q>.
+    Found 5-bit register for signal <M_state_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 23                                             |
@@ -144,17 +145,17 @@ WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_counter_q[27]_GND_1_o_add_0_OUT> created at line 117.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 104
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 104
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 104
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 104
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 104
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 104
+    Found 28-bit adder for signal <M_counter_q[27]_GND_1_o_add_0_OUT> created at line 118.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 105
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 105
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 105
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 105
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 105
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 105
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
-	inferred  33 Multiplexer(s).
+	inferred  30 Multiplexer(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -168,9 +169,9 @@ Unit <reset_conditioner_1> synthesized.
 
 Synthesizing Unit <emulator_2>.
     Related source file is "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v".
-INFO:Xst:3210 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 108: Output port <z> of the instance <myalu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 108: Output port <v> of the instance <myalu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 108: Output port <n> of the instance <myalu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 102: Output port <z> of the instance <myalu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 102: Output port <v> of the instance <myalu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 102: Output port <n> of the instance <myalu> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <emulator_2> synthesized.
@@ -181,12 +182,11 @@ Synthesizing Unit <mux_2_3>.
 	inferred   1 Multiplexer(s).
 Unit <mux_2_3> synthesized.
 
-Synthesizing Unit <mux_5_4>.
-    Related source file is "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_4.v".
-    Found 16-bit 7-to-1 multiplexer for signal <out> created at line 22.
+Synthesizing Unit <mux_5_6>.
+    Related source file is "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_6.v".
     Summary:
-	inferred   1 Multiplexer(s).
-Unit <mux_5_4> synthesized.
+	inferred   3 Multiplexer(s).
+Unit <mux_5_6> synthesized.
 
 Synthesizing Unit <rom_8>.
     Related source file is "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v".
@@ -268,6 +268,7 @@ Synthesizing Unit <register_10>.
     Found 16-bit register for signal <M_reg_q>.
     Summary:
 	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
 Unit <register_10> synthesized.
 
 =========================================================================
@@ -286,13 +287,12 @@ Macro Statistics
  16-bit register                                       : 3
  28-bit register                                       : 1
  4-bit register                                        : 1
-# Multiplexers                                         : 62
- 1-bit 2-to-1 multiplexer                              : 24
+# Multiplexers                                         : 64
+ 1-bit 2-to-1 multiplexer                              : 21
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 16
- 16-bit 2-to-1 multiplexer                             : 3
+ 16-bit 2-to-1 multiplexer                             : 10
  16-bit 4-to-1 multiplexer                             : 4
- 16-bit 7-to-1 multiplexer                             : 2
  28-bit 2-to-1 multiplexer                             : 4
  3-bit 2-to-1 multiplexer                              : 3
  6-bit 2-to-1 multiplexer                              : 5
@@ -341,13 +341,12 @@ Macro Statistics
  28-bit adder                                          : 1
 # Registers                                            : 80
  Flip-Flops                                            : 80
-# Multiplexers                                         : 62
- 1-bit 2-to-1 multiplexer                              : 24
+# Multiplexers                                         : 64
+ 1-bit 2-to-1 multiplexer                              : 21
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 16
- 16-bit 2-to-1 multiplexer                             : 3
+ 16-bit 2-to-1 multiplexer                             : 10
  16-bit 4-to-1 multiplexer                             : 4
- 16-bit 7-to-1 multiplexer                             : 2
  28-bit 2-to-1 multiplexer                             : 4
  3-bit 2-to-1 multiplexer                              : 3
  6-bit 2-to-1 multiplexer                              : 5
@@ -403,7 +402,6 @@ Optimizing unit <alu_9> ...
 Optimizing unit <add_13> ...
 
 Optimizing unit <register_10> ...
-WARNING:Xst:1293 - FF/Latch <myGame/level/M_reg_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <myGame/level/M_reg_q_15> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <myGame/level/M_reg_q_14> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <myGame/level/M_reg_q_13> of sequential type is unconnected in block <mojo_top_0>.
@@ -422,7 +420,6 @@ WARNING:Xst:2677 - Node <myGame/level/M_reg_q_2> of sequential type is unconnect
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 7.
-FlipFlop M_counter_q_27 has been replicated 5 time(s)
 
 Final Macro Processing ...
 
@@ -434,8 +431,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 93
- Flip-Flops                                            : 93
+# Registers                                            : 89
+ Flip-Flops                                            : 89
 
 =========================================================================
 
@@ -458,21 +455,20 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 493
+# BELS                             : 497
 #      GND                         : 4
 #      INV                         : 2
 #      LUT1                        : 27
-#      LUT2                        : 90
-#      LUT3                        : 73
-#      LUT4                        : 30
-#      LUT5                        : 58
-#      LUT6                        : 90
+#      LUT2                        : 75
+#      LUT3                        : 76
+#      LUT4                        : 48
+#      LUT5                        : 52
+#      LUT6                        : 94
 #      MUXCY                       : 57
 #      VCC                         : 2
 #      XORCY                       : 60
-# FlipFlops/Latches                : 93
-#      FDR                         : 55
-#      FDRE                        : 33
+# FlipFlops/Latches                : 89
+#      FDR                         : 84
 #      FDS                         : 5
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -490,19 +486,19 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              93  out of  11440     0%  
- Number of Slice LUTs:                  370  out of   5720     6%  
-    Number used as Logic:               370  out of   5720     6%  
+ Number of Slice Registers:              89  out of  11440     0%  
+ Number of Slice LUTs:                  374  out of   5720     6%  
+    Number used as Logic:               374  out of   5720     6%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    412
-   Number with an unused Flip Flop:     319  out of    412    77%  
-   Number with an unused LUT:            42  out of    412    10%  
-   Number of fully used LUT-FF pairs:    51  out of    412    12%  
+ Number of LUT Flip Flop pairs used:    396
+   Number with an unused Flip Flop:     307  out of    396    77%  
+   Number with an unused LUT:            22  out of    396     5%  
+   Number of fully used LUT-FF pairs:    67  out of    396    16%  
    Number of unique control sets:        11
 
 IO Utilization: 
- Number of IOs:                          87
+ Number of IOs:                          93
  Number of bonded IOBs:                  60  out of    102    58%  
 
 Specific Feature Utilization:
@@ -530,7 +526,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 93    |
+clk                                | BUFGP                  | 89    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -541,10 +537,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 114.138ns (Maximum Frequency: 8.761MHz)
-   Minimum input arrival time before clock: 113.848ns
-   Maximum output required time after clock: 117.657ns
-   Maximum combinational path delay: 117.367ns
+   Minimum period: 107.034ns (Maximum Frequency: 9.343MHz)
+   Minimum input arrival time before clock: 106.076ns
+   Maximum output required time after clock: 110.657ns
+   Maximum combinational path delay: 109.699ns
 
 Timing Details:
 ---------------
@@ -552,57 +548,43 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 114.138ns (frequency: 8.761MHz)
-  Total number of paths / destination ports: 169581752663 / 212
+  Clock period: 107.034ns (frequency: 9.343MHz)
+  Total number of paths / destination ports: 2856050622661 / 173
 -------------------------------------------------------------------------
-Delay:               114.138ns (Levels of Logic = 188)
-  Source:            M_state_q_FSM_FFd13 (FF)
+Delay:               107.034ns (Levels of Logic = 179)
+  Source:            M_state_q_FSM_FFd6 (FF)
   Destination:       M_state_q_FSM_FFd18 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: M_state_q_FSM_FFd13 to M_state_q_FSM_FFd18
+  Data Path: M_state_q_FSM_FFd6 to M_state_q_FSM_FFd18
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             29   0.525   1.470  M_state_q_FSM_FFd13 (M_state_q_FSM_FFd13)
-     LUT6:I5->O           31   0.254   1.731  M_state_q_M_myGame_wb1 (M_myGame_wb)
-     begin scope: 'myGame:wb'
-     begin scope: 'myGame/board:write<0>'
-     LUT3:I0->O            2   0.235   0.726  out<0>1 (out<0>)
-     end scope: 'myGame/board:out<0>'
-     begin scope: 'myGame/muxB:a<0>'
-     LUT3:I2->O           41   0.254   1.671  Mmux_out17 (out<0>)
-     end scope: 'myGame/muxB:out<0>'
-     begin scope: 'myGame/myalu:b<0>'
-     begin scope: 'myGame/myalu/myAdd:b<0>'
-     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<0> (Msub_a[15]_b[15]_sub_2_OUT_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<0> (Msub_a[15]_b[15]_sub_2_OUT_cy<0>)
-     XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<1> (a[15]_b[15]_sub_2_OUT<1>)
-     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<1>'
-     LUT5:I1->O            1   0.254   1.112  Mmux_c142 (Mmux_c141)
-     LUT5:I0->O            3   0.254   0.874  Mmux_c145 (M_myalu_c<1>)
-     end scope: 'myGame/myalu:M_myalu_c<1>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<1>'
-     LUT2:I0->O            2   0.250   0.834  Mmux_out81 (out<1>)
-     end scope: 'myGame/muxSequence:out<1>'
-     begin scope: 'myGame/sequence:value<1>'
-     LUT3:I1->O           12   0.250   1.177  out<1>1 (out<1>)
+     FDR:C->Q              8   0.525   1.374  M_state_q_FSM_FFd6 (M_state_q_FSM_FFd6)
+     LUT6:I1->O            7   0.254   0.910  Mmux_M_myGame_ws1111 (Mmux_M_myGame_ws111)
+     LUT3:I2->O           16   0.254   1.458  Mmux_M_myGame_ws112 (M_myGame_ws)
+     begin scope: 'myGame:ws'
+     begin scope: 'myGame/sequence:write'
+     LUT4:I0->O           25   0.254   1.403  Mmux_out81 (out<1>)
      end scope: 'myGame/sequence:out<1>'
-     begin scope: 'myGame/muxB:b<1>'
-     LUT3:I1->O           41   0.250   2.101  Mmux_out81 (out<1>)
-     end scope: 'myGame/muxB:out<1>'
-     begin scope: 'myGame/myalu:b<1>'
-     LUT6:I1->O            2   0.254   0.726  Sh691 (Sh69)
+     end scope: 'myGame:sqc<1>'
+     begin scope: 'myGame_myRom:M_myGame_sqc<1>'
+     LUT6:I5->O            3   0.254   0.766  Mram_out41 (M_myRom_out<4>)
+     end scope: 'myGame_myRom:M_myRom_out<4>'
+     begin scope: 'myGame:M_myRom_out<4>'
+     LUT3:I2->O            9   0.254   1.252  M_muxA_out<4>1 (M_muxA_out<4>)
+     begin scope: 'myGame/myalu:a<4>'
+     LUT6:I2->O            2   0.254   0.726  Sh691 (Sh69)
      LUT3:I2->O            2   0.254   0.726  Sh9311 (Sh931)
-     LUT6:I5->O            1   0.254   0.790  Mmux_c221 (Mmux_c22)
-     LUT5:I3->O            3   0.250   0.874  Mmux_c2251 (M_myalu_c<5>)
+     LUT6:I5->O            1   0.254   0.682  Mmux_c221 (Mmux_c22)
+     LUT5:I4->O            2   0.254   0.726  Mmux_c2251 (M_myalu_c<5>)
      end scope: 'myGame/myalu:M_myalu_c<5>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<5>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out121 (out<5>)
-     end scope: 'myGame/muxSequence:out<5>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<5>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out121 (out<5>)
+     begin scope: 'myGame/sequence:value<5>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out121 (out<5>)
+     end scope: 'myGame/sequence:out<5>'
+     begin scope: 'myGame/muxB:b<5>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out121 (out<5>)
      end scope: 'myGame/muxB:out<5>'
      begin scope: 'myGame/myalu:b<5>'
      begin scope: 'myGame/myalu/myAdd:b<5>'
@@ -611,13 +593,13 @@ Delay:               114.138ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<6> (a[15]_b[15]_sub_2_OUT<6>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<6>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c244 (Mmux_c244)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c245 (M_myalu_c<6>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c245 (M_myalu_c<6>)
      end scope: 'myGame/myalu:M_myalu_c<6>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<6>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out131 (out<6>)
-     end scope: 'myGame/muxSequence:out<6>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<6>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out131 (out<6>)
+     begin scope: 'myGame/sequence:value<6>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out131 (out<6>)
+     end scope: 'myGame/sequence:out<6>'
+     begin scope: 'myGame/muxB:b<6>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out131 (out<6>)
      end scope: 'myGame/muxB:out<6>'
      begin scope: 'myGame/myalu:b<6>'
      begin scope: 'myGame/myalu/myAdd:b<6>'
@@ -626,13 +608,13 @@ Delay:               114.138ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<7> (a[15]_b[15]_sub_2_OUT<7>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<7>'
      LUT6:I5->O            1   0.254   0.910  Mmux_c266 (Mmux_c266)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c267 (M_myalu_c<7>)
+     LUT4:I1->O            2   0.235   0.726  Mmux_c267 (M_myalu_c<7>)
      end scope: 'myGame/myalu:M_myalu_c<7>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<7>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out141 (out<7>)
-     end scope: 'myGame/muxSequence:out<7>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<7>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out141 (out<7>)
+     begin scope: 'myGame/sequence:value<7>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out141 (out<7>)
+     end scope: 'myGame/sequence:out<7>'
+     begin scope: 'myGame/muxB:b<7>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out141 (out<7>)
      end scope: 'myGame/muxB:out<7>'
      begin scope: 'myGame/myalu:b<7>'
      begin scope: 'myGame/myalu/myAdd:b<7>'
@@ -641,13 +623,13 @@ Delay:               114.138ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<8> (a[15]_b[15]_sub_2_OUT<8>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<8>'
      LUT6:I5->O            1   0.254   0.910  Mmux_c286 (Mmux_c285)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c287 (M_myalu_c<8>)
+     LUT4:I1->O            2   0.235   0.726  Mmux_c287 (M_myalu_c<8>)
      end scope: 'myGame/myalu:M_myalu_c<8>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<8>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out151 (out<8>)
-     end scope: 'myGame/muxSequence:out<8>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<8>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out151 (out<8>)
+     begin scope: 'myGame/sequence:value<8>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out151 (out<8>)
+     end scope: 'myGame/sequence:out<8>'
+     begin scope: 'myGame/muxB:b<8>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out151 (out<8>)
      end scope: 'myGame/muxB:out<8>'
      begin scope: 'myGame/myalu:b<8>'
      begin scope: 'myGame/myalu/myAdd:b<8>'
@@ -656,13 +638,13 @@ Delay:               114.138ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<9> (a[15]_b[15]_sub_2_OUT<9>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<9>'
      LUT6:I5->O            1   0.254   0.910  Mmux_c306 (Mmux_c305)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c307 (M_myalu_c<9>)
+     LUT4:I1->O            2   0.235   0.726  Mmux_c307 (M_myalu_c<9>)
      end scope: 'myGame/myalu:M_myalu_c<9>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<9>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out161 (out<9>)
-     end scope: 'myGame/muxSequence:out<9>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<9>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out161 (out<9>)
+     begin scope: 'myGame/sequence:value<9>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out161 (out<9>)
+     end scope: 'myGame/sequence:out<9>'
+     begin scope: 'myGame/muxB:b<9>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out161 (out<9>)
      end scope: 'myGame/muxB:out<9>'
      begin scope: 'myGame/myalu:b<9>'
      begin scope: 'myGame/myalu/myAdd:b<9>'
@@ -671,13 +653,13 @@ Delay:               114.138ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<10> (a[15]_b[15]_sub_2_OUT<10>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<10>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c213 (Mmux_c212)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c214 (M_myalu_c<10>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c214 (M_myalu_c<10>)
      end scope: 'myGame/myalu:M_myalu_c<10>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<10>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out21 (out<10>)
-     end scope: 'myGame/muxSequence:out<10>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<10>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out21 (out<10>)
+     begin scope: 'myGame/sequence:value<10>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out21 (out<10>)
+     end scope: 'myGame/sequence:out<10>'
+     begin scope: 'myGame/muxB:b<10>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out21 (out<10>)
      end scope: 'myGame/muxB:out<10>'
      begin scope: 'myGame/myalu:b<10>'
      begin scope: 'myGame/myalu/myAdd:b<10>'
@@ -685,14 +667,14 @@ Delay:               114.138ns (Levels of Logic = 188)
      MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<10> (Msub_a[15]_b[15]_sub_2_OUT_cy<10>)
      XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<11> (a[15]_b[15]_sub_2_OUT<11>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<11>'
-     LUT6:I5->O            1   0.254   0.910  Mmux_c48 (Mmux_c48)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c49 (M_myalu_c<11>)
+     LUT6:I5->O            1   0.254   0.682  Mmux_c45 (Mmux_c45)
+     LUT4:I3->O            2   0.254   0.726  Mmux_c461 (M_myalu_c<11>)
      end scope: 'myGame/myalu:M_myalu_c<11>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<11>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out31 (out<11>)
-     end scope: 'myGame/muxSequence:out<11>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<11>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out31 (out<11>)
+     begin scope: 'myGame/sequence:value<11>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out31 (out<11>)
+     end scope: 'myGame/sequence:out<11>'
+     begin scope: 'myGame/muxB:b<11>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out31 (out<11>)
      end scope: 'myGame/muxB:out<11>'
      begin scope: 'myGame/myalu:b<11>'
      begin scope: 'myGame/myalu/myAdd:b<11>'
@@ -701,13 +683,13 @@ Delay:               114.138ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<12> (a[15]_b[15]_sub_2_OUT<12>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<12>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c66 (Mmux_c68)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c67 (M_myalu_c<12>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c67 (M_myalu_c<12>)
      end scope: 'myGame/myalu:M_myalu_c<12>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<12>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out41 (out<12>)
-     end scope: 'myGame/muxSequence:out<12>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<12>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out41 (out<12>)
+     begin scope: 'myGame/sequence:value<12>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out41 (out<12>)
+     end scope: 'myGame/sequence:out<12>'
+     begin scope: 'myGame/muxB:b<12>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out41 (out<12>)
      end scope: 'myGame/muxB:out<12>'
      begin scope: 'myGame/myalu:b<12>'
      begin scope: 'myGame/myalu/myAdd:b<12>'
@@ -716,13 +698,13 @@ Delay:               114.138ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<13> (a[15]_b[15]_sub_2_OUT<13>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<13>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c86 (Mmux_c85)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c87 (M_myalu_c<13>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c87 (M_myalu_c<13>)
      end scope: 'myGame/myalu:M_myalu_c<13>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<13>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out51 (out<13>)
-     end scope: 'myGame/muxSequence:out<13>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<13>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out51 (out<13>)
+     begin scope: 'myGame/sequence:value<13>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out51 (out<13>)
+     end scope: 'myGame/sequence:out<13>'
+     begin scope: 'myGame/muxB:b<13>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out51 (out<13>)
      end scope: 'myGame/muxB:out<13>'
      begin scope: 'myGame/myalu:b<13>'
      begin scope: 'myGame/myalu/myAdd:b<13>'
@@ -731,13 +713,13 @@ Delay:               114.138ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<14> (a[15]_b[15]_sub_2_OUT<14>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<14>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c107 (Mmux_c106)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c108 (M_myalu_c<14>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c108 (M_myalu_c<14>)
      end scope: 'myGame/myalu:M_myalu_c<14>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<14>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out61 (out<14>)
-     end scope: 'myGame/muxSequence:out<14>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<14>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out61 (out<14>)
+     begin scope: 'myGame/sequence:value<14>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out61 (out<14>)
+     end scope: 'myGame/sequence:out<14>'
+     begin scope: 'myGame/muxB:b<14>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out61 (out<14>)
      end scope: 'myGame/muxB:out<14>'
      begin scope: 'myGame/myalu:b<14>'
      begin scope: 'myGame/myalu/myAdd:b<14>'
@@ -746,27 +728,27 @@ Delay:               114.138ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.910  Msub_a[15]_b[15]_sub_2_OUT_xor<15> (a[15]_b[15]_sub_2_OUT<15>)
      LUT5:I2->O            1   0.235   0.790  Mmux_c71 (c<15>)
      end scope: 'myGame/myalu/myAdd:c<15>'
-     LUT4:I2->O            3   0.250   0.874  Mmux_c127 (M_myalu_c<15>)
+     LUT4:I2->O            2   0.250   0.726  Mmux_c127 (M_myalu_c<15>)
      end scope: 'myGame/myalu:M_myalu_c<15>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<15>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out71 (out<15>)
-     end scope: 'myGame/muxSequence:out<15>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<15>'
-     LUT5:I2->O            4   0.235   0.803  Mmux_out71 (out<15>)
+     begin scope: 'myGame/sequence:value<15>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out71 (out<15>)
+     end scope: 'myGame/sequence:out<15>'
+     begin scope: 'myGame/muxB:b<15>'
+     LUT3:I1->O            4   0.250   0.803  Mmux_out71 (out<15>)
      end scope: 'myGame/muxB:out<15>'
      begin scope: 'myGame/myalu:b<15>'
      begin scope: 'myGame/myalu/myAdd:b<15>'
-     DSP48A1:A15->M4       2   3.265   0.954  Mmult_n0029 (n0029<4>)
+     DSP48A1:A15->M4       2   3.265   0.726  Mmult_n0029 (n0029<4>)
      end scope: 'myGame/myalu/myAdd:n0029<4>'
-     LUT6:I3->O            1   0.235   0.682  Mmux_c202 (Mmux_c201)
+     LUT6:I5->O            1   0.254   0.682  Mmux_c202 (Mmux_c201)
      LUT5:I4->O            1   0.254   0.790  Mmux_c203 (Mmux_c202)
-     LUT6:I4->O            3   0.250   0.874  Mmux_c205 (M_myalu_c<4>)
+     LUT6:I4->O            2   0.250   0.726  Mmux_c205 (M_myalu_c<4>)
      end scope: 'myGame/myalu:M_myalu_c<4>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<4>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out111 (out<4>)
-     end scope: 'myGame/muxSequence:out<4>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<4>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out111 (out<4>)
+     begin scope: 'myGame/sequence:value<4>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out111 (out<4>)
+     end scope: 'myGame/sequence:out<4>'
+     begin scope: 'myGame/muxB:b<4>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out111 (out<4>)
      end scope: 'myGame/muxB:out<4>'
      begin scope: 'myGame/myalu:b<4>'
      begin scope: 'myGame/myalu/myAdd:b<4>'
@@ -778,106 +760,91 @@ Delay:               114.138ns (Levels of Logic = 188)
      MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<8> (Madd_a[15]_b[15]_add_0_OUT_cy<8>)
      MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<9> (Madd_a[15]_b[15]_add_0_OUT_cy<9>)
      MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<10> (Madd_a[15]_b[15]_add_0_OUT_cy<10>)
-     XORCY:CI->O           2   0.206   1.156  Madd_a[15]_b[15]_add_0_OUT_xor<11> (a[15]_b[15]_add_0_OUT<11>)
-     LUT6:I1->O            1   0.254   0.910  z2 (z1)
-     LUT3:I0->O            1   0.235   0.958  z4 (z3)
-     end scope: 'myGame/myalu/myAdd:z3'
-     LUT6:I2->O            1   0.254   0.790  Mmux_c_8 (Mmux_c_8)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<11> (Madd_a[15]_b[15]_add_0_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<12> (Madd_a[15]_b[15]_add_0_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<13> (Madd_a[15]_b[15]_add_0_OUT_cy<13>)
+     XORCY:CI->O           2   0.206   1.156  Madd_a[15]_b[15]_add_0_OUT_xor<14> (a[15]_b[15]_add_0_OUT<14>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_add_0_OUT<14>'
+     LUT6:I1->O            1   0.254   0.790  Mmux_c_8 (Mmux_c_8)
      LUT5:I3->O            5   0.250   0.841  alufn<5> (M_myGame_eq<0>)
      end scope: 'myGame/myalu:M_myGame_eq<0>'
-     begin scope: 'myGame/muxSequence:M_myGame_eq<0>'
-     LUT3:I2->O            2   0.254   0.834  Mmux_out17 (out<0>)
-     end scope: 'myGame/muxSequence:out<0>'
      begin scope: 'myGame/sequence:value<0>'
-     LUT3:I1->O           12   0.250   1.499  out<0>1 (out<0>)
+     LUT4:I3->O           24   0.254   1.488  Mmux_out17 (out<0>)
      end scope: 'myGame/sequence:out<0>'
-     end scope: 'myGame:sqc<0>'
-     begin scope: 'myGame_myRom:M_myGame_sqc<0>'
-     LUT5:I0->O           16   0.254   1.182  Mram_out16 (M_myRom_out<0>)
-     end scope: 'myGame_myRom:M_myRom_out<0>'
-     begin scope: 'myGame:M_myRom_out<0>'
-     begin scope: 'myGame/muxA:a<3>'
-     LUT3:I2->O           10   0.254   1.236  Mmux_out91 (out<2>)
-     end scope: 'myGame/muxA:out<2>'
-     begin scope: 'myGame/myalu:a<2>'
-     LUT6:I3->O            3   0.235   0.874  Mmux_c168 (M_myalu_c<2>)
+     begin scope: 'myGame/muxB:b<0>'
+     LUT3:I1->O           40   0.250   2.109  Mmux_out17 (out<0>)
+     end scope: 'myGame/muxB:out<0>'
+     begin scope: 'myGame/myalu:b<0>'
+     LUT6:I0->O            2   0.254   0.954  Sh391 (Sh39)
+     LUT5:I2->O            1   0.235   1.112  Mmux_c182 (Mmux_c181)
+     LUT6:I1->O            2   0.254   0.726  Mmux_c186 (M_myalu_c<3>)
+     end scope: 'myGame/myalu:M_myalu_c<3>'
+     begin scope: 'myGame/sequence:value<3>'
+     LUT4:I3->O           25   0.254   1.511  Mmux_out101 (out<3>)
+     end scope: 'myGame/sequence:out<3>'
+     begin scope: 'myGame/muxB:b<3>'
+     LUT3:I1->O           34   0.250   2.008  Mmux_out101 (out<3>)
+     end scope: 'myGame/muxB:out<3>'
+     begin scope: 'myGame/myalu:b<3>'
+     LUT6:I0->O            1   0.254   0.790  Sh1811 (Sh181)
+     LUT4:I2->O            1   0.250   0.910  Mmux_c165 (Mmux_c164)
+     LUT6:I3->O            2   0.235   0.726  Mmux_c167 (M_myalu_c<2>)
      end scope: 'myGame/myalu:M_myalu_c<2>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<2>'
-     LUT2:I0->O            2   0.250   0.834  Mmux_out91 (out<2>)
-     end scope: 'myGame/muxSequence:out<2>'
      begin scope: 'myGame/sequence:value<2>'
-     LUT3:I1->O           13   0.250   1.206  out<2>1 (out<2>)
+     LUT4:I3->O           25   0.254   1.511  Mmux_out91 (out<2>)
      end scope: 'myGame/sequence:out<2>'
      begin scope: 'myGame/muxB:b<2>'
-     LUT3:I1->O           32   0.250   1.628  Mmux_out91 (out<2>)
+     LUT3:I1->O           34   0.250   1.983  Mmux_out91 (out<2>)
      end scope: 'myGame/muxB:out<2>'
      begin scope: 'myGame/myalu:b<2>'
-     LUT4:I2->O            1   0.250   0.910  Mmux_c181 (Mmux_c18)
-     LUT3:I0->O            3   0.235   0.766  Mmux_c1861 (M_myalu_c<3>)
-     end scope: 'myGame/myalu:M_myalu_c<3>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<3>'
-     LUT3:I2->O            2   0.254   0.834  Mmux_out101 (out<3>)
-     end scope: 'myGame/muxSequence:out<3>'
-     begin scope: 'myGame/sequence:value<3>'
-     LUT3:I1->O           13   0.250   1.098  out<3>1 (out<3>)
-     end scope: 'myGame/sequence:out<3>'
-     end scope: 'myGame:sqc<3>'
+     LUT5:I0->O            3   0.254   0.766  Mmux_c145 (M_myalu_c<1>)
+     end scope: 'myGame/myalu:M_myalu_c<1>'
+     begin scope: 'myGame/level:value<1>'
+     LUT4:I3->O           24   0.254   1.380  Mmux_out81 (out<1>)
+     end scope: 'myGame/level:out<1>'
+     end scope: 'myGame:lvl<1>'
      LUT6:I5->O            1   0.254   0.000  M_state_q_FSM_FFd13-In3 (M_state_q_FSM_FFd13-In)
      FDR:D                     0.074          M_state_q_FSM_FFd13
     ----------------------------------------
-    Total                    114.138ns (30.869ns logic, 83.268ns route)
-                                       (27.0% logic, 73.0% route)
+    Total                    107.034ns (29.830ns logic, 77.204ns route)
+                                       (27.9% logic, 72.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 10124104079 / 92
+  Total number of paths / destination ports: 612600152819 / 87
 -------------------------------------------------------------------------
-Offset:              113.848ns (Levels of Logic = 188)
-  Source:            io_dip<21> (PAD)
+Offset:              106.076ns (Levels of Logic = 179)
+  Source:            io_dip<23> (PAD)
   Destination:       M_state_q_FSM_FFd18 (FF)
   Destination Clock: clk rising
 
-  Data Path: io_dip<21> to M_state_q_FSM_FFd18
+  Data Path: io_dip<23> to M_state_q_FSM_FFd18
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             7   1.328   1.340  io_dip_21_IBUF (io_dip_21_IBUF)
-     begin scope: 'myGame:io_dip_21_IBUF'
-     begin scope: 'myGame/level:io_dip_21_IBUF'
-     LUT5:I0->O           11   0.254   1.039  out<0>1 (out<0>)
+     IBUF:I->O             6   1.328   1.152  io_dip_23_IBUF (io_dip_23_IBUF)
+     LUT4:I0->O            2   0.254   1.002  M_state_q_M_myGame_wl1 (M_myGame_wl)
+     begin scope: 'myGame:wl'
+     begin scope: 'myGame/level:write'
+     LUT4:I0->O           24   0.254   1.488  Mmux_out11 (out<0>)
      end scope: 'myGame/level:out<0>'
      end scope: 'myGame:lvl<0>'
      begin scope: 'myGame_myRom:M_myGame_lvl<0>'
-     LUT5:I4->O            2   0.254   0.834  Mram_out41 (M_myRom_out<4>)
+     LUT6:I4->O            3   0.250   0.766  Mram_out41 (M_myRom_out<4>)
      end scope: 'myGame_myRom:M_myRom_out<4>'
      begin scope: 'myGame:M_myRom_out<4>'
-     LUT3:I1->O           10   0.250   1.116  M_muxA_out<4>1 (M_muxA_out<4>)
+     LUT3:I2->O            9   0.254   1.252  M_muxA_out<4>1 (M_muxA_out<4>)
      begin scope: 'myGame/myalu:a<4>'
-     LUT3:I1->O            2   0.250   0.834  Sh1121 (Sh112)
-     LUT3:I1->O            1   0.250   0.790  Mmux_c143 (Mmux_c142)
-     LUT6:I4->O            1   0.250   0.790  Mmux_c144 (Mmux_c143)
-     LUT5:I3->O            3   0.250   0.874  Mmux_c145 (M_myalu_c<1>)
-     end scope: 'myGame/myalu:M_myalu_c<1>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<1>'
-     LUT2:I0->O            2   0.250   0.834  Mmux_out81 (out<1>)
-     end scope: 'myGame/muxSequence:out<1>'
-     begin scope: 'myGame/sequence:value<1>'
-     LUT3:I1->O           12   0.250   1.177  out<1>1 (out<1>)
-     end scope: 'myGame/sequence:out<1>'
-     begin scope: 'myGame/muxB:b<1>'
-     LUT3:I1->O           41   0.250   2.101  Mmux_out81 (out<1>)
-     end scope: 'myGame/muxB:out<1>'
-     begin scope: 'myGame/myalu:b<1>'
-     LUT6:I1->O            2   0.254   0.726  Sh691 (Sh69)
+     LUT6:I2->O            2   0.254   0.726  Sh691 (Sh69)
      LUT3:I2->O            2   0.254   0.726  Sh9311 (Sh931)
-     LUT6:I5->O            1   0.254   0.790  Mmux_c221 (Mmux_c22)
-     LUT5:I3->O            3   0.250   0.874  Mmux_c2251 (M_myalu_c<5>)
+     LUT6:I5->O            1   0.254   0.682  Mmux_c221 (Mmux_c22)
+     LUT5:I4->O            2   0.254   0.726  Mmux_c2251 (M_myalu_c<5>)
      end scope: 'myGame/myalu:M_myalu_c<5>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<5>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out121 (out<5>)
-     end scope: 'myGame/muxSequence:out<5>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<5>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out121 (out<5>)
+     begin scope: 'myGame/sequence:value<5>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out121 (out<5>)
+     end scope: 'myGame/sequence:out<5>'
+     begin scope: 'myGame/muxB:b<5>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out121 (out<5>)
      end scope: 'myGame/muxB:out<5>'
      begin scope: 'myGame/myalu:b<5>'
      begin scope: 'myGame/myalu/myAdd:b<5>'
@@ -886,13 +853,13 @@ Offset:              113.848ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<6> (a[15]_b[15]_sub_2_OUT<6>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<6>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c244 (Mmux_c244)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c245 (M_myalu_c<6>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c245 (M_myalu_c<6>)
      end scope: 'myGame/myalu:M_myalu_c<6>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<6>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out131 (out<6>)
-     end scope: 'myGame/muxSequence:out<6>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<6>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out131 (out<6>)
+     begin scope: 'myGame/sequence:value<6>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out131 (out<6>)
+     end scope: 'myGame/sequence:out<6>'
+     begin scope: 'myGame/muxB:b<6>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out131 (out<6>)
      end scope: 'myGame/muxB:out<6>'
      begin scope: 'myGame/myalu:b<6>'
      begin scope: 'myGame/myalu/myAdd:b<6>'
@@ -901,13 +868,13 @@ Offset:              113.848ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<7> (a[15]_b[15]_sub_2_OUT<7>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<7>'
      LUT6:I5->O            1   0.254   0.910  Mmux_c266 (Mmux_c266)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c267 (M_myalu_c<7>)
+     LUT4:I1->O            2   0.235   0.726  Mmux_c267 (M_myalu_c<7>)
      end scope: 'myGame/myalu:M_myalu_c<7>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<7>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out141 (out<7>)
-     end scope: 'myGame/muxSequence:out<7>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<7>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out141 (out<7>)
+     begin scope: 'myGame/sequence:value<7>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out141 (out<7>)
+     end scope: 'myGame/sequence:out<7>'
+     begin scope: 'myGame/muxB:b<7>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out141 (out<7>)
      end scope: 'myGame/muxB:out<7>'
      begin scope: 'myGame/myalu:b<7>'
      begin scope: 'myGame/myalu/myAdd:b<7>'
@@ -916,13 +883,13 @@ Offset:              113.848ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<8> (a[15]_b[15]_sub_2_OUT<8>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<8>'
      LUT6:I5->O            1   0.254   0.910  Mmux_c286 (Mmux_c285)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c287 (M_myalu_c<8>)
+     LUT4:I1->O            2   0.235   0.726  Mmux_c287 (M_myalu_c<8>)
      end scope: 'myGame/myalu:M_myalu_c<8>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<8>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out151 (out<8>)
-     end scope: 'myGame/muxSequence:out<8>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<8>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out151 (out<8>)
+     begin scope: 'myGame/sequence:value<8>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out151 (out<8>)
+     end scope: 'myGame/sequence:out<8>'
+     begin scope: 'myGame/muxB:b<8>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out151 (out<8>)
      end scope: 'myGame/muxB:out<8>'
      begin scope: 'myGame/myalu:b<8>'
      begin scope: 'myGame/myalu/myAdd:b<8>'
@@ -931,13 +898,13 @@ Offset:              113.848ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<9> (a[15]_b[15]_sub_2_OUT<9>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<9>'
      LUT6:I5->O            1   0.254   0.910  Mmux_c306 (Mmux_c305)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c307 (M_myalu_c<9>)
+     LUT4:I1->O            2   0.235   0.726  Mmux_c307 (M_myalu_c<9>)
      end scope: 'myGame/myalu:M_myalu_c<9>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<9>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out161 (out<9>)
-     end scope: 'myGame/muxSequence:out<9>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<9>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out161 (out<9>)
+     begin scope: 'myGame/sequence:value<9>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out161 (out<9>)
+     end scope: 'myGame/sequence:out<9>'
+     begin scope: 'myGame/muxB:b<9>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out161 (out<9>)
      end scope: 'myGame/muxB:out<9>'
      begin scope: 'myGame/myalu:b<9>'
      begin scope: 'myGame/myalu/myAdd:b<9>'
@@ -946,13 +913,13 @@ Offset:              113.848ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<10> (a[15]_b[15]_sub_2_OUT<10>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<10>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c213 (Mmux_c212)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c214 (M_myalu_c<10>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c214 (M_myalu_c<10>)
      end scope: 'myGame/myalu:M_myalu_c<10>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<10>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out21 (out<10>)
-     end scope: 'myGame/muxSequence:out<10>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<10>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out21 (out<10>)
+     begin scope: 'myGame/sequence:value<10>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out21 (out<10>)
+     end scope: 'myGame/sequence:out<10>'
+     begin scope: 'myGame/muxB:b<10>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out21 (out<10>)
      end scope: 'myGame/muxB:out<10>'
      begin scope: 'myGame/myalu:b<10>'
      begin scope: 'myGame/myalu/myAdd:b<10>'
@@ -960,14 +927,14 @@ Offset:              113.848ns (Levels of Logic = 188)
      MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<10> (Msub_a[15]_b[15]_sub_2_OUT_cy<10>)
      XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<11> (a[15]_b[15]_sub_2_OUT<11>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<11>'
-     LUT6:I5->O            1   0.254   0.910  Mmux_c48 (Mmux_c48)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c49 (M_myalu_c<11>)
+     LUT6:I5->O            1   0.254   0.682  Mmux_c45 (Mmux_c45)
+     LUT4:I3->O            2   0.254   0.726  Mmux_c461 (M_myalu_c<11>)
      end scope: 'myGame/myalu:M_myalu_c<11>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<11>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out31 (out<11>)
-     end scope: 'myGame/muxSequence:out<11>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<11>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out31 (out<11>)
+     begin scope: 'myGame/sequence:value<11>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out31 (out<11>)
+     end scope: 'myGame/sequence:out<11>'
+     begin scope: 'myGame/muxB:b<11>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out31 (out<11>)
      end scope: 'myGame/muxB:out<11>'
      begin scope: 'myGame/myalu:b<11>'
      begin scope: 'myGame/myalu/myAdd:b<11>'
@@ -976,13 +943,13 @@ Offset:              113.848ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<12> (a[15]_b[15]_sub_2_OUT<12>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<12>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c66 (Mmux_c68)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c67 (M_myalu_c<12>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c67 (M_myalu_c<12>)
      end scope: 'myGame/myalu:M_myalu_c<12>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<12>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out41 (out<12>)
-     end scope: 'myGame/muxSequence:out<12>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<12>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out41 (out<12>)
+     begin scope: 'myGame/sequence:value<12>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out41 (out<12>)
+     end scope: 'myGame/sequence:out<12>'
+     begin scope: 'myGame/muxB:b<12>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out41 (out<12>)
      end scope: 'myGame/muxB:out<12>'
      begin scope: 'myGame/myalu:b<12>'
      begin scope: 'myGame/myalu/myAdd:b<12>'
@@ -991,13 +958,13 @@ Offset:              113.848ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<13> (a[15]_b[15]_sub_2_OUT<13>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<13>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c86 (Mmux_c85)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c87 (M_myalu_c<13>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c87 (M_myalu_c<13>)
      end scope: 'myGame/myalu:M_myalu_c<13>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<13>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out51 (out<13>)
-     end scope: 'myGame/muxSequence:out<13>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<13>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out51 (out<13>)
+     begin scope: 'myGame/sequence:value<13>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out51 (out<13>)
+     end scope: 'myGame/sequence:out<13>'
+     begin scope: 'myGame/muxB:b<13>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out51 (out<13>)
      end scope: 'myGame/muxB:out<13>'
      begin scope: 'myGame/myalu:b<13>'
      begin scope: 'myGame/myalu/myAdd:b<13>'
@@ -1006,13 +973,13 @@ Offset:              113.848ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<14> (a[15]_b[15]_sub_2_OUT<14>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<14>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c107 (Mmux_c106)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c108 (M_myalu_c<14>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c108 (M_myalu_c<14>)
      end scope: 'myGame/myalu:M_myalu_c<14>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<14>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out61 (out<14>)
-     end scope: 'myGame/muxSequence:out<14>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<14>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out61 (out<14>)
+     begin scope: 'myGame/sequence:value<14>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out61 (out<14>)
+     end scope: 'myGame/sequence:out<14>'
+     begin scope: 'myGame/muxB:b<14>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out61 (out<14>)
      end scope: 'myGame/muxB:out<14>'
      begin scope: 'myGame/myalu:b<14>'
      begin scope: 'myGame/myalu/myAdd:b<14>'
@@ -1021,27 +988,27 @@ Offset:              113.848ns (Levels of Logic = 188)
      XORCY:CI->O           1   0.206   0.910  Msub_a[15]_b[15]_sub_2_OUT_xor<15> (a[15]_b[15]_sub_2_OUT<15>)
      LUT5:I2->O            1   0.235   0.790  Mmux_c71 (c<15>)
      end scope: 'myGame/myalu/myAdd:c<15>'
-     LUT4:I2->O            3   0.250   0.874  Mmux_c127 (M_myalu_c<15>)
+     LUT4:I2->O            2   0.250   0.726  Mmux_c127 (M_myalu_c<15>)
      end scope: 'myGame/myalu:M_myalu_c<15>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<15>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out71 (out<15>)
-     end scope: 'myGame/muxSequence:out<15>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<15>'
-     LUT5:I2->O            4   0.235   0.803  Mmux_out71 (out<15>)
+     begin scope: 'myGame/sequence:value<15>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out71 (out<15>)
+     end scope: 'myGame/sequence:out<15>'
+     begin scope: 'myGame/muxB:b<15>'
+     LUT3:I1->O            4   0.250   0.803  Mmux_out71 (out<15>)
      end scope: 'myGame/muxB:out<15>'
      begin scope: 'myGame/myalu:b<15>'
      begin scope: 'myGame/myalu/myAdd:b<15>'
-     DSP48A1:A15->M4       2   3.265   0.954  Mmult_n0029 (n0029<4>)
+     DSP48A1:A15->M4       2   3.265   0.726  Mmult_n0029 (n0029<4>)
      end scope: 'myGame/myalu/myAdd:n0029<4>'
-     LUT6:I3->O            1   0.235   0.682  Mmux_c202 (Mmux_c201)
+     LUT6:I5->O            1   0.254   0.682  Mmux_c202 (Mmux_c201)
      LUT5:I4->O            1   0.254   0.790  Mmux_c203 (Mmux_c202)
-     LUT6:I4->O            3   0.250   0.874  Mmux_c205 (M_myalu_c<4>)
+     LUT6:I4->O            2   0.250   0.726  Mmux_c205 (M_myalu_c<4>)
      end scope: 'myGame/myalu:M_myalu_c<4>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<4>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out111 (out<4>)
-     end scope: 'myGame/muxSequence:out<4>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<4>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out111 (out<4>)
+     begin scope: 'myGame/sequence:value<4>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out111 (out<4>)
+     end scope: 'myGame/sequence:out<4>'
+     begin scope: 'myGame/muxB:b<4>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out111 (out<4>)
      end scope: 'myGame/muxB:out<4>'
      begin scope: 'myGame/myalu:b<4>'
      begin scope: 'myGame/myalu/myAdd:b<4>'
@@ -1053,381 +1020,92 @@ Offset:              113.848ns (Levels of Logic = 188)
      MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<8> (Madd_a[15]_b[15]_add_0_OUT_cy<8>)
      MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<9> (Madd_a[15]_b[15]_add_0_OUT_cy<9>)
      MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<10> (Madd_a[15]_b[15]_add_0_OUT_cy<10>)
-     XORCY:CI->O           2   0.206   1.156  Madd_a[15]_b[15]_add_0_OUT_xor<11> (a[15]_b[15]_add_0_OUT<11>)
-     LUT6:I1->O            1   0.254   0.910  z2 (z1)
-     LUT3:I0->O            1   0.235   0.958  z4 (z3)
-     end scope: 'myGame/myalu/myAdd:z3'
-     LUT6:I2->O            1   0.254   0.790  Mmux_c_8 (Mmux_c_8)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<11> (Madd_a[15]_b[15]_add_0_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<12> (Madd_a[15]_b[15]_add_0_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<13> (Madd_a[15]_b[15]_add_0_OUT_cy<13>)
+     XORCY:CI->O           2   0.206   1.156  Madd_a[15]_b[15]_add_0_OUT_xor<14> (a[15]_b[15]_add_0_OUT<14>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_add_0_OUT<14>'
+     LUT6:I1->O            1   0.254   0.790  Mmux_c_8 (Mmux_c_8)
      LUT5:I3->O            5   0.250   0.841  alufn<5> (M_myGame_eq<0>)
      end scope: 'myGame/myalu:M_myGame_eq<0>'
-     begin scope: 'myGame/muxSequence:M_myGame_eq<0>'
-     LUT3:I2->O            2   0.254   0.834  Mmux_out17 (out<0>)
-     end scope: 'myGame/muxSequence:out<0>'
      begin scope: 'myGame/sequence:value<0>'
-     LUT3:I1->O           12   0.250   1.499  out<0>1 (out<0>)
+     LUT4:I3->O           24   0.254   1.488  Mmux_out17 (out<0>)
      end scope: 'myGame/sequence:out<0>'
-     end scope: 'myGame:sqc<0>'
-     begin scope: 'myGame_myRom:M_myGame_sqc<0>'
-     LUT5:I0->O           16   0.254   1.182  Mram_out16 (M_myRom_out<0>)
-     end scope: 'myGame_myRom:M_myRom_out<0>'
-     begin scope: 'myGame:M_myRom_out<0>'
-     begin scope: 'myGame/muxA:a<3>'
-     LUT3:I2->O           10   0.254   1.236  Mmux_out91 (out<2>)
-     end scope: 'myGame/muxA:out<2>'
-     begin scope: 'myGame/myalu:a<2>'
-     LUT6:I3->O            3   0.235   0.874  Mmux_c168 (M_myalu_c<2>)
+     begin scope: 'myGame/muxB:b<0>'
+     LUT3:I1->O           40   0.250   2.109  Mmux_out17 (out<0>)
+     end scope: 'myGame/muxB:out<0>'
+     begin scope: 'myGame/myalu:b<0>'
+     LUT6:I0->O            2   0.254   0.954  Sh391 (Sh39)
+     LUT5:I2->O            1   0.235   1.112  Mmux_c182 (Mmux_c181)
+     LUT6:I1->O            2   0.254   0.726  Mmux_c186 (M_myalu_c<3>)
+     end scope: 'myGame/myalu:M_myalu_c<3>'
+     begin scope: 'myGame/sequence:value<3>'
+     LUT4:I3->O           25   0.254   1.511  Mmux_out101 (out<3>)
+     end scope: 'myGame/sequence:out<3>'
+     begin scope: 'myGame/muxB:b<3>'
+     LUT3:I1->O           34   0.250   2.008  Mmux_out101 (out<3>)
+     end scope: 'myGame/muxB:out<3>'
+     begin scope: 'myGame/myalu:b<3>'
+     LUT6:I0->O            1   0.254   0.790  Sh1811 (Sh181)
+     LUT4:I2->O            1   0.250   0.910  Mmux_c165 (Mmux_c164)
+     LUT6:I3->O            2   0.235   0.726  Mmux_c167 (M_myalu_c<2>)
      end scope: 'myGame/myalu:M_myalu_c<2>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<2>'
-     LUT2:I0->O            2   0.250   0.834  Mmux_out91 (out<2>)
-     end scope: 'myGame/muxSequence:out<2>'
      begin scope: 'myGame/sequence:value<2>'
-     LUT3:I1->O           13   0.250   1.206  out<2>1 (out<2>)
+     LUT4:I3->O           25   0.254   1.511  Mmux_out91 (out<2>)
      end scope: 'myGame/sequence:out<2>'
      begin scope: 'myGame/muxB:b<2>'
-     LUT3:I1->O           32   0.250   1.628  Mmux_out91 (out<2>)
+     LUT3:I1->O           34   0.250   1.983  Mmux_out91 (out<2>)
      end scope: 'myGame/muxB:out<2>'
      begin scope: 'myGame/myalu:b<2>'
-     LUT4:I2->O            1   0.250   0.910  Mmux_c181 (Mmux_c18)
-     LUT3:I0->O            3   0.235   0.766  Mmux_c1861 (M_myalu_c<3>)
-     end scope: 'myGame/myalu:M_myalu_c<3>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<3>'
-     LUT3:I2->O            2   0.254   0.834  Mmux_out101 (out<3>)
-     end scope: 'myGame/muxSequence:out<3>'
-     begin scope: 'myGame/sequence:value<3>'
-     LUT3:I1->O           13   0.250   1.098  out<3>1 (out<3>)
-     end scope: 'myGame/sequence:out<3>'
-     end scope: 'myGame:sqc<3>'
+     LUT5:I0->O            3   0.254   0.766  Mmux_c145 (M_myalu_c<1>)
+     end scope: 'myGame/myalu:M_myalu_c<1>'
+     begin scope: 'myGame/level:value<1>'
+     LUT4:I3->O           24   0.254   1.380  Mmux_out81 (out<1>)
+     end scope: 'myGame/level:out<1>'
+     end scope: 'myGame:lvl<1>'
      LUT6:I5->O            1   0.254   0.000  M_state_q_FSM_FFd13-In3 (M_state_q_FSM_FFd13-In)
      FDR:D                     0.074          M_state_q_FSM_FFd13
     ----------------------------------------
-    Total                    113.848ns (31.504ns logic, 82.344ns route)
-                                       (27.7% logic, 72.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 25587168849 / 21
--------------------------------------------------------------------------
-Offset:              117.657ns (Levels of Logic = 189)
-  Source:            M_state_q_FSM_FFd13 (FF)
-  Destination:       io_led<19> (PAD)
-  Source Clock:      clk rising
-
-  Data Path: M_state_q_FSM_FFd13 to io_led<19>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FDR:C->Q             29   0.525   1.470  M_state_q_FSM_FFd13 (M_state_q_FSM_FFd13)
-     LUT6:I5->O           31   0.254   1.731  M_state_q_M_myGame_wb1 (M_myGame_wb)
-     begin scope: 'myGame:wb'
-     begin scope: 'myGame/board:write<0>'
-     LUT3:I0->O            2   0.235   0.726  out<0>1 (out<0>)
-     end scope: 'myGame/board:out<0>'
-     begin scope: 'myGame/muxB:a<0>'
-     LUT3:I2->O           41   0.254   1.671  Mmux_out17 (out<0>)
-     end scope: 'myGame/muxB:out<0>'
-     begin scope: 'myGame/myalu:b<0>'
-     begin scope: 'myGame/myalu/myAdd:b<0>'
-     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<0> (Msub_a[15]_b[15]_sub_2_OUT_lut<0>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<0> (Msub_a[15]_b[15]_sub_2_OUT_cy<0>)
-     XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<1> (a[15]_b[15]_sub_2_OUT<1>)
-     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<1>'
-     LUT5:I1->O            1   0.254   1.112  Mmux_c142 (Mmux_c141)
-     LUT5:I0->O            3   0.254   0.874  Mmux_c145 (M_myalu_c<1>)
-     end scope: 'myGame/myalu:M_myalu_c<1>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<1>'
-     LUT2:I0->O            2   0.250   0.834  Mmux_out81 (out<1>)
-     end scope: 'myGame/muxSequence:out<1>'
-     begin scope: 'myGame/sequence:value<1>'
-     LUT3:I1->O           12   0.250   1.177  out<1>1 (out<1>)
-     end scope: 'myGame/sequence:out<1>'
-     begin scope: 'myGame/muxB:b<1>'
-     LUT3:I1->O           41   0.250   2.101  Mmux_out81 (out<1>)
-     end scope: 'myGame/muxB:out<1>'
-     begin scope: 'myGame/myalu:b<1>'
-     LUT6:I1->O            2   0.254   0.726  Sh691 (Sh69)
-     LUT3:I2->O            2   0.254   0.726  Sh9311 (Sh931)
-     LUT6:I5->O            1   0.254   0.790  Mmux_c221 (Mmux_c22)
-     LUT5:I3->O            3   0.250   0.874  Mmux_c2251 (M_myalu_c<5>)
-     end scope: 'myGame/myalu:M_myalu_c<5>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<5>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out121 (out<5>)
-     end scope: 'myGame/muxSequence:out<5>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<5>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out121 (out<5>)
-     end scope: 'myGame/muxB:out<5>'
-     begin scope: 'myGame/myalu:b<5>'
-     begin scope: 'myGame/myalu/myAdd:b<5>'
-     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<5> (Msub_a[15]_b[15]_sub_2_OUT_lut<5>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<5> (Msub_a[15]_b[15]_sub_2_OUT_cy<5>)
-     XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<6> (a[15]_b[15]_sub_2_OUT<6>)
-     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<6>'
-     LUT5:I1->O            1   0.254   0.790  Mmux_c244 (Mmux_c244)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c245 (M_myalu_c<6>)
-     end scope: 'myGame/myalu:M_myalu_c<6>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<6>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out131 (out<6>)
-     end scope: 'myGame/muxSequence:out<6>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<6>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out131 (out<6>)
-     end scope: 'myGame/muxB:out<6>'
-     begin scope: 'myGame/myalu:b<6>'
-     begin scope: 'myGame/myalu/myAdd:b<6>'
-     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<6> (Msub_a[15]_b[15]_sub_2_OUT_lut<6>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<6> (Msub_a[15]_b[15]_sub_2_OUT_cy<6>)
-     XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<7> (a[15]_b[15]_sub_2_OUT<7>)
-     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<7>'
-     LUT6:I5->O            1   0.254   0.910  Mmux_c266 (Mmux_c266)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c267 (M_myalu_c<7>)
-     end scope: 'myGame/myalu:M_myalu_c<7>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<7>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out141 (out<7>)
-     end scope: 'myGame/muxSequence:out<7>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<7>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out141 (out<7>)
-     end scope: 'myGame/muxB:out<7>'
-     begin scope: 'myGame/myalu:b<7>'
-     begin scope: 'myGame/myalu/myAdd:b<7>'
-     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<7> (Msub_a[15]_b[15]_sub_2_OUT_lut<7>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<7> (Msub_a[15]_b[15]_sub_2_OUT_cy<7>)
-     XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<8> (a[15]_b[15]_sub_2_OUT<8>)
-     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<8>'
-     LUT6:I5->O            1   0.254   0.910  Mmux_c286 (Mmux_c285)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c287 (M_myalu_c<8>)
-     end scope: 'myGame/myalu:M_myalu_c<8>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<8>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out151 (out<8>)
-     end scope: 'myGame/muxSequence:out<8>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<8>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out151 (out<8>)
-     end scope: 'myGame/muxB:out<8>'
-     begin scope: 'myGame/myalu:b<8>'
-     begin scope: 'myGame/myalu/myAdd:b<8>'
-     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<8> (Msub_a[15]_b[15]_sub_2_OUT_lut<8>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<8> (Msub_a[15]_b[15]_sub_2_OUT_cy<8>)
-     XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<9> (a[15]_b[15]_sub_2_OUT<9>)
-     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<9>'
-     LUT6:I5->O            1   0.254   0.910  Mmux_c306 (Mmux_c305)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c307 (M_myalu_c<9>)
-     end scope: 'myGame/myalu:M_myalu_c<9>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<9>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out161 (out<9>)
-     end scope: 'myGame/muxSequence:out<9>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<9>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out161 (out<9>)
-     end scope: 'myGame/muxB:out<9>'
-     begin scope: 'myGame/myalu:b<9>'
-     begin scope: 'myGame/myalu/myAdd:b<9>'
-     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<9> (Msub_a[15]_b[15]_sub_2_OUT_lut<9>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<9> (Msub_a[15]_b[15]_sub_2_OUT_cy<9>)
-     XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<10> (a[15]_b[15]_sub_2_OUT<10>)
-     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<10>'
-     LUT5:I1->O            1   0.254   0.790  Mmux_c213 (Mmux_c212)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c214 (M_myalu_c<10>)
-     end scope: 'myGame/myalu:M_myalu_c<10>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<10>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out21 (out<10>)
-     end scope: 'myGame/muxSequence:out<10>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<10>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out21 (out<10>)
-     end scope: 'myGame/muxB:out<10>'
-     begin scope: 'myGame/myalu:b<10>'
-     begin scope: 'myGame/myalu/myAdd:b<10>'
-     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<10> (Msub_a[15]_b[15]_sub_2_OUT_lut<10>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<10> (Msub_a[15]_b[15]_sub_2_OUT_cy<10>)
-     XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<11> (a[15]_b[15]_sub_2_OUT<11>)
-     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<11>'
-     LUT6:I5->O            1   0.254   0.910  Mmux_c48 (Mmux_c48)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c49 (M_myalu_c<11>)
-     end scope: 'myGame/myalu:M_myalu_c<11>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<11>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out31 (out<11>)
-     end scope: 'myGame/muxSequence:out<11>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<11>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out31 (out<11>)
-     end scope: 'myGame/muxB:out<11>'
-     begin scope: 'myGame/myalu:b<11>'
-     begin scope: 'myGame/myalu/myAdd:b<11>'
-     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<11> (Msub_a[15]_b[15]_sub_2_OUT_lut<11>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<11> (Msub_a[15]_b[15]_sub_2_OUT_cy<11>)
-     XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<12> (a[15]_b[15]_sub_2_OUT<12>)
-     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<12>'
-     LUT5:I1->O            1   0.254   0.790  Mmux_c66 (Mmux_c68)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c67 (M_myalu_c<12>)
-     end scope: 'myGame/myalu:M_myalu_c<12>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<12>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out41 (out<12>)
-     end scope: 'myGame/muxSequence:out<12>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<12>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out41 (out<12>)
-     end scope: 'myGame/muxB:out<12>'
-     begin scope: 'myGame/myalu:b<12>'
-     begin scope: 'myGame/myalu/myAdd:b<12>'
-     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<12> (Msub_a[15]_b[15]_sub_2_OUT_lut<12>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<12> (Msub_a[15]_b[15]_sub_2_OUT_cy<12>)
-     XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<13> (a[15]_b[15]_sub_2_OUT<13>)
-     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<13>'
-     LUT5:I1->O            1   0.254   0.790  Mmux_c86 (Mmux_c85)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c87 (M_myalu_c<13>)
-     end scope: 'myGame/myalu:M_myalu_c<13>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<13>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out51 (out<13>)
-     end scope: 'myGame/muxSequence:out<13>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<13>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out51 (out<13>)
-     end scope: 'myGame/muxB:out<13>'
-     begin scope: 'myGame/myalu:b<13>'
-     begin scope: 'myGame/myalu/myAdd:b<13>'
-     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<13> (Msub_a[15]_b[15]_sub_2_OUT_lut<13>)
-     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<13> (Msub_a[15]_b[15]_sub_2_OUT_cy<13>)
-     XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<14> (a[15]_b[15]_sub_2_OUT<14>)
-     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<14>'
-     LUT5:I1->O            1   0.254   0.790  Mmux_c107 (Mmux_c106)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c108 (M_myalu_c<14>)
-     end scope: 'myGame/myalu:M_myalu_c<14>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<14>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out61 (out<14>)
-     end scope: 'myGame/muxSequence:out<14>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<14>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out61 (out<14>)
-     end scope: 'myGame/muxB:out<14>'
-     begin scope: 'myGame/myalu:b<14>'
-     begin scope: 'myGame/myalu/myAdd:b<14>'
-     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<14> (Msub_a[15]_b[15]_sub_2_OUT_lut<14>)
-     MUXCY:S->O            0   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<14> (Msub_a[15]_b[15]_sub_2_OUT_cy<14>)
-     XORCY:CI->O           1   0.206   0.910  Msub_a[15]_b[15]_sub_2_OUT_xor<15> (a[15]_b[15]_sub_2_OUT<15>)
-     LUT5:I2->O            1   0.235   0.790  Mmux_c71 (c<15>)
-     end scope: 'myGame/myalu/myAdd:c<15>'
-     LUT4:I2->O            3   0.250   0.874  Mmux_c127 (M_myalu_c<15>)
-     end scope: 'myGame/myalu:M_myalu_c<15>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<15>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out71 (out<15>)
-     end scope: 'myGame/muxSequence:out<15>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<15>'
-     LUT5:I2->O            4   0.235   0.803  Mmux_out71 (out<15>)
-     end scope: 'myGame/muxB:out<15>'
-     begin scope: 'myGame/myalu:b<15>'
-     begin scope: 'myGame/myalu/myAdd:b<15>'
-     DSP48A1:A15->M4       2   3.265   0.954  Mmult_n0029 (n0029<4>)
-     end scope: 'myGame/myalu/myAdd:n0029<4>'
-     LUT6:I3->O            1   0.235   0.682  Mmux_c202 (Mmux_c201)
-     LUT5:I4->O            1   0.254   0.790  Mmux_c203 (Mmux_c202)
-     LUT6:I4->O            3   0.250   0.874  Mmux_c205 (M_myalu_c<4>)
-     end scope: 'myGame/myalu:M_myalu_c<4>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<4>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out111 (out<4>)
-     end scope: 'myGame/muxSequence:out<4>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<4>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out111 (out<4>)
-     end scope: 'myGame/muxB:out<4>'
-     begin scope: 'myGame/myalu:b<4>'
-     begin scope: 'myGame/myalu/myAdd:b<4>'
-     LUT2:I1->O            1   0.254   0.000  Madd_a[15]_b[15]_add_0_OUT_lut<4> (Madd_a[15]_b[15]_add_0_OUT_lut<4>)
-     MUXCY:S->O            1   0.215   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<4> (Madd_a[15]_b[15]_add_0_OUT_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<5> (Madd_a[15]_b[15]_add_0_OUT_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<6> (Madd_a[15]_b[15]_add_0_OUT_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<7> (Madd_a[15]_b[15]_add_0_OUT_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<8> (Madd_a[15]_b[15]_add_0_OUT_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<9> (Madd_a[15]_b[15]_add_0_OUT_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<10> (Madd_a[15]_b[15]_add_0_OUT_cy<10>)
-     XORCY:CI->O           2   0.206   1.156  Madd_a[15]_b[15]_add_0_OUT_xor<11> (a[15]_b[15]_add_0_OUT<11>)
-     LUT6:I1->O            1   0.254   0.910  z2 (z1)
-     LUT3:I0->O            1   0.235   0.958  z4 (z3)
-     end scope: 'myGame/myalu/myAdd:z3'
-     LUT6:I2->O            1   0.254   0.790  Mmux_c_8 (Mmux_c_8)
-     LUT5:I3->O            5   0.250   0.841  alufn<5> (M_myGame_eq<0>)
-     end scope: 'myGame/myalu:M_myGame_eq<0>'
-     begin scope: 'myGame/muxSequence:M_myGame_eq<0>'
-     LUT3:I2->O            2   0.254   0.834  Mmux_out17 (out<0>)
-     end scope: 'myGame/muxSequence:out<0>'
-     begin scope: 'myGame/sequence:value<0>'
-     LUT3:I1->O           12   0.250   1.499  out<0>1 (out<0>)
-     end scope: 'myGame/sequence:out<0>'
-     end scope: 'myGame:sqc<0>'
-     begin scope: 'myGame_myRom:M_myGame_sqc<0>'
-     LUT5:I0->O           16   0.254   1.182  Mram_out16 (M_myRom_out<0>)
-     end scope: 'myGame_myRom:M_myRom_out<0>'
-     begin scope: 'myGame:M_myRom_out<0>'
-     begin scope: 'myGame/muxA:a<3>'
-     LUT3:I2->O           10   0.254   1.236  Mmux_out91 (out<2>)
-     end scope: 'myGame/muxA:out<2>'
-     begin scope: 'myGame/myalu:a<2>'
-     LUT6:I3->O            3   0.235   0.874  Mmux_c168 (M_myalu_c<2>)
-     end scope: 'myGame/myalu:M_myalu_c<2>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<2>'
-     LUT2:I0->O            2   0.250   0.834  Mmux_out91 (out<2>)
-     end scope: 'myGame/muxSequence:out<2>'
-     begin scope: 'myGame/sequence:value<2>'
-     LUT3:I1->O           13   0.250   1.206  out<2>1 (out<2>)
-     end scope: 'myGame/sequence:out<2>'
-     begin scope: 'myGame/muxB:b<2>'
-     LUT3:I1->O           32   0.250   1.628  Mmux_out91 (out<2>)
-     end scope: 'myGame/muxB:out<2>'
-     begin scope: 'myGame/myalu:b<2>'
-     LUT4:I2->O            1   0.250   0.910  Mmux_c181 (Mmux_c18)
-     LUT3:I0->O            3   0.235   0.766  Mmux_c1861 (M_myalu_c<3>)
-     end scope: 'myGame/myalu:M_myalu_c<3>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<3>'
-     LUT3:I2->O            2   0.254   0.834  Mmux_out101 (out<3>)
-     end scope: 'myGame/muxSequence:out<3>'
-     begin scope: 'myGame/sequence:value<3>'
-     LUT3:I1->O           13   0.250   1.098  out<3>1 (out<3>)
-     end scope: 'myGame/sequence:out<3>'
-     end scope: 'myGame:sqc<3>'
-     LUT2:I1->O            1   0.254   0.681  M_state_q_io_led<19>1 (io_led_19_OBUF)
-     OBUF:I->O                 2.912          io_led_19_OBUF (io_led<19>)
-    ----------------------------------------
-    Total                    117.657ns (33.707ns logic, 83.949ns route)
+    Total                    106.076ns (30.375ns logic, 75.701ns route)
                                        (28.6% logic, 71.4% route)
 
 =========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 1527565053 / 17
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 475144281842 / 22
 -------------------------------------------------------------------------
-Delay:               117.367ns (Levels of Logic = 189)
-  Source:            io_dip<21> (PAD)
-  Destination:       io_led<19> (PAD)
+Offset:              110.657ns (Levels of Logic = 180)
+  Source:            M_state_q_FSM_FFd6 (FF)
+  Destination:       io_led<21> (PAD)
+  Source Clock:      clk rising
 
-  Data Path: io_dip<21> to io_led<19>
+  Data Path: M_state_q_FSM_FFd6 to io_led<21>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             7   1.328   1.340  io_dip_21_IBUF (io_dip_21_IBUF)
-     begin scope: 'myGame:io_dip_21_IBUF'
-     begin scope: 'myGame/level:io_dip_21_IBUF'
-     LUT5:I0->O           11   0.254   1.039  out<0>1 (out<0>)
-     end scope: 'myGame/level:out<0>'
-     end scope: 'myGame:lvl<0>'
-     begin scope: 'myGame_myRom:M_myGame_lvl<0>'
-     LUT5:I4->O            2   0.254   0.834  Mram_out41 (M_myRom_out<4>)
+     FDR:C->Q              8   0.525   1.374  M_state_q_FSM_FFd6 (M_state_q_FSM_FFd6)
+     LUT6:I1->O            7   0.254   0.910  Mmux_M_myGame_ws1111 (Mmux_M_myGame_ws111)
+     LUT3:I2->O           16   0.254   1.458  Mmux_M_myGame_ws112 (M_myGame_ws)
+     begin scope: 'myGame:ws'
+     begin scope: 'myGame/sequence:write'
+     LUT4:I0->O           25   0.254   1.403  Mmux_out81 (out<1>)
+     end scope: 'myGame/sequence:out<1>'
+     end scope: 'myGame:sqc<1>'
+     begin scope: 'myGame_myRom:M_myGame_sqc<1>'
+     LUT6:I5->O            3   0.254   0.766  Mram_out41 (M_myRom_out<4>)
      end scope: 'myGame_myRom:M_myRom_out<4>'
      begin scope: 'myGame:M_myRom_out<4>'
-     LUT3:I1->O           10   0.250   1.116  M_muxA_out<4>1 (M_muxA_out<4>)
+     LUT3:I2->O            9   0.254   1.252  M_muxA_out<4>1 (M_muxA_out<4>)
      begin scope: 'myGame/myalu:a<4>'
-     LUT3:I1->O            2   0.250   0.834  Sh1121 (Sh112)
-     LUT3:I1->O            1   0.250   0.790  Mmux_c143 (Mmux_c142)
-     LUT6:I4->O            1   0.250   0.790  Mmux_c144 (Mmux_c143)
-     LUT5:I3->O            3   0.250   0.874  Mmux_c145 (M_myalu_c<1>)
-     end scope: 'myGame/myalu:M_myalu_c<1>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<1>'
-     LUT2:I0->O            2   0.250   0.834  Mmux_out81 (out<1>)
-     end scope: 'myGame/muxSequence:out<1>'
-     begin scope: 'myGame/sequence:value<1>'
-     LUT3:I1->O           12   0.250   1.177  out<1>1 (out<1>)
-     end scope: 'myGame/sequence:out<1>'
-     begin scope: 'myGame/muxB:b<1>'
-     LUT3:I1->O           41   0.250   2.101  Mmux_out81 (out<1>)
-     end scope: 'myGame/muxB:out<1>'
-     begin scope: 'myGame/myalu:b<1>'
-     LUT6:I1->O            2   0.254   0.726  Sh691 (Sh69)
+     LUT6:I2->O            2   0.254   0.726  Sh691 (Sh69)
      LUT3:I2->O            2   0.254   0.726  Sh9311 (Sh931)
-     LUT6:I5->O            1   0.254   0.790  Mmux_c221 (Mmux_c22)
-     LUT5:I3->O            3   0.250   0.874  Mmux_c2251 (M_myalu_c<5>)
+     LUT6:I5->O            1   0.254   0.682  Mmux_c221 (Mmux_c22)
+     LUT5:I4->O            2   0.254   0.726  Mmux_c2251 (M_myalu_c<5>)
      end scope: 'myGame/myalu:M_myalu_c<5>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<5>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out121 (out<5>)
-     end scope: 'myGame/muxSequence:out<5>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<5>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out121 (out<5>)
+     begin scope: 'myGame/sequence:value<5>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out121 (out<5>)
+     end scope: 'myGame/sequence:out<5>'
+     begin scope: 'myGame/muxB:b<5>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out121 (out<5>)
      end scope: 'myGame/muxB:out<5>'
      begin scope: 'myGame/myalu:b<5>'
      begin scope: 'myGame/myalu/myAdd:b<5>'
@@ -1436,13 +1114,13 @@ Delay:               117.367ns (Levels of Logic = 189)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<6> (a[15]_b[15]_sub_2_OUT<6>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<6>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c244 (Mmux_c244)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c245 (M_myalu_c<6>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c245 (M_myalu_c<6>)
      end scope: 'myGame/myalu:M_myalu_c<6>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<6>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out131 (out<6>)
-     end scope: 'myGame/muxSequence:out<6>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<6>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out131 (out<6>)
+     begin scope: 'myGame/sequence:value<6>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out131 (out<6>)
+     end scope: 'myGame/sequence:out<6>'
+     begin scope: 'myGame/muxB:b<6>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out131 (out<6>)
      end scope: 'myGame/muxB:out<6>'
      begin scope: 'myGame/myalu:b<6>'
      begin scope: 'myGame/myalu/myAdd:b<6>'
@@ -1451,13 +1129,13 @@ Delay:               117.367ns (Levels of Logic = 189)
      XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<7> (a[15]_b[15]_sub_2_OUT<7>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<7>'
      LUT6:I5->O            1   0.254   0.910  Mmux_c266 (Mmux_c266)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c267 (M_myalu_c<7>)
+     LUT4:I1->O            2   0.235   0.726  Mmux_c267 (M_myalu_c<7>)
      end scope: 'myGame/myalu:M_myalu_c<7>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<7>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out141 (out<7>)
-     end scope: 'myGame/muxSequence:out<7>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<7>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out141 (out<7>)
+     begin scope: 'myGame/sequence:value<7>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out141 (out<7>)
+     end scope: 'myGame/sequence:out<7>'
+     begin scope: 'myGame/muxB:b<7>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out141 (out<7>)
      end scope: 'myGame/muxB:out<7>'
      begin scope: 'myGame/myalu:b<7>'
      begin scope: 'myGame/myalu/myAdd:b<7>'
@@ -1466,13 +1144,13 @@ Delay:               117.367ns (Levels of Logic = 189)
      XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<8> (a[15]_b[15]_sub_2_OUT<8>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<8>'
      LUT6:I5->O            1   0.254   0.910  Mmux_c286 (Mmux_c285)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c287 (M_myalu_c<8>)
+     LUT4:I1->O            2   0.235   0.726  Mmux_c287 (M_myalu_c<8>)
      end scope: 'myGame/myalu:M_myalu_c<8>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<8>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out151 (out<8>)
-     end scope: 'myGame/muxSequence:out<8>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<8>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out151 (out<8>)
+     begin scope: 'myGame/sequence:value<8>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out151 (out<8>)
+     end scope: 'myGame/sequence:out<8>'
+     begin scope: 'myGame/muxB:b<8>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out151 (out<8>)
      end scope: 'myGame/muxB:out<8>'
      begin scope: 'myGame/myalu:b<8>'
      begin scope: 'myGame/myalu/myAdd:b<8>'
@@ -1481,13 +1159,13 @@ Delay:               117.367ns (Levels of Logic = 189)
      XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<9> (a[15]_b[15]_sub_2_OUT<9>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<9>'
      LUT6:I5->O            1   0.254   0.910  Mmux_c306 (Mmux_c305)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c307 (M_myalu_c<9>)
+     LUT4:I1->O            2   0.235   0.726  Mmux_c307 (M_myalu_c<9>)
      end scope: 'myGame/myalu:M_myalu_c<9>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<9>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out161 (out<9>)
-     end scope: 'myGame/muxSequence:out<9>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<9>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out161 (out<9>)
+     begin scope: 'myGame/sequence:value<9>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out161 (out<9>)
+     end scope: 'myGame/sequence:out<9>'
+     begin scope: 'myGame/muxB:b<9>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out161 (out<9>)
      end scope: 'myGame/muxB:out<9>'
      begin scope: 'myGame/myalu:b<9>'
      begin scope: 'myGame/myalu/myAdd:b<9>'
@@ -1496,13 +1174,13 @@ Delay:               117.367ns (Levels of Logic = 189)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<10> (a[15]_b[15]_sub_2_OUT<10>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<10>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c213 (Mmux_c212)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c214 (M_myalu_c<10>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c214 (M_myalu_c<10>)
      end scope: 'myGame/myalu:M_myalu_c<10>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<10>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out21 (out<10>)
-     end scope: 'myGame/muxSequence:out<10>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<10>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out21 (out<10>)
+     begin scope: 'myGame/sequence:value<10>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out21 (out<10>)
+     end scope: 'myGame/sequence:out<10>'
+     begin scope: 'myGame/muxB:b<10>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out21 (out<10>)
      end scope: 'myGame/muxB:out<10>'
      begin scope: 'myGame/myalu:b<10>'
      begin scope: 'myGame/myalu/myAdd:b<10>'
@@ -1510,14 +1188,14 @@ Delay:               117.367ns (Levels of Logic = 189)
      MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<10> (Msub_a[15]_b[15]_sub_2_OUT_cy<10>)
      XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<11> (a[15]_b[15]_sub_2_OUT<11>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<11>'
-     LUT6:I5->O            1   0.254   0.910  Mmux_c48 (Mmux_c48)
-     LUT4:I1->O            3   0.235   0.874  Mmux_c49 (M_myalu_c<11>)
+     LUT6:I5->O            1   0.254   0.682  Mmux_c45 (Mmux_c45)
+     LUT4:I3->O            2   0.254   0.726  Mmux_c461 (M_myalu_c<11>)
      end scope: 'myGame/myalu:M_myalu_c<11>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<11>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out31 (out<11>)
-     end scope: 'myGame/muxSequence:out<11>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<11>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out31 (out<11>)
+     begin scope: 'myGame/sequence:value<11>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out31 (out<11>)
+     end scope: 'myGame/sequence:out<11>'
+     begin scope: 'myGame/muxB:b<11>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out31 (out<11>)
      end scope: 'myGame/muxB:out<11>'
      begin scope: 'myGame/myalu:b<11>'
      begin scope: 'myGame/myalu/myAdd:b<11>'
@@ -1526,13 +1204,13 @@ Delay:               117.367ns (Levels of Logic = 189)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<12> (a[15]_b[15]_sub_2_OUT<12>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<12>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c66 (Mmux_c68)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c67 (M_myalu_c<12>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c67 (M_myalu_c<12>)
      end scope: 'myGame/myalu:M_myalu_c<12>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<12>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out41 (out<12>)
-     end scope: 'myGame/muxSequence:out<12>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<12>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out41 (out<12>)
+     begin scope: 'myGame/sequence:value<12>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out41 (out<12>)
+     end scope: 'myGame/sequence:out<12>'
+     begin scope: 'myGame/muxB:b<12>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out41 (out<12>)
      end scope: 'myGame/muxB:out<12>'
      begin scope: 'myGame/myalu:b<12>'
      begin scope: 'myGame/myalu/myAdd:b<12>'
@@ -1541,13 +1219,13 @@ Delay:               117.367ns (Levels of Logic = 189)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<13> (a[15]_b[15]_sub_2_OUT<13>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<13>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c86 (Mmux_c85)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c87 (M_myalu_c<13>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c87 (M_myalu_c<13>)
      end scope: 'myGame/myalu:M_myalu_c<13>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<13>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out51 (out<13>)
-     end scope: 'myGame/muxSequence:out<13>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<13>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out51 (out<13>)
+     begin scope: 'myGame/sequence:value<13>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out51 (out<13>)
+     end scope: 'myGame/sequence:out<13>'
+     begin scope: 'myGame/muxB:b<13>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out51 (out<13>)
      end scope: 'myGame/muxB:out<13>'
      begin scope: 'myGame/myalu:b<13>'
      begin scope: 'myGame/myalu/myAdd:b<13>'
@@ -1556,13 +1234,13 @@ Delay:               117.367ns (Levels of Logic = 189)
      XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<14> (a[15]_b[15]_sub_2_OUT<14>)
      end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<14>'
      LUT5:I1->O            1   0.254   0.790  Mmux_c107 (Mmux_c106)
-     LUT3:I1->O            3   0.250   0.874  Mmux_c108 (M_myalu_c<14>)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c108 (M_myalu_c<14>)
      end scope: 'myGame/myalu:M_myalu_c<14>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<14>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out61 (out<14>)
-     end scope: 'myGame/muxSequence:out<14>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<14>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out61 (out<14>)
+     begin scope: 'myGame/sequence:value<14>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out61 (out<14>)
+     end scope: 'myGame/sequence:out<14>'
+     begin scope: 'myGame/muxB:b<14>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out61 (out<14>)
      end scope: 'myGame/muxB:out<14>'
      begin scope: 'myGame/myalu:b<14>'
      begin scope: 'myGame/myalu/myAdd:b<14>'
@@ -1571,27 +1249,27 @@ Delay:               117.367ns (Levels of Logic = 189)
      XORCY:CI->O           1   0.206   0.910  Msub_a[15]_b[15]_sub_2_OUT_xor<15> (a[15]_b[15]_sub_2_OUT<15>)
      LUT5:I2->O            1   0.235   0.790  Mmux_c71 (c<15>)
      end scope: 'myGame/myalu/myAdd:c<15>'
-     LUT4:I2->O            3   0.250   0.874  Mmux_c127 (M_myalu_c<15>)
+     LUT4:I2->O            2   0.250   0.726  Mmux_c127 (M_myalu_c<15>)
      end scope: 'myGame/myalu:M_myalu_c<15>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<15>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out71 (out<15>)
-     end scope: 'myGame/muxSequence:out<15>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<15>'
-     LUT5:I2->O            4   0.235   0.803  Mmux_out71 (out<15>)
+     begin scope: 'myGame/sequence:value<15>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out71 (out<15>)
+     end scope: 'myGame/sequence:out<15>'
+     begin scope: 'myGame/muxB:b<15>'
+     LUT3:I1->O            4   0.250   0.803  Mmux_out71 (out<15>)
      end scope: 'myGame/muxB:out<15>'
      begin scope: 'myGame/myalu:b<15>'
      begin scope: 'myGame/myalu/myAdd:b<15>'
-     DSP48A1:A15->M4       2   3.265   0.954  Mmult_n0029 (n0029<4>)
+     DSP48A1:A15->M4       2   3.265   0.726  Mmult_n0029 (n0029<4>)
      end scope: 'myGame/myalu/myAdd:n0029<4>'
-     LUT6:I3->O            1   0.235   0.682  Mmux_c202 (Mmux_c201)
+     LUT6:I5->O            1   0.254   0.682  Mmux_c202 (Mmux_c201)
      LUT5:I4->O            1   0.254   0.790  Mmux_c203 (Mmux_c202)
-     LUT6:I4->O            3   0.250   0.874  Mmux_c205 (M_myalu_c<4>)
+     LUT6:I4->O            2   0.250   0.726  Mmux_c205 (M_myalu_c<4>)
      end scope: 'myGame/myalu:M_myalu_c<4>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<4>'
-     LUT2:I0->O            2   0.250   0.954  Mmux_out111 (out<4>)
-     end scope: 'myGame/muxSequence:out<4>'
-     begin scope: 'myGame/muxB:M_muxSequence_out<4>'
-     LUT5:I2->O            4   0.235   0.804  Mmux_out111 (out<4>)
+     begin scope: 'myGame/sequence:value<4>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out111 (out<4>)
+     end scope: 'myGame/sequence:out<4>'
+     begin scope: 'myGame/muxB:b<4>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out111 (out<4>)
      end scope: 'myGame/muxB:out<4>'
      begin scope: 'myGame/myalu:b<4>'
      begin scope: 'myGame/myalu/myAdd:b<4>'
@@ -1603,55 +1281,313 @@ Delay:               117.367ns (Levels of Logic = 189)
      MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<8> (Madd_a[15]_b[15]_add_0_OUT_cy<8>)
      MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<9> (Madd_a[15]_b[15]_add_0_OUT_cy<9>)
      MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<10> (Madd_a[15]_b[15]_add_0_OUT_cy<10>)
-     XORCY:CI->O           2   0.206   1.156  Madd_a[15]_b[15]_add_0_OUT_xor<11> (a[15]_b[15]_add_0_OUT<11>)
-     LUT6:I1->O            1   0.254   0.910  z2 (z1)
-     LUT3:I0->O            1   0.235   0.958  z4 (z3)
-     end scope: 'myGame/myalu/myAdd:z3'
-     LUT6:I2->O            1   0.254   0.790  Mmux_c_8 (Mmux_c_8)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<11> (Madd_a[15]_b[15]_add_0_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<12> (Madd_a[15]_b[15]_add_0_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<13> (Madd_a[15]_b[15]_add_0_OUT_cy<13>)
+     XORCY:CI->O           2   0.206   1.156  Madd_a[15]_b[15]_add_0_OUT_xor<14> (a[15]_b[15]_add_0_OUT<14>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_add_0_OUT<14>'
+     LUT6:I1->O            1   0.254   0.790  Mmux_c_8 (Mmux_c_8)
      LUT5:I3->O            5   0.250   0.841  alufn<5> (M_myGame_eq<0>)
      end scope: 'myGame/myalu:M_myGame_eq<0>'
-     begin scope: 'myGame/muxSequence:M_myGame_eq<0>'
-     LUT3:I2->O            2   0.254   0.834  Mmux_out17 (out<0>)
-     end scope: 'myGame/muxSequence:out<0>'
      begin scope: 'myGame/sequence:value<0>'
-     LUT3:I1->O           12   0.250   1.499  out<0>1 (out<0>)
+     LUT4:I3->O           24   0.254   1.488  Mmux_out17 (out<0>)
      end scope: 'myGame/sequence:out<0>'
-     end scope: 'myGame:sqc<0>'
-     begin scope: 'myGame_myRom:M_myGame_sqc<0>'
-     LUT5:I0->O           16   0.254   1.182  Mram_out16 (M_myRom_out<0>)
-     end scope: 'myGame_myRom:M_myRom_out<0>'
-     begin scope: 'myGame:M_myRom_out<0>'
-     begin scope: 'myGame/muxA:a<3>'
-     LUT3:I2->O           10   0.254   1.236  Mmux_out91 (out<2>)
-     end scope: 'myGame/muxA:out<2>'
-     begin scope: 'myGame/myalu:a<2>'
-     LUT6:I3->O            3   0.235   0.874  Mmux_c168 (M_myalu_c<2>)
+     begin scope: 'myGame/muxB:b<0>'
+     LUT3:I1->O           40   0.250   2.109  Mmux_out17 (out<0>)
+     end scope: 'myGame/muxB:out<0>'
+     begin scope: 'myGame/myalu:b<0>'
+     LUT6:I0->O            2   0.254   0.954  Sh391 (Sh39)
+     LUT5:I2->O            1   0.235   1.112  Mmux_c182 (Mmux_c181)
+     LUT6:I1->O            2   0.254   0.726  Mmux_c186 (M_myalu_c<3>)
+     end scope: 'myGame/myalu:M_myalu_c<3>'
+     begin scope: 'myGame/sequence:value<3>'
+     LUT4:I3->O           25   0.254   1.511  Mmux_out101 (out<3>)
+     end scope: 'myGame/sequence:out<3>'
+     begin scope: 'myGame/muxB:b<3>'
+     LUT3:I1->O           34   0.250   2.008  Mmux_out101 (out<3>)
+     end scope: 'myGame/muxB:out<3>'
+     begin scope: 'myGame/myalu:b<3>'
+     LUT6:I0->O            1   0.254   0.790  Sh1811 (Sh181)
+     LUT4:I2->O            1   0.250   0.910  Mmux_c165 (Mmux_c164)
+     LUT6:I3->O            2   0.235   0.726  Mmux_c167 (M_myalu_c<2>)
      end scope: 'myGame/myalu:M_myalu_c<2>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<2>'
-     LUT2:I0->O            2   0.250   0.834  Mmux_out91 (out<2>)
-     end scope: 'myGame/muxSequence:out<2>'
      begin scope: 'myGame/sequence:value<2>'
-     LUT3:I1->O           13   0.250   1.206  out<2>1 (out<2>)
+     LUT4:I3->O           25   0.254   1.511  Mmux_out91 (out<2>)
      end scope: 'myGame/sequence:out<2>'
      begin scope: 'myGame/muxB:b<2>'
-     LUT3:I1->O           32   0.250   1.628  Mmux_out91 (out<2>)
+     LUT3:I1->O           34   0.250   1.983  Mmux_out91 (out<2>)
      end scope: 'myGame/muxB:out<2>'
      begin scope: 'myGame/myalu:b<2>'
-     LUT4:I2->O            1   0.250   0.910  Mmux_c181 (Mmux_c18)
-     LUT3:I0->O            3   0.235   0.766  Mmux_c1861 (M_myalu_c<3>)
-     end scope: 'myGame/myalu:M_myalu_c<3>'
-     begin scope: 'myGame/muxSequence:M_myalu_c<3>'
-     LUT3:I2->O            2   0.254   0.834  Mmux_out101 (out<3>)
-     end scope: 'myGame/muxSequence:out<3>'
-     begin scope: 'myGame/sequence:value<3>'
-     LUT3:I1->O           13   0.250   1.098  out<3>1 (out<3>)
-     end scope: 'myGame/sequence:out<3>'
-     end scope: 'myGame:sqc<3>'
-     LUT2:I1->O            1   0.254   0.681  M_state_q_io_led<19>1 (io_led_19_OBUF)
-     OBUF:I->O                 2.912          io_led_19_OBUF (io_led<19>)
+     LUT5:I0->O            3   0.254   0.766  Mmux_c145 (M_myalu_c<1>)
+     end scope: 'myGame/myalu:M_myalu_c<1>'
+     begin scope: 'myGame/level:value<1>'
+     LUT4:I3->O           24   0.254   1.488  Mmux_out81 (out<1>)
+     end scope: 'myGame/level:out<1>'
+     end scope: 'myGame:lvl<1>'
+     LUT2:I0->O            1   0.250   0.681  M_state_q_io_led<21>1 (io_led_21_OBUF)
+     OBUF:I->O                 2.912          io_led_21_OBUF (io_led<21>)
     ----------------------------------------
-    Total                    117.367ns (34.342ns logic, 83.025ns route)
-                                       (29.3% logic, 70.7% route)
+    Total                    110.657ns (32.664ns logic, 77.993ns route)
+                                       (29.5% logic, 70.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 101914671049 / 17
+-------------------------------------------------------------------------
+Delay:               109.699ns (Levels of Logic = 180)
+  Source:            io_dip<23> (PAD)
+  Destination:       io_led<21> (PAD)
+
+  Data Path: io_dip<23> to io_led<21>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.328   1.152  io_dip_23_IBUF (io_dip_23_IBUF)
+     LUT4:I0->O            2   0.254   1.002  M_state_q_M_myGame_wl1 (M_myGame_wl)
+     begin scope: 'myGame:wl'
+     begin scope: 'myGame/level:write'
+     LUT4:I0->O           24   0.254   1.488  Mmux_out11 (out<0>)
+     end scope: 'myGame/level:out<0>'
+     end scope: 'myGame:lvl<0>'
+     begin scope: 'myGame_myRom:M_myGame_lvl<0>'
+     LUT6:I4->O            3   0.250   0.766  Mram_out41 (M_myRom_out<4>)
+     end scope: 'myGame_myRom:M_myRom_out<4>'
+     begin scope: 'myGame:M_myRom_out<4>'
+     LUT3:I2->O            9   0.254   1.252  M_muxA_out<4>1 (M_muxA_out<4>)
+     begin scope: 'myGame/myalu:a<4>'
+     LUT6:I2->O            2   0.254   0.726  Sh691 (Sh69)
+     LUT3:I2->O            2   0.254   0.726  Sh9311 (Sh931)
+     LUT6:I5->O            1   0.254   0.682  Mmux_c221 (Mmux_c22)
+     LUT5:I4->O            2   0.254   0.726  Mmux_c2251 (M_myalu_c<5>)
+     end scope: 'myGame/myalu:M_myalu_c<5>'
+     begin scope: 'myGame/sequence:value<5>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out121 (out<5>)
+     end scope: 'myGame/sequence:out<5>'
+     begin scope: 'myGame/muxB:b<5>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out121 (out<5>)
+     end scope: 'myGame/muxB:out<5>'
+     begin scope: 'myGame/myalu:b<5>'
+     begin scope: 'myGame/myalu/myAdd:b<5>'
+     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<5> (Msub_a[15]_b[15]_sub_2_OUT_lut<5>)
+     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<5> (Msub_a[15]_b[15]_sub_2_OUT_cy<5>)
+     XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<6> (a[15]_b[15]_sub_2_OUT<6>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<6>'
+     LUT5:I1->O            1   0.254   0.790  Mmux_c244 (Mmux_c244)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c245 (M_myalu_c<6>)
+     end scope: 'myGame/myalu:M_myalu_c<6>'
+     begin scope: 'myGame/sequence:value<6>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out131 (out<6>)
+     end scope: 'myGame/sequence:out<6>'
+     begin scope: 'myGame/muxB:b<6>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out131 (out<6>)
+     end scope: 'myGame/muxB:out<6>'
+     begin scope: 'myGame/myalu:b<6>'
+     begin scope: 'myGame/myalu/myAdd:b<6>'
+     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<6> (Msub_a[15]_b[15]_sub_2_OUT_lut<6>)
+     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<6> (Msub_a[15]_b[15]_sub_2_OUT_cy<6>)
+     XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<7> (a[15]_b[15]_sub_2_OUT<7>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<7>'
+     LUT6:I5->O            1   0.254   0.910  Mmux_c266 (Mmux_c266)
+     LUT4:I1->O            2   0.235   0.726  Mmux_c267 (M_myalu_c<7>)
+     end scope: 'myGame/myalu:M_myalu_c<7>'
+     begin scope: 'myGame/sequence:value<7>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out141 (out<7>)
+     end scope: 'myGame/sequence:out<7>'
+     begin scope: 'myGame/muxB:b<7>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out141 (out<7>)
+     end scope: 'myGame/muxB:out<7>'
+     begin scope: 'myGame/myalu:b<7>'
+     begin scope: 'myGame/myalu/myAdd:b<7>'
+     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<7> (Msub_a[15]_b[15]_sub_2_OUT_lut<7>)
+     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<7> (Msub_a[15]_b[15]_sub_2_OUT_cy<7>)
+     XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<8> (a[15]_b[15]_sub_2_OUT<8>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<8>'
+     LUT6:I5->O            1   0.254   0.910  Mmux_c286 (Mmux_c285)
+     LUT4:I1->O            2   0.235   0.726  Mmux_c287 (M_myalu_c<8>)
+     end scope: 'myGame/myalu:M_myalu_c<8>'
+     begin scope: 'myGame/sequence:value<8>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out151 (out<8>)
+     end scope: 'myGame/sequence:out<8>'
+     begin scope: 'myGame/muxB:b<8>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out151 (out<8>)
+     end scope: 'myGame/muxB:out<8>'
+     begin scope: 'myGame/myalu:b<8>'
+     begin scope: 'myGame/myalu/myAdd:b<8>'
+     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<8> (Msub_a[15]_b[15]_sub_2_OUT_lut<8>)
+     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<8> (Msub_a[15]_b[15]_sub_2_OUT_cy<8>)
+     XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<9> (a[15]_b[15]_sub_2_OUT<9>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<9>'
+     LUT6:I5->O            1   0.254   0.910  Mmux_c306 (Mmux_c305)
+     LUT4:I1->O            2   0.235   0.726  Mmux_c307 (M_myalu_c<9>)
+     end scope: 'myGame/myalu:M_myalu_c<9>'
+     begin scope: 'myGame/sequence:value<9>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out161 (out<9>)
+     end scope: 'myGame/sequence:out<9>'
+     begin scope: 'myGame/muxB:b<9>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out161 (out<9>)
+     end scope: 'myGame/muxB:out<9>'
+     begin scope: 'myGame/myalu:b<9>'
+     begin scope: 'myGame/myalu/myAdd:b<9>'
+     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<9> (Msub_a[15]_b[15]_sub_2_OUT_lut<9>)
+     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<9> (Msub_a[15]_b[15]_sub_2_OUT_cy<9>)
+     XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<10> (a[15]_b[15]_sub_2_OUT<10>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<10>'
+     LUT5:I1->O            1   0.254   0.790  Mmux_c213 (Mmux_c212)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c214 (M_myalu_c<10>)
+     end scope: 'myGame/myalu:M_myalu_c<10>'
+     begin scope: 'myGame/sequence:value<10>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out21 (out<10>)
+     end scope: 'myGame/sequence:out<10>'
+     begin scope: 'myGame/muxB:b<10>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out21 (out<10>)
+     end scope: 'myGame/muxB:out<10>'
+     begin scope: 'myGame/myalu:b<10>'
+     begin scope: 'myGame/myalu/myAdd:b<10>'
+     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<10> (Msub_a[15]_b[15]_sub_2_OUT_lut<10>)
+     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<10> (Msub_a[15]_b[15]_sub_2_OUT_cy<10>)
+     XORCY:CI->O           1   0.206   0.682  Msub_a[15]_b[15]_sub_2_OUT_xor<11> (a[15]_b[15]_sub_2_OUT<11>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<11>'
+     LUT6:I5->O            1   0.254   0.682  Mmux_c45 (Mmux_c45)
+     LUT4:I3->O            2   0.254   0.726  Mmux_c461 (M_myalu_c<11>)
+     end scope: 'myGame/myalu:M_myalu_c<11>'
+     begin scope: 'myGame/sequence:value<11>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out31 (out<11>)
+     end scope: 'myGame/sequence:out<11>'
+     begin scope: 'myGame/muxB:b<11>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out31 (out<11>)
+     end scope: 'myGame/muxB:out<11>'
+     begin scope: 'myGame/myalu:b<11>'
+     begin scope: 'myGame/myalu/myAdd:b<11>'
+     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<11> (Msub_a[15]_b[15]_sub_2_OUT_lut<11>)
+     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<11> (Msub_a[15]_b[15]_sub_2_OUT_cy<11>)
+     XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<12> (a[15]_b[15]_sub_2_OUT<12>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<12>'
+     LUT5:I1->O            1   0.254   0.790  Mmux_c66 (Mmux_c68)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c67 (M_myalu_c<12>)
+     end scope: 'myGame/myalu:M_myalu_c<12>'
+     begin scope: 'myGame/sequence:value<12>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out41 (out<12>)
+     end scope: 'myGame/sequence:out<12>'
+     begin scope: 'myGame/muxB:b<12>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out41 (out<12>)
+     end scope: 'myGame/muxB:out<12>'
+     begin scope: 'myGame/myalu:b<12>'
+     begin scope: 'myGame/myalu/myAdd:b<12>'
+     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<12> (Msub_a[15]_b[15]_sub_2_OUT_lut<12>)
+     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<12> (Msub_a[15]_b[15]_sub_2_OUT_cy<12>)
+     XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<13> (a[15]_b[15]_sub_2_OUT<13>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<13>'
+     LUT5:I1->O            1   0.254   0.790  Mmux_c86 (Mmux_c85)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c87 (M_myalu_c<13>)
+     end scope: 'myGame/myalu:M_myalu_c<13>'
+     begin scope: 'myGame/sequence:value<13>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out51 (out<13>)
+     end scope: 'myGame/sequence:out<13>'
+     begin scope: 'myGame/muxB:b<13>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out51 (out<13>)
+     end scope: 'myGame/muxB:out<13>'
+     begin scope: 'myGame/myalu:b<13>'
+     begin scope: 'myGame/myalu/myAdd:b<13>'
+     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<13> (Msub_a[15]_b[15]_sub_2_OUT_lut<13>)
+     MUXCY:S->O            1   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<13> (Msub_a[15]_b[15]_sub_2_OUT_cy<13>)
+     XORCY:CI->O           1   0.206   0.958  Msub_a[15]_b[15]_sub_2_OUT_xor<14> (a[15]_b[15]_sub_2_OUT<14>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_sub_2_OUT<14>'
+     LUT5:I1->O            1   0.254   0.790  Mmux_c107 (Mmux_c106)
+     LUT3:I1->O            2   0.250   0.726  Mmux_c108 (M_myalu_c<14>)
+     end scope: 'myGame/myalu:M_myalu_c<14>'
+     begin scope: 'myGame/sequence:value<14>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out61 (out<14>)
+     end scope: 'myGame/sequence:out<14>'
+     begin scope: 'myGame/muxB:b<14>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out61 (out<14>)
+     end scope: 'myGame/muxB:out<14>'
+     begin scope: 'myGame/myalu:b<14>'
+     begin scope: 'myGame/myalu/myAdd:b<14>'
+     LUT2:I1->O            1   0.254   0.000  Msub_a[15]_b[15]_sub_2_OUT_lut<14> (Msub_a[15]_b[15]_sub_2_OUT_lut<14>)
+     MUXCY:S->O            0   0.215   0.000  Msub_a[15]_b[15]_sub_2_OUT_cy<14> (Msub_a[15]_b[15]_sub_2_OUT_cy<14>)
+     XORCY:CI->O           1   0.206   0.910  Msub_a[15]_b[15]_sub_2_OUT_xor<15> (a[15]_b[15]_sub_2_OUT<15>)
+     LUT5:I2->O            1   0.235   0.790  Mmux_c71 (c<15>)
+     end scope: 'myGame/myalu/myAdd:c<15>'
+     LUT4:I2->O            2   0.250   0.726  Mmux_c127 (M_myalu_c<15>)
+     end scope: 'myGame/myalu:M_myalu_c<15>'
+     begin scope: 'myGame/sequence:value<15>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out71 (out<15>)
+     end scope: 'myGame/sequence:out<15>'
+     begin scope: 'myGame/muxB:b<15>'
+     LUT3:I1->O            4   0.250   0.803  Mmux_out71 (out<15>)
+     end scope: 'myGame/muxB:out<15>'
+     begin scope: 'myGame/myalu:b<15>'
+     begin scope: 'myGame/myalu/myAdd:b<15>'
+     DSP48A1:A15->M4       2   3.265   0.726  Mmult_n0029 (n0029<4>)
+     end scope: 'myGame/myalu/myAdd:n0029<4>'
+     LUT6:I5->O            1   0.254   0.682  Mmux_c202 (Mmux_c201)
+     LUT5:I4->O            1   0.254   0.790  Mmux_c203 (Mmux_c202)
+     LUT6:I4->O            2   0.250   0.726  Mmux_c205 (M_myalu_c<4>)
+     end scope: 'myGame/myalu:M_myalu_c<4>'
+     begin scope: 'myGame/sequence:value<4>'
+     LUT4:I3->O            2   0.254   0.834  Mmux_out111 (out<4>)
+     end scope: 'myGame/sequence:out<4>'
+     begin scope: 'myGame/muxB:b<4>'
+     LUT3:I1->O            4   0.250   0.804  Mmux_out111 (out<4>)
+     end scope: 'myGame/muxB:out<4>'
+     begin scope: 'myGame/myalu:b<4>'
+     begin scope: 'myGame/myalu/myAdd:b<4>'
+     LUT2:I1->O            1   0.254   0.000  Madd_a[15]_b[15]_add_0_OUT_lut<4> (Madd_a[15]_b[15]_add_0_OUT_lut<4>)
+     MUXCY:S->O            1   0.215   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<4> (Madd_a[15]_b[15]_add_0_OUT_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<5> (Madd_a[15]_b[15]_add_0_OUT_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<6> (Madd_a[15]_b[15]_add_0_OUT_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<7> (Madd_a[15]_b[15]_add_0_OUT_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<8> (Madd_a[15]_b[15]_add_0_OUT_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<9> (Madd_a[15]_b[15]_add_0_OUT_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<10> (Madd_a[15]_b[15]_add_0_OUT_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<11> (Madd_a[15]_b[15]_add_0_OUT_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<12> (Madd_a[15]_b[15]_add_0_OUT_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Madd_a[15]_b[15]_add_0_OUT_cy<13> (Madd_a[15]_b[15]_add_0_OUT_cy<13>)
+     XORCY:CI->O           2   0.206   1.156  Madd_a[15]_b[15]_add_0_OUT_xor<14> (a[15]_b[15]_add_0_OUT<14>)
+     end scope: 'myGame/myalu/myAdd:a[15]_b[15]_add_0_OUT<14>'
+     LUT6:I1->O            1   0.254   0.790  Mmux_c_8 (Mmux_c_8)
+     LUT5:I3->O            5   0.250   0.841  alufn<5> (M_myGame_eq<0>)
+     end scope: 'myGame/myalu:M_myGame_eq<0>'
+     begin scope: 'myGame/sequence:value<0>'
+     LUT4:I3->O           24   0.254   1.488  Mmux_out17 (out<0>)
+     end scope: 'myGame/sequence:out<0>'
+     begin scope: 'myGame/muxB:b<0>'
+     LUT3:I1->O           40   0.250   2.109  Mmux_out17 (out<0>)
+     end scope: 'myGame/muxB:out<0>'
+     begin scope: 'myGame/myalu:b<0>'
+     LUT6:I0->O            2   0.254   0.954  Sh391 (Sh39)
+     LUT5:I2->O            1   0.235   1.112  Mmux_c182 (Mmux_c181)
+     LUT6:I1->O            2   0.254   0.726  Mmux_c186 (M_myalu_c<3>)
+     end scope: 'myGame/myalu:M_myalu_c<3>'
+     begin scope: 'myGame/sequence:value<3>'
+     LUT4:I3->O           25   0.254   1.511  Mmux_out101 (out<3>)
+     end scope: 'myGame/sequence:out<3>'
+     begin scope: 'myGame/muxB:b<3>'
+     LUT3:I1->O           34   0.250   2.008  Mmux_out101 (out<3>)
+     end scope: 'myGame/muxB:out<3>'
+     begin scope: 'myGame/myalu:b<3>'
+     LUT6:I0->O            1   0.254   0.790  Sh1811 (Sh181)
+     LUT4:I2->O            1   0.250   0.910  Mmux_c165 (Mmux_c164)
+     LUT6:I3->O            2   0.235   0.726  Mmux_c167 (M_myalu_c<2>)
+     end scope: 'myGame/myalu:M_myalu_c<2>'
+     begin scope: 'myGame/sequence:value<2>'
+     LUT4:I3->O           25   0.254   1.511  Mmux_out91 (out<2>)
+     end scope: 'myGame/sequence:out<2>'
+     begin scope: 'myGame/muxB:b<2>'
+     LUT3:I1->O           34   0.250   1.983  Mmux_out91 (out<2>)
+     end scope: 'myGame/muxB:out<2>'
+     begin scope: 'myGame/myalu:b<2>'
+     LUT5:I0->O            3   0.254   0.766  Mmux_c145 (M_myalu_c<1>)
+     end scope: 'myGame/myalu:M_myalu_c<1>'
+     begin scope: 'myGame/level:value<1>'
+     LUT4:I3->O           24   0.254   1.488  Mmux_out81 (out<1>)
+     end scope: 'myGame/level:out<1>'
+     end scope: 'myGame:lvl<1>'
+     LUT2:I0->O            1   0.250   0.681  M_state_q_io_led<21>1 (io_led_21_OBUF)
+     OBUF:I->O                 2.912          io_led_21_OBUF (io_led<21>)
+    ----------------------------------------
+    Total                    109.699ns (33.209ns logic, 76.490ns route)
+                                       (30.3% logic, 69.7% route)
 
 =========================================================================
 
@@ -1663,18 +1599,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |  114.138|         |         |         |
+clk            |  107.034|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.75 secs
+Total CPU time to Xst completion: 6.90 secs
  
 --> 
 
-Total memory usage is 250720 kilobytes
+Total memory usage is 250784 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   38 (   0 filtered)

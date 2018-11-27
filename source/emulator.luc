@@ -17,7 +17,7 @@ module emulator (
     
   ) {
   mux_2 muxBoard;
-  mux_5 muxLevel;
+  mux_2 muxLevel;
   mux_2 muxSequence;
   mux_5 muxA;
   mux_2 muxB;
@@ -53,12 +53,16 @@ module emulator (
     muxBoard.b = 16b0;
     muxBoard.sel = rstb;
     
-    muxLevel.a = 16b0;
-    muxLevel.b = 16b1;
-    muxLevel.c = 16b10;
-    muxLevel.d = 16b11;
-    muxLevel.e = 16b0;
+    muxLevel.a = myalu.c;
+    muxLevel.b = 16b0;
     muxLevel.sel = rstl;
+    
+    //muxLevel.a = 16b0;
+    //muxLevel.b = 16b1;
+    //muxLevel.c = 16b10;
+    //muxLevel.d = 16b11;
+    //muxLevel.e = 16b0;
+    //muxLevel.sel = rstl;
     
     muxSequence.a = myalu.c;
     muxSequence.b = 16b0;

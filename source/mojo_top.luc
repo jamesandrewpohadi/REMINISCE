@@ -16,7 +16,10 @@ module mojo_top (
     output io_seg [8],      // 7-segment LEDs on IO Shield
     output io_sel [4],      // Digit select on IO Shield
     input io_button [5],    // 5 buttons on IO Shield
-    input io_dip [3][8]
+    input io_dip [3][8],
+    input address[6]
+    
+   
   ) {
   
   sig rst;                  // reset signal
@@ -35,7 +38,7 @@ module mojo_top (
   }
   dff counter[28](.clk(clk), .rst(rst)); // Define the counter
   emulator myGame(.clk(clk), .rst(rst)); // define our device
-  
+
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
     rst = reset_cond.out;   // conditioned reset
@@ -57,7 +60,7 @@ module mojo_top (
     myGame.rsts = 0;
     myGame.bsel = 0;
     myGame.asel = 3b0;
-    myGame.alufn = 6b0;
+    myGame.alufn = 6b0; //ADD
     io_led[1] = myGame.display[15:8];
     io_led[0] = myGame.display[7:0];
     
@@ -209,7 +212,7 @@ module mojo_top (
           state.d = state.L1;
         }
       state.L1:
-        io_led[2] = 8b00010000;  //c{myGame.lvl, myGame.sqc};
+        io_led[2] = 8b00010000;
         if (counter.q[27]==1b1) {
           // increment sequence by 1, the next state is L1_DS1
           myGame.alufn = 6b0; // add
@@ -222,11 +225,11 @@ module mojo_top (
         }
       state.L1_DS1:
       // load sequence 1
-        io_led[2] = 8b00010001;   //c{myGame.lvl, myGame.sqc};
-        myGame.asel = 3b0;
-        myGame.alufn = 6b011010;
-        myGame.rstb = 0;
-        myGame.wb = 1;
+        io_led[2] = 8b00010001;
+        myGame.asel = 3b0; // a=0
+        myGame.alufn = 6b011010; // "A"
+        myGame.rstb = 0; // not reset
+        myGame.wb = 1; // write
         io_led[1] = myGame.display[15:8];
         io_led[0] = myGame.display[7:0];
         if (counter.q[27]==1) {
@@ -241,7 +244,7 @@ module mojo_top (
         }
       state.L1_DS2:
       // load sequence 2
-        io_led[2] = 8b00010010;  //c{myGame.lvl, myGame.sqc};
+        io_led[2] = 8b00010010;
         myGame.asel = 3b0;  // a=0
         myGame.alufn = 6b011010; // "A"
         myGame.rstb = 0;  // not reset 
@@ -260,7 +263,7 @@ module mojo_top (
         }
       state.L1_DS3:
       // load sequence 3
-        io_led[2] = 8b00010011;  //c{myGame.lvl, myGame.sqc};
+        io_led[2] = 8b00010011;
         myGame.asel = 3b0;
         myGame.alufn = 6b011010;
         myGame.rstb = 0;
@@ -279,7 +282,7 @@ module mojo_top (
         }
       state.L1_DS4:
         // load sequence 4
-        io_led[2] = 8b00010100;  //c{myGame.lvl, myGame.sqc};
+        io_led[2] = 8b00010100;
         myGame.asel = 3b0;
         myGame.alufn = 6b011010;
         myGame.rstb = 0;
@@ -298,7 +301,7 @@ module mojo_top (
         }
       state.L1_DSW:
       // load sequence win
-        io_led[2] = c{myGame.lvl, myGame.sqc};
+        io_led[2] = c{00,myGame.lvl, myGame.sqc};
         myGame.asel = 3b0;
         myGame.alufn = 6b011010;
         myGame.rstb = 0;

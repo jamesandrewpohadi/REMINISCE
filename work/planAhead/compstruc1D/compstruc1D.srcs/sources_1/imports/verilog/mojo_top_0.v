@@ -21,7 +21,8 @@ module mojo_top_0 (
     output reg [7:0] io_seg,
     output reg [3:0] io_sel,
     input [4:0] io_button,
-    input [23:0] io_dip
+    input [23:0] io_dip,
+    input [5:0] address
   );
   
   
@@ -285,7 +286,7 @@ module mojo_top_0 (
         end
       end
       L1_state: begin
-        io_led[16+7-:8] = 8'h10;
+        io_led[16+7-:8] = {1'h0, M_myGame_lvl, M_myGame_sqc};
         if (M_counter_q[27+0-:1] == 1'h1) begin
           M_myGame_alufn = 6'h00;
           M_myGame_asel = 3'h1;
@@ -297,7 +298,7 @@ module mojo_top_0 (
         end
       end
       L1_DS1_state: begin
-        io_led[16+7-:8] = 8'h11;
+        io_led[16+7-:8] = {1'h0, M_myGame_lvl, M_myGame_sqc};
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 1'h0;
@@ -315,7 +316,7 @@ module mojo_top_0 (
         end
       end
       L1_DS2_state: begin
-        io_led[16+7-:8] = 8'h12;
+        io_led[16+7-:8] = {1'h0, M_myGame_lvl, M_myGame_sqc};
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 1'h0;
@@ -333,7 +334,7 @@ module mojo_top_0 (
         end
       end
       L1_DS3_state: begin
-        io_led[16+7-:8] = 8'h13;
+        io_led[16+7-:8] = {1'h0, M_myGame_lvl, M_myGame_sqc};
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 1'h0;
@@ -351,7 +352,7 @@ module mojo_top_0 (
         end
       end
       L1_DS4_state: begin
-        io_led[16+7-:8] = 8'h14;
+        io_led[16+7-:8] = {1'h0, M_myGame_lvl, M_myGame_sqc};
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 1'h0;
@@ -369,7 +370,7 @@ module mojo_top_0 (
         end
       end
       L1_DSW_state: begin
-        io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
+        io_led[16+7-:8] = {1'h0, M_myGame_lvl, M_myGame_sqc};
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 1'h0;
@@ -460,18 +461,18 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_counter_q <= 1'h0;
+      M_state_q <= 1'h0;
     end else begin
-      M_counter_q <= M_counter_d;
+      M_state_q <= M_state_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
+      M_counter_q <= 1'h0;
     end else begin
-      M_state_q <= M_state_d;
+      M_counter_q <= M_counter_d;
     end
   end
   

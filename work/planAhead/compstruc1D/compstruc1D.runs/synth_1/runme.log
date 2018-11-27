@@ -19,8 +19,8 @@ Analyzing Verilog file "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/pl
 Parsing module <rom_8>.
 Analyzing Verilog file "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/register_10.v" into library work
 Parsing module <register_10>.
-Analyzing Verilog file "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_4.v" into library work
-Parsing module <mux_5_4>.
+Analyzing Verilog file "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_6.v" into library work
+Parsing module <mux_5_6>.
 Analyzing Verilog file "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_2_3.v" into library work
 Parsing module <mux_2_3>.
 Analyzing Verilog file "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" into library work
@@ -44,7 +44,7 @@ Elaborating module <emulator_2>.
 
 Elaborating module <mux_2_3>.
 
-Elaborating module <mux_5_4>.
+Elaborating module <mux_5_6>.
 
 Elaborating module <rom_8>.
 WARNING:HDLCompiler:295 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" Line 53: case condition never applies
@@ -61,13 +61,13 @@ Elaborating module <cmp_14>.
 Elaborating module <boole_15>.
 
 Elaborating module <shift_16>.
-WARNING:HDLCompiler:1127 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 113: Assignment to M_myalu_z ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 114: Assignment to M_myalu_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 115: Assignment to M_myalu_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 107: Assignment to M_myalu_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 108: Assignment to M_myalu_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 109: Assignment to M_myalu_n ignored, since the identifier is never used
 
 Elaborating module <register_10>.
-WARNING:HDLCompiler:413 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 138: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 143: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 139: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 144: Result of 2-bit expression is truncated to fit in 1-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -76,14 +76,15 @@ WARNING:HDLCompiler:413 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work
 Synthesizing Unit <mojo_top_0>.
     Related source file is "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v".
 WARNING:Xst:647 - Input <io_dip<20:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <address> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 5-bit register for signal <M_state_q>.
     Found 28-bit register for signal <M_counter_q>.
+    Found 5-bit register for signal <M_state_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 23                                             |
@@ -98,17 +99,17 @@ WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_counter_q[27]_GND_1_o_add_0_OUT> created at line 117.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 104
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 104
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 104
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 104
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 104
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 104
+    Found 28-bit adder for signal <M_counter_q[27]_GND_1_o_add_0_OUT> created at line 118.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 105
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 105
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 105
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 105
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 105
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 105
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
-	inferred  33 Multiplexer(s).
+	inferred  30 Multiplexer(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -122,9 +123,9 @@ Unit <reset_conditioner_1> synthesized.
 
 Synthesizing Unit <emulator_2>.
     Related source file is "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v".
-INFO:Xst:3210 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 108: Output port <z> of the instance <myalu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 108: Output port <v> of the instance <myalu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 108: Output port <n> of the instance <myalu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 102: Output port <z> of the instance <myalu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 102: Output port <v> of the instance <myalu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 102: Output port <n> of the instance <myalu> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <emulator_2> synthesized.
@@ -135,12 +136,11 @@ Synthesizing Unit <mux_2_3>.
 	inferred   1 Multiplexer(s).
 Unit <mux_2_3> synthesized.
 
-Synthesizing Unit <mux_5_4>.
-    Related source file is "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_4.v".
-    Found 16-bit 7-to-1 multiplexer for signal <out> created at line 22.
+Synthesizing Unit <mux_5_6>.
+    Related source file is "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_6.v".
     Summary:
-	inferred   1 Multiplexer(s).
-Unit <mux_5_4> synthesized.
+	inferred   3 Multiplexer(s).
+Unit <mux_5_6> synthesized.
 
 Synthesizing Unit <rom_8>.
     Related source file is "C:/Users/Wang Zijia/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v".
@@ -222,6 +222,7 @@ Synthesizing Unit <register_10>.
     Found 16-bit register for signal <M_reg_q>.
     Summary:
 	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
 Unit <register_10> synthesized.
 
 =========================================================================
@@ -240,13 +241,12 @@ Macro Statistics
  16-bit register                                       : 3
  28-bit register                                       : 1
  4-bit register                                        : 1
-# Multiplexers                                         : 62
- 1-bit 2-to-1 multiplexer                              : 24
+# Multiplexers                                         : 64
+ 1-bit 2-to-1 multiplexer                              : 21
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 16
- 16-bit 2-to-1 multiplexer                             : 3
+ 16-bit 2-to-1 multiplexer                             : 10
  16-bit 4-to-1 multiplexer                             : 4
- 16-bit 7-to-1 multiplexer                             : 2
  28-bit 2-to-1 multiplexer                             : 4
  3-bit 2-to-1 multiplexer                              : 3
  6-bit 2-to-1 multiplexer                              : 5
@@ -295,13 +295,12 @@ Macro Statistics
  28-bit adder                                          : 1
 # Registers                                            : 80
  Flip-Flops                                            : 80
-# Multiplexers                                         : 62
- 1-bit 2-to-1 multiplexer                              : 24
+# Multiplexers                                         : 64
+ 1-bit 2-to-1 multiplexer                              : 21
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 16
- 16-bit 2-to-1 multiplexer                             : 3
+ 16-bit 2-to-1 multiplexer                             : 10
  16-bit 4-to-1 multiplexer                             : 4
- 16-bit 7-to-1 multiplexer                             : 2
  28-bit 2-to-1 multiplexer                             : 4
  3-bit 2-to-1 multiplexer                              : 3
  6-bit 2-to-1 multiplexer                              : 5
@@ -357,7 +356,6 @@ Optimizing unit <alu_9> ...
 Optimizing unit <add_13> ...
 
 Optimizing unit <register_10> ...
-WARNING:Xst:1293 - FF/Latch <myGame/level/M_reg_q_1> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <myGame/level/M_reg_q_15> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <myGame/level/M_reg_q_14> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <myGame/level/M_reg_q_13> of sequential type is unconnected in block <mojo_top_0>.
@@ -376,7 +374,6 @@ WARNING:Xst:2677 - Node <myGame/level/M_reg_q_2> of sequential type is unconnect
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 7.
-FlipFlop M_counter_q_27 has been replicated 5 time(s)
 
 Final Macro Processing ...
 
@@ -388,8 +385,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 93
- Flip-Flops                                            : 93
+# Registers                                            : 89
+ Flip-Flops                                            : 89
 
 =========================================================================
 
@@ -413,7 +410,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 93    |
+clk                                | BUFGP                  | 89    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -424,9 +421,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 114.138ns (Maximum Frequency: 8.761MHz)
-   Minimum input arrival time before clock: 113.848ns
-   Maximum output required time after clock: 117.657ns
-   Maximum combinational path delay: 117.367ns
+   Minimum period: 107.034ns (Maximum Frequency: 9.343MHz)
+   Minimum input arrival time before clock: 106.076ns
+   Maximum output required time after clock: 110.657ns
+   Maximum combinational path delay: 109.699ns
 
 =========================================================================

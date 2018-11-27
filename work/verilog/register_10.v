@@ -7,7 +7,7 @@
 module register_10 (
     input clk,
     input rst,
-    input [15:0] write,
+    input write,
     input [15:0] value,
     output reg [15:0] out
   );

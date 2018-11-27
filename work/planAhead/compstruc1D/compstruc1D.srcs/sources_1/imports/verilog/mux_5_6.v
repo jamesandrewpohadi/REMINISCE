@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module mux_5_4 (
+module mux_5_6 (
     input [15:0] a,
     input [15:0] b,
     input [15:0] c,

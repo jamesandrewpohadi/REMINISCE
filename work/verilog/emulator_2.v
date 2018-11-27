@@ -38,16 +38,10 @@ module emulator_2 (
   wire [16-1:0] M_muxLevel_out;
   reg [16-1:0] M_muxLevel_a;
   reg [16-1:0] M_muxLevel_b;
-  reg [16-1:0] M_muxLevel_c;
-  reg [16-1:0] M_muxLevel_d;
-  reg [16-1:0] M_muxLevel_e;
-  reg [3-1:0] M_muxLevel_sel;
-  mux_5_4 muxLevel (
+  reg [1-1:0] M_muxLevel_sel;
+  mux_2_3 muxLevel (
     .a(M_muxLevel_a),
     .b(M_muxLevel_b),
-    .c(M_muxLevel_c),
-    .d(M_muxLevel_d),
-    .e(M_muxLevel_e),
     .sel(M_muxLevel_sel),
     .out(M_muxLevel_out)
   );
@@ -70,7 +64,7 @@ module emulator_2 (
   reg [16-1:0] M_muxA_d;
   reg [16-1:0] M_muxA_e;
   reg [3-1:0] M_muxA_sel;
-  mux_5_4 muxA (
+  mux_5_6 muxA (
     .a(M_muxA_a),
     .b(M_muxA_b),
     .c(M_muxA_c),
@@ -116,7 +110,7 @@ module emulator_2 (
   );
   
   wire [16-1:0] M_board_out;
-  reg [16-1:0] M_board_write;
+  reg [1-1:0] M_board_write;
   reg [16-1:0] M_board_value;
   register_10 board (
     .clk(clk),
@@ -126,7 +120,7 @@ module emulator_2 (
     .out(M_board_out)
   );
   wire [16-1:0] M_level_out;
-  reg [16-1:0] M_level_write;
+  reg [1-1:0] M_level_write;
   reg [16-1:0] M_level_value;
   register_10 level (
     .clk(clk),
@@ -136,7 +130,7 @@ module emulator_2 (
     .out(M_level_out)
   );
   wire [16-1:0] M_sequence_out;
-  reg [16-1:0] M_sequence_write;
+  reg [1-1:0] M_sequence_write;
   reg [16-1:0] M_sequence_value;
   register_10 sequence (
     .clk(clk),
@@ -163,11 +157,8 @@ module emulator_2 (
     M_muxBoard_a = M_myalu_c;
     M_muxBoard_b = 16'h0000;
     M_muxBoard_sel = rstb;
-    M_muxLevel_a = 16'h0000;
-    M_muxLevel_b = 16'h0001;
-    M_muxLevel_c = 16'h0002;
-    M_muxLevel_d = 16'h0003;
-    M_muxLevel_e = 16'h0000;
+    M_muxLevel_a = M_myalu_c;
+    M_muxLevel_b = 16'h0000;
     M_muxLevel_sel = rstl;
     M_muxSequence_a = M_myalu_c;
     M_muxSequence_b = 16'h0000;
