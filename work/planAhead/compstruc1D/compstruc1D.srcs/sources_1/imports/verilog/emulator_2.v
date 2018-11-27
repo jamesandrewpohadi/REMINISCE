@@ -150,7 +150,7 @@ module emulator_2 (
     M_muxA_a = M_myRom_out;
     M_muxA_b = 16'h0001;
     M_muxA_c = 14'h3ee4;
-    M_muxA_d = 16'h0000;
+    M_muxA_d = 16'h0660;
     M_muxA_e = 16'h0000;
     M_muxA_sel = asel;
     M_muxB_a = M_board_out;

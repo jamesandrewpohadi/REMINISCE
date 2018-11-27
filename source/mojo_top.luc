@@ -19,17 +19,19 @@ module mojo_top (
   ) {
   
   sig rst;                  // reset signal
-  
-  .clk(clk) {
+  dff myClk[1](.clk(clk), .rst(rst));
+  .clk(myClk.q) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
     .rst(rst) {
+      emulator myGame; // define our device
       fsm state(#INIT(IDLE)) = {IDLE, CHECK, INCR, PRE_L, PRE_R, PRE_U, PRE_D, PRE_O, L, R, U, D, O, PRE_L1, L1, PRE_L2, L2, PRE_L3, L3, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, DF};
     }
   }
+  
   dff counter[28](.clk(clk), .rst(rst)); // Define the counter
-  emulator myGame(.clk(clk), .rst(rst)); // define our device
+  
   
   always {
     reset_cond.in = ~rst_n; // input raw inverted reset signal
@@ -44,6 +46,7 @@ module mojo_top (
     io_seg = 8hff;          // turn segments off
     io_sel = 4hf;           // select no digits
     counter.d = counter.q+1;
+    myClk.d[0] = counter.q[27];
     myGame.wb = 0;
     myGame.wl = 0;
     myGame.ws = 0;
@@ -198,14 +201,14 @@ module mojo_top (
         }
       state.PRE_L1:
         // if button L1 released, go to state L1
-        io_led[2] = 8b00000011;
+        io_led[2] = c{myGame.lvl,myGame.sqc};
         if (!io_dip[2][7]) {
           counter.d = 0;
           state.d = state.L1;
         }
       state.L1:
-        io_led[2] = c{myGame.lvl, myGame.sqc};
-        if (counter.q[27]==1b1) {
+        io_led[2][5:0] = c{myGame.lvl, myGame.sqc};
+        if (counter.q[27]==1) {
           // increment sequence by 1, the next state is L1_DS1
           myGame.alufn = 6b0; // add
           myGame.asel = 3b001; // a=1
@@ -217,13 +220,15 @@ module mojo_top (
         }
       state.L1_DS1:
       // load sequence 1
-        io_led[2] = c{myGame.lvl, myGame.sqc};
-        myGame.asel = 3b0;
-        myGame.alufn = 6b011010;
-        myGame.rstb = 0;
-        myGame.wb = 1;
+        io_led[2][5:0] = c{myGame.lvl, myGame.sqc};
         io_led[1] = myGame.display[15:8];
         io_led[0] = myGame.display[7:0];
+        //myGame.asel = 3b0;
+        //myGame.bsel = 0;
+        //myGame.alufn = 6b011010;
+        //myGame.rstb = 0;
+        //myGame.wb = 1;
+        //myGame.ws = 0;
         if (counter.q[27]==1) {
           // increment sequence by 1, the next state is L1_DS2
           myGame.alufn = 6b0; // add
@@ -236,13 +241,13 @@ module mojo_top (
         }
       state.L1_DS2:
       // load sequence 2
-        io_led[2] = c{myGame.lvl, myGame.sqc};
-        myGame.asel = 3b0;
-        myGame.alufn = 6b011010;
-        myGame.rstb = 0;
-        myGame.wb = 1;
-        io_led[1] = myGame.display[15:8];
-        io_led[0] = myGame.display[7:0];
+        io_led[2][5:0] = c{myGame.lvl, myGame.sqc};
+        //myGame.asel = 3b0;
+        //myGame.bsel = 0;
+        //myGame.alufn = 6b011010;
+        //myGame.rstb = 1b0;
+        //myGame.wb = 1b1;
+        //myGame.ws = 0;
         if (counter.q[27]==1) {
           // increment sequence by 1, the next state is L1_DS3
           myGame.alufn = 6b0; // add
@@ -253,13 +258,17 @@ module mojo_top (
           counter.d = 0;
           state.d = state.L1_DS3;
         }
+        io_led[1] = myGame.display[15:8];
+        io_led[0] = myGame.display[7:0];
       state.L1_DS3:
       // load sequence 3
-        io_led[2] = c{myGame.lvl, myGame.sqc};
-        myGame.asel = 3b0;
-        myGame.alufn = 6b011010;
-        myGame.rstb = 0;
-        myGame.wb = 1;
+        io_led[2][5:0] = c{myGame.lvl, myGame.sqc};
+        //myGame.asel = 3b0;
+        //myGame.bsel = 0;
+        //myGame.alufn = 6b011010;
+        //myGame.rstb = 1b0;
+        //myGame.wb = 1b1;
+        //myGame.ws = 0;
         io_led[1] = myGame.display[15:8];
         io_led[0] = myGame.display[7:0];
         if (counter.q[27]==1) {
@@ -268,17 +277,19 @@ module mojo_top (
           myGame.asel = 3b001; // a=1
           myGame.bsel = 1; // b=sequence
           myGame.ws = 1; // write = true
+          io_led[0] = myGame.eq[7:0];
           myGame.rsts = 0; // reset = false
           counter.d = 0;
           state.d = state.L1_DS4;
         }
       state.L1_DS4:
         // load sequence 4
-        io_led[2] = c{myGame.lvl, myGame.sqc};
-        myGame.asel = 3b0;
-        myGame.alufn = 6b011010;
-        myGame.rstb = 0;
-        myGame.wb = 1;
+        io_led[2][5:0] = c{myGame.lvl, myGame.sqc};
+        //myGame.asel = 3b0;
+        //myGame.alufn = 6b011010;
+        //myGame.rstb = 0;
+        //myGame.wb = 1;
+        //myGame.ws = 0;
         io_led[1] = myGame.display[15:8];
         io_led[0] = myGame.display[7:0];
         if (counter.q[27]==1) {
@@ -287,25 +298,26 @@ module mojo_top (
           myGame.asel = 3b001; // a=1
           myGame.bsel = 1; // b=sequence
           myGame.ws = 1; // write = true
+          io_led[0] = myGame.eq[7:0];
           myGame.rsts = 0; // reset = false
           counter.d = 0;
           state.d = state.L1_DSW;
         }
       state.L1_DSW:
       // load sequence win
-        io_led[2] = c{myGame.lvl, myGame.sqc};
-        myGame.asel = 3b0;
-        myGame.alufn = 6b011010;
-        myGame.rstb = 0;
-        myGame.wb = 1;
-        io_led[1] = myGame.display[15:8];
-        io_led[0] = myGame.display[7:0];
         if (counter.q[27]==1) {
           // reset sequence, the next state is L1_P1
           myGame.rsts = 1;
           myGame.ws = 1;
           state.d = state.L1_P1;
         }
+        io_led[2][5:0] = c{myGame.lvl, myGame.sqc};
+        myGame.asel = 3b0;
+        myGame.alufn = 6b011010;
+        myGame.rstb = 0;
+        myGame.wb = 1;
+        io_led[1] = myGame.display[15:8];
+        io_led[0] = myGame.display[7:0];
       state.L1_P1:
         if (io_button[1]) {
           state.d = state.CHECK;
