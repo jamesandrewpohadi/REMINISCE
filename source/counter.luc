@@ -1,0 +1,12 @@
+module counter (
+    input clk,  // clock
+    input rst,  // reset
+    output counter[8]
+  ) {
+  dff state[25](.clk(clk), .rst(rst));
+
+  always {
+   counter[7:0] = state.q[24:18];
+    state.d = state.q+1;
+  }
+}

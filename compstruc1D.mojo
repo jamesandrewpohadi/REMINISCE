@@ -15,6 +15,7 @@
     <src>board.luc</src>
     <src>emulator.luc</src>
     <src>boole.luc</src>
+    <src>counter.luc</src>
     <src>mux_2.luc</src>
     <src>rom.luc</src>
     <ucf lib="true">io_shield.ucf</ucf>

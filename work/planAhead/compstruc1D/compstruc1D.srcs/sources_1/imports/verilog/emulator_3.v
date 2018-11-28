@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module emulator_2 (
+module emulator_3 (
     input clk,
     input rst,
     input [5:0] alufn,
@@ -28,7 +28,7 @@ module emulator_2 (
   reg [16-1:0] M_muxBoard_a;
   reg [16-1:0] M_muxBoard_b;
   reg [1-1:0] M_muxBoard_sel;
-  mux_2_3 muxBoard (
+  mux_2_4 muxBoard (
     .a(M_muxBoard_a),
     .b(M_muxBoard_b),
     .sel(M_muxBoard_sel),
@@ -42,7 +42,7 @@ module emulator_2 (
   reg [16-1:0] M_muxLevel_d;
   reg [16-1:0] M_muxLevel_e;
   reg [3-1:0] M_muxLevel_sel;
-  mux_5_4 muxLevel (
+  mux_5_5 muxLevel (
     .a(M_muxLevel_a),
     .b(M_muxLevel_b),
     .c(M_muxLevel_c),
@@ -56,7 +56,7 @@ module emulator_2 (
   reg [16-1:0] M_muxSequence_a;
   reg [16-1:0] M_muxSequence_b;
   reg [1-1:0] M_muxSequence_sel;
-  mux_2_3 muxSequence (
+  mux_2_4 muxSequence (
     .a(M_muxSequence_a),
     .b(M_muxSequence_b),
     .sel(M_muxSequence_sel),
@@ -70,7 +70,7 @@ module emulator_2 (
   reg [16-1:0] M_muxA_d;
   reg [16-1:0] M_muxA_e;
   reg [3-1:0] M_muxA_sel;
-  mux_5_4 muxA (
+  mux_5_5 muxA (
     .a(M_muxA_a),
     .b(M_muxA_b),
     .c(M_muxA_c),
@@ -84,7 +84,7 @@ module emulator_2 (
   reg [16-1:0] M_muxB_a;
   reg [16-1:0] M_muxB_b;
   reg [1-1:0] M_muxB_sel;
-  mux_2_3 muxB (
+  mux_2_4 muxB (
     .a(M_muxB_a),
     .b(M_muxB_b),
     .sel(M_muxB_sel),
@@ -93,7 +93,7 @@ module emulator_2 (
   
   wire [16-1:0] M_myRom_out;
   reg [6-1:0] M_myRom_address;
-  rom_8 myRom (
+  rom_9 myRom (
     .address(M_myRom_address),
     .out(M_myRom_out)
   );
@@ -105,7 +105,7 @@ module emulator_2 (
   reg [16-1:0] M_myalu_a;
   reg [16-1:0] M_myalu_b;
   reg [6-1:0] M_myalu_alufn;
-  alu_9 myalu (
+  alu_10 myalu (
     .a(M_myalu_a),
     .b(M_myalu_b),
     .alufn(M_myalu_alufn),
@@ -118,7 +118,7 @@ module emulator_2 (
   wire [16-1:0] M_board_out;
   reg [16-1:0] M_board_write;
   reg [16-1:0] M_board_value;
-  register_10 board (
+  register_11 board (
     .clk(clk),
     .rst(rst),
     .write(M_board_write),
@@ -128,7 +128,7 @@ module emulator_2 (
   wire [16-1:0] M_level_out;
   reg [16-1:0] M_level_write;
   reg [16-1:0] M_level_value;
-  register_10 level (
+  register_11 level (
     .clk(clk),
     .rst(rst),
     .write(M_level_write),
@@ -138,7 +138,7 @@ module emulator_2 (
   wire [16-1:0] M_sequence_out;
   reg [16-1:0] M_sequence_write;
   reg [16-1:0] M_sequence_value;
-  register_10 sequence (
+  register_11 sequence (
     .clk(clk),
     .rst(rst),
     .write(M_sequence_write),
