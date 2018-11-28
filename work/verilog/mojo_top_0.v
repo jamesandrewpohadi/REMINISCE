@@ -28,12 +28,13 @@ module mojo_top_0 (
   
   reg rst;
   
-  reg [0:0] M_myClk_d, M_myClk_q = 1'h0;
+  reg [37:0] M_counter_d, M_counter_q = 1'h0;
   
+  reg [27:0] M_counter2_d, M_counter2_q = 1'h0;
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
   reset_conditioner_1 reset_cond (
-    .clk(M_myClk_q),
+    .clk(M_counter_q[27+0-:1]),
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
@@ -51,7 +52,7 @@ module mojo_top_0 (
   reg [1-1:0] M_myGame_bsel;
   reg [3-1:0] M_myGame_asel;
   emulator_2 myGame (
-    .clk(M_myClk_q),
+    .clk(M_counter_q[27+0-:1]),
     .rst(rst),
     .alufn(M_myGame_alufn),
     .wb(M_myGame_wb),
@@ -67,44 +68,8 @@ module mojo_top_0 (
     .lvl(M_myGame_lvl),
     .eq(M_myGame_eq)
   );
-  localparam IDLE_state = 5'd0;
-  localparam CHECK_state = 5'd1;
-  localparam INCR_state = 5'd2;
-  localparam PRE_L_state = 5'd3;
-  localparam PRE_R_state = 5'd4;
-  localparam PRE_U_state = 5'd5;
-  localparam PRE_D_state = 5'd6;
-  localparam PRE_O_state = 5'd7;
-  localparam L_state = 5'd8;
-  localparam R_state = 5'd9;
-  localparam U_state = 5'd10;
-  localparam D_state = 5'd11;
-  localparam O_state = 5'd12;
-  localparam PRE_L1_state = 5'd13;
-  localparam L1_state = 5'd14;
-  localparam PRE_L2_state = 5'd15;
-  localparam L2_state = 5'd16;
-  localparam PRE_L3_state = 5'd17;
-  localparam L3_state = 5'd18;
-  localparam L1_DS1_state = 5'd19;
-  localparam L1_DS2_state = 5'd20;
-  localparam L1_DS3_state = 5'd21;
-  localparam L1_DS4_state = 5'd22;
-  localparam L1_DSW_state = 5'd23;
-  localparam L1_P1_state = 5'd24;
-  localparam L1_P2_state = 5'd25;
-  localparam L1_P3_state = 5'd26;
-  localparam L1_P4_state = 5'd27;
-  localparam L1_PW_state = 5'd28;
-  localparam DF_state = 5'd29;
-  
-  reg [4:0] M_state_d, M_state_q = IDLE_state;
-  
-  reg [27:0] M_counter_d, M_counter_q = 1'h0;
   
   always @* begin
-    M_state_d = M_state_q;
-    M_myClk_d = M_myClk_q;
     M_counter_d = M_counter_q;
     
     M_reset_cond_in = ~rst_n;
@@ -116,360 +81,30 @@ module mojo_top_0 (
     io_led = 24'h000000;
     io_seg = 8'hff;
     io_sel = 4'hf;
+    M_myGame_wb = io_dip[0+0+0-:1];
+    M_myGame_wl = io_dip[0+1+0-:1];
+    M_myGame_ws = io_dip[0+2+0-:1];
+    M_myGame_rstb = io_dip[0+3+0-:1];
+    M_myGame_rstl = io_dip[0+4+0-:1];
+    M_myGame_rsts = io_dip[0+5+0-:1];
+    M_myGame_bsel = io_dip[0+6+0-:1];
+    M_myGame_asel = io_dip[8+0+2-:3];
+    M_myGame_alufn = io_dip[16+0+5-:6];
+    io_led[0+0+7-:8] = M_counter_q[27+7-:8];
+    io_led[8+7-:8] = 8'hf0;
     M_counter_d = M_counter_q + 1'h1;
-    M_myClk_d[0+0-:1] = M_counter_q[27+0-:1];
-    M_myGame_wb = 1'h0;
-    M_myGame_wl = 1'h0;
-    M_myGame_ws = 1'h0;
-    M_myGame_rstb = 1'h0;
-    M_myGame_rstl = 1'h0;
-    M_myGame_rsts = 1'h0;
-    M_myGame_bsel = 1'h0;
-    M_myGame_asel = 3'h0;
-    M_myGame_alufn = 6'h00;
-    io_led[8+7-:8] = M_myGame_display[8+7-:8];
-    io_led[0+7-:8] = M_myGame_display[0+7-:8];
-    
-    case (M_state_q)
-      IDLE_state: begin
-        if (io_dip[16+7+0-:1]) begin
-          M_myGame_rstl = 3'h1;
-          M_myGame_wl = 1'h1;
-          M_state_d = PRE_L1_state;
-        end
-        if (io_dip[16+6+0-:1]) begin
-          M_myGame_rstl = 3'h2;
-          M_myGame_wl = 1'h1;
-          M_state_d = PRE_L2_state;
-        end
-        if (io_dip[16+5+0-:1]) begin
-          M_myGame_rstl = 3'h3;
-          M_myGame_wl = 1'h1;
-          M_state_d = PRE_L3_state;
-        end
-      end
-      PRE_U_state: begin
-        if (!io_button[0+0-:1]) begin
-          M_state_d = U_state;
-        end
-      end
-      U_state: begin
-        M_myGame_wb = 1'h1;
-        M_myGame_rstb = 1'h0;
-        M_myGame_asel = 3'h2;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h20;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
-          M_state_d = L1_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
-          M_state_d = L1_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
-          M_state_d = L1_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
-          M_state_d = L1_P4_state;
-        end
-      end
-      PRE_D_state: begin
-        if (!io_button[2+0-:1]) begin
-          M_state_d = U_state;
-        end
-      end
-      D_state: begin
-        M_myGame_wb = 1'h1;
-        M_myGame_rstb = 1'h0;
-        M_myGame_asel = 3'h2;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h21;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
-          M_state_d = L1_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
-          M_state_d = L1_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
-          M_state_d = L1_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
-          M_state_d = L1_P4_state;
-        end
-      end
-      PRE_L_state: begin
-        if (!io_button[3+0-:1]) begin
-          M_state_d = U_state;
-        end
-      end
-      L_state: begin
-        M_myGame_wb = 1'h1;
-        M_myGame_rstb = 1'h0;
-        M_myGame_asel = 3'h1;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h20;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
-          M_state_d = L1_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
-          M_state_d = L1_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
-          M_state_d = L1_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
-          M_state_d = L1_P4_state;
-        end
-      end
-      PRE_R_state: begin
-        if (!io_button[4+0-:1]) begin
-          M_state_d = U_state;
-        end
-      end
-      R_state: begin
-        M_myGame_wb = 1'h1;
-        M_myGame_rstb = 1'h0;
-        M_myGame_asel = 3'h1;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h20;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
-          M_state_d = L1_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
-          M_state_d = L1_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
-          M_state_d = L1_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
-          M_state_d = L1_P4_state;
-        end
-      end
-      CHECK_state: begin
-        if (!io_button[1+0-:1]) begin
-          M_myGame_asel = 3'h0;
-          M_myGame_bsel = 1'h0;
-          M_myGame_alufn = 6'h33;
-          if (M_myGame_eq[0+0-:1]) begin
-            M_state_d = INCR_state;
-          end else begin
-            M_state_d = DF_state;
-          end
-        end
-      end
-      INCR_state: begin
-        M_myGame_alufn = 6'h00;
-        M_myGame_asel = 3'h1;
-        M_myGame_bsel = 1'h1;
-        M_myGame_ws = 1'h1;
-        M_myGame_rsts = 1'h0;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
-          M_state_d = L1_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
-          M_state_d = L1_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
-          M_state_d = L1_P4_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h15) begin
-          M_state_d = L1_PW_state;
-        end
-      end
-      DF_state: begin
-        if (io_button[0+0-:1]) begin
-          M_state_d = IDLE_state;
-        end
-      end
-      PRE_L1_state: begin
-        io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
-        if (!io_dip[16+7+0-:1]) begin
-          M_counter_d = 1'h0;
-          M_state_d = L1_state;
-        end
-      end
-      L1_state: begin
-        io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DS1_state;
-        end
-      end
-      L1_DS1_state: begin
-        io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
-        io_led[8+7-:8] = M_myGame_display[8+7-:8];
-        io_led[0+7-:8] = M_myGame_display[0+7-:8];
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DS2_state;
-        end
-      end
-      L1_DS2_state: begin
-        io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DS3_state;
-        end
-        io_led[8+7-:8] = M_myGame_display[8+7-:8];
-        io_led[0+7-:8] = M_myGame_display[0+7-:8];
-      end
-      L1_DS3_state: begin
-        io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
-        io_led[8+7-:8] = M_myGame_display[8+7-:8];
-        io_led[0+7-:8] = M_myGame_display[0+7-:8];
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          io_led[0+7-:8] = M_myGame_eq[0+7-:8];
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DS4_state;
-        end
-      end
-      L1_DS4_state: begin
-        io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
-        io_led[8+7-:8] = M_myGame_display[8+7-:8];
-        io_led[0+7-:8] = M_myGame_display[0+7-:8];
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          io_led[0+7-:8] = M_myGame_eq[0+7-:8];
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DSW_state;
-        end
-      end
-      L1_DSW_state: begin
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_rsts = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_state_d = L1_P1_state;
-        end
-        io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
-        M_myGame_asel = 3'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 1'h0;
-        M_myGame_wb = 1'h1;
-        io_led[8+7-:8] = M_myGame_display[8+7-:8];
-        io_led[0+7-:8] = M_myGame_display[0+7-:8];
-      end
-      L1_P1_state: begin
-        if (io_button[1+0-:1]) begin
-          M_state_d = CHECK_state;
-        end
-        if (io_button[0+0-:1]) begin
-          M_state_d = PRE_U_state;
-        end
-        if (io_button[2+0-:1]) begin
-          M_state_d = PRE_D_state;
-        end
-        if (io_button[3+0-:1]) begin
-          M_state_d = PRE_L_state;
-        end
-        if (io_button[4+0-:1]) begin
-          M_state_d = PRE_R_state;
-        end
-      end
-      L1_P2_state: begin
-        if (io_button[1+0-:1]) begin
-          M_state_d = CHECK_state;
-        end
-        if (io_button[0+0-:1]) begin
-          M_state_d = PRE_U_state;
-        end
-        if (io_button[2+0-:1]) begin
-          M_state_d = PRE_D_state;
-        end
-        if (io_button[3+0-:1]) begin
-          M_state_d = PRE_L_state;
-        end
-        if (io_button[4+0-:1]) begin
-          M_state_d = PRE_R_state;
-        end
-      end
-      L1_P3_state: begin
-        if (io_button[1+0-:1]) begin
-          M_state_d = CHECK_state;
-        end
-        if (io_button[0+0-:1]) begin
-          M_state_d = PRE_U_state;
-        end
-        if (io_button[2+0-:1]) begin
-          M_state_d = PRE_D_state;
-        end
-        if (io_button[3+0-:1]) begin
-          M_state_d = PRE_L_state;
-        end
-        if (io_button[4+0-:1]) begin
-          M_state_d = PRE_R_state;
-        end
-      end
-      L1_P4_state: begin
-        if (io_button[1+0-:1]) begin
-          M_state_d = CHECK_state;
-        end
-        if (io_button[0+0-:1]) begin
-          M_state_d = PRE_U_state;
-        end
-        if (io_button[2+0-:1]) begin
-          M_state_d = PRE_D_state;
-        end
-        if (io_button[3+0-:1]) begin
-          M_state_d = PRE_L_state;
-        end
-        if (io_button[4+0-:1]) begin
-          M_state_d = PRE_R_state;
-        end
-      end
-      L1_PW_state: begin
-        if (io_button[1+0-:1]) begin
-          M_state_d = IDLE_state;
-        end
-      end
-    endcase
   end
+  
+  always @(posedge M_counter_q[27+0-:1]) begin
+    M_counter2_q <= M_counter2_d;
+  end
+  
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       M_counter_q <= 1'h0;
     end else begin
       M_counter_q <= M_counter_d;
-    end
-  end
-  
-  
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_myClk_q <= 1'h0;
-    end else begin
-      M_myClk_q <= M_myClk_d;
-    end
-  end
-  
-  
-  always @(posedge M_myClk_q) begin
-    if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
-    end else begin
-      M_state_q <= M_state_d;
     end
   end
   
