@@ -15,8 +15,8 @@
     <src>board.luc</src>
     <src>emulator.luc</src>
     <src>boole.luc</src>
-    <src>counter.luc</src>
     <src>mux_2.luc</src>
+    <src>counter.luc</src>
     <src>rom.luc</src>
     <ucf lib="true">io_shield.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
@@ -25,9 +25,9 @@
     <component>uart_rx.luc</component>
     <component>cclk_detector.luc</component>
     <component>reset_conditioner.luc</component>
-    <component>uart_tx.luc</component>
-    <component>avr_interface.luc</component>
     <component>pipeline.luc</component>
+    <component>avr_interface.luc</component>
+    <component>uart_tx.luc</component>
     <component>button_conditioner.luc</component>
   </files>
 </project>

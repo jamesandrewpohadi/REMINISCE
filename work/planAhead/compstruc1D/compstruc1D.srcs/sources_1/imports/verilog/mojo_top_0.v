@@ -28,18 +28,14 @@ module mojo_top_0 (
   
   reg rst;
   
+  reg [49:0] M_counter_d, M_counter_q = 1'h0;
+  
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
   reset_conditioner_1 reset_cond (
     .clk(clk),
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
-  );
-  wire [8-1:0] M_myCounter_counter;
-  counter_2 myCounter (
-    .clk(clk),
-    .rst(rst),
-    .counter(M_myCounter_counter)
   );
   wire [16-1:0] M_myGame_display;
   wire [4-1:0] M_myGame_sqc;
@@ -54,7 +50,7 @@ module mojo_top_0 (
   reg [1-1:0] M_myGame_rsts;
   reg [1-1:0] M_myGame_bsel;
   reg [3-1:0] M_myGame_asel;
-  emulator_3 myGame (
+  emulator_2 myGame (
     .clk(clk),
     .rst(rst),
     .alufn(M_myGame_alufn),
@@ -73,6 +69,8 @@ module mojo_top_0 (
   );
   
   always @* begin
+    M_counter_d = M_counter_q;
+    
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
     led = 8'h00;
@@ -91,6 +89,16 @@ module mojo_top_0 (
     M_myGame_bsel = io_dip[0+6+0-:1];
     M_myGame_asel = io_dip[8+0+2-:3];
     M_myGame_alufn = io_dip[16+0+5-:6];
-    io_led[0+0+7-:8] = M_myCounter_counter;
+    M_counter_d = M_counter_q + 1'h1;
+    io_led[8+0+7-:8] = M_counter_q[27+7-:8];
   end
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_counter_q <= 1'h0;
+    end else begin
+      M_counter_q <= M_counter_d;
+    end
+  end
+  
 endmodule

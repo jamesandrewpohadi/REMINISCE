@@ -21,14 +21,14 @@ module mojo_top (
   sig rst;                  // reset signal
   //dff state[38](#INIT(0),.clk(clk), .rst(rst)); // Define the counter
   //dff myClk[1](.clk(clk), .rst(rst));
-  //counter.q[25](.clk())
+  dff counter[50](.clk(clk), .rst(rst));
   .clk(clk) {
     // The reset conditioner is used to synchronize the reset signal to the FPGA
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     //dff counter2[28];
     reset_conditioner reset_cond;
     .rst(rst) {
-      counter myCounter;
+      //counter myCounter;
       emulator myGame; // define our device
       //fsm state(#INIT(IDLE)) = {IDLE, CHECK, INCR, PRE_L, PRE_R, PRE_U, PRE_D, PRE_O, L, R, U, D, O, PRE_L1, L1, PRE_L2, L2, PRE_L3, L3, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, DF};
     }
@@ -56,7 +56,8 @@ module mojo_top (
     myGame.asel = io_dip[1][2:0];
     myGame.alufn = io_dip[2][5:0];
     
-    io_led[0][7:0] = myCounter.counter;   
-    
+    //io_led[0][7:0] = myCounter.counter; 
+    counter.d = counter.q+1;  
+    io_led[1][7:0] = counter.q[34:27];
   }
 }
