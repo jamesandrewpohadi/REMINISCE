@@ -10,7 +10,7 @@ module register (
     case (write) {
       1:
         reg.d = value;
-        out = value;
+        out = reg.q;
       0:
         reg.d = reg.q;
         out = reg.q;

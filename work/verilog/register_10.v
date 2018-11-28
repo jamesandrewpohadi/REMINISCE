@@ -23,7 +23,7 @@ module register_10 (
     case (write)
       1'h1: begin
         M_reg_d = value;
-        out = value;
+        out = M_reg_q;
       end
       1'h0: begin
         M_reg_d = M_reg_q;

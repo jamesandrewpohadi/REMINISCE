@@ -28,12 +28,10 @@ module mojo_top_0 (
   
   reg rst;
   
-  reg [0:0] M_myClk_d, M_myClk_q = 1'h0;
-  
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
   reset_conditioner_1 reset_cond (
-    .clk(M_myClk_q),
+    .clk(clk),
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
@@ -51,7 +49,7 @@ module mojo_top_0 (
   reg [1-1:0] M_myGame_bsel;
   reg [3-1:0] M_myGame_asel;
   emulator_2 myGame (
-    .clk(M_myClk_q),
+    .clk(clk),
     .rst(rst),
     .alufn(M_myGame_alufn),
     .wb(M_myGame_wb),
@@ -104,7 +102,6 @@ module mojo_top_0 (
   
   always @* begin
     M_state_d = M_state_q;
-    M_myClk_d = M_myClk_q;
     M_counter_d = M_counter_q;
     
     M_reset_cond_in = ~rst_n;
@@ -117,7 +114,6 @@ module mojo_top_0 (
     io_seg = 8'hff;
     io_sel = 4'hf;
     M_counter_d = M_counter_q + 1'h1;
-    M_myClk_d[0+0-:1] = M_counter_q[27+0-:1];
     M_myGame_wb = 1'h0;
     M_myGame_wl = 1'h0;
     M_myGame_ws = 1'h0;
@@ -129,6 +125,7 @@ module mojo_top_0 (
     M_myGame_alufn = 6'h00;
     io_led[8+7-:8] = M_myGame_display[8+7-:8];
     io_led[0+7-:8] = M_myGame_display[0+7-:8];
+    io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
     
     case (M_state_q)
       IDLE_state: begin
@@ -282,12 +279,14 @@ module mojo_top_0 (
       end
       PRE_L1_state: begin
         io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
+        io_led[16+6+1-:2] = 2'h1;
         if (!io_dip[16+7+0-:1]) begin
           M_counter_d = 1'h0;
           M_state_d = L1_state;
         end
       end
       L1_state: begin
+        io_led[16+6+1-:2] = 2'h3;
         io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
         if (M_counter_q[27+0-:1] == 1'h1) begin
           M_myGame_alufn = 6'h00;
@@ -303,6 +302,12 @@ module mojo_top_0 (
         io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
         io_led[8+7-:8] = M_myGame_display[8+7-:8];
         io_led[0+7-:8] = M_myGame_display[0+7-:8];
+        M_myGame_asel = 3'h0;
+        M_myGame_bsel = 1'h0;
+        M_myGame_alufn = 6'h1a;
+        M_myGame_rstb = 1'h0;
+        M_myGame_wb = 1'h1;
+        M_myGame_ws = 1'h0;
         if (M_counter_q[27+0-:1] == 1'h1) begin
           M_myGame_alufn = 6'h00;
           M_myGame_asel = 3'h1;
@@ -315,6 +320,12 @@ module mojo_top_0 (
       end
       L1_DS2_state: begin
         io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
+        M_myGame_asel = 3'h0;
+        M_myGame_bsel = 1'h0;
+        M_myGame_alufn = 6'h1a;
+        M_myGame_rstb = 1'h0;
+        M_myGame_wb = 1'h1;
+        M_myGame_ws = 1'h0;
         if (M_counter_q[27+0-:1] == 1'h1) begin
           M_myGame_alufn = 6'h00;
           M_myGame_asel = 3'h1;
@@ -329,6 +340,12 @@ module mojo_top_0 (
       end
       L1_DS3_state: begin
         io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
+        M_myGame_asel = 3'h0;
+        M_myGame_bsel = 1'h0;
+        M_myGame_alufn = 6'h1a;
+        M_myGame_rstb = 1'h0;
+        M_myGame_wb = 1'h1;
+        M_myGame_ws = 1'h0;
         io_led[8+7-:8] = M_myGame_display[8+7-:8];
         io_led[0+7-:8] = M_myGame_display[0+7-:8];
         if (M_counter_q[27+0-:1] == 1'h1) begin
@@ -344,6 +361,11 @@ module mojo_top_0 (
       end
       L1_DS4_state: begin
         io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
+        M_myGame_asel = 3'h0;
+        M_myGame_alufn = 6'h1a;
+        M_myGame_rstb = 1'h0;
+        M_myGame_wb = 1'h1;
+        M_myGame_ws = 1'h0;
         io_led[8+7-:8] = M_myGame_display[8+7-:8];
         io_led[0+7-:8] = M_myGame_display[0+7-:8];
         if (M_counter_q[27+0-:1] == 1'h1) begin
@@ -359,6 +381,8 @@ module mojo_top_0 (
       end
       L1_DSW_state: begin
         if (M_counter_q[27+0-:1] == 1'h1) begin
+          M_myGame_rstb = 1'h1;
+          M_myGame_wb = 1'h1;
           M_myGame_rsts = 1'h1;
           M_myGame_ws = 1'h1;
           M_state_d = L1_P1_state;
@@ -366,12 +390,13 @@ module mojo_top_0 (
         io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 1'h0;
+        M_myGame_rstb = 1'h1;
         M_myGame_wb = 1'h1;
         io_led[8+7-:8] = M_myGame_display[8+7-:8];
         io_led[0+7-:8] = M_myGame_display[0+7-:8];
       end
       L1_P1_state: begin
+        io_led[16+6+1-:2] = 2'h1;
         if (io_button[1+0-:1]) begin
           M_state_d = CHECK_state;
         end
@@ -449,27 +474,18 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_counter_q <= 1'h0;
+      M_state_q <= 1'h0;
     end else begin
-      M_counter_q <= M_counter_d;
+      M_state_q <= M_state_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_myClk_q <= 1'h0;
+      M_counter_q <= 1'h0;
     end else begin
-      M_myClk_q <= M_myClk_d;
-    end
-  end
-  
-  
-  always @(posedge M_myClk_q) begin
-    if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
-    end else begin
-      M_state_q <= M_state_d;
+      M_counter_q <= M_counter_d;
     end
   end
   

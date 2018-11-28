@@ -66,8 +66,8 @@ WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/pl
 WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 115: Assignment to M_myalu_n ignored, since the identifier is never used
 
 Elaborating module <register_10>.
-WARNING:HDLCompiler:413 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 141: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 146: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 138: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 143: Result of 2-bit expression is truncated to fit in 1-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -82,16 +82,15 @@ WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved an
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit register for signal <M_myClk_q>.
-    Found 5-bit register for signal <M_state_q>.
     Found 28-bit register for signal <M_counter_q>.
+    Found 5-bit register for signal <M_state_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
     | States             | 23                                             |
     | Transitions        | 69                                             |
     | Inputs             | 15                                             |
-    | Outputs            | 6                                              |
-    | Clock              | M_myClk_q (rising_edge)                        |
+    | Outputs            | 9                                              |
+    | Clock              | clk (rising_edge)                              |
     | Reset              | M_reset_cond_out (positive)                    |
     | Reset type         | synchronous                                    |
     | Reset State        | 00000                                          |
@@ -99,17 +98,17 @@ WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_counter_q[27]_GND_1_o_add_0_OUT> created at line 119.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 105
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 105
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 105
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 105
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 105
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 105
+    Found 28-bit adder for signal <M_counter_q[27]_GND_1_o_add_0_OUT> created at line 116.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 103
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 103
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 103
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 103
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 103
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 103
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  29 D-type flip-flop(s).
-	inferred  44 Multiplexer(s).
+	inferred  28 D-type flip-flop(s).
+	inferred  39 Multiplexer(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -223,6 +222,7 @@ Synthesizing Unit <register_10>.
     Found 16-bit register for signal <M_reg_q>.
     Summary:
 	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
 Unit <register_10> synthesized.
 
 =========================================================================
@@ -237,21 +237,20 @@ Macro Statistics
  16-bit adder                                          : 1
  16-bit subtractor                                     : 1
  28-bit adder                                          : 1
-# Registers                                            : 6
- 1-bit register                                        : 1
+# Registers                                            : 5
  16-bit register                                       : 3
  28-bit register                                       : 1
  4-bit register                                        : 1
-# Multiplexers                                         : 73
- 1-bit 2-to-1 multiplexer                              : 36
+# Multiplexers                                         : 71
+ 1-bit 2-to-1 multiplexer                              : 30
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 16
- 16-bit 2-to-1 multiplexer                             : 3
+ 16-bit 2-to-1 multiplexer                             : 6
  16-bit 4-to-1 multiplexer                             : 4
  16-bit 7-to-1 multiplexer                             : 2
  28-bit 2-to-1 multiplexer                             : 4
  3-bit 2-to-1 multiplexer                              : 3
- 6-bit 2-to-1 multiplexer                              : 4
+ 6-bit 2-to-1 multiplexer                              : 5
 # Logic shifters                                       : 3
  16-bit shifter arithmetic right                       : 1
  16-bit shifter logical left                           : 1
@@ -295,18 +294,18 @@ Macro Statistics
  16-bit adder                                          : 1
  16-bit subtractor                                     : 1
  28-bit adder                                          : 1
-# Registers                                            : 81
- Flip-Flops                                            : 81
-# Multiplexers                                         : 73
- 1-bit 2-to-1 multiplexer                              : 36
+# Registers                                            : 80
+ Flip-Flops                                            : 80
+# Multiplexers                                         : 71
+ 1-bit 2-to-1 multiplexer                              : 30
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 16
- 16-bit 2-to-1 multiplexer                             : 3
+ 16-bit 2-to-1 multiplexer                             : 6
  16-bit 4-to-1 multiplexer                             : 4
  16-bit 7-to-1 multiplexer                             : 2
  28-bit 2-to-1 multiplexer                             : 4
  3-bit 2-to-1 multiplexer                              : 3
- 6-bit 2-to-1 multiplexer                              : 4
+ 6-bit 2-to-1 multiplexer                              : 5
 # Logic shifters                                       : 3
  16-bit shifter arithmetic right                       : 1
  16-bit shifter logical left                           : 1
@@ -378,9 +377,7 @@ WARNING:Xst:2677 - Node <myGame/level/M_reg_q_2> of sequential type is unconnect
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 7.
-FlipFlop M_state_q_FSM_FFd13 has been replicated 1 time(s)
-FlipFlop M_state_q_FSM_FFd6 has been replicated 3 time(s)
-FlipFlop M_state_q_FSM_FFd7 has been replicated 1 time(s)
+FlipFlop M_counter_q_27 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -392,8 +389,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 94
- Flip-Flops                                            : 94
+# Registers                                            : 89
+ Flip-Flops                                            : 89
 
 =========================================================================
 
@@ -417,8 +414,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 29    |
-M_myClk_q_0                        | BUFG                   | 65    |
+clk                                | BUFGP                  | 89    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -429,9 +425,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 114.568ns (Maximum Frequency: 8.728MHz)
-   Minimum input arrival time before clock: 114.381ns
-   Maximum output required time after clock: 118.191ns
-   Maximum combinational path delay: 118.004ns
+   Minimum period: 11.835ns (Maximum Frequency: 84.495MHz)
+   Minimum input arrival time before clock: 10.139ns
+   Maximum output required time after clock: 17.673ns
+   Maximum combinational path delay: 15.247ns
 
 =========================================================================
