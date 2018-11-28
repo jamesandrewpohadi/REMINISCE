@@ -6,7 +6,7 @@ module emulator (
     input wl,
     input ws,
     input rstb,
-    input rstl,
+    input rstl[3],
     input rsts,
     input bsel,
     input asel[3],

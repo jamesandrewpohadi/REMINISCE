@@ -30,14 +30,8 @@ module mojo_top_0 (
   
   reg [37:0] M_counter_d, M_counter_q = 1'h0;
   
-  reg [27:0] M_counter2_d, M_counter2_q = 1'h0;
-  wire [1-1:0] M_reset_cond_out;
-  reg [1-1:0] M_reset_cond_in;
-  reset_conditioner_1 reset_cond (
-    .clk(M_counter_q[27+0-:1]),
-    .in(M_reset_cond_in),
-    .out(M_reset_cond_out)
-  );
+  reg [19:0] M_counter2_d, M_counter2_q = 1'h0;
+  
   wire [16-1:0] M_myGame_display;
   wire [4-1:0] M_myGame_sqc;
   wire [2-1:0] M_myGame_lvl;
@@ -47,12 +41,12 @@ module mojo_top_0 (
   reg [1-1:0] M_myGame_wl;
   reg [1-1:0] M_myGame_ws;
   reg [1-1:0] M_myGame_rstb;
-  reg [1-1:0] M_myGame_rstl;
+  reg [3-1:0] M_myGame_rstl;
   reg [1-1:0] M_myGame_rsts;
   reg [1-1:0] M_myGame_bsel;
   reg [3-1:0] M_myGame_asel;
-  emulator_2 myGame (
-    .clk(M_counter_q[27+0-:1]),
+  emulator_1 myGame (
+    .clk(M_counter2_q[0+0-:1]),
     .rst(rst),
     .alufn(M_myGame_alufn),
     .wb(M_myGame_wb),
@@ -69,8 +63,17 @@ module mojo_top_0 (
     .eq(M_myGame_eq)
   );
   
+  wire [1-1:0] M_reset_cond_out;
+  reg [1-1:0] M_reset_cond_in;
+  reset_conditioner_2 reset_cond (
+    .clk(clk),
+    .in(M_reset_cond_in),
+    .out(M_reset_cond_out)
+  );
+  
   always @* begin
     M_counter_d = M_counter_q;
+    M_counter2_d = M_counter2_q;
     
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
@@ -81,30 +84,36 @@ module mojo_top_0 (
     io_led = 24'h000000;
     io_seg = 8'hff;
     io_sel = 4'hf;
+    M_counter_d = M_counter_q + 1'h1;
+    M_counter2_d = M_counter2_q + 1'h1;
     M_myGame_wb = io_dip[0+0+0-:1];
     M_myGame_wl = io_dip[0+1+0-:1];
     M_myGame_ws = io_dip[0+2+0-:1];
     M_myGame_rstb = io_dip[0+3+0-:1];
-    M_myGame_rstl = io_dip[0+4+0-:1];
-    M_myGame_rsts = io_dip[0+5+0-:1];
-    M_myGame_bsel = io_dip[0+6+0-:1];
+    M_myGame_rstl[0+1-:2] = io_dip[0+4+1-:2];
+    M_myGame_rsts = io_dip[0+6+0-:1];
+    M_myGame_bsel = io_dip[0+7+0-:1];
     M_myGame_asel = io_dip[8+0+2-:3];
     M_myGame_alufn = io_dip[16+0+5-:6];
-    io_led[0+0+7-:8] = M_counter_q[27+7-:8];
-    io_led[8+7-:8] = 8'hf0;
-    M_counter_d = M_counter_q + 1'h1;
+    io_led[8+7-:8] = M_myGame_display[8+7-:8];
+    io_led[0+7-:8] = M_myGame_display[0+7-:8];
+    io_led[16+7-:8] = {M_myGame_lvl[0+1-:2], M_myGame_sqc};
   end
-  
-  always @(posedge M_counter_q[27+0-:1]) begin
-    M_counter2_q <= M_counter2_d;
-  end
-  
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
       M_counter_q <= 1'h0;
     end else begin
       M_counter_q <= M_counter_d;
+    end
+  end
+  
+  
+  always @(posedge M_counter_q[25+0-:1]) begin
+    if (rst == 1'b1) begin
+      M_counter2_q <= 1'h0;
+    end else begin
+      M_counter2_q <= M_counter2_d;
     end
   end
   

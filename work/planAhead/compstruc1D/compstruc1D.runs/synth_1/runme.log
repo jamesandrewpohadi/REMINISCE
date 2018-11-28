@@ -25,10 +25,10 @@ Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAh
 Parsing module <mux_2_3>.
 Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" into library work
 Parsing module <alu_9>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
-Parsing module <reset_conditioner_1>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" into library work
-Parsing module <emulator_2>.
+Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/reset_conditioner_2.v" into library work
+Parsing module <reset_conditioner_2>.
+Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_1.v" into library work
+Parsing module <emulator_1>.
 Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
 Parsing module <mojo_top_0>.
 
@@ -38,9 +38,7 @@ Parsing module <mojo_top_0>.
 
 Elaborating module <mojo_top_0>.
 
-Elaborating module <reset_conditioner_1>.
-
-Elaborating module <emulator_2>.
+Elaborating module <emulator_1>.
 
 Elaborating module <mux_2_3>.
 
@@ -61,17 +59,15 @@ Elaborating module <cmp_14>.
 Elaborating module <boole_15>.
 
 Elaborating module <shift_16>.
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 113: Assignment to M_myalu_z ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 114: Assignment to M_myalu_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 115: Assignment to M_myalu_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_1.v" Line 113: Assignment to M_myalu_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_1.v" Line 114: Assignment to M_myalu_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_1.v" Line 115: Assignment to M_myalu_n ignored, since the identifier is never used
 
 Elaborating module <register_10>.
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 66: Assignment to M_myGame_display ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 67: Assignment to M_myGame_sqc ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 68: Assignment to M_myGame_lvl ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 69: Assignment to M_myGame_eq ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 98: Assignment to M_counter2_q ignored, since the identifier is never used
-WARNING:Xst:2972 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 54. All outputs of instance <myGame> of block <emulator_2> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
+WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 63: Assignment to M_myGame_eq ignored, since the identifier is never used
+
+Elaborating module <reset_conditioner_2>.
+WARNING:HDLCompiler:634 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 44: Net <M_myGame_rstl[2]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -80,7 +76,6 @@ WARNING:Xst:2972 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/
 Synthesizing Unit <mojo_top_0>.
     Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v".
 WARNING:Xst:647 - Input <io_button> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <io_dip<7:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <io_dip<15:11>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <io_dip<23:22>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -89,54 +84,59 @@ WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved an
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 54: Output port <display> of the instance <myGame> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 54: Output port <sqc> of the instance <myGame> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 54: Output port <lvl> of the instance <myGame> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 54: Output port <eq> of the instance <myGame> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" line 48: Output port <eq> of the instance <myGame> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <M_myGame_rstl<2>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 20-bit register for signal <M_counter2_q>.
     Found 38-bit register for signal <M_counter_q>.
-    Found 38-bit adder for signal <M_counter_d> created at line 95.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 72
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 72
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 72
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 72
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 72
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 72
+    Found 38-bit adder for signal <M_counter_d> created at line 87.
+    Found 20-bit adder for signal <M_counter2_d> created at line 88.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 74
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 74
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 74
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 74
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 74
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 74
     Summary:
-	inferred   1 Adder/Subtractor(s).
-	inferred  38 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  58 D-type flip-flop(s).
 	inferred   6 Tristate(s).
 Unit <mojo_top_0> synthesized.
 
-Synthesizing Unit <reset_conditioner_1>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/reset_conditioner_1.v".
-    Found 4-bit register for signal <M_stage_q>.
+Synthesizing Unit <emulator_1>.
+    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_1.v".
+INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_1.v" line 108: Output port <z> of the instance <myalu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_1.v" line 108: Output port <v> of the instance <myalu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_1.v" line 108: Output port <n> of the instance <myalu> is unconnected or connected to loadless signal.
     Summary:
-	inferred   4 D-type flip-flop(s).
-Unit <reset_conditioner_1> synthesized.
+	no macro.
+Unit <emulator_1> synthesized.
 
 Synthesizing Unit <mux_2_3>.
     Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_2_3.v".
     Summary:
-	no macro.
+	inferred   1 Multiplexer(s).
 Unit <mux_2_3> synthesized.
 
 Synthesizing Unit <mux_5_4>.
     Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_4.v".
+    Found 16-bit 7-to-1 multiplexer for signal <out> created at line 22.
     Summary:
-	no macro.
+	inferred   1 Multiplexer(s).
 Unit <mux_5_4> synthesized.
 
 Synthesizing Unit <rom_8>.
     Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v".
+    Found 64x16-bit Read Only RAM for signal <out>
     Summary:
-	no macro.
+	inferred   1 RAM(s).
 Unit <rom_8> synthesized.
 
 Synthesizing Unit <alu_9>.
     Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v".
 INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" line 27: Output port <led> of the instance <myAdd> is unconnected or connected to loadless signal.
+    Found 16-bit 4-to-1 multiplexer for signal <c> created at line 92.
     Summary:
-	no macro.
+	inferred   4 Multiplexer(s).
 Unit <alu_9> synthesized.
 
 Synthesizing Unit <add_13>.
@@ -201,37 +201,51 @@ Unit <shift_16> synthesized.
 
 Synthesizing Unit <register_10>.
     Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/register_10.v".
-    Found 1-bit register for signal <M_reg_q<15>>.
-    Found 1-bit register for signal <M_reg_q<14>>.
-    Found 1-bit register for signal <M_reg_q<13>>.
-    Found 1-bit register for signal <M_reg_q<12>>.
-    Found 1-bit register for signal <M_reg_q<11>>.
-    Found 1-bit register for signal <M_reg_q<10>>.
-    Found 1-bit register for signal <M_reg_q<9>>.
-    Found 1-bit register for signal <M_reg_q<8>>.
-    Found 1-bit register for signal <M_reg_q<7>>.
-    Found 1-bit register for signal <M_reg_q<6>>.
-    Found 1-bit register for signal <M_reg_q<5>>.
-    Found 1-bit register for signal <M_reg_q<4>>.
-    Found 1-bit register for signal <M_reg_q<3>>.
-    Found 1-bit register for signal <M_reg_q<2>>.
-    Found 1-bit register for signal <M_reg_q<1>>.
-    Found 1-bit register for signal <M_reg_q<0>>.
+    Found 16-bit register for signal <M_reg_q>.
     Summary:
 	inferred  16 D-type flip-flop(s).
 Unit <register_10> synthesized.
+
+Synthesizing Unit <reset_conditioner_2>.
+    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/reset_conditioner_2.v".
+    Found 4-bit register for signal <M_stage_q>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <reset_conditioner_2> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 1
+# RAMs                                                 : 1
+ 64x16-bit single-port Read Only RAM                   : 1
+# Multipliers                                          : 1
+ 16x16-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 4
+ 16-bit adder                                          : 1
+ 16-bit subtractor                                     : 1
+ 20-bit adder                                          : 1
  38-bit adder                                          : 1
-# Registers                                            : 2
+# Registers                                            : 6
+ 16-bit register                                       : 3
+ 20-bit register                                       : 1
  38-bit register                                       : 1
  4-bit register                                        : 1
+# Multiplexers                                         : 29
+ 1-bit 2-to-1 multiplexer                              : 3
+ 1-bit 3-to-1 multiplexer                              : 1
+ 1-bit 4-to-1 multiplexer                              : 16
+ 16-bit 2-to-1 multiplexer                             : 3
+ 16-bit 4-to-1 multiplexer                             : 4
+ 16-bit 7-to-1 multiplexer                             : 2
+# Logic shifters                                       : 3
+ 16-bit shifter arithmetic right                       : 1
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
 # Tristates                                            : 6
  1-bit tristate buffer                                 : 6
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
 
 =========================================================================
 
@@ -242,31 +256,119 @@ Macro Statistics
 
 Synthesizing (advanced) Unit <mojo_top_0>.
 The following registers are absorbed into counter <M_counter_q>: 1 register on signal <M_counter_q>.
+The following registers are absorbed into counter <M_counter2_q>: 1 register on signal <M_counter2_q>.
 Unit <mojo_top_0> synthesized (advanced).
+
+Synthesizing (advanced) Unit <rom_8>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_out> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 16-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <out>           |          |
+    -----------------------------------------------------------------------
+Unit <rom_8> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 1
+# RAMs                                                 : 1
+ 64x16-bit single-port distributed Read Only RAM       : 1
+# Multipliers                                          : 1
+ 16x16-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 2
+ 16-bit adder                                          : 1
+ 16-bit subtractor                                     : 1
+# Counters                                             : 2
+ 20-bit up counter                                     : 1
  38-bit up counter                                     : 1
-# Registers                                            : 4
- Flip-Flops                                            : 4
+# Registers                                            : 52
+ Flip-Flops                                            : 52
+# Multiplexers                                         : 29
+ 1-bit 2-to-1 multiplexer                              : 3
+ 1-bit 3-to-1 multiplexer                              : 1
+ 1-bit 4-to-1 multiplexer                              : 16
+ 16-bit 2-to-1 multiplexer                             : 3
+ 16-bit 4-to-1 multiplexer                             : 4
+ 16-bit 7-to-1 multiplexer                             : 2
+# Logic shifters                                       : 3
+ 16-bit shifter arithmetic right                       : 1
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:2677 - Node <M_counter_q_26> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter_q_27> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter_q_28> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter_q_29> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter_q_30> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter_q_31> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter_q_32> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter_q_33> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter_q_34> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <M_counter_q_35> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <M_counter_q_36> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <M_counter_q_37> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_1> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_2> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_3> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_4> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_5> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_6> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_7> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_8> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_9> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_10> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_11> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_12> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_13> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_14> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_15> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_16> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_17> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_18> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <M_counter2_q_19> of sequential type is unconnected in block <mojo_top_0>.
+
+Optimizing unit <register_10> ...
 
 Optimizing unit <mojo_top_0> ...
 
+Optimizing unit <emulator_1> ...
+
+Optimizing unit <alu_9> ...
+
+Optimizing unit <add_13> ...
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_15> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_14> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_13> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_12> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_11> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_10> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_9> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_8> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_7> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_6> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_5> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_4> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_3> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <myGame/level/M_reg_q_2> of sequential type is unconnected in block <mojo_top_0>.
+
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 0.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 6.
+FlipFlop myGame/level/M_reg_q_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop myGame/level/M_reg_q_0 has been replicated 1 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
 
@@ -278,8 +380,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 39
- Flip-Flops                                            : 39
+# Registers                                            : 67
+ Flip-Flops                                            : 67
 
 =========================================================================
 
@@ -300,12 +402,13 @@ Partition Implementation Status
 
 Clock Information:
 ------------------
------------------------------------+-----------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)       | Load  |
------------------------------------+-----------------------------+-------+
-clk                                | BUFGP                       | 35    |
-M_counter_q_27                     | NONE(reset_cond/M_stage_q_3)| 4     |
------------------------------------+-----------------------------+-------+
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 30    |
+M_counter_q_25                     | NONE(M_counter2_q_0)   | 1     |
+M_counter2_q_0                     | BUFG                   | 36    |
+-----------------------------------+------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -316,9 +419,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 2.723ns (Maximum Frequency: 367.208MHz)
-   Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 4.312ns
+   Minimum period: 12.274ns (Maximum Frequency: 81.473MHz)
+   Minimum input arrival time before clock: 12.593ns
+   Maximum output required time after clock: 4.906ns
    Maximum combinational path delay: No path found
 
 =========================================================================

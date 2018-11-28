@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module emulator_2 (
+module emulator_1 (
     input clk,
     input rst,
     input [5:0] alufn,
@@ -12,7 +12,7 @@ module emulator_2 (
     input wl,
     input ws,
     input rstb,
-    input rstl,
+    input [2:0] rstl,
     input rsts,
     input bsel,
     input [2:0] asel,
@@ -116,7 +116,7 @@ module emulator_2 (
   );
   
   wire [16-1:0] M_board_out;
-  reg [16-1:0] M_board_write;
+  reg [1-1:0] M_board_write;
   reg [16-1:0] M_board_value;
   register_10 board (
     .clk(clk),
@@ -126,7 +126,7 @@ module emulator_2 (
     .out(M_board_out)
   );
   wire [16-1:0] M_level_out;
-  reg [16-1:0] M_level_write;
+  reg [1-1:0] M_level_write;
   reg [16-1:0] M_level_value;
   register_10 level (
     .clk(clk),
@@ -136,7 +136,7 @@ module emulator_2 (
     .out(M_level_out)
   );
   wire [16-1:0] M_sequence_out;
-  reg [16-1:0] M_sequence_write;
+  reg [1-1:0] M_sequence_write;
   reg [16-1:0] M_sequence_value;
   register_10 sequence (
     .clk(clk),

@@ -7,7 +7,7 @@
 module register_10 (
     input clk,
     input rst,
-    input [15:0] write,
+    input [0:0] write,
     input [15:0] value,
     output reg [15:0] out
   );
@@ -23,14 +23,14 @@ module register_10 (
     case (write)
       1'h1: begin
         M_reg_d = value;
-        out = value;
+        out = M_reg_q;
       end
       1'h0: begin
         M_reg_d = M_reg_q;
         out = M_reg_q;
       end
       default: begin
-        out = 16'h0000;
+        out = 16'h0002;
       end
     endcase
   end
