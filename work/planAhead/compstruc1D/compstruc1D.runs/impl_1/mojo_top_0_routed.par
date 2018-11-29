@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-C30RN5A::  Thu Nov 29 09:33:16 2018
+DESKTOP-C30RN5A::  Thu Nov 29 11:11:35 2018
 
 par -intstyle pa -w -mt on mojo_top_0.ncd mojo_top_0_routed.ncd 
 
@@ -22,16 +22,16 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                    93 out of  11,440    1%
-    Number used as Flip Flops:                  93
+  Number of Slice Registers:                    92 out of  11,440    1%
+    Number used as Flip Flops:                  92
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
   Number of Slice LUTs:                        328 out of   5,720    5%
     Number used as logic:                      327 out of   5,720    5%
-      Number using O6 output only:             255
+      Number using O6 output only:             260
       Number using O5 output only:              26
-      Number using O5 and O6:                   46
+      Number using O5 and O6:                   41
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   1,440    0%
     Number used exclusively as route-thrus:      1
@@ -40,12 +40,12 @@ Slice Logic Utilization:
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   108 out of   1,430    7%
+  Number of occupied Slices:                   103 out of   1,430    7%
   Number of MUXCYs used:                        60 out of   2,860    2%
-  Number of LUT Flip Flop pairs used:          333
-    Number with an unused Flip Flop:           261 out of     333   78%
-    Number with an unused LUT:                   5 out of     333    1%
-    Number of fully used LUT-FF pairs:          67 out of     333   20%
+  Number of LUT Flip Flop pairs used:          332
+    Number with an unused Flip Flop:           264 out of     332   79%
+    Number with an unused LUT:                   4 out of     332    1%
+    Number of fully used LUT-FF pairs:          64 out of     332   19%
     Number of slice register sites lost
       to control set restrictions:               0 out of  11,440    0%
 
@@ -119,11 +119,11 @@ WARNING:Par:288 - The signal spi_mosi_IBUF has no load.  PAR will not attempt to
 Starting Multi-threaded Router
 
 
-Phase  1  : 1988 unrouted;      REAL time: 3 secs 
+Phase  1  : 1961 unrouted;      REAL time: 3 secs 
 
-Phase  2  : 1784 unrouted;      REAL time: 3 secs 
+Phase  2  : 1764 unrouted;      REAL time: 3 secs 
 
-Phase  3  : 1047 unrouted;      REAL time: 3 secs 
+Phase  3  : 1047 unrouted;      REAL time: 4 secs 
 
 Phase  4  : 1047 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 4 secs 
 
@@ -152,7 +152,7 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|           clk_BUFGP | BUFGMUX_X2Y11| No   |   35 |  0.118     |  1.510      |
+|           clk_BUFGP | BUFGMUX_X2Y11| No   |   32 |  0.056     |  1.447      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -172,8 +172,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH | SETUP       |     6.147ns|    13.853ns|       0|           0
-   50%                                      | HOLD        |     0.399ns|            |       0|           0
+  TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH | SETUP       |     6.752ns|    13.248ns|       0|           0
+   50%                                      | HOLD        |     0.414ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -189,7 +189,7 @@ WARNING:Par:283 - There are 27 loadless signals in this design. This design will
 Total REAL time to PAR completion: 5 secs 
 Total CPU time to PAR completion (all processors): 5 secs 
 
-Peak Memory Usage:  299 MB
+Peak Memory Usage:  289 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

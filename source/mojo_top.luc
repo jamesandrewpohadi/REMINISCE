@@ -75,19 +75,7 @@ module mojo_top (
           myGame.wl = 1;
           state.d = state.PRE_L3;//go to level 3
         }
-      state.PRE_U:
-        if (!io_button[0]) {
-          state.d = state.U;
-        }
-      state.U:
-        myGame.wb = 1; // write = true
-        myGame.rstb = 0; // reset=false
-        myGame.asel = 3b010; // a=4
-        myGame.bsel = 0; // b=board bsel == 0 
-        myGame.alufn = 6b100000; // shift left
-        //state.d = state.PRE_U;
-        
-        state.d = state.RETURN;
+      
         
         
       state.RETURN:
@@ -106,7 +94,7 @@ module mojo_top (
         }
         
         if (io_button[1]) {
-          state.d = state.CHECK_STATE;
+          state.d = state.CHECK;
         }
         //io_led[1] = myGame.display[15:8];
         //io_led[0] = myGame.display[7:0];
@@ -124,7 +112,7 @@ module mojo_top (
         //}
         
       state.CHECK_STATE:
-      io_led[1] = 8b0;
+      //io_led[1] = 8b0;      
         
         if (c{myGame.lvl,myGame.sqc} == 6b010001) {
           state.d = state.L1_P1;
@@ -138,6 +126,19 @@ module mojo_top (
         if (c{myGame.lvl,myGame.sqc} == 6b010100) {
           state.d = state.L1_P4;
         }
+      state.PRE_U:
+        if (!io_button[0]) {
+          state.d = state.U;
+        }
+      state.U:
+        myGame.wb = 1; // write = true
+        myGame.rstb = 0; // reset=false
+        myGame.asel = 3b010; // a=4
+        myGame.bsel = 0; // b=board bsel == 0 
+        myGame.alufn = 6b100000; // shift up (left +4)
+        //state.d = state.PRE_U;
+        
+        state.d = state.RETURN;
         
         
         
@@ -150,7 +151,7 @@ module mojo_top (
         myGame.rstb = 0; // reset=false
         myGame.asel = 3b010 ; // a=4
         myGame.bsel = 0; // b=board
-        myGame.alufn = 6b100001; // shift down (right +4)
+        myGame.alufn = 6b100001; // shift down (right + 4)
         state.d = state.RETURN;
         
       state.PRE_L:
@@ -162,7 +163,7 @@ module mojo_top (
         myGame.rstb = 0; // reset=false
         myGame.asel = 3b001; // a=1 
         myGame.bsel = 0; // b=board
-        myGame.alufn = 6b100000; // shl
+        myGame.alufn = 6b100000; // shift left (left +1)
         state.d = state.RETURN;
         
       state.PRE_R:
@@ -174,7 +175,7 @@ module mojo_top (
         myGame.rstb = 0; // reset=false
         myGame.asel = 3b001; // a=1
         myGame.bsel = 0; // b=board
-        myGame.alufn = 6b100000; // shl
+        myGame.alufn = 6b100001; // shift right (right +1)
         
         state.d = state.RETURN;
         
@@ -184,9 +185,11 @@ module mojo_top (
           myGame.asel = 3b0;
           myGame.bsel = 0;
           myGame.alufn = 6b110011;
+          myGame.rstb = 1; //Reset the board state
           if (myGame.eq[0]) {
             state.d = state.INCR;
           } else {
+          
             state.d = state.DF;
             
           }

@@ -147,19 +147,6 @@ module mojo_top_0 (
           M_state_d = PRE_L3_state;
         end
       end
-      PRE_U_state: begin
-        if (!io_button[0+0-:1]) begin
-          M_state_d = U_state;
-        end
-      end
-      U_state: begin
-        M_myGame_wb = 1'h1;
-        M_myGame_rstb = 1'h0;
-        M_myGame_asel = 3'h2;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h20;
-        M_state_d = RETURN_state;
-      end
       RETURN_state: begin
         if (io_button[0+0-:1]) begin
           M_state_d = PRE_U_state;
@@ -174,11 +161,10 @@ module mojo_top_0 (
           M_state_d = PRE_R_state;
         end
         if (io_button[1+0-:1]) begin
-          M_state_d = CHECK_STATE_state;
+          M_state_d = CHECK_state;
         end
       end
       CHECK_STATE_state: begin
-        io_led[8+7-:8] = 8'h00;
         if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
           M_state_d = L1_P1_state;
         end
@@ -191,6 +177,19 @@ module mojo_top_0 (
         if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
           M_state_d = L1_P4_state;
         end
+      end
+      PRE_U_state: begin
+        if (!io_button[0+0-:1]) begin
+          M_state_d = U_state;
+        end
+      end
+      U_state: begin
+        M_myGame_wb = 1'h1;
+        M_myGame_rstb = 1'h0;
+        M_myGame_asel = 3'h2;
+        M_myGame_bsel = 1'h0;
+        M_myGame_alufn = 6'h20;
+        M_state_d = RETURN_state;
       end
       PRE_D_state: begin
         if (!io_button[2+0-:1]) begin
@@ -228,7 +227,7 @@ module mojo_top_0 (
         M_myGame_rstb = 1'h0;
         M_myGame_asel = 3'h1;
         M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h20;
+        M_myGame_alufn = 6'h21;
         M_state_d = RETURN_state;
       end
       CHECK_state: begin
@@ -236,6 +235,7 @@ module mojo_top_0 (
           M_myGame_asel = 3'h0;
           M_myGame_bsel = 1'h0;
           M_myGame_alufn = 6'h33;
+          M_myGame_rstb = 1'h1;
           if (M_myGame_eq[0+0-:1]) begin
             M_state_d = INCR_state;
           end else begin
@@ -265,7 +265,7 @@ module mojo_top_0 (
       DF_state: begin
         io_led[8+7-:8] = 8'hff;
         if (io_button[0+0-:1]) begin
-          M_state_d = CHECK_STATE_state;
+          M_state_d = IDLE_state;
         end
       end
       PRE_L1_state: begin
@@ -465,18 +465,18 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
+      M_counter_q <= 1'h0;
     end else begin
-      M_state_q <= M_state_d;
+      M_counter_q <= M_counter_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_counter_q <= 1'h0;
+      M_state_q <= 1'h0;
     end else begin
-      M_counter_q <= M_counter_d;
+      M_state_q <= M_state_d;
     end
   end
   
