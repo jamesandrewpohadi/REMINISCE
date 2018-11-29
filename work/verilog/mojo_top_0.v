@@ -67,34 +67,36 @@ module mojo_top_0 (
   );
   localparam IDLE_state = 5'd0;
   localparam CHECK_state = 5'd1;
-  localparam INCR_state = 5'd2;
-  localparam PRE_L_state = 5'd3;
-  localparam PRE_R_state = 5'd4;
-  localparam PRE_U_state = 5'd5;
-  localparam PRE_D_state = 5'd6;
-  localparam PRE_O_state = 5'd7;
-  localparam L_state = 5'd8;
-  localparam R_state = 5'd9;
-  localparam U_state = 5'd10;
-  localparam D_state = 5'd11;
-  localparam O_state = 5'd12;
-  localparam PRE_L1_state = 5'd13;
-  localparam L1_state = 5'd14;
-  localparam PRE_L2_state = 5'd15;
-  localparam L2_state = 5'd16;
-  localparam PRE_L3_state = 5'd17;
-  localparam L3_state = 5'd18;
-  localparam L1_DS1_state = 5'd19;
-  localparam L1_DS2_state = 5'd20;
-  localparam L1_DS3_state = 5'd21;
-  localparam L1_DS4_state = 5'd22;
-  localparam L1_DSW_state = 5'd23;
-  localparam L1_P1_state = 5'd24;
-  localparam L1_P2_state = 5'd25;
-  localparam L1_P3_state = 5'd26;
-  localparam L1_P4_state = 5'd27;
-  localparam L1_PW_state = 5'd28;
-  localparam DF_state = 5'd29;
+  localparam CHECK_STATE_state = 5'd2;
+  localparam RETURN_state = 5'd3;
+  localparam INCR_state = 5'd4;
+  localparam PRE_L_state = 5'd5;
+  localparam PRE_R_state = 5'd6;
+  localparam PRE_U_state = 5'd7;
+  localparam PRE_D_state = 5'd8;
+  localparam PRE_O_state = 5'd9;
+  localparam L_state = 5'd10;
+  localparam R_state = 5'd11;
+  localparam U_state = 5'd12;
+  localparam D_state = 5'd13;
+  localparam O_state = 5'd14;
+  localparam PRE_L1_state = 5'd15;
+  localparam L1_state = 5'd16;
+  localparam PRE_L2_state = 5'd17;
+  localparam L2_state = 5'd18;
+  localparam PRE_L3_state = 5'd19;
+  localparam L3_state = 5'd20;
+  localparam L1_DS1_state = 5'd21;
+  localparam L1_DS2_state = 5'd22;
+  localparam L1_DS3_state = 5'd23;
+  localparam L1_DS4_state = 5'd24;
+  localparam L1_DSW_state = 5'd25;
+  localparam L1_P1_state = 5'd26;
+  localparam L1_P2_state = 5'd27;
+  localparam L1_P3_state = 5'd28;
+  localparam L1_P4_state = 5'd29;
+  localparam L1_PW_state = 5'd30;
+  localparam DF_state = 5'd31;
   
   reg [4:0] M_state_d, M_state_q = IDLE_state;
   
@@ -156,6 +158,27 @@ module mojo_top_0 (
         M_myGame_asel = 3'h2;
         M_myGame_bsel = 1'h0;
         M_myGame_alufn = 6'h20;
+        M_state_d = RETURN_state;
+      end
+      RETURN_state: begin
+        if (io_button[0+0-:1]) begin
+          M_state_d = PRE_U_state;
+        end
+        if (io_button[2+0-:1]) begin
+          M_state_d = PRE_D_state;
+        end
+        if (io_button[3+0-:1]) begin
+          M_state_d = PRE_L_state;
+        end
+        if (io_button[4+0-:1]) begin
+          M_state_d = PRE_R_state;
+        end
+        if (io_button[1+0-:1]) begin
+          M_state_d = CHECK_STATE_state;
+        end
+      end
+      CHECK_STATE_state: begin
+        io_led[8+7-:8] = 8'h00;
         if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
           M_state_d = L1_P1_state;
         end
@@ -171,7 +194,7 @@ module mojo_top_0 (
       end
       PRE_D_state: begin
         if (!io_button[2+0-:1]) begin
-          M_state_d = U_state;
+          M_state_d = D_state;
         end
       end
       D_state: begin
@@ -180,22 +203,11 @@ module mojo_top_0 (
         M_myGame_asel = 3'h2;
         M_myGame_bsel = 1'h0;
         M_myGame_alufn = 6'h21;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
-          M_state_d = L1_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
-          M_state_d = L1_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
-          M_state_d = L1_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
-          M_state_d = L1_P4_state;
-        end
+        M_state_d = RETURN_state;
       end
       PRE_L_state: begin
         if (!io_button[3+0-:1]) begin
-          M_state_d = U_state;
+          M_state_d = L_state;
         end
       end
       L_state: begin
@@ -204,22 +216,11 @@ module mojo_top_0 (
         M_myGame_asel = 3'h1;
         M_myGame_bsel = 1'h0;
         M_myGame_alufn = 6'h20;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
-          M_state_d = L1_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
-          M_state_d = L1_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
-          M_state_d = L1_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
-          M_state_d = L1_P4_state;
-        end
+        M_state_d = RETURN_state;
       end
       PRE_R_state: begin
         if (!io_button[4+0-:1]) begin
-          M_state_d = U_state;
+          M_state_d = R_state;
         end
       end
       R_state: begin
@@ -228,18 +229,7 @@ module mojo_top_0 (
         M_myGame_asel = 3'h1;
         M_myGame_bsel = 1'h0;
         M_myGame_alufn = 6'h20;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
-          M_state_d = L1_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
-          M_state_d = L1_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
-          M_state_d = L1_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
-          M_state_d = L1_P4_state;
-        end
+        M_state_d = RETURN_state;
       end
       CHECK_state: begin
         if (!io_button[1+0-:1]) begin
@@ -273,8 +263,9 @@ module mojo_top_0 (
         end
       end
       DF_state: begin
+        io_led[8+7-:8] = 8'hff;
         if (io_button[0+0-:1]) begin
-          M_state_d = IDLE_state;
+          M_state_d = CHECK_STATE_state;
         end
       end
       PRE_L1_state: begin

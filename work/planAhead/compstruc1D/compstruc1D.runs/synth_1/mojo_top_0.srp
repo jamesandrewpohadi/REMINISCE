@@ -2,7 +2,7 @@ Release 14.7 - xst P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: mojo_top_0.prj
@@ -53,29 +53,29 @@ Netlist Hierarchy                  : rebuilt
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/shift_16.v" into library work
+Analyzing Verilog file "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/shift_16.v" into library work
 Parsing module <shift_16>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/cmp_14.v" into library work
+Analyzing Verilog file "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/cmp_14.v" into library work
 Parsing module <cmp_14>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/boole_15.v" into library work
+Analyzing Verilog file "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/boole_15.v" into library work
 Parsing module <boole_15>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/add_13.v" into library work
+Analyzing Verilog file "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/add_13.v" into library work
 Parsing module <add_13>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" into library work
+Analyzing Verilog file "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" into library work
 Parsing module <rom_8>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/register_10.v" into library work
+Analyzing Verilog file "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/register_10.v" into library work
 Parsing module <register_10>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_4.v" into library work
+Analyzing Verilog file "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_4.v" into library work
 Parsing module <mux_5_4>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_2_3.v" into library work
+Analyzing Verilog file "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_2_3.v" into library work
 Parsing module <mux_2_3>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" into library work
+Analyzing Verilog file "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" into library work
 Parsing module <alu_9>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
+Analyzing Verilog file "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
 Parsing module <reset_conditioner_1>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" into library work
+Analyzing Verilog file "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" into library work
 Parsing module <emulator_2>.
-Analyzing Verilog file "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
+Analyzing Verilog file "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
 Parsing module <mojo_top_0>.
 
 =========================================================================
@@ -93,34 +93,34 @@ Elaborating module <mux_2_3>.
 Elaborating module <mux_5_4>.
 
 Elaborating module <rom_8>.
-WARNING:HDLCompiler:295 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" Line 53: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" Line 86: case condition never applies
-WARNING:HDLCompiler:295 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" Line 89: case condition never applies
+WARNING:HDLCompiler:295 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" Line 53: case condition never applies
+WARNING:HDLCompiler:295 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" Line 86: case condition never applies
+WARNING:HDLCompiler:295 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v" Line 89: case condition never applies
 
 Elaborating module <alu_9>.
 
 Elaborating module <add_13>.
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" Line 31: Assignment to M_myAdd_led ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" Line 31: Assignment to M_myAdd_led ignored, since the identifier is never used
 
 Elaborating module <cmp_14>.
 
 Elaborating module <boole_15>.
 
 Elaborating module <shift_16>.
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 113: Assignment to M_myalu_z ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 114: Assignment to M_myalu_v ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 115: Assignment to M_myalu_n ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 113: Assignment to M_myalu_z ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 114: Assignment to M_myalu_v ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 115: Assignment to M_myalu_n ignored, since the identifier is never used
 
 Elaborating module <register_10>.
-WARNING:HDLCompiler:413 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 138: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 143: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 140: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 145: Result of 2-bit expression is truncated to fit in 1-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <mojo_top_0>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v".
+    Related source file is "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v".
 WARNING:Xst:647 - Input <io_dip<20:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -132,8 +132,8 @@ WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved
     Found 5-bit register for signal <M_state_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
-    | States             | 23                                             |
-    | Transitions        | 69                                             |
+    | States             | 28                                             |
+    | Transitions        | 79                                             |
     | Inputs             | 15                                             |
     | Outputs            | 9                                              |
     | Clock              | clk (rising_edge)                              |
@@ -144,67 +144,67 @@ WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_counter_q[27]_GND_1_o_add_0_OUT> created at line 116.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 103
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 103
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 103
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 103
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 103
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 103
+    Found 28-bit adder for signal <M_counter_q[27]_GND_1_o_add_0_OUT> created at line 118.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 105
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 105
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 105
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 105
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 105
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 105
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
-	inferred  39 Multiplexer(s).
+	inferred  55 Multiplexer(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
 
 Synthesizing Unit <reset_conditioner_1>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/reset_conditioner_1.v".
+    Related source file is "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/reset_conditioner_1.v".
     Found 4-bit register for signal <M_stage_q>.
     Summary:
 	inferred   4 D-type flip-flop(s).
 Unit <reset_conditioner_1> synthesized.
 
 Synthesizing Unit <emulator_2>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v".
-INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 108: Output port <z> of the instance <myalu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 108: Output port <v> of the instance <myalu> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 108: Output port <n> of the instance <myalu> is unconnected or connected to loadless signal.
+    Related source file is "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v".
+INFO:Xst:3210 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 108: Output port <z> of the instance <myalu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 108: Output port <v> of the instance <myalu> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" line 108: Output port <n> of the instance <myalu> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <emulator_2> synthesized.
 
 Synthesizing Unit <mux_2_3>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_2_3.v".
+    Related source file is "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_2_3.v".
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mux_2_3> synthesized.
 
 Synthesizing Unit <mux_5_4>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_4.v".
+    Related source file is "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mux_5_4.v".
     Found 16-bit 7-to-1 multiplexer for signal <out> created at line 22.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mux_5_4> synthesized.
 
 Synthesizing Unit <rom_8>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v".
+    Related source file is "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/rom_8.v".
     Found 64x16-bit Read Only RAM for signal <out>
     Summary:
 	inferred   1 RAM(s).
 Unit <rom_8> synthesized.
 
 Synthesizing Unit <alu_9>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v".
-INFO:Xst:3210 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" line 27: Output port <led> of the instance <myAdd> is unconnected or connected to loadless signal.
+    Related source file is "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v".
+INFO:Xst:3210 - "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/alu_9.v" line 27: Output port <led> of the instance <myAdd> is unconnected or connected to loadless signal.
     Found 16-bit 4-to-1 multiplexer for signal <c> created at line 92.
     Summary:
 	inferred   4 Multiplexer(s).
 Unit <alu_9> synthesized.
 
 Synthesizing Unit <add_13>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/add_13.v".
+    Related source file is "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/add_13.v".
 WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:653 - Signal <led<5:0>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Found 16-bit subtractor for signal <a[15]_b[15]_sub_2_OUT> created at line 36.
@@ -219,7 +219,7 @@ WARNING:Xst:653 - Signal <led<5:0>> is used but never assigned. This sourceless 
 Unit <add_13> synthesized.
 
 Synthesizing Unit <cmp_14>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/cmp_14.v".
+    Related source file is "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/cmp_14.v".
 WARNING:Xst:647 - Input <alufn<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <alufn<5:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit 4-to-1 multiplexer for signal <c> created at line 20.
@@ -228,7 +228,7 @@ WARNING:Xst:647 - Input <alufn<5:3>> is never used. This port will be preserved 
 Unit <cmp_14> synthesized.
 
 Synthesizing Unit <boole_15>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/boole_15.v".
+    Related source file is "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/boole_15.v".
 WARNING:Xst:647 - Input <alufn<5:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit 4-to-1 multiplexer for signal <c<0>> created at line 11.
     Found 1-bit 4-to-1 multiplexer for signal <c<1>> created at line 11.
@@ -251,7 +251,7 @@ WARNING:Xst:647 - Input <alufn<5:4>> is never used. This port will be preserved 
 Unit <boole_15> synthesized.
 
 Synthesizing Unit <shift_16>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/shift_16.v".
+    Related source file is "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/shift_16.v".
 WARNING:Xst:647 - Input <alufn<5:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <b<15:4>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 16-bit shifter logical left for signal <a[15]_b[3]_shift_left_0_OUT> created at line 21
@@ -264,7 +264,7 @@ WARNING:Xst:647 - Input <b<15:4>> is never used. This port will be preserved and
 Unit <shift_16> synthesized.
 
 Synthesizing Unit <register_10>.
-    Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/register_10.v".
+    Related source file is "C:/Users/Asus/Documents/GitHub/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/register_10.v".
     Found 16-bit register for signal <M_reg_q>.
     Summary:
 	inferred  16 D-type flip-flop(s).
@@ -287,8 +287,8 @@ Macro Statistics
  16-bit register                                       : 3
  28-bit register                                       : 1
  4-bit register                                        : 1
-# Multiplexers                                         : 71
- 1-bit 2-to-1 multiplexer                              : 30
+# Multiplexers                                         : 87
+ 1-bit 2-to-1 multiplexer                              : 46
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 16
  16-bit 2-to-1 multiplexer                             : 6
@@ -342,8 +342,8 @@ Macro Statistics
  28-bit adder                                          : 1
 # Registers                                            : 80
  Flip-Flops                                            : 80
-# Multiplexers                                         : 71
- 1-bit 2-to-1 multiplexer                              : 30
+# Multiplexers                                         : 87
+ 1-bit 2-to-1 multiplexer                              : 46
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 16
  16-bit 2-to-1 multiplexer                             : 6
@@ -366,34 +366,39 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <M_state_q[1:23]> with one-hot encoding.
-----------------------------------
+Optimizing FSM <FSM_0> on signal <M_state_q[1:28]> with one-hot encoding.
+---------------------------------------
  State | Encoding
-----------------------------------
- 00000 | 00000000000000000000001
- 01101 | 00000000000000000000010
- 01111 | 00000000000000000000100
- 10001 | 00000000000000000001000
- 11101 | 00000000000000000010000
- 00010 | 00000000000000000100000
- 11001 | 00000000000000001000000
- 11010 | 00000000000000010000000
- 11011 | 00000000000000100000000
- 11100 | 00000000000001000000000
- 01010 | 00000000000010000000000
- 11000 | 00000000000100000000000
- 01110 | 00000000001000000000000
- 10011 | 00000000010000000000000
- 10100 | 00000000100000000000000
- 10101 | 00000001000000000000000
- 10110 | 00000010000000000000000
- 10111 | 00000100000000000000000
- 00001 | 00001000000000000000000
- 00101 | 00010000000000000000000
- 00110 | 00100000000000000000000
- 00011 | 01000000000000000000000
- 00100 | 10000000000000000000000
-----------------------------------
+---------------------------------------
+ 00000 | 0000000000000000000000000001
+ 01111 | 0000000000000000000000000010
+ 10001 | 0000000000000000000000000100
+ 10011 | 0000000000000000000000001000
+ 11111 | 0000000000000000000000010000
+ 00100 | 0000000000000000000000100000
+ 11010 | 0000000000000000000001000000
+ 11011 | 0000000000000000000010000000
+ 11100 | 0000000000000000000100000000
+ 11101 | 0000000000000000001000000000
+ 00111 | 0000000000000000010000000000
+ 01000 | 0000000000000000100000000000
+ 00101 | 0000000000000001000000000000
+ 00110 | 0000000000000010000000000000
+ 00010 | 0000000000000100000000000000
+ 11110 | 0000000000001000000000000000
+ 01010 | 0000000000010000000000000000
+ 01011 | 0000000000100000000000000000
+ 01100 | 0000000001000000000000000000
+ 01101 | 0000000010000000000000000000
+ 00011 | 0000000100000000000000000000
+ 10000 | 0000001000000000000000000000
+ 10101 | 0000010000000000000000000000
+ 10110 | 0000100000000000000000000000
+ 10111 | 0001000000000000000000000000
+ 11000 | 0010000000000000000000000000
+ 11001 | 0100000000000000000000000000
+ 00001 | 1000000000000000000000000000
+---------------------------------------
 
 Optimizing unit <mojo_top_0> ...
 
@@ -419,11 +424,13 @@ WARNING:Xst:2677 - Node <myGame/level/M_reg_q_5> of sequential type is unconnect
 WARNING:Xst:2677 - Node <myGame/level/M_reg_q_4> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <myGame/level/M_reg_q_3> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <myGame/level/M_reg_q_2> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:1293 - FF/Latch <M_state_q_FSM_FFd24> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 7.
-FlipFlop M_counter_q_27 has been replicated 1 time(s)
+FlipFlop M_counter_q_27 has been replicated 2 time(s)
+FlipFlop M_state_q_FSM_FFd23 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -435,8 +442,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 89
- Flip-Flops                                            : 89
+# Registers                                            : 95
+ Flip-Flops                                            : 95
 
 =========================================================================
 
@@ -459,21 +466,21 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 502
-#      GND                         : 6
+# BELS                             : 510
+#      GND                         : 4
 #      INV                         : 2
 #      LUT1                        : 27
-#      LUT2                        : 42
-#      LUT3                        : 47
-#      LUT4                        : 27
-#      LUT5                        : 97
-#      LUT6                        : 126
+#      LUT2                        : 54
+#      LUT3                        : 27
+#      LUT4                        : 25
+#      LUT5                        : 75
+#      LUT6                        : 166
 #      MUXCY                       : 57
-#      MUXF7                       : 9
+#      MUXF7                       : 11
 #      VCC                         : 2
 #      XORCY                       : 60
-# FlipFlops/Latches                : 89
-#      FDR                         : 51
+# FlipFlops/Latches                : 95
+#      FDR                         : 57
 #      FDRE                        : 33
 #      FDS                         : 5
 # Clock Buffers                    : 1
@@ -492,16 +499,16 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              89  out of  11440     0%  
- Number of Slice LUTs:                  368  out of   5720     6%  
-    Number used as Logic:               368  out of   5720     6%  
+ Number of Slice Registers:              95  out of  11440     0%  
+ Number of Slice LUTs:                  376  out of   5720     6%  
+    Number used as Logic:               376  out of   5720     6%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    407
-   Number with an unused Flip Flop:     318  out of    407    78%  
-   Number with an unused LUT:            39  out of    407     9%  
-   Number of fully used LUT-FF pairs:    50  out of    407    12%  
-   Number of unique control sets:        11
+ Number of LUT Flip Flop pairs used:    418
+   Number with an unused Flip Flop:     323  out of    418    77%  
+   Number with an unused LUT:            42  out of    418    10%  
+   Number of fully used LUT-FF pairs:    53  out of    418    12%  
+   Number of unique control sets:        15
 
 IO Utilization: 
  Number of IOs:                          87
@@ -532,7 +539,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 89    |
+clk                                | BUFGP                  | 95    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -543,10 +550,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 11.835ns (Maximum Frequency: 84.495MHz)
-   Minimum input arrival time before clock: 10.139ns
-   Maximum output required time after clock: 17.673ns
-   Maximum combinational path delay: 15.247ns
+   Minimum period: 11.470ns (Maximum Frequency: 87.184MHz)
+   Minimum input arrival time before clock: 10.082ns
+   Maximum output required time after clock: 17.241ns
+   Maximum combinational path delay: 15.231ns
 
 Timing Details:
 ---------------
@@ -554,90 +561,120 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 11.835ns (frequency: 84.495MHz)
-  Total number of paths / destination ports: 77829 / 206
+  Clock period: 11.470ns (frequency: 87.184MHz)
+  Total number of paths / destination ports: 109310 / 218
 -------------------------------------------------------------------------
-Delay:               11.835ns (Levels of Logic = 10)
-  Source:            M_state_q_FSM_FFd8 (FF)
-  Destination:       M_state_q_FSM_FFd19 (FF)
+Delay:               11.470ns (Levels of Logic = 8)
+  Source:            M_state_q_FSM_FFd5 (FF)
+  Destination:       M_state_q_FSM_FFd23 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: M_state_q_FSM_FFd8 to M_state_q_FSM_FFd19
+  Data Path: M_state_q_FSM_FFd5 to M_state_q_FSM_FFd23
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             15   0.525   1.155  M_state_q_FSM_FFd8 (M_state_q_FSM_FFd8)
-     LUT2:I1->O            4   0.254   0.804  Mmux_M_myGame_bsel11_SW0 (N2)
-     LUT6:I5->O            9   0.254   0.976  Mmux_M_myGame_bsel11_2 (Mmux_M_myGame_bsel11_1)
-     begin scope: 'myGame:Mmux_M_myGame_bsel11_1'
-     LUT3:I2->O            9   0.254   0.975  M_muxA_out<8>1 (M_muxA_out<8>)
-     begin scope: 'myGame/myalu:a<8>'
-     begin scope: 'myGame/myalu/myAdd:a<8>'
-     DSP48A1:B8->M9        1   3.894   1.112  Mmult_n0029 (n0029<9>)
-     LUT6:I1->O            5   0.254   1.069  z9 (z8)
+     FDR:C->Q              8   0.525   1.374  M_state_q_FSM_FFd5 (M_state_q_FSM_FFd5)
+     LUT5:I0->O           13   0.254   1.206  Mmux_M_counter_d101111_2 (Mmux_M_counter_d1011111)
+     begin scope: 'myGame:Mmux_M_counter_d1011111'
+     LUT6:I4->O           19   0.250   1.260  M_muxA_out<15>1 (M_muxA_out<15>)
+     begin scope: 'myGame/myalu:a<15>'
+     begin scope: 'myGame/myalu/myAdd:a<15>'
+     DSP48A1:B15->M9       1   3.894   1.112  Mmult_n0029 (n0029<9>)
+     LUT6:I1->O            4   0.254   1.032  z9 (z8)
      end scope: 'myGame/myalu/myAdd:z8'
      end scope: 'myGame/myalu:z8'
      end scope: 'myGame:z8'
-     LUT6:I3->O            1   0.235   0.000  M_state_q_FSM_FFd18-In (M_state_q_FSM_FFd18-In)
-     FDR:D                     0.074          M_state_q_FSM_FFd18
+     LUT6:I3->O            2   0.235   0.000  M_state_q_FSM_FFd23-In (M_state_q_FSM_FFd23-In)
+     FDR:D                     0.074          M_state_q_FSM_FFd23
     ----------------------------------------
-    Total                     11.835ns (5.744ns logic, 6.091ns route)
-                                       (48.5% logic, 51.5% route)
+    Total                     11.470ns (5.486ns logic, 5.984ns route)
+                                       (47.8% logic, 52.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 461 / 90
+  Total number of paths / destination ports: 517 / 97
 -------------------------------------------------------------------------
-Offset:              10.139ns (Levels of Logic = 10)
+Offset:              10.082ns (Levels of Logic = 11)
   Source:            io_button<1> (PAD)
-  Destination:       myGame/board/M_reg_q_13 (FF)
+  Destination:       myGame/board/M_reg_q_4 (FF)
   Destination Clock: clk rising
 
-  Data Path: io_button<1> to myGame/board/M_reg_q_13
+  Data Path: io_button<1> to myGame/board/M_reg_q_4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            43   1.328   2.134  io_button_1_IBUF (io_button_1_IBUF)
-     LUT5:I0->O           61   0.254   1.906  M_myGame_alufn<1>1 (M_myGame_alufn<4>)
+     IBUF:I->O            31   1.328   1.933  io_button_1_IBUF (io_button_1_IBUF)
+     LUT5:I0->O           54   0.254   1.960  M_myGame_alufn<1>1 (M_myGame_alufn<4>)
      begin scope: 'myGame:alufn<4>'
      begin scope: 'myGame/myalu:alufn<4>'
-     LUT3:I2->O           11   0.254   1.039  Mmux_c6621 (Mmux_c64)
-     LUT6:I5->O            2   0.254   0.726  Mmux_c302111 (Mmux_c30211)
-     LUT6:I5->O            1   0.254   0.682  Mmux_c82 (Mmux_c81)
-     LUT6:I5->O            2   0.254   0.726  Mmux_c83 (Mmux_c82)
-     end scope: 'myGame/myalu:Mmux_c82'
-     begin scope: 'myGame/muxBoard:Mmux_c82'
-     LUT6:I5->O            1   0.254   0.000  Mmux_out51 (out<13>)
-     end scope: 'myGame/muxBoard:out<13>'
-     begin scope: 'myGame/board:value<13>'
-     FDRE:D                    0.074          M_reg_q_13
+     LUT6:I4->O            3   0.250   0.874  Mmux_c16311 (Mmux_c1631)
+     LUT6:I4->O            1   0.250   0.790  Mmux_c202 (Mmux_c201)
+     LUT6:I4->O            1   0.250   0.682  Mmux_c204 (Mmux_c203)
+     LUT5:I4->O            1   0.254   0.000  Mmux_c206_F (N108)
+     MUXF7:I0->O           3   0.163   0.766  Mmux_c206 (c<4>)
+     end scope: 'myGame/myalu:c<4>'
+     begin scope: 'myGame/muxBoard:a<4>'
+     LUT2:I1->O            1   0.254   0.000  Mmux_out111 (out<4>)
+     end scope: 'myGame/muxBoard:out<4>'
+     begin scope: 'myGame/board:value<4>'
+     FDRE:D                    0.074          M_reg_q_4
     ----------------------------------------
-    Total                     10.139ns (2.926ns logic, 7.213ns route)
-                                       (28.9% logic, 71.1% route)
+    Total                     10.082ns (3.077ns logic, 7.005ns route)
+                                       (30.5% logic, 69.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 17943 / 23
+  Total number of paths / destination ports: 24611 / 23
 -------------------------------------------------------------------------
-Offset:              17.673ns (Levels of Logic = 13)
-  Source:            M_state_q_FSM_FFd8 (FF)
+Offset:              17.241ns (Levels of Logic = 11)
+  Source:            M_state_q_FSM_FFd5 (FF)
   Destination:       io_led<0> (PAD)
   Source Clock:      clk rising
 
-  Data Path: M_state_q_FSM_FFd8 to io_led<0>
+  Data Path: M_state_q_FSM_FFd5 to io_led<0>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             15   0.525   1.155  M_state_q_FSM_FFd8 (M_state_q_FSM_FFd8)
-     LUT2:I1->O            4   0.254   0.804  Mmux_M_myGame_bsel11_SW0 (N2)
-     LUT6:I5->O            9   0.254   0.976  Mmux_M_myGame_bsel11_2 (Mmux_M_myGame_bsel11_1)
-     begin scope: 'myGame:Mmux_M_myGame_bsel11_1'
-     LUT3:I2->O            9   0.254   0.975  M_muxA_out<8>1 (M_muxA_out<8>)
-     begin scope: 'myGame/myalu:a<8>'
-     begin scope: 'myGame/myalu/myAdd:a<8>'
-     DSP48A1:B8->M9        1   3.894   1.112  Mmult_n0029 (n0029<9>)
-     LUT6:I1->O            5   0.254   1.117  z9 (z8)
+     FDR:C->Q              8   0.525   1.374  M_state_q_FSM_FFd5 (M_state_q_FSM_FFd5)
+     LUT5:I0->O           13   0.254   1.206  Mmux_M_counter_d101111_2 (Mmux_M_counter_d1011111)
+     begin scope: 'myGame:Mmux_M_counter_d1011111'
+     LUT6:I4->O           19   0.250   1.260  M_muxA_out<15>1 (M_muxA_out<15>)
+     begin scope: 'myGame/myalu:a<15>'
+     begin scope: 'myGame/myalu/myAdd:a<15>'
+     DSP48A1:B15->M9       1   3.894   1.112  Mmult_n0029 (n0029<9>)
+     LUT6:I1->O            4   0.254   1.032  z9 (z8)
+     LUT4:I1->O            1   0.235   0.790  z12 (M_myAdd_z)
+     end scope: 'myGame/myalu/myAdd:z'
+     LUT5:I3->O            1   0.250   0.958  alufn<5> (c<0>)
+     end scope: 'myGame/myalu:c<0>'
+     end scope: 'myGame:eq<0>'
+     LUT5:I1->O            1   0.254   0.681  Mmux_io_led<0>11 (io_led_0_OBUF)
+     OBUF:I->O                 2.912          io_led_0_OBUF (io_led<0>)
+    ----------------------------------------
+    Total                     17.241ns (8.828ns logic, 8.413ns route)
+                                       (51.2% logic, 48.8% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 90 / 8
+-------------------------------------------------------------------------
+Delay:               15.231ns (Levels of Logic = 12)
+  Source:            io_button<1> (PAD)
+  Destination:       io_led<0> (PAD)
+
+  Data Path: io_button<1> to io_led<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            31   1.328   1.933  io_button_1_IBUF (io_button_1_IBUF)
+     LUT5:I0->O           54   0.254   2.307  M_myGame_alufn<1>1 (M_myGame_alufn<4>)
+     begin scope: 'myGame:alufn<4>'
+     begin scope: 'myGame/myalu:alufn<4>'
+     begin scope: 'myGame/myalu/myAdd:M_myGame_alufn<1>'
+     LUT6:I0->O            1   0.254   0.682  z1 (z)
+     LUT6:I5->O            1   0.254   0.790  z2 (z1)
+     LUT6:I4->O            4   0.250   1.080  z8 (z7)
      LUT4:I0->O            1   0.254   0.790  z12 (M_myAdd_z)
      end scope: 'myGame/myalu/myAdd:z'
      LUT5:I3->O            1   0.250   0.958  alufn<5> (c<0>)
@@ -646,39 +683,8 @@ Offset:              17.673ns (Levels of Logic = 13)
      LUT5:I1->O            1   0.254   0.681  Mmux_io_led<0>11 (io_led_0_OBUF)
      OBUF:I->O                 2.912          io_led_0_OBUF (io_led<0>)
     ----------------------------------------
-    Total                     17.673ns (9.105ns logic, 8.568ns route)
-                                       (51.5% logic, 48.5% route)
-
-=========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 87 / 8
--------------------------------------------------------------------------
-Delay:               15.247ns (Levels of Logic = 12)
-  Source:            io_button<1> (PAD)
-  Destination:       io_led<0> (PAD)
-
-  Data Path: io_button<1> to io_led<0>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            43   1.328   2.134  io_button_1_IBUF (io_button_1_IBUF)
-     LUT5:I0->O           61   0.254   2.361  M_myGame_alufn<1>1 (M_myGame_alufn<4>)
-     begin scope: 'myGame:alufn<4>'
-     begin scope: 'myGame/myalu:alufn<4>'
-     begin scope: 'myGame/myalu/myAdd:M_myGame_alufn<1>'
-     LUT6:I0->O            1   0.254   0.682  z1 (z)
-     LUT6:I5->O            1   0.254   0.790  z2 (z1)
-     LUT6:I4->O            5   0.250   0.841  z8 (z7)
-     LUT4:I3->O            1   0.254   0.790  z12 (M_myAdd_z)
-     end scope: 'myGame/myalu/myAdd:z'
-     LUT5:I3->O            1   0.250   0.958  alufn<5> (c<0>)
-     end scope: 'myGame/myalu:c<0>'
-     end scope: 'myGame:eq<0>'
-     LUT5:I1->O            1   0.254   0.681  Mmux_io_led<0>11 (io_led_0_OBUF)
-     OBUF:I->O                 2.912          io_led_0_OBUF (io_led<0>)
-    ----------------------------------------
-    Total                     15.247ns (6.010ns logic, 9.237ns route)
-                                       (39.4% logic, 60.6% route)
+    Total                     15.231ns (6.010ns logic, 9.221ns route)
+                                       (39.5% logic, 60.5% route)
 
 =========================================================================
 
@@ -690,20 +696,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |   11.835|         |         |         |
+clk            |   11.470|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.26 secs
+Total CPU time to Xst completion: 6.37 secs
  
 --> 
 
-Total memory usage is 250336 kilobytes
+Total memory usage is 266844 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   38 (   0 filtered)
+Number of warnings :   39 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 

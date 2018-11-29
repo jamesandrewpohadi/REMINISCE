@@ -25,7 +25,7 @@ module mojo_top (
     reset_conditioner reset_cond;
     .rst(rst) {
       emulator myGame; // define our device
-      fsm state(#INIT(IDLE)) = {IDLE, CHECK, INCR, PRE_L, PRE_R, PRE_U, PRE_D, PRE_O, L, R, U, D, O, PRE_L1, L1, PRE_L2, L2, PRE_L3, L3, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, DF};
+      fsm state(#INIT(IDLE)) = {IDLE, CHECK, CHECK_STATE,RETURN, INCR, PRE_L, PRE_R, PRE_U, PRE_D, PRE_O, L, R, U, D, O, PRE_L1, L1, PRE_L2, L2, PRE_L3, L3, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, DF};
     }
   }
   
@@ -59,21 +59,21 @@ module mojo_top (
     io_led[2] = c{myGame.lvl, myGame.sqc};
     
     case (state.q) {
-      state.IDLE:
+      state.IDLE: //initial game state
         if (io_dip[2][7]) {
           myGame.rstl = 3b001;
           myGame.wl = 1;
-          state.d = state.PRE_L1;
+          state.d = state.PRE_L1; //go to level 1
         }
         if (io_dip[2][6]) {
           myGame.rstl = 3b010;
           myGame.wl = 1;
-          state.d = state.PRE_L2;
+          state.d = state.PRE_L2;//go to level 2
         }
         if (io_dip[2][5]) {
           myGame.rstl = 3b011;
           myGame.wl = 1;
-          state.d = state.PRE_L3;
+          state.d = state.PRE_L3;//go to level 3
         }
       state.PRE_U:
         if (!io_button[0]) {
@@ -83,8 +83,49 @@ module mojo_top (
         myGame.wb = 1; // write = true
         myGame.rstb = 0; // reset=false
         myGame.asel = 3b010; // a=4
-        myGame.bsel = 0; // b=board
-        myGame.alufn = 6b100000; // shl
+        myGame.bsel = 0; // b=board bsel == 0 
+        myGame.alufn = 6b100000; // shift left
+        //state.d = state.PRE_U;
+        
+        state.d = state.RETURN;
+        
+        
+      state.RETURN:
+        //io_led[1] = 8b11111111;
+        if (io_button[0]) {
+          state.d = state.PRE_U;
+        }
+        if (io_button[2]) {
+          state.d = state.PRE_D;
+        }
+        if (io_button[3]) {
+          state.d = state.PRE_L;
+        }
+        if (io_button[4]) {
+          state.d = state.PRE_R;
+        }
+        
+        if (io_button[1]) {
+          state.d = state.CHECK_STATE;
+        }
+        //io_led[1] = myGame.display[15:8];
+        //io_led[0] = myGame.display[7:0];
+        //if (c{myGame.lvl,myGame.sqc} == 6b010001) {
+          //state.d = state.PRE_L1;//L1_P1;
+        //}
+        //if (c{myGame.lvl,myGame.sqc} == 6b010010) {
+        //  state.d = state.L1_P2;
+        //}
+        //if (c{myGame.lvl,myGame.sqc} == 6b010011) {
+        //  state.d = state.L1_P3;
+        //}
+        //if (c{myGame.lvl,myGame.sqc} == 6b010100) {
+        //  state.d = state.L1_P4;
+        //}
+        
+      state.CHECK_STATE:
+      io_led[1] = 8b0;
+        
         if (c{myGame.lvl,myGame.sqc} == 6b010001) {
           state.d = state.L1_P1;
         }
@@ -97,72 +138,46 @@ module mojo_top (
         if (c{myGame.lvl,myGame.sqc} == 6b010100) {
           state.d = state.L1_P4;
         }
+        
+        
+        
       state.PRE_D:
         if (!io_button[2]) {
-          state.d = state.U;
+          state.d = state.D;
         }
       state.D:
         myGame.wb = 1; // write = true
         myGame.rstb = 0; // reset=false
-        myGame.asel = 3b010; // a=4
+        myGame.asel = 3b010 ; // a=4
         myGame.bsel = 0; // b=board
-        myGame.alufn = 6b100001; // shl
-        if (c{myGame.lvl,myGame.sqc} == 6b010001) {
-          state.d = state.L1_P1;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
-          state.d = state.L1_P2;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
-          state.d = state.L1_P3;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010100) {
-          state.d = state.L1_P4;
-        }
+        myGame.alufn = 6b100001; // shift down (right +4)
+        state.d = state.RETURN;
+        
       state.PRE_L:
         if (!io_button[3]) {
-          state.d = state.U;
+          state.d = state.L;
         }
       state.L:
         myGame.wb = 1; // write = true
         myGame.rstb = 0; // reset=false
-        myGame.asel = 3b001; // a=4
+        myGame.asel = 3b001; // a=1 
         myGame.bsel = 0; // b=board
         myGame.alufn = 6b100000; // shl
-        if (c{myGame.lvl,myGame.sqc} == 6b010001) {
-          state.d = state.L1_P1;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
-          state.d = state.L1_P2;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
-          state.d = state.L1_P3;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010100) {
-          state.d = state.L1_P4;
-        }
+        state.d = state.RETURN;
+        
       state.PRE_R:
         if (!io_button[4]) {
-          state.d = state.U;
+          state.d = state.R;
         }
       state.R:
         myGame.wb = 1; // write = true
         myGame.rstb = 0; // reset=false
-        myGame.asel = 3b001; // a=4
+        myGame.asel = 3b001; // a=1
         myGame.bsel = 0; // b=board
         myGame.alufn = 6b100000; // shl
-        if (c{myGame.lvl,myGame.sqc} == 6b010001) {
-          state.d = state.L1_P1;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
-          state.d = state.L1_P2;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
-          state.d = state.L1_P3;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010100) {
-          state.d = state.L1_P4;
-        }
+        
+        state.d = state.RETURN;
+        
       state.CHECK:
         if (!io_button[1]) {
           // check the board and sequence. If equal, go to INCR, else go to DF
@@ -173,6 +188,7 @@ module mojo_top (
             state.d = state.INCR;
           } else {
             state.d = state.DF;
+            
           }
         }
       state.INCR:
@@ -195,7 +211,11 @@ module mojo_top (
           state.d = state.L1_PW;
         }
       state.DF:
+      //Display False
+        //TODO: ADD LOSE PATTERN
+        io_led[1] = 8b11111111;
         if (io_button[0]) {
+        //state.d = state.CHECK_STATE;
           state.d = state.IDLE;
         }
       state.PRE_L1:
@@ -322,6 +342,7 @@ module mojo_top (
         io_led[1] = myGame.display[15:8];
         io_led[0] = myGame.display[7:0];
       state.L1_P1:
+      //Shift sequence 1
         io_led[2][7:6] = 2b1;
         if (io_button[1]) {
           state.d = state.CHECK;
