@@ -89,12 +89,13 @@ module mojo_top_0 (
   localparam L1_DS3_state = 5'd21;
   localparam L1_DS4_state = 5'd22;
   localparam L1_DSW_state = 5'd23;
-  localparam L1_P1_state = 5'd24;
-  localparam L1_P2_state = 5'd25;
-  localparam L1_P3_state = 5'd26;
-  localparam L1_P4_state = 5'd27;
-  localparam L1_PW_state = 5'd28;
-  localparam DF_state = 5'd29;
+  localparam L1_PP_state = 5'd24;
+  localparam L1_P1_state = 5'd25;
+  localparam L1_P2_state = 5'd26;
+  localparam L1_P3_state = 5'd27;
+  localparam L1_P4_state = 5'd28;
+  localparam L1_PW_state = 5'd29;
+  localparam DF_state = 5'd30;
   
   reg [4:0] M_state_d, M_state_q = IDLE_state;
   
@@ -146,32 +147,35 @@ module mojo_top_0 (
         end
       end
       PRE_U_state: begin
-        if (!io_button[0+0-:1]) begin
+        io_led[16+7+0-:1] = 1'h1;
+        if (!io_dip[16+4+0-:1]) begin
           M_state_d = U_state;
+          M_counter_d = 1'h0;
         end
       end
       U_state: begin
-        M_myGame_wb = 1'h1;
-        M_myGame_rstb = 1'h0;
+        io_led[16+6+0-:1] = 1'h1;
         M_myGame_asel = 3'h2;
         M_myGame_bsel = 1'h0;
         M_myGame_alufn = 6'h20;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
+        M_myGame_wb = 1'h1;
+        M_myGame_rstb = 1'h0;
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h10) begin
           M_state_d = L1_P1_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
           M_state_d = L1_P2_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
           M_state_d = L1_P3_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
           M_state_d = L1_P4_state;
         end
       end
       PRE_D_state: begin
-        if (!io_button[2+0-:1]) begin
-          M_state_d = U_state;
+        if (!io_dip[16+3+0-:1]) begin
+          M_state_d = D_state;
         end
       end
       D_state: begin
@@ -179,23 +183,23 @@ module mojo_top_0 (
         M_myGame_rstb = 1'h0;
         M_myGame_asel = 3'h2;
         M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h21;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
+        M_myGame_alufn = 6'h20;
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h10) begin
           M_state_d = L1_P1_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
           M_state_d = L1_P2_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
           M_state_d = L1_P3_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
           M_state_d = L1_P4_state;
         end
       end
       PRE_L_state: begin
-        if (!io_button[3+0-:1]) begin
-          M_state_d = U_state;
+        if (!io_dip[16+2+0-:1]) begin
+          M_state_d = L_state;
         end
       end
       L_state: begin
@@ -204,22 +208,22 @@ module mojo_top_0 (
         M_myGame_asel = 3'h1;
         M_myGame_bsel = 1'h0;
         M_myGame_alufn = 6'h20;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h10) begin
           M_state_d = L1_P1_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
           M_state_d = L1_P2_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
           M_state_d = L1_P3_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
           M_state_d = L1_P4_state;
         end
       end
       PRE_R_state: begin
-        if (!io_button[4+0-:1]) begin
-          M_state_d = U_state;
+        if (!io_dip[16+1+0-:1]) begin
+          M_state_d = R_state;
         end
       end
       R_state: begin
@@ -227,17 +231,17 @@ module mojo_top_0 (
         M_myGame_rstb = 1'h0;
         M_myGame_asel = 3'h1;
         M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h20;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
+        M_myGame_alufn = 6'h21;
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h10) begin
           M_state_d = L1_P1_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
           M_state_d = L1_P2_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
           M_state_d = L1_P3_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
           M_state_d = L1_P4_state;
         end
       end
@@ -307,7 +311,6 @@ module mojo_top_0 (
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 1'h0;
         M_myGame_wb = 1'h1;
-        M_myGame_ws = 1'h0;
         if (M_counter_q[27+0-:1] == 1'h1) begin
           M_myGame_alufn = 6'h00;
           M_myGame_asel = 3'h1;
@@ -396,76 +399,76 @@ module mojo_top_0 (
         io_led[0+7-:8] = M_myGame_display[0+7-:8];
       end
       L1_P1_state: begin
-        io_led[16+6+1-:2] = 2'h1;
-        if (io_button[1+0-:1]) begin
+        io_led[16+6+1-:2] = 2'h2;
+        if (io_dip[16+0+0-:1]) begin
           M_state_d = CHECK_state;
         end
-        if (io_button[0+0-:1]) begin
+        if (io_dip[16+4+0-:1]) begin
           M_state_d = PRE_U_state;
         end
-        if (io_button[2+0-:1]) begin
+        if (io_dip[16+3+0-:1]) begin
           M_state_d = PRE_D_state;
         end
-        if (io_button[3+0-:1]) begin
+        if (io_dip[16+2+0-:1]) begin
           M_state_d = PRE_L_state;
         end
-        if (io_button[4+0-:1]) begin
+        if (io_dip[16+1+0-:1]) begin
           M_state_d = PRE_R_state;
         end
       end
       L1_P2_state: begin
-        if (io_button[1+0-:1]) begin
+        if (io_dip[16+0+0-:1]) begin
           M_state_d = CHECK_state;
         end
-        if (io_button[0+0-:1]) begin
+        if (io_dip[16+4+0-:1]) begin
           M_state_d = PRE_U_state;
         end
-        if (io_button[2+0-:1]) begin
+        if (io_dip[16+3+0-:1]) begin
           M_state_d = PRE_D_state;
         end
-        if (io_button[3+0-:1]) begin
+        if (io_dip[16+2+0-:1]) begin
           M_state_d = PRE_L_state;
         end
-        if (io_button[4+0-:1]) begin
+        if (io_dip[16+1+0-:1]) begin
           M_state_d = PRE_R_state;
         end
       end
       L1_P3_state: begin
-        if (io_button[1+0-:1]) begin
+        if (io_dip[16+0+0-:1]) begin
           M_state_d = CHECK_state;
         end
-        if (io_button[0+0-:1]) begin
+        if (io_dip[16+4+0-:1]) begin
           M_state_d = PRE_U_state;
         end
-        if (io_button[2+0-:1]) begin
+        if (io_dip[16+3+0-:1]) begin
           M_state_d = PRE_D_state;
         end
-        if (io_button[3+0-:1]) begin
+        if (io_dip[16+2+0-:1]) begin
           M_state_d = PRE_L_state;
         end
-        if (io_button[4+0-:1]) begin
+        if (io_dip[16+1+0-:1]) begin
           M_state_d = PRE_R_state;
         end
       end
       L1_P4_state: begin
-        if (io_button[1+0-:1]) begin
+        if (io_dip[16+0+0-:1]) begin
           M_state_d = CHECK_state;
         end
-        if (io_button[0+0-:1]) begin
+        if (io_dip[16+4+0-:1]) begin
           M_state_d = PRE_U_state;
         end
-        if (io_button[2+0-:1]) begin
+        if (io_dip[16+3+0-:1]) begin
           M_state_d = PRE_D_state;
         end
-        if (io_button[3+0-:1]) begin
+        if (io_dip[16+2+0-:1]) begin
           M_state_d = PRE_L_state;
         end
-        if (io_button[4+0-:1]) begin
+        if (io_dip[16+1+0-:1]) begin
           M_state_d = PRE_R_state;
         end
       end
       L1_PW_state: begin
-        if (io_button[1+0-:1]) begin
+        if (io_dip[16+0+0-:1]) begin
           M_state_d = IDLE_state;
         end
       end

@@ -50,7 +50,7 @@ module emulator (
     eq = myalu.c;
     
     muxBoard.a = myalu.c;
-    muxBoard.b = 16b0000000000000011;
+    muxBoard.b = 16b000000000000001;
     muxBoard.sel = rstb;
     
     muxLevel.a = 16b0;
