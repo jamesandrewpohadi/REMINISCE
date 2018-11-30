@@ -25,7 +25,7 @@ module mojo_top (
     reset_conditioner reset_cond;
     .rst(rst) {
       emulator myGame; // define our device
-      fsm state(#INIT(IDLE)) = {IDLE, CHECK, INCR, PRE_L, PRE_R, PRE_U, PRE_D, L, R, U, D, PRE_L1, L1, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, DF};
+      fsm state(#INIT(IDLE)) = {IDLE, RETURN, CHECK, INCR, PRE_L, PRE_R, PRE_U, PRE_D, L, R, U, D, PRE_L1, L1, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, DF};
     }
   }
   
@@ -65,19 +65,7 @@ module mojo_top (
           myGame.wl = 1;
           state.d = state.PRE_L1;
         }
-      state.PRE_U:
-        io_led[2][7] = 1;
-        if (!io_dip[2][4]) {
-          state.d = state.U;
-          counter.d = 0;
-        }
-      state.U:
-        io_led[2][6] = 1;
-        myGame.asel = 3b010; // a=4
-        myGame.bsel = 0; // b=board
-        myGame.alufn = 6b100000; // shl
-        myGame.wb = 1; // write = true
-        myGame.rstb = 0;
+      state.RETURN:
         if (c{myGame.lvl,myGame.sqc} == 6b010000) {
           state.d = state.L1_P1;
         }
@@ -90,6 +78,19 @@ module mojo_top (
         if (c{myGame.lvl,myGame.sqc} == 6b010011) {
           state.d = state.L1_P4;
         }
+      state.PRE_U:
+        io_led[2][7] = 1;
+        if (!io_dip[2][4]) {
+          state.d = state.U;
+        }
+      state.U:
+        io_led[2][6] = 1;
+        myGame.asel = 3b010; // a=4
+        myGame.bsel = 0; // b=board
+        myGame.alufn = 6b100000; // shl
+        myGame.wb = 1; // write = true
+        myGame.rstb = 0;
+        state.d = state.RETURN;
       state.PRE_D:
         if (!io_dip[2][3]) {
           state.d = state.D;
@@ -99,19 +100,8 @@ module mojo_top (
         myGame.rstb = 0; // reset=false
         myGame.asel = 3b010; // a=4
         myGame.bsel = 0; // b=board
-        myGame.alufn = 6b100000; // shl
-        if (c{myGame.lvl,myGame.sqc} == 6b010000) {
-          state.d = state.L1_P1;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010001) {
-          state.d = state.L1_P2;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
-          state.d = state.L1_P3;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
-          state.d = state.L1_P4;
-        }
+        myGame.alufn = 6b100001; // shr
+        state.d = state.RETURN;
       state.PRE_L:
         if (!io_dip[2][2]) {
           state.d = state.L;
@@ -119,21 +109,10 @@ module mojo_top (
       state.L:
         myGame.wb = 1; // write = true
         myGame.rstb = 0; // reset=false
-        myGame.asel = 3b001; // a=4
+        myGame.asel = 3b001; // a=1
         myGame.bsel = 0; // b=board
         myGame.alufn = 6b100000; // shl
-        if (c{myGame.lvl,myGame.sqc} == 6b010000) {
-          state.d = state.L1_P1;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010001) {
-          state.d = state.L1_P2;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
-          state.d = state.L1_P3;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
-          state.d = state.L1_P4;
-        }
+        state.d = state.RETURN;
       state.PRE_R:
         if (!io_dip[2][1]) {
           state.d = state.R;
@@ -141,24 +120,15 @@ module mojo_top (
       state.R:
         myGame.wb = 1; // write = true
         myGame.rstb = 0; // reset=false
-        myGame.asel = 3b001; // a=4
+        myGame.asel = 3b001; // a=1
         myGame.bsel = 0; // b=board
-        myGame.alufn = 6b100001; // shl
-        if (c{myGame.lvl,myGame.sqc} == 6b010000) {
-          state.d = state.L1_P1;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010001) {
-          state.d = state.L1_P2;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
-          state.d = state.L1_P3;
-        }
-        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
-          state.d = state.L1_P4;
-        }
+        myGame.alufn = 6b100001; // shr
+        state.d = state.RETURN;
       state.CHECK:
+        io_led[2][7] = 1;
         if (!io_dip[2][0]) {
           // check the board and sequence. If equal, go to INCR, else go to DF
+          io_led[2][6] = 1;
           myGame.asel = 3b0;
           myGame.bsel = 0;
           myGame.alufn = 6b110011;

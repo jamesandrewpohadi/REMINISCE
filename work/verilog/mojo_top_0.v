@@ -66,29 +66,30 @@ module mojo_top_0 (
     .eq(M_myGame_eq)
   );
   localparam IDLE_state = 5'd0;
-  localparam CHECK_state = 5'd1;
-  localparam INCR_state = 5'd2;
-  localparam PRE_L_state = 5'd3;
-  localparam PRE_R_state = 5'd4;
-  localparam PRE_U_state = 5'd5;
-  localparam PRE_D_state = 5'd6;
-  localparam L_state = 5'd7;
-  localparam R_state = 5'd8;
-  localparam U_state = 5'd9;
-  localparam D_state = 5'd10;
-  localparam PRE_L1_state = 5'd11;
-  localparam L1_state = 5'd12;
-  localparam L1_DS1_state = 5'd13;
-  localparam L1_DS2_state = 5'd14;
-  localparam L1_DS3_state = 5'd15;
-  localparam L1_DS4_state = 5'd16;
-  localparam L1_DSW_state = 5'd17;
-  localparam L1_P1_state = 5'd18;
-  localparam L1_P2_state = 5'd19;
-  localparam L1_P3_state = 5'd20;
-  localparam L1_P4_state = 5'd21;
-  localparam L1_PW_state = 5'd22;
-  localparam DF_state = 5'd23;
+  localparam RETURN_state = 5'd1;
+  localparam CHECK_state = 5'd2;
+  localparam INCR_state = 5'd3;
+  localparam PRE_L_state = 5'd4;
+  localparam PRE_R_state = 5'd5;
+  localparam PRE_U_state = 5'd6;
+  localparam PRE_D_state = 5'd7;
+  localparam L_state = 5'd8;
+  localparam R_state = 5'd9;
+  localparam U_state = 5'd10;
+  localparam D_state = 5'd11;
+  localparam PRE_L1_state = 5'd12;
+  localparam L1_state = 5'd13;
+  localparam L1_DS1_state = 5'd14;
+  localparam L1_DS2_state = 5'd15;
+  localparam L1_DS3_state = 5'd16;
+  localparam L1_DS4_state = 5'd17;
+  localparam L1_DSW_state = 5'd18;
+  localparam L1_P1_state = 5'd19;
+  localparam L1_P2_state = 5'd20;
+  localparam L1_P3_state = 5'd21;
+  localparam L1_P4_state = 5'd22;
+  localparam L1_PW_state = 5'd23;
+  localparam DF_state = 5'd24;
   
   reg [4:0] M_state_d, M_state_q = IDLE_state;
   
@@ -129,20 +130,7 @@ module mojo_top_0 (
           M_state_d = PRE_L1_state;
         end
       end
-      PRE_U_state: begin
-        io_led[16+7+0-:1] = 1'h1;
-        if (!io_dip[16+4+0-:1]) begin
-          M_state_d = U_state;
-          M_counter_d = 1'h0;
-        end
-      end
-      U_state: begin
-        io_led[16+6+0-:1] = 1'h1;
-        M_myGame_asel = 3'h2;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h20;
-        M_myGame_wb = 1'h1;
-        M_myGame_rstb = 1'h0;
+      RETURN_state: begin
         if ({M_myGame_lvl, M_myGame_sqc} == 6'h10) begin
           M_state_d = L1_P1_state;
         end
@@ -155,6 +143,21 @@ module mojo_top_0 (
         if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
           M_state_d = L1_P4_state;
         end
+      end
+      PRE_U_state: begin
+        io_led[16+7+0-:1] = 1'h1;
+        if (!io_dip[16+4+0-:1]) begin
+          M_state_d = U_state;
+        end
+      end
+      U_state: begin
+        io_led[16+6+0-:1] = 1'h1;
+        M_myGame_asel = 3'h2;
+        M_myGame_bsel = 1'h0;
+        M_myGame_alufn = 6'h20;
+        M_myGame_wb = 1'h1;
+        M_myGame_rstb = 1'h0;
+        M_state_d = RETURN_state;
       end
       PRE_D_state: begin
         if (!io_dip[16+3+0-:1]) begin
@@ -166,19 +169,8 @@ module mojo_top_0 (
         M_myGame_rstb = 1'h0;
         M_myGame_asel = 3'h2;
         M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h20;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h10) begin
-          M_state_d = L1_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
-          M_state_d = L1_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
-          M_state_d = L1_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
-          M_state_d = L1_P4_state;
-        end
+        M_myGame_alufn = 6'h21;
+        M_state_d = RETURN_state;
       end
       PRE_L_state: begin
         if (!io_dip[16+2+0-:1]) begin
@@ -191,18 +183,7 @@ module mojo_top_0 (
         M_myGame_asel = 3'h1;
         M_myGame_bsel = 1'h0;
         M_myGame_alufn = 6'h20;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h10) begin
-          M_state_d = L1_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
-          M_state_d = L1_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
-          M_state_d = L1_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
-          M_state_d = L1_P4_state;
-        end
+        M_state_d = RETURN_state;
       end
       PRE_R_state: begin
         if (!io_dip[16+1+0-:1]) begin
@@ -215,21 +196,12 @@ module mojo_top_0 (
         M_myGame_asel = 3'h1;
         M_myGame_bsel = 1'h0;
         M_myGame_alufn = 6'h21;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h10) begin
-          M_state_d = L1_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
-          M_state_d = L1_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
-          M_state_d = L1_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
-          M_state_d = L1_P4_state;
-        end
+        M_state_d = RETURN_state;
       end
       CHECK_state: begin
+        io_led[16+7+0-:1] = 1'h1;
         if (!io_dip[16+0+0-:1]) begin
+          io_led[16+6+0-:1] = 1'h1;
           M_myGame_asel = 3'h0;
           M_myGame_bsel = 1'h0;
           M_myGame_alufn = 6'h33;
@@ -463,18 +435,18 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
+      M_counter_q <= 1'h0;
     end else begin
-      M_state_q <= M_state_d;
+      M_counter_q <= M_counter_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_counter_q <= 1'h0;
+      M_state_q <= 1'h0;
     end else begin
-      M_counter_q <= M_counter_d;
+      M_state_q <= M_state_d;
     end
   end
   
