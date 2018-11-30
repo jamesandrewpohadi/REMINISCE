@@ -25,7 +25,7 @@ module mojo_top (
     reset_conditioner reset_cond;
     .rst(rst) {
       emulator myGame; // define our device
-      fsm state(#INIT(IDLE)) = {IDLE, CHECK, INCR, PRE_L, PRE_R, PRE_U, PRE_D, PRE_O, L, R, U, D, O, PRE_L1, L1, PRE_L2, L2, PRE_L3, L3, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, DF};
+      fsm state(#INIT(IDLE)) = {IDLE, CHECK, INCR, PRE_L, PRE_R, PRE_U, PRE_D, L, R, U, D, PRE_L1, L1, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, DF};
     }
   }
   
@@ -64,16 +64,6 @@ module mojo_top (
           myGame.rstl = 3b001;
           myGame.wl = 1;
           state.d = state.PRE_L1;
-        }
-        if (io_dip[2][6]) {
-          myGame.rstl = 3b010;
-          myGame.wl = 1;
-          state.d = state.PRE_L2;
-        }
-        if (io_dip[2][5]) {
-          myGame.rstl = 3b011;
-          myGame.wl = 1;
-          state.d = state.PRE_L3;
         }
       state.PRE_U:
         io_led[2][7] = 1;

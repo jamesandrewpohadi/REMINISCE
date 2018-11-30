@@ -72,29 +72,23 @@ module mojo_top_0 (
   localparam PRE_R_state = 5'd4;
   localparam PRE_U_state = 5'd5;
   localparam PRE_D_state = 5'd6;
-  localparam PRE_O_state = 5'd7;
-  localparam L_state = 5'd8;
-  localparam R_state = 5'd9;
-  localparam U_state = 5'd10;
-  localparam D_state = 5'd11;
-  localparam O_state = 5'd12;
-  localparam PRE_L1_state = 5'd13;
-  localparam L1_state = 5'd14;
-  localparam PRE_L2_state = 5'd15;
-  localparam L2_state = 5'd16;
-  localparam PRE_L3_state = 5'd17;
-  localparam L3_state = 5'd18;
-  localparam L1_DS1_state = 5'd19;
-  localparam L1_DS2_state = 5'd20;
-  localparam L1_DS3_state = 5'd21;
-  localparam L1_DS4_state = 5'd22;
-  localparam L1_DSW_state = 5'd23;
-  localparam L1_P1_state = 5'd24;
-  localparam L1_P2_state = 5'd25;
-  localparam L1_P3_state = 5'd26;
-  localparam L1_P4_state = 5'd27;
-  localparam L1_PW_state = 5'd28;
-  localparam DF_state = 5'd29;
+  localparam L_state = 5'd7;
+  localparam R_state = 5'd8;
+  localparam U_state = 5'd9;
+  localparam D_state = 5'd10;
+  localparam PRE_L1_state = 5'd11;
+  localparam L1_state = 5'd12;
+  localparam L1_DS1_state = 5'd13;
+  localparam L1_DS2_state = 5'd14;
+  localparam L1_DS3_state = 5'd15;
+  localparam L1_DS4_state = 5'd16;
+  localparam L1_DSW_state = 5'd17;
+  localparam L1_P1_state = 5'd18;
+  localparam L1_P2_state = 5'd19;
+  localparam L1_P3_state = 5'd20;
+  localparam L1_P4_state = 5'd21;
+  localparam L1_PW_state = 5'd22;
+  localparam DF_state = 5'd23;
   
   reg [4:0] M_state_d, M_state_q = IDLE_state;
   
@@ -133,16 +127,6 @@ module mojo_top_0 (
           M_myGame_rstl = 3'h1;
           M_myGame_wl = 1'h1;
           M_state_d = PRE_L1_state;
-        end
-        if (io_dip[16+6+0-:1]) begin
-          M_myGame_rstl = 3'h2;
-          M_myGame_wl = 1'h1;
-          M_state_d = PRE_L2_state;
-        end
-        if (io_dip[16+5+0-:1]) begin
-          M_myGame_rstl = 3'h3;
-          M_myGame_wl = 1'h1;
-          M_state_d = PRE_L3_state;
         end
       end
       PRE_U_state: begin
@@ -479,18 +463,18 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_counter_q <= 1'h0;
+      M_state_q <= 1'h0;
     end else begin
-      M_counter_q <= M_counter_d;
+      M_state_q <= M_state_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
+      M_counter_q <= 1'h0;
     end else begin
-      M_state_q <= M_state_d;
+      M_counter_q <= M_counter_d;
     end
   end
   

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Nov 30 11:52:18 2018
+// Written by: Map P.20131013 on Fri Nov 30 19:39:45 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -58,12 +58,12 @@ COMP "io_dip(10)" LOCATE = SITE "P105" LEVEL 1;
 COMP "io_dip(11)" LOCATE = SITE "P104" LEVEL 1;
 COMP "io_dip(12)" LOCATE = SITE "P102" LEVEL 1;
 COMP "io_dip(13)" LOCATE = SITE "P101" LEVEL 1;
+COMP "io_dip(21)" LOCATE = SITE "P66" LEVEL 1;
 COMP "io_dip(14)" LOCATE = SITE "P100" LEVEL 1;
+COMP "io_dip(22)" LOCATE = SITE "P58" LEVEL 1;
 COMP "io_dip(15)" LOCATE = SITE "P99" LEVEL 1;
 COMP "avr_tx" LOCATE = SITE "P55" LEVEL 1;
 COMP "io_dip[20]" LOCATE = SITE "P67" LEVEL 1;
-COMP "io_dip[21]" LOCATE = SITE "P66" LEVEL 1;
-COMP "io_dip[22]" LOCATE = SITE "P58" LEVEL 1;
 COMP "io_dip[23]" LOCATE = SITE "P57" LEVEL 1;
 COMP "io_dip[16]" LOCATE = SITE "P79" LEVEL 1;
 COMP "io_dip[17]" LOCATE = SITE "P78" LEVEL 1;
@@ -94,19 +94,15 @@ TIMEGRP clk = BEL "M_counter_q_0" BEL "M_counter_q_1" BEL "M_counter_q_2" BEL
         "M_counter_q_18" BEL "M_counter_q_19" BEL "M_counter_q_20" BEL
         "M_counter_q_21" BEL "M_counter_q_22" BEL "M_counter_q_23" BEL
         "M_counter_q_24" BEL "M_counter_q_25" BEL "M_counter_q_26" BEL
-        "M_counter_q_27" BEL "M_state_q_FSM_FFd24" BEL "M_state_q_FSM_FFd25"
-        BEL "M_state_q_FSM_FFd19" BEL "M_state_q_FSM_FFd20" BEL
-        "M_state_q_FSM_FFd16" BEL "M_state_q_FSM_FFd18" BEL
-        "M_state_q_FSM_FFd17" BEL "M_state_q_FSM_FFd13" BEL
-        "M_state_q_FSM_FFd15" BEL "M_state_q_FSM_FFd14" BEL
-        "M_state_q_FSM_FFd12" BEL "M_state_q_FSM_FFd11" BEL
-        "M_state_q_FSM_FFd8" BEL "M_state_q_FSM_FFd10" BEL
-        "M_state_q_FSM_FFd9" BEL "M_state_q_FSM_FFd7" BEL "M_state_q_FSM_FFd6"
-        BEL "M_state_q_FSM_FFd3" BEL "M_state_q_FSM_FFd5" BEL
+        "M_counter_q_27" BEL "M_state_q_FSM_FFd3" BEL "M_state_q_FSM_FFd5" BEL
         "M_state_q_FSM_FFd4" BEL "M_state_q_FSM_FFd2" BEL "M_state_q_FSM_FFd1"
-        BEL "M_state_q_FSM_FFd20_1" BEL "M_state_q_FSM_FFd14_1" BEL
-        "M_counter_q_27_1" BEL "M_counter_q_27_2" BEL "M_state_q_FSM_FFd20_2"
-        BEL "myGame/board/M_reg_q_15" BEL "myGame/board/M_reg_q_14" BEL
+        BEL "M_state_q_FSM_FFd4_1" BEL "M_state_q_FSM_FFd1_1" BEL
+        "M_state_q_FSM_FFd3_1" BEL "M_state_q_FSM_FFd2_1" BEL
+        "M_state_q_FSM_FFd5_1" BEL "M_state_q_FSM_FFd4_2" BEL
+        "M_state_q_FSM_FFd1_2" BEL "M_state_q_FSM_FFd3_2" BEL
+        "M_state_q_FSM_FFd2_2" BEL "M_state_q_FSM_FFd4_3" BEL
+        "M_counter_q_27_1" BEL "M_counter_q_27_2" BEL
+        "myGame/board/M_reg_q_15" BEL "myGame/board/M_reg_q_14" BEL
         "myGame/board/M_reg_q_13" BEL "myGame/board/M_reg_q_12" BEL
         "myGame/board/M_reg_q_11" BEL "myGame/board/M_reg_q_10" BEL
         "myGame/board/M_reg_q_9" BEL "myGame/board/M_reg_q_8" BEL
@@ -122,9 +118,10 @@ TIMEGRP clk = BEL "M_counter_q_0" BEL "M_counter_q_1" BEL "M_counter_q_2" BEL
         "myGame/sequence/M_reg_q_5" BEL "myGame/sequence/M_reg_q_4" BEL
         "myGame/sequence/M_reg_q_3" BEL "myGame/sequence/M_reg_q_2" BEL
         "myGame/sequence/M_reg_q_1" BEL "myGame/sequence/M_reg_q_0" BEL
-        "myGame/level/M_reg_q_0" BEL "clk_BUFGP/BUFG" BEL
-        "reset_cond/M_stage_q_3" BEL "reset_cond/M_stage_q_2" BEL
-        "reset_cond/M_stage_q_1" BEL "reset_cond/M_stage_q_0";
+        "myGame/sequence/M_reg_q_1_1" BEL "myGame/level/M_reg_q_0" BEL
+        "clk_BUFGP/BUFG" BEL "reset_cond/M_stage_q_3" BEL
+        "reset_cond/M_stage_q_2" BEL "reset_cond/M_stage_q_1" BEL
+        "reset_cond/M_stage_q_0";
 TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 
