@@ -3,7 +3,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Reading design: mojo_top_0.prj
 
@@ -457,10 +457,10 @@ Primitive and Black Box Usage:
 #      LUT2                        : 2
 #      LUT3                        : 19
 #      LUT4                        : 21
-#      LUT5                        : 119
+#      LUT5                        : 118
 #      LUT6                        : 120
 #      MUXCY                       : 55
-#      MUXF7                       : 8
+#      MUXF7                       : 9
 #      VCC                         : 2
 #      XORCY                       : 59
 # FlipFlops/Latches                : 67
@@ -485,14 +485,14 @@ Selected Device : 6slx9tqg144-2
 
 Slice Logic Utilization: 
  Number of Slice Registers:              65  out of  11440     0%  
- Number of Slice LUTs:                  309  out of   5720     5%  
-    Number used as Logic:               309  out of   5720     5%  
+ Number of Slice LUTs:                  308  out of   5720     5%  
+    Number used as Logic:               308  out of   5720     5%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    348
-   Number with an unused Flip Flop:     283  out of    348    81%  
-   Number with an unused LUT:            39  out of    348    11%  
-   Number of fully used LUT-FF pairs:    26  out of    348     7%  
+ Number of LUT Flip Flop pairs used:    347
+   Number with an unused Flip Flop:     282  out of    347    81%  
+   Number with an unused LUT:            39  out of    347    11%  
+   Number of fully used LUT-FF pairs:    26  out of    347     7%  
    Number of unique control sets:         6
 
 IO Utilization: 
@@ -540,7 +540,7 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: 12.274ns (Maximum Frequency: 81.473MHz)
-   Minimum input arrival time before clock: 12.593ns
+   Minimum input arrival time before clock: 12.560ns
    Maximum output required time after clock: 4.906ns
    Maximum combinational path delay: No path found
 
@@ -598,7 +598,7 @@ Timing constraint: Default period analysis for Clock 'M_counter2_q_0'
   Clock period: 12.274ns (frequency: 81.473MHz)
   Total number of paths / destination ports: 30808 / 32
 -------------------------------------------------------------------------
-Delay:               12.274ns (Levels of Logic = 12)
+Delay:               12.274ns (Levels of Logic = 13)
   Source:            myGame/level/M_reg_q_0 (FF)
   Destination:       myGame/board/M_reg_q_0 (FF)
   Source Clock:      M_counter2_q_0 rising
@@ -615,7 +615,9 @@ Delay:               12.274ns (Levels of Logic = 12)
      LUT6:I0->O            5   0.254   0.841  Mram_out151 (M_myRom_out<15>)
      end scope: 'myGame_myRom:M_myRom_out<15>'
      begin scope: 'myGame:M_myRom_out<15>'
-     LUT4:I3->O           19   0.254   1.260  M_muxA_out<15>1 (M_muxA_out<15>)
+     begin scope: 'myGame/muxA:a<15>'
+     LUT4:I3->O           19   0.254   1.260  Mmux_out71 (out<15>)
+     end scope: 'myGame/muxA:out<15>'
      begin scope: 'myGame/myalu:a<15>'
      begin scope: 'myGame/myalu/myAdd:a<15>'
      DSP48A1:B15->M9       2   3.894   1.156  Mmult_n0029 (n0029<9>)
@@ -655,9 +657,9 @@ Offset:              3.526ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'M_counter2_q_0'
-  Total number of paths / destination ports: 16266 / 72
+  Total number of paths / destination ports: 16282 / 72
 -------------------------------------------------------------------------
-Offset:              12.593ns (Levels of Logic = 19)
+Offset:              12.560ns (Levels of Logic = 19)
   Source:            io_dip<7> (PAD)
   Destination:       myGame/board/M_reg_q_0 (FF)
   Destination Clock: M_counter2_q_0 rising
@@ -666,10 +668,10 @@ Offset:              12.593ns (Levels of Logic = 19)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            60   1.328   2.127  io_dip_7_IBUF (io_dip_7_IBUF)
+     IBUF:I->O            58   1.328   2.111  io_dip_7_IBUF (io_dip_7_IBUF)
      begin scope: 'myGame:bsel'
      begin scope: 'myGame/muxB:sel'
-     LUT3:I0->O           42   0.235   1.687  Mmux_out17 (out<0>)
+     LUT3:I0->O           41   0.235   1.671  Mmux_out17 (out<0>)
      end scope: 'myGame/muxB:out<0>'
      begin scope: 'myGame/myalu:b<0>'
      begin scope: 'myGame/myalu/myAdd:b<0>'
@@ -692,8 +694,8 @@ Offset:              12.593ns (Levels of Logic = 19)
      begin scope: 'myGame/board:value<0>'
      FDRE:D                    0.074          M_reg_q_0
     ----------------------------------------
-    Total                     12.593ns (3.879ns logic, 8.714ns route)
-                                       (30.8% logic, 69.2% route)
+    Total                     12.560ns (3.879ns logic, 8.682ns route)
+                                       (30.9% logic, 69.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'M_counter2_q_0'
@@ -750,12 +752,12 @@ clk            |    2.905|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.99 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.62 secs
  
 --> 
 
-Total memory usage is 249248 kilobytes
+Total memory usage is 248224 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   71 (   0 filtered)

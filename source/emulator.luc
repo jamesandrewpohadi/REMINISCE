@@ -34,7 +34,7 @@ module emulator (
   always {
     muxA.a = myRom.out;
     muxA.b = 16b1;
-    muxA.c = 16100;
+    muxA.c = 16b100;
     muxA.d = 16b0000011001100000;
     muxA.e = 16b0;
     muxA.sel = asel;

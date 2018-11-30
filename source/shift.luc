@@ -6,13 +6,13 @@ module shift (
   ) {
 
   always {
-    c = 8b1;
+    c = 16b0;
     case (alufn[1:0]) {
-      b00:
+      2b00:
         c = a << b[3:0]; // shift left
-      b01:
+      2b01:
         c = a >> b[3:0]; // shift right
-      b11:
+      2b11:
         c = $signed(a) >>> b[3:0]; // shift right with signed extension
     }
   }
