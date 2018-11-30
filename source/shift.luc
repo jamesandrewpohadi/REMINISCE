@@ -9,9 +9,9 @@ module shift (
     c = 16b0;
     case (alufn[1:0]) {
       2b00:
-        c = a << b[3:0]; // shift left
+        c = b << a[3:0]; // shift left
       2b01:
-        c = a >> b[3:0]; // shift right
+        c = b >> a[3:0]; // shift right
       2b11:
         c = $signed(a) >>> b[3:0]; // shift right with signed extension
     }

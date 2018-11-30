@@ -14,14 +14,14 @@ module shift_16 (
   
   
   always @* begin
-    c = 8'h01;
+    c = 16'h0000;
     
     case (alufn[0+1-:2])
       2'h0: begin
-        c = a << b[0+3-:4];
+        c = b << a[0+3-:4];
       end
       2'h1: begin
-        c = a >> b[0+3-:4];
+        c = b >> a[0+3-:4];
       end
       2'h3: begin
         c = $signed(a) >>> b[0+3-:4];
