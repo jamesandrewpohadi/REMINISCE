@@ -89,13 +89,12 @@ module mojo_top_0 (
   localparam L1_DS3_state = 5'd21;
   localparam L1_DS4_state = 5'd22;
   localparam L1_DSW_state = 5'd23;
-  localparam L1_PP_state = 5'd24;
-  localparam L1_P1_state = 5'd25;
-  localparam L1_P2_state = 5'd26;
-  localparam L1_P3_state = 5'd27;
-  localparam L1_P4_state = 5'd28;
-  localparam L1_PW_state = 5'd29;
-  localparam DF_state = 5'd30;
+  localparam L1_P1_state = 5'd24;
+  localparam L1_P2_state = 5'd25;
+  localparam L1_P3_state = 5'd26;
+  localparam L1_P4_state = 5'd27;
+  localparam L1_PW_state = 5'd28;
+  localparam DF_state = 5'd29;
   
   reg [4:0] M_state_d, M_state_q = IDLE_state;
   
@@ -246,7 +245,7 @@ module mojo_top_0 (
         end
       end
       CHECK_state: begin
-        if (!io_button[1+0-:1]) begin
+        if (!io_dip[16+0+0-:1]) begin
           M_myGame_asel = 3'h0;
           M_myGame_bsel = 1'h0;
           M_myGame_alufn = 6'h33;
@@ -263,21 +262,24 @@ module mojo_top_0 (
         M_myGame_bsel = 1'h1;
         M_myGame_ws = 1'h1;
         M_myGame_rsts = 1'h0;
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h10) begin
+          M_state_d = L1_P1_state;
+        end
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
           M_state_d = L1_P2_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
           M_state_d = L1_P3_state;
         end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
           M_state_d = L1_P4_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h15) begin
-          M_state_d = L1_PW_state;
         end
       end
       DF_state: begin
-        if (io_button[0+0-:1]) begin
+        M_myGame_wb = 1'h1;
+        M_myGame_asel = 3'h3;
+        M_myGame_alufn = 6'h1a;
+        if (io_dip[16+0+0-:1]) begin
           M_state_d = IDLE_state;
         end
       end
@@ -399,7 +401,7 @@ module mojo_top_0 (
         io_led[0+7-:8] = M_myGame_display[0+7-:8];
       end
       L1_P1_state: begin
-        io_led[16+6+1-:2] = 2'h2;
+        io_led[16+6+1-:2] = 2'h3;
         if (io_dip[16+0+0-:1]) begin
           M_state_d = CHECK_state;
         end
@@ -477,18 +479,18 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
+      M_counter_q <= 1'h0;
     end else begin
-      M_state_q <= M_state_d;
+      M_counter_q <= M_counter_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_counter_q <= 1'h0;
+      M_state_q <= 1'h0;
     end else begin
-      M_counter_q <= M_counter_d;
+      M_state_q <= M_state_d;
     end
   end
   

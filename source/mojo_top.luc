@@ -25,7 +25,7 @@ module mojo_top (
     reset_conditioner reset_cond;
     .rst(rst) {
       emulator myGame; // define our device
-      fsm state(#INIT(IDLE)) = {IDLE, CHECK, INCR, PRE_L, PRE_R, PRE_U, PRE_D, PRE_O, L, R, U, D, O, PRE_L1, L1, PRE_L2, L2, PRE_L3, L3, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_PP, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, DF};
+      fsm state(#INIT(IDLE)) = {IDLE, CHECK, INCR, PRE_L, PRE_R, PRE_U, PRE_D, PRE_O, L, R, U, D, O, PRE_L1, L1, PRE_L2, L2, PRE_L3, L3, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, DF};
     }
   }
   
@@ -167,7 +167,7 @@ module mojo_top (
           state.d = state.L1_P4;
         }
       state.CHECK:
-        if (!io_button[1]) {
+        if (!io_dip[2][0]) {
           // check the board and sequence. If equal, go to INCR, else go to DF
           myGame.asel = 3b0;
           myGame.bsel = 0;
@@ -185,20 +185,23 @@ module mojo_top (
         myGame.bsel = 1; // b=sequence
         myGame.ws = 1; // write = true
         myGame.rsts = 0; // reset = false
-        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
+        if (c{myGame.lvl,myGame.sqc} == 6b010000) {
+          state.d = state.L1_P1;
+        }
+        if (c{myGame.lvl,myGame.sqc} == 6b010001) {
           state.d = state.L1_P2;
         }
-        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
+        if (c{myGame.lvl,myGame.sqc} == 6b010010) {
           state.d = state.L1_P3;
         }
-        if (c{myGame.lvl,myGame.sqc} == 6b010100) {
+        if (c{myGame.lvl,myGame.sqc} == 6b010011) {
           state.d = state.L1_P4;
         }
-        if (c{myGame.lvl,myGame.sqc} == 6b010101) {
-          state.d = state.L1_PW;
-        }
       state.DF:
-        if (io_button[0]) {
+        myGame.wb = 1;
+        myGame.asel = 3b11;
+        myGame.alufn = 6b011010;
+        if (io_dip[2][0]) {
           state.d = state.IDLE;
         }
       state.PRE_L1:
@@ -324,7 +327,7 @@ module mojo_top (
         io_led[1] = myGame.display[15:8];
         io_led[0] = myGame.display[7:0];
       state.L1_P1:
-        io_led[2][7:6] = 2b10;
+        io_led[2][7:6] = 2b11;
         if (io_dip[2][0]) {
           state.d = state.CHECK;
         }

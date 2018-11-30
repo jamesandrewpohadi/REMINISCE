@@ -66,8 +66,8 @@ WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/pl
 WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/emulator_2.v" Line 115: Assignment to M_myalu_n ignored, since the identifier is never used
 
 Elaborating module <register_10>.
-WARNING:HDLCompiler:413 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 139: Result of 2-bit expression is truncated to fit in 1-bit target.
-WARNING:HDLCompiler:413 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 144: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 138: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 143: Result of 2-bit expression is truncated to fit in 1-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -75,7 +75,7 @@ WARNING:HDLCompiler:413 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/pla
 
 Synthesizing Unit <mojo_top_0>.
     Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v".
-WARNING:Xst:647 - Input <io_button<4:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <io_button> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <io_dip<15:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -83,13 +83,13 @@ WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved an
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 28-bit register for signal <M_counter_q>.
     Found 5-bit register for signal <M_state_q>.
+    Found 28-bit register for signal <M_counter_q>.
     Found finite state machine <FSM_0> for signal <M_state_q>.
     -----------------------------------------------------------------------
-    | States             | 26                                             |
-    | Transitions        | 84                                             |
-    | Inputs             | 18                                             |
+    | States             | 25                                             |
+    | Transitions        | 82                                             |
+    | Inputs             | 14                                             |
     | Outputs            | 9                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | M_reset_cond_out (positive)                    |
@@ -99,17 +99,17 @@ WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 28-bit adder for signal <M_counter_q[27]_GND_1_o_add_0_OUT> created at line 117.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 104
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 104
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 104
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 104
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 104
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 104
+    Found 28-bit adder for signal <M_counter_q[27]_GND_1_o_add_0_OUT> created at line 116.
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 103
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 103
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 103
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 103
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 103
+    Found 1-bit tristate buffer for signal <avr_rx> created at line 103
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  28 D-type flip-flop(s).
-	inferred  41 Multiplexer(s).
+	inferred  42 Multiplexer(s).
 	inferred   6 Tristate(s).
 	inferred   1 Finite State Machine(s).
 Unit <mojo_top_0> synthesized.
@@ -242,7 +242,7 @@ Macro Statistics
  16-bit register                                       : 3
  28-bit register                                       : 1
  4-bit register                                        : 1
-# Multiplexers                                         : 73
+# Multiplexers                                         : 74
  1-bit 2-to-1 multiplexer                              : 30
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 16
@@ -250,7 +250,7 @@ Macro Statistics
  16-bit 4-to-1 multiplexer                             : 4
  16-bit 7-to-1 multiplexer                             : 2
  28-bit 2-to-1 multiplexer                             : 6
- 3-bit 2-to-1 multiplexer                              : 3
+ 3-bit 2-to-1 multiplexer                              : 4
  6-bit 2-to-1 multiplexer                              : 5
 # Logic shifters                                       : 3
  16-bit shifter arithmetic right                       : 1
@@ -297,7 +297,7 @@ Macro Statistics
  28-bit adder                                          : 1
 # Registers                                            : 80
  Flip-Flops                                            : 80
-# Multiplexers                                         : 73
+# Multiplexers                                         : 74
  1-bit 2-to-1 multiplexer                              : 30
  1-bit 3-to-1 multiplexer                              : 1
  1-bit 4-to-1 multiplexer                              : 16
@@ -305,7 +305,7 @@ Macro Statistics
  16-bit 4-to-1 multiplexer                             : 4
  16-bit 7-to-1 multiplexer                             : 2
  28-bit 2-to-1 multiplexer                             : 6
- 3-bit 2-to-1 multiplexer                              : 3
+ 3-bit 2-to-1 multiplexer                              : 4
  6-bit 2-to-1 multiplexer                              : 5
 # Logic shifters                                       : 3
  16-bit shifter arithmetic right                       : 1
@@ -321,37 +321,36 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <M_state_q[1:26]> with one-hot encoding.
--------------------------------------
+Optimizing FSM <FSM_0> on signal <M_state_q[1:25]> with one-hot encoding.
+------------------------------------
  State | Encoding
--------------------------------------
- 00000 | 00000000000000000000000001
- 01101 | 00000000000000000000000010
- 01111 | 00000000000000000000000100
- 10001 | 00000000000000000000001000
- 11110 | 00000000000000000000010000
- 00010 | 00000000000000000000100000
- 11010 | 00000000000000000001000000
- 11011 | 00000000000000000010000000
- 11100 | 00000000000000000100000000
- 11101 | 00000000000000001000000000
- 01000 | 00000000000000010000000000
- 01001 | 00000000000000100000000000
- 01010 | 00000000000001000000000000
- 01011 | 00000000000010000000000000
- 11001 | 00000000000100000000000000
- 01110 | 00000000001000000000000000
- 10011 | 00000000010000000000000000
- 10100 | 00000000100000000000000000
- 10101 | 00000001000000000000000000
- 10110 | 00000010000000000000000000
- 10111 | 00000100000000000000000000
- 00001 | 00001000000000000000000000
- 00101 | 00010000000000000000000000
- 00110 | 00100000000000000000000000
- 00011 | 01000000000000000000000000
- 00100 | 10000000000000000000000000
--------------------------------------
+------------------------------------
+ 00000 | 0000000000000000000000001
+ 01101 | 0000000000000000000000010
+ 01111 | 0000000000000000000000100
+ 10001 | 0000000000000000000001000
+ 11101 | 0000000000000000000010000
+ 00010 | 0000000000000000000100000
+ 11000 | 0000000000000000001000000
+ 11001 | 0000000000000000010000000
+ 11010 | 0000000000000000100000000
+ 11011 | 0000000000000001000000000
+ 01000 | 0000000000000010000000000
+ 01001 | 0000000000000100000000000
+ 01010 | 0000000000001000000000000
+ 01011 | 0000000000010000000000000
+ 01110 | 0000000000100000000000000
+ 10011 | 0000000001000000000000000
+ 10100 | 0000000010000000000000000
+ 10101 | 0000000100000000000000000
+ 10110 | 0000001000000000000000000
+ 10111 | 0000010000000000000000000
+ 00001 | 0000100000000000000000000
+ 00101 | 0001000000000000000000000
+ 00110 | 0010000000000000000000000
+ 00011 | 0100000000000000000000000
+ 00100 | 1000000000000000000000000
+------------------------------------
 
 Optimizing unit <mojo_top_0> ...
 
@@ -377,13 +376,14 @@ WARNING:Xst:2677 - Node <myGame/level/M_reg_q_5> of sequential type is unconnect
 WARNING:Xst:2677 - Node <myGame/level/M_reg_q_4> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <myGame/level/M_reg_q_3> of sequential type is unconnected in block <mojo_top_0>.
 WARNING:Xst:2677 - Node <myGame/level/M_reg_q_2> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:1293 - FF/Latch <M_state_q_FSM_FFd21> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 7.
 FlipFlop M_counter_q_27 has been replicated 2 time(s)
-FlipFlop M_state_q_FSM_FFd15 has been replicated 1 time(s)
-FlipFlop M_state_q_FSM_FFd21 has been replicated 1 time(s)
+FlipFlop M_state_q_FSM_FFd14 has been replicated 1 time(s)
+FlipFlop M_state_q_FSM_FFd20 has been replicated 2 time(s)
 
 Final Macro Processing ...
 
@@ -395,8 +395,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 95
- Flip-Flops                                            : 95
+# Registers                                            : 94
+ Flip-Flops                                            : 94
 
 =========================================================================
 
@@ -420,7 +420,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 95    |
+clk                                | BUFGP                  | 94    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -431,9 +431,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 11.799ns (Maximum Frequency: 84.753MHz)
-   Minimum input arrival time before clock: 9.886ns
-   Maximum output required time after clock: 17.328ns
-   Maximum combinational path delay: 15.176ns
+   Minimum period: 11.715ns (Maximum Frequency: 85.361MHz)
+   Minimum input arrival time before clock: 10.133ns
+   Maximum output required time after clock: 17.244ns
+   Maximum combinational path delay: 15.093ns
 
 =========================================================================
