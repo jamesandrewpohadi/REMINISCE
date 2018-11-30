@@ -6,7 +6,7 @@ module shift (
   ) {
 
   always {
-    c = 8b1;
+    c = 16b0;
     case (alufn[1:0]) {
       b00:
         c = a << b[3:0]; // shift left

@@ -33,9 +33,9 @@ module emulator (
   
   always {
     muxA.a = myRom.out;
-    muxA.b = 16b1;
-    muxA.c = 16100;
-    muxA.d = 16b0000011001100000;
+    muxA.b = 16b1; // +1
+    muxA.c = 16b100; //+4 
+    muxA.d = 16b0000011001100000; //error
     muxA.e = 16b0;
     muxA.sel = asel;
     
@@ -50,7 +50,7 @@ module emulator (
     eq = myalu.c;
     
     muxBoard.a = myalu.c;
-    muxBoard.b = 16b0000000000000011;
+    muxBoard.b = 16b0000000000000001;
     muxBoard.sel = rstb;
     
     muxLevel.a = 16b0;

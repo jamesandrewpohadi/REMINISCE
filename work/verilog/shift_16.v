@@ -14,7 +14,7 @@ module shift_16 (
   
   
   always @* begin
-    c = 8'h01;
+    c = 16'h0000;
     
     case (alufn[0+1-:2])
       2'h0: begin
