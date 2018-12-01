@@ -1,0 +1,21 @@
+module mux_3 (
+    input a[16],
+    input b[16],
+    input c[16],
+    input sel[2],
+    output out[16]
+  ) {
+
+  always {
+    case (sel) {
+      2b00:
+        out = a;
+      2b01:
+        out = b;
+      2b10:
+        out = c;
+      default:
+        out = 16b0;
+    }
+  }
+}

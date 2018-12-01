@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module boole_15 (
+module boole_23 (
     input [5:0] alufn,
     input [15:0] a,
     input [15:0] b,

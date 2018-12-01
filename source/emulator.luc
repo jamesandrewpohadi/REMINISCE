@@ -5,8 +5,8 @@ module emulator (
     input wb,
     input wl,
     input ws,
-    input rstb,
-    input rstl,
+    input rstb[2],
+    input rstl[3],
     input rsts,
     input bsel,
     input asel[3],
@@ -16,7 +16,7 @@ module emulator (
     output eq[16]
     
   ) {
-  mux_2 muxBoard;
+  mux_3 muxBoard;
   mux_5 muxLevel;
   mux_2 muxSequence;
   mux_5 muxA;
@@ -34,7 +34,7 @@ module emulator (
   always {
     muxA.a = myRom.out;
     muxA.b = 16b1;
-    muxA.c = 16100;
+    muxA.c = 16b100;
     muxA.d = 16b0000011001100000;
     muxA.e = 16b0;
     muxA.sel = asel;
@@ -51,6 +51,7 @@ module emulator (
     
     muxBoard.a = myalu.c;
     muxBoard.b = 16b000000000000001;
+    muxBoard.c = 16b0;
     muxBoard.sel = rstb;
     
     muxLevel.a = 16b0;
