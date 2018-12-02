@@ -41,6 +41,22 @@ module mojo_top_0 (
   
   reg rst;
   
+  reg [0:0] M_tl1_d, M_tl1_q = 1'h0;
+  
+  reg [0:0] M_tl2_d, M_tl2_q = 1'h0;
+  
+  reg [0:0] M_tl3_d, M_tl3_q = 1'h0;
+  
+  reg [0:0] M_tu_d, M_tu_q = 1'h0;
+  
+  reg [0:0] M_td_d, M_td_q = 1'h0;
+  
+  reg [0:0] M_tl_d, M_tl_q = 1'h0;
+  
+  reg [0:0] M_tr_d, M_tr_q = 1'h0;
+  
+  reg [0:0] M_to_d, M_to_q = 1'h0;
+  
   wire [1-1:0] M_reset_cond_out;
   reg [1-1:0] M_reset_cond_in;
   reset_conditioner_1 reset_cond (
@@ -104,139 +120,15 @@ module mojo_top_0 (
     .in(M_l3d_in),
     .out(M_l3d_out)
   );
-  wire [4-1:0] M_myGame_sqc;
-  wire [2-1:0] M_myGame_lvl;
-  wire [16-1:0] M_myGame_eq;
-  wire [1-1:0] M_myGame_x0;
-  wire [1-1:0] M_myGame_x1;
-  wire [1-1:0] M_myGame_x2;
-  wire [1-1:0] M_myGame_x3;
-  wire [1-1:0] M_myGame_x4;
-  wire [1-1:0] M_myGame_x5;
-  wire [1-1:0] M_myGame_x6;
-  wire [1-1:0] M_myGame_x7;
-  wire [1-1:0] M_myGame_y0;
-  wire [1-1:0] M_myGame_y1;
-  wire [1-1:0] M_myGame_y2;
-  wire [1-1:0] M_myGame_y3;
-  wire [1-1:0] M_myGame_y4;
-  wire [1-1:0] M_myGame_y5;
-  wire [1-1:0] M_myGame_y6;
-  wire [1-1:0] M_myGame_y7;
-  wire [16-1:0] M_myGame_display;
-  reg [6-1:0] M_myGame_alufn;
-  reg [1-1:0] M_myGame_wb;
-  reg [1-1:0] M_myGame_wl;
-  reg [1-1:0] M_myGame_ws;
-  reg [2-1:0] M_myGame_rstb;
-  reg [3-1:0] M_myGame_rstl;
-  reg [1-1:0] M_myGame_rsts;
-  reg [1-1:0] M_myGame_bsel;
-  reg [3-1:0] M_myGame_asel;
-  emulator_10 myGame (
-    .clk(clk),
-    .rst(rst),
-    .alufn(M_myGame_alufn),
-    .wb(M_myGame_wb),
-    .wl(M_myGame_wl),
-    .ws(M_myGame_ws),
-    .rstb(M_myGame_rstb),
-    .rstl(M_myGame_rstl),
-    .rsts(M_myGame_rsts),
-    .bsel(M_myGame_bsel),
-    .asel(M_myGame_asel),
-    .sqc(M_myGame_sqc),
-    .lvl(M_myGame_lvl),
-    .eq(M_myGame_eq),
-    .x0(M_myGame_x0),
-    .x1(M_myGame_x1),
-    .x2(M_myGame_x2),
-    .x3(M_myGame_x3),
-    .x4(M_myGame_x4),
-    .x5(M_myGame_x5),
-    .x6(M_myGame_x6),
-    .x7(M_myGame_x7),
-    .y0(M_myGame_y0),
-    .y1(M_myGame_y1),
-    .y2(M_myGame_y2),
-    .y3(M_myGame_y3),
-    .y4(M_myGame_y4),
-    .y5(M_myGame_y5),
-    .y6(M_myGame_y6),
-    .y7(M_myGame_y7),
-    .display(M_myGame_display)
-  );
-  localparam IDLE_state = 6'd0;
-  localparam RETURN_state = 6'd1;
-  localparam CHECK_state = 6'd2;
-  localparam INCR_state = 6'd3;
-  localparam PRE_L_state = 6'd4;
-  localparam PRE_R_state = 6'd5;
-  localparam PRE_U_state = 6'd6;
-  localparam PRE_D_state = 6'd7;
-  localparam L_state = 6'd8;
-  localparam R_state = 6'd9;
-  localparam U_state = 6'd10;
-  localparam D_state = 6'd11;
-  localparam PRE_L1_state = 6'd12;
-  localparam L1_state = 6'd13;
-  localparam L1_DS1_state = 6'd14;
-  localparam L1_DS2_state = 6'd15;
-  localparam L1_DS3_state = 6'd16;
-  localparam L1_DS4_state = 6'd17;
-  localparam L1_DSW_state = 6'd18;
-  localparam L1_P1_state = 6'd19;
-  localparam L1_P2_state = 6'd20;
-  localparam L1_P3_state = 6'd21;
-  localparam L1_P4_state = 6'd22;
-  localparam L1_PW_state = 6'd23;
-  localparam L2_state = 6'd24;
-  localparam L2_DS1_state = 6'd25;
-  localparam L2_DS2_state = 6'd26;
-  localparam L2_DS3_state = 6'd27;
-  localparam L2_DS4_state = 6'd28;
-  localparam L2_DS5_state = 6'd29;
-  localparam L2_DS6_state = 6'd30;
-  localparam L2_DSW_state = 6'd31;
-  localparam L2_P1_state = 6'd32;
-  localparam L2_P2_state = 6'd33;
-  localparam L2_P3_state = 6'd34;
-  localparam L2_P4_state = 6'd35;
-  localparam L2_P5_state = 6'd36;
-  localparam L2_P6_state = 6'd37;
-  localparam L2_PW_state = 6'd38;
-  localparam L3_state = 6'd39;
-  localparam L3_DS1_state = 6'd40;
-  localparam L3_DS2_state = 6'd41;
-  localparam L3_DS3_state = 6'd42;
-  localparam L3_DS4_state = 6'd43;
-  localparam L3DS5_state = 6'd44;
-  localparam L3_DS6_state = 6'd45;
-  localparam L3_DS7_state = 6'd46;
-  localparam L3_DS8_state = 6'd47;
-  localparam L3_DS9_state = 6'd48;
-  localparam L3_DS10_state = 6'd49;
-  localparam L3_DSW_state = 6'd50;
-  localparam L3_P1_state = 6'd51;
-  localparam L3_P2_state = 6'd52;
-  localparam L3_P3_state = 6'd53;
-  localparam L3_P4_state = 6'd54;
-  localparam L3_P5_state = 6'd55;
-  localparam L3_P6_state = 6'd56;
-  localparam L3_P7_state = 6'd57;
-  localparam L3_P8_state = 6'd58;
-  localparam L3_P9_state = 6'd59;
-  localparam L3_P10_state = 6'd60;
-  localparam L3_PW_state = 6'd61;
-  localparam DF_state = 6'd62;
-  
-  reg [5:0] M_state_d, M_state_q = IDLE_state;
-  
-  reg [27:0] M_counter_d, M_counter_q = 1'h0;
   
   always @* begin
-    M_state_d = M_state_q;
-    M_counter_d = M_counter_q;
+    M_to_d = M_to_q;
+    M_tl_d = M_tl_q;
+    M_tu_d = M_tu_q;
+    M_td_d = M_td_q;
+    M_tl3_d = M_tl3_q;
+    M_tl2_d = M_tl2_q;
+    M_tl1_d = M_tl1_q;
     
     M_reset_cond_in = ~rst_n;
     rst = M_reset_cond_out;
@@ -252,783 +144,124 @@ module mojo_top_0 (
     M_l1d_in = l1;
     M_l2d_in = l2;
     M_l3d_in = l3;
-    M_counter_d = M_counter_q + 1'h1;
-    M_myGame_wb = 1'h0;
-    M_myGame_wl = 1'h0;
-    M_myGame_ws = 1'h0;
-    M_myGame_rstb = 2'h0;
-    M_myGame_rstl = 1'h0;
-    M_myGame_rsts = 1'h0;
-    M_myGame_bsel = 1'h0;
-    M_myGame_asel = 3'h0;
-    M_myGame_alufn = 6'h00;
-    x0 = M_myGame_x0;
-    x1 = M_myGame_x1;
-    x2 = M_myGame_x2;
-    x3 = M_myGame_x3;
-    x4 = M_myGame_x4;
-    x5 = M_myGame_x5;
-    x6 = M_myGame_x6;
-    x7 = M_myGame_x7;
-    y0 = M_myGame_y0;
-    y1 = M_myGame_y1;
-    y2 = M_myGame_y2;
-    y3 = M_myGame_y3;
-    y4 = M_myGame_y4;
-    y5 = M_myGame_y5;
-    y6 = M_myGame_y6;
-    y7 = M_myGame_y7;
-    led = M_myGame_eq[0+7-:8];
-    
-    case (M_state_q)
-      IDLE_state: begin
-        if (M_l1d_out) begin
-          M_myGame_rstl = 3'h1;
-          M_myGame_wl = 1'h1;
-          M_state_d = L1_state;
-        end
-        if (M_l2d_out) begin
-          M_myGame_rstl = 3'h2;
-          M_myGame_wl = 1'h1;
-          M_state_d = L2_state;
-        end
-        if (M_l3d_out) begin
-          M_myGame_rstl = 3'h3;
-          M_myGame_wl = 1'h1;
-          M_state_d = L3_state;
-        end
-      end
-      RETURN_state: begin
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h10) begin
-          M_state_d = L1_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h11) begin
-          M_state_d = L1_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h12) begin
-          M_state_d = L1_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
-          M_state_d = L1_P4_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h20) begin
-          M_state_d = L2_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h21) begin
-          M_state_d = L2_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h22) begin
-          M_state_d = L2_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h23) begin
-          M_state_d = L2_P4_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h24) begin
-          M_state_d = L2_P5_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h25) begin
-          M_state_d = L2_P6_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h30) begin
-          M_state_d = L3_P1_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h31) begin
-          M_state_d = L3_P2_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h32) begin
-          M_state_d = L3_P3_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h33) begin
-          M_state_d = L3_P4_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h34) begin
-          M_state_d = L3_P5_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h35) begin
-          M_state_d = L3_P6_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h36) begin
-          M_state_d = L3_P7_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h37) begin
-          M_state_d = L3_P8_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h38) begin
-          M_state_d = L3_P9_state;
-        end
-        if ({M_myGame_lvl, M_myGame_sqc} == 6'h39) begin
-          M_state_d = L3_P10_state;
-        end
-      end
-      U_state: begin
-        if (M_myGame_display[15+0-:1] != 1'h1 && M_myGame_display[14+0-:1] != 1'h1 && M_myGame_display[13+0-:1] != 1'h1 && M_myGame_display[12+0-:1] != 1'h1) begin
-          M_myGame_wb = 1'h1;
-          M_myGame_rstb = 2'h0;
-          M_myGame_asel = 3'h2;
-          M_myGame_bsel = 1'h0;
-          M_myGame_alufn = 6'h20;
-        end
-        M_state_d = RETURN_state;
-      end
-      D_state: begin
-        if (M_myGame_display[3+0-:1] != 1'h1 && M_myGame_display[2+0-:1] != 1'h1 && M_myGame_display[1+0-:1] != 1'h1 && M_myGame_display[0+0-:1] != 1'h1) begin
-          M_myGame_wb = 1'h1;
-          M_myGame_rstb = 2'h0;
-          M_myGame_asel = 3'h2;
-          M_myGame_bsel = 1'h0;
-          M_myGame_alufn = 6'h21;
-        end
-        M_state_d = RETURN_state;
-      end
-      L_state: begin
-        if (M_myGame_display[15+0-:1] != 1'h1 && M_myGame_display[11+0-:1] != 1'h1 && M_myGame_display[7+0-:1] != 1'h1 && M_myGame_display[3+0-:1] != 1'h1) begin
-          M_myGame_wb = 1'h1;
-          M_myGame_rstb = 2'h0;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h0;
-          M_myGame_alufn = 6'h20;
-        end
-        M_state_d = RETURN_state;
-      end
-      R_state: begin
-        if (M_myGame_display[0+0-:1] != 1'h1 && M_myGame_display[4+0-:1] != 1'h1 && M_myGame_display[8+0-:1] != 1'h1 && M_myGame_display[12+0-:1] != 1'h1) begin
-          M_myGame_wb = 1'h1;
-          M_myGame_rstb = 2'h0;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h0;
-          M_myGame_alufn = 6'h21;
-        end
-        M_state_d = RETURN_state;
-      end
-      CHECK_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h33;
-        if (M_counter_q[25+0-:1] == 1'h1) begin
-          if (M_myGame_eq == 16'h0001) begin
-            M_state_d = INCR_state;
-          end else begin
-            M_state_d = DF_state;
-          end
-        end
-      end
-      INCR_state: begin
-        M_myGame_alufn = 6'h00;
-        M_myGame_asel = 3'h1;
-        M_myGame_bsel = 1'h1;
-        M_myGame_ws = 1'h1;
-        M_myGame_rsts = 1'h0;
-        M_state_d = RETURN_state;
-      end
-      DF_state: begin
-        M_myGame_wb = 1'h1;
-        M_myGame_asel = 3'h3;
-        M_myGame_alufn = 6'h1a;
-        if (M_od_out) begin
-          M_myGame_rstb = 2'h2;
-          M_state_d = IDLE_state;
-        end
-      end
-      L1_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DS1_state;
-        end
-      end
-      L1_DS1_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DS2_state;
-        end
-      end
-      L1_DS2_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        M_myGame_ws = 1'h0;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DS3_state;
-        end
-      end
-      L1_DS3_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        M_myGame_ws = 1'h0;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DS4_state;
-        end
-      end
-      L1_DS4_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        M_myGame_ws = 1'h0;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DSW_state;
-        end
-      end
-      L1_DSW_state: begin
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_rstb = 2'h1;
-          M_myGame_wb = 1'h1;
-          M_myGame_rsts = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_state_d = L1_P1_state;
-        end
-        M_myGame_asel = 3'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h1;
-        M_myGame_wb = 1'h1;
-      end
-      L1_P1_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L1_P2_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L1_P3_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L1_P4_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L1_PW_state: begin
-        if (M_od_out) begin
-          M_state_d = IDLE_state;
-        end
-      end
-      L2_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L2_DS1_state;
-        end
-      end
-      L2_DS1_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L2_DS2_state;
-        end
-      end
-      L2_DS2_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        M_myGame_ws = 1'h0;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L2_DS3_state;
-        end
-      end
-      L2_DS3_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        M_myGame_ws = 1'h0;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L2_DS4_state;
-        end
-      end
-      L2_DS4_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        M_myGame_ws = 1'h0;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L2_DS5_state;
-        end
-      end
-      L2_DS5_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        M_myGame_ws = 1'h0;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L2_DS6_state;
-        end
-      end
-      L2_DS6_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        M_myGame_ws = 1'h0;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L2_DSW_state;
-        end
-      end
-      L2_DSW_state: begin
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_rstb = 2'h1;
-          M_myGame_wb = 1'h1;
-          M_myGame_rsts = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_state_d = L2_P1_state;
-        end
-        M_myGame_asel = 3'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h1;
-        M_myGame_wb = 1'h1;
-      end
-      L2_P1_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L2_P2_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L2_P3_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L2_P4_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L2_P5_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L2_P6_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L2_PW_state: begin
-        if (M_od_out) begin
-          M_state_d = IDLE_state;
-        end
-      end
-      L3_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DS1_state;
-        end
-      end
-      L3_DS1_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DS2_state;
-        end
-      end
-      L3_DS2_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        M_myGame_ws = 1'h0;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DS3_state;
-        end
-      end
-      L3_DS3_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        M_myGame_ws = 1'h0;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DS4_state;
-        end
-      end
-      L3_DS4_state: begin
-        M_myGame_asel = 3'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h0;
-        M_myGame_wb = 1'h1;
-        M_myGame_ws = 1'h0;
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_alufn = 6'h00;
-          M_myGame_asel = 3'h1;
-          M_myGame_bsel = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_myGame_rsts = 1'h0;
-          M_counter_d = 1'h0;
-          M_state_d = L1_DSW_state;
-        end
-      end
-      L3_DSW_state: begin
-        if (M_counter_q[27+0-:1] == 1'h1) begin
-          M_myGame_rstb = 2'h1;
-          M_myGame_wb = 1'h1;
-          M_myGame_rsts = 1'h1;
-          M_myGame_ws = 1'h1;
-          M_state_d = L1_P1_state;
-        end
-        M_myGame_asel = 3'h0;
-        M_myGame_alufn = 6'h1a;
-        M_myGame_rstb = 2'h1;
-        M_myGame_wb = 1'h1;
-      end
-      L3_P1_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L3_P2_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L3_P3_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L3_P4_state: begin
-        if (M_od_out) begin
-          M_state_d = CHECK_state;
-        end
-        if (M_ud_out) begin
-          M_state_d = U_state;
-        end
-        if (M_dd_out) begin
-          M_state_d = D_state;
-        end
-        if (M_ld_out) begin
-          M_state_d = L_state;
-        end
-        if (M_rd_out) begin
-          M_state_d = R_state;
-        end
-      end
-      L3_PW_state: begin
-        if (M_od_out) begin
-          M_state_d = IDLE_state;
-        end
-      end
-      default: begin
-        led = 8'h00;
-        M_myGame_wb = 1'h0;
-        M_myGame_wl = 1'h0;
-        M_myGame_ws = 1'h0;
-        M_myGame_rstb = 2'h0;
-        M_myGame_rstl = 1'h0;
-        M_myGame_rsts = 1'h0;
-        M_myGame_bsel = 1'h0;
-        M_myGame_asel = 3'h0;
-        M_myGame_alufn = 6'h00;
-      end
-    endcase
+    if (M_l1d_out) begin
+      M_tl1_d = ~M_tl1_q;
+    end
+    led[0+0-:1] = M_tl1_q;
+    if (M_l2d_out) begin
+      M_tl2_d = ~M_tl2_q;
+    end
+    led[1+0-:1] = M_tl2_q;
+    if (M_od_out) begin
+      M_to_d = ~M_to_q;
+    end
+    led[7+0-:1] = M_to_q;
+    if (M_l3d_out) begin
+      M_tl3_d = ~M_tl3_q;
+    end
+    led[2+0-:1] = M_tl3_q;
+    if (M_ud_out) begin
+      M_tu_d = ~M_tu_q;
+    end
+    led[3+0-:1] = M_tu_q;
+    if (M_ld_out) begin
+      M_tl_d = ~M_tl_q;
+    end
+    led[5+0-:1] = M_tl_q;
+    if (M_dd_out) begin
+      M_td_d = ~M_td_q;
+    end
+    led[6+0-:1] = M_td_q;
+    if (M_rd_out) begin
+      M_td_d = ~M_td_q;
+    end
+    led[6+0-:1] = M_td_q;
+    x0 = 1'h1;
+    x1 = 1'h1;
+    x2 = 1'h0;
+    x3 = 1'h0;
+    x4 = 1'h1;
+    x5 = 1'h1;
+    x6 = 1'h1;
+    x7 = 1'h1;
+    y0 = 1'h1;
+    y1 = 1'h1;
+    y2 = 1'h0;
+    y3 = 1'h0;
+    y4 = 1'h0;
+    y5 = 1'h0;
+    y6 = 1'h0;
+    y7 = 1'h0;
   end
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_counter_q <= 1'h0;
+      M_to_q <= 1'h0;
     end else begin
-      M_counter_q <= M_counter_d;
+      M_to_q <= M_to_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
+      M_tl3_q <= 1'h0;
     end else begin
-      M_state_q <= M_state_d;
+      M_tl3_q <= M_tl3_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_td_q <= 1'h0;
+    end else begin
+      M_td_q <= M_td_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_tr_q <= 1'h0;
+    end else begin
+      M_tr_q <= M_tr_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_tl_q <= 1'h0;
+    end else begin
+      M_tl_q <= M_tl_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_tl2_q <= 1'h0;
+    end else begin
+      M_tl2_q <= M_tl2_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_tl1_q <= 1'h0;
+    end else begin
+      M_tl1_q <= M_tl1_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_tu_q <= 1'h0;
+    end else begin
+      M_tu_q <= M_tu_d;
     end
   end
   
