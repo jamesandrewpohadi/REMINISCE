@@ -8,20 +8,33 @@ module mojo_top_0 (
     input clk,
     input rst_n,
     output reg [7:0] led,
-    input cclk,
     output reg spi_miso,
-    input spi_ss,
-    input spi_mosi,
-    input spi_sck,
     output reg [3:0] spi_channel,
-    input avr_tx,
     output reg avr_rx,
-    input avr_rx_busy,
-    output reg [23:0] io_led,
-    output reg [7:0] io_seg,
-    output reg [3:0] io_sel,
-    input [4:0] io_button,
-    input [23:0] io_dip
+    input l1,
+    input l2,
+    input l3,
+    input o,
+    input u,
+    input d,
+    input l,
+    input r,
+    output reg x0,
+    output reg x1,
+    output reg x2,
+    output reg x3,
+    output reg x4,
+    output reg x5,
+    output reg x6,
+    output reg x7,
+    output reg y0,
+    output reg y1,
+    output reg y2,
+    output reg y3,
+    output reg y4,
+    output reg y5,
+    output reg y6,
+    output reg y7
   );
   
   
@@ -35,61 +48,61 @@ module mojo_top_0 (
     .in(M_reset_cond_in),
     .out(M_reset_cond_out)
   );
-  wire [1-1:0] M_u_out;
-  reg [1-1:0] M_u_in;
-  edge_detector_2 u (
+  wire [1-1:0] M_ud_out;
+  reg [1-1:0] M_ud_in;
+  edge_detector_2 ud (
     .clk(clk),
-    .in(M_u_in),
-    .out(M_u_out)
+    .in(M_ud_in),
+    .out(M_ud_out)
   );
-  wire [1-1:0] M_d_out;
-  reg [1-1:0] M_d_in;
-  edge_detector_2 d (
+  wire [1-1:0] M_dd_out;
+  reg [1-1:0] M_dd_in;
+  edge_detector_2 dd (
     .clk(clk),
-    .in(M_d_in),
-    .out(M_d_out)
+    .in(M_dd_in),
+    .out(M_dd_out)
   );
-  wire [1-1:0] M_l_out;
-  reg [1-1:0] M_l_in;
-  edge_detector_2 l (
+  wire [1-1:0] M_ld_out;
+  reg [1-1:0] M_ld_in;
+  edge_detector_2 ld (
     .clk(clk),
-    .in(M_l_in),
-    .out(M_l_out)
+    .in(M_ld_in),
+    .out(M_ld_out)
   );
-  wire [1-1:0] M_r_out;
-  reg [1-1:0] M_r_in;
-  edge_detector_2 r (
+  wire [1-1:0] M_rd_out;
+  reg [1-1:0] M_rd_in;
+  edge_detector_2 rd (
     .clk(clk),
-    .in(M_r_in),
-    .out(M_r_out)
+    .in(M_rd_in),
+    .out(M_rd_out)
   );
-  wire [1-1:0] M_o_out;
-  reg [1-1:0] M_o_in;
-  edge_detector_2 o (
+  wire [1-1:0] M_od_out;
+  reg [1-1:0] M_od_in;
+  edge_detector_2 od (
     .clk(clk),
-    .in(M_o_in),
-    .out(M_o_out)
+    .in(M_od_in),
+    .out(M_od_out)
   );
-  wire [1-1:0] M_l1_out;
-  reg [1-1:0] M_l1_in;
-  edge_detector_2 l1 (
+  wire [1-1:0] M_l1d_out;
+  reg [1-1:0] M_l1d_in;
+  edge_detector_2 l1d (
     .clk(clk),
-    .in(M_l1_in),
-    .out(M_l1_out)
+    .in(M_l1d_in),
+    .out(M_l1d_out)
   );
-  wire [1-1:0] M_l2_out;
-  reg [1-1:0] M_l2_in;
-  edge_detector_2 l2 (
+  wire [1-1:0] M_l2d_out;
+  reg [1-1:0] M_l2d_in;
+  edge_detector_2 l2d (
     .clk(clk),
-    .in(M_l2_in),
-    .out(M_l2_out)
+    .in(M_l2d_in),
+    .out(M_l2d_out)
   );
-  wire [1-1:0] M_l3_out;
-  reg [1-1:0] M_l3_in;
-  edge_detector_2 l3 (
+  wire [1-1:0] M_l3d_out;
+  reg [1-1:0] M_l3d_in;
+  edge_detector_2 l3d (
     .clk(clk),
-    .in(M_l3_in),
-    .out(M_l3_out)
+    .in(M_l3d_in),
+    .out(M_l3d_out)
   );
   wire [4-1:0] M_myGame_sqc;
   wire [2-1:0] M_myGame_lvl;
@@ -231,17 +244,14 @@ module mojo_top_0 (
     spi_miso = 1'bz;
     spi_channel = 4'bzzzz;
     avr_rx = 1'bz;
-    io_led = 24'h000000;
-    io_seg = 8'hff;
-    io_sel = 4'hf;
-    M_u_in = io_button[0+0-:1];
-    M_d_in = io_button[2+0-:1];
-    M_l_in = io_button[3+0-:1];
-    M_r_in = io_button[4+0-:1];
-    M_o_in = io_button[1+0-:1];
-    M_l1_in = io_dip[16+7+0-:1];
-    M_l2_in = io_dip[16+6+0-:1];
-    M_l3_in = io_dip[16+5+0-:1];
+    M_ud_in = u;
+    M_dd_in = d;
+    M_ld_in = l;
+    M_rd_in = r;
+    M_od_in = o;
+    M_l1d_in = l1;
+    M_l2d_in = l2;
+    M_l3d_in = l3;
     M_counter_d = M_counter_q + 1'h1;
     M_myGame_wb = 1'h0;
     M_myGame_wl = 1'h0;
@@ -252,39 +262,37 @@ module mojo_top_0 (
     M_myGame_bsel = 1'h0;
     M_myGame_asel = 3'h0;
     M_myGame_alufn = 6'h00;
-    io_led[8+7+0-:1] = M_myGame_x0;
-    io_led[8+6+0-:1] = M_myGame_x1;
-    io_led[8+5+0-:1] = M_myGame_x2;
-    io_led[8+4+0-:1] = M_myGame_x3;
-    io_led[8+3+0-:1] = M_myGame_x4;
-    io_led[8+2+0-:1] = M_myGame_x5;
-    io_led[8+1+0-:1] = M_myGame_x6;
-    io_led[8+0+0-:1] = M_myGame_x7;
-    io_led[0+7+0-:1] = M_myGame_y0;
-    io_led[0+6+0-:1] = M_myGame_y1;
-    io_led[0+5+0-:1] = M_myGame_y2;
-    io_led[0+4+0-:1] = M_myGame_y3;
-    io_led[0+3+0-:1] = M_myGame_y4;
-    io_led[0+2+0-:1] = M_myGame_y5;
-    io_led[0+1+0-:1] = M_myGame_y6;
-    io_led[0+0+0-:1] = M_myGame_y7;
-    io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
-    io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
+    x0 = M_myGame_x0;
+    x1 = M_myGame_x1;
+    x2 = M_myGame_x2;
+    x3 = M_myGame_x3;
+    x4 = M_myGame_x4;
+    x5 = M_myGame_x5;
+    x6 = M_myGame_x6;
+    x7 = M_myGame_x7;
+    y0 = M_myGame_y0;
+    y1 = M_myGame_y1;
+    y2 = M_myGame_y2;
+    y3 = M_myGame_y3;
+    y4 = M_myGame_y4;
+    y5 = M_myGame_y5;
+    y6 = M_myGame_y6;
+    y7 = M_myGame_y7;
     led = M_myGame_eq[0+7-:8];
     
     case (M_state_q)
       IDLE_state: begin
-        if (M_l1_out) begin
+        if (M_l1d_out) begin
           M_myGame_rstl = 3'h1;
           M_myGame_wl = 1'h1;
           M_state_d = L1_state;
         end
-        if (M_l2_out) begin
+        if (M_l2d_out) begin
           M_myGame_rstl = 3'h2;
           M_myGame_wl = 1'h1;
           M_state_d = L2_state;
         end
-        if (M_l3_out) begin
+        if (M_l3d_out) begin
           M_myGame_rstl = 3'h3;
           M_myGame_wl = 1'h1;
           M_state_d = L3_state;
@@ -416,17 +424,9 @@ module mojo_top_0 (
         M_myGame_wb = 1'h1;
         M_myGame_asel = 3'h3;
         M_myGame_alufn = 6'h1a;
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_myGame_rstb = 2'h2;
           M_state_d = IDLE_state;
-        end
-      end
-      PRE_L1_state: begin
-        io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
-        io_led[16+6+1-:2] = 2'h1;
-        if (!io_dip[16+7+0-:1]) begin
-          M_counter_d = 1'h0;
-          M_state_d = L1_state;
         end
       end
       L1_state: begin
@@ -496,7 +496,6 @@ module mojo_top_0 (
         end
       end
       L1_DS4_state: begin
-        io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 2'h0;
@@ -526,76 +525,75 @@ module mojo_top_0 (
         M_myGame_wb = 1'h1;
       end
       L1_P1_state: begin
-        if (M_o_out) begin
-          M_counter_d = 1'h0;
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L1_P2_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L1_P3_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L1_P4_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L1_PW_state: begin
-        if (io_dip[16+0+0-:1]) begin
+        if (M_od_out) begin
           M_state_d = IDLE_state;
         end
       end
@@ -666,7 +664,6 @@ module mojo_top_0 (
         end
       end
       L2_DS4_state: begin
-        io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 2'h0;
@@ -700,7 +697,6 @@ module mojo_top_0 (
         end
       end
       L2_DS6_state: begin
-        io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 2'h0;
@@ -730,109 +726,109 @@ module mojo_top_0 (
         M_myGame_wb = 1'h1;
       end
       L2_P1_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L2_P2_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L2_P3_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L2_P4_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L2_P5_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L2_P6_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L2_PW_state: begin
-        if (io_dip[16+0+0-:1]) begin
+        if (M_od_out) begin
           M_state_d = IDLE_state;
         end
       end
@@ -903,7 +899,6 @@ module mojo_top_0 (
         end
       end
       L3_DS4_state: begin
-        io_led[16+0+5-:6] = {M_myGame_lvl, M_myGame_sqc};
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
         M_myGame_rstb = 2'h0;
@@ -933,75 +928,75 @@ module mojo_top_0 (
         M_myGame_wb = 1'h1;
       end
       L3_P1_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L3_P2_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L3_P3_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L3_P4_state: begin
-        if (M_o_out) begin
+        if (M_od_out) begin
           M_state_d = CHECK_state;
         end
-        if (M_u_out) begin
+        if (M_ud_out) begin
           M_state_d = U_state;
         end
-        if (M_d_out) begin
+        if (M_dd_out) begin
           M_state_d = D_state;
         end
-        if (M_l_out) begin
+        if (M_ld_out) begin
           M_state_d = L_state;
         end
-        if (M_r_out) begin
+        if (M_rd_out) begin
           M_state_d = R_state;
         end
       end
       L3_PW_state: begin
-        if (io_dip[16+0+0-:1]) begin
+        if (M_od_out) begin
           M_state_d = IDLE_state;
         end
       end
@@ -1016,23 +1011,6 @@ module mojo_top_0 (
         M_myGame_bsel = 1'h0;
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h00;
-        io_led[8+7+0-:1] = M_myGame_x0;
-        io_led[8+6+0-:1] = M_myGame_x1;
-        io_led[8+5+0-:1] = M_myGame_x2;
-        io_led[8+4+0-:1] = M_myGame_x3;
-        io_led[8+3+0-:1] = M_myGame_x4;
-        io_led[8+2+0-:1] = M_myGame_x5;
-        io_led[8+1+0-:1] = M_myGame_x6;
-        io_led[8+0+0-:1] = M_myGame_x7;
-        io_led[16+7+0-:1] = M_myGame_y0;
-        io_led[16+6+0-:1] = M_myGame_y1;
-        io_led[16+5+0-:1] = M_myGame_y2;
-        io_led[16+4+0-:1] = M_myGame_y3;
-        io_led[16+3+0-:1] = M_myGame_y4;
-        io_led[16+2+0-:1] = M_myGame_y5;
-        io_led[16+1+0-:1] = M_myGame_y6;
-        io_led[16+0+0-:1] = M_myGame_y7;
-        io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
       end
     endcase
   end
