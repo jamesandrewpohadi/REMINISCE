@@ -18,7 +18,6 @@
     <src>mux_2.luc</src>
     <src>mux_3.luc</src>
     <src>rom.luc</src>
-    <ucf lib="true">io_shield.ucf</ucf>
     <ucf lib="true">mojo.ucf</ucf>
     <component>reg_interface.luc</component>
     <component>spi_slave.luc</component>
