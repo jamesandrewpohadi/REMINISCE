@@ -4,27 +4,28 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module shift_24 (
+module cmp_23 (
     input [5:0] alufn,
-    input [15:0] a,
-    input [15:0] b,
+    input z,
+    input v,
+    input n,
     output reg [15:0] c
   );
   
   
   
   always @* begin
-    c = 8'h01;
+    c = 16'h0000;
     
-    case (alufn[0+1-:2])
-      2'h0: begin
-        c = b << a[0+3-:4];
-      end
+    case (alufn[1+1-:2])
       2'h1: begin
-        c = b >> a[0+3-:4];
+        c[0+0-:1] = z;
+      end
+      2'h2: begin
+        c[0+0-:1] = n ^ v;
       end
       2'h3: begin
-        c = $signed(a) >>> b[0+3-:4];
+        c[0+0-:1] = z | (n ^ v);
       end
     endcase
   end

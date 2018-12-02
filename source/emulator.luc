@@ -10,10 +10,26 @@ module emulator (
     input rsts,
     input bsel,
     input asel[3],
-    output display[16],
     output sqc[4],
     output lvl[2],
-    output eq[16]
+    output eq[16],
+    output x0,
+    output x1,
+    output x2,
+    output x3,
+    output x4,
+    output x5,
+    output x6,
+    output x7,
+    output y0,
+    output y1,
+    output y2,
+    output y3,
+    output y4,
+    output y5,
+    output y6,
+    output y7,
+    output display[16]   
     
   ) {
   mux_3 muxBoard;
@@ -22,6 +38,7 @@ module emulator (
   mux_5 muxA;
   mux_2 muxB;
   rom myRom;
+  board bm;
   alu myalu;
   .clk(clk) {
     .rst(rst) {
@@ -79,8 +96,24 @@ module emulator (
     sqc = sequence.out[3:0];
     
     myRom.address = c{level.out[1:0],sequence.out[3:0]};
-    
     display = board.out;
+    bm.b = board.out;
+    x0 = bm.x0;
+    x1 = bm.x1;
+    x2= bm.x2;
+    x3 = bm.x3;
+    x4 = bm.x4;
+    x5 = bm.x5;
+    x6 = bm.x6;
+    x7 = bm.x7;
+    y0 = bm.y0;
+    y1 = bm.y1;
+    y2 = bm.y2;
+    y3 = bm.y3;
+    y4 = bm.y4;
+    y5 = bm.y5;
+    y6 = bm.y6;
+    y7 = bm.y7;
     
   }
 }

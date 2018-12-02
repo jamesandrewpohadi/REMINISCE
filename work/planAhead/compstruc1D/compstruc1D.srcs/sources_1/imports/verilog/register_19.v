@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module register_18 (
+module register_19 (
     input clk,
     input rst,
     input [15:0] write,

@@ -70,9 +70,25 @@ module mojo_top (
     myGame.bsel = 0;
     myGame.asel = 3b0;
     myGame.alufn = 6b0;
-    io_led[1] = myGame.display[15:8];
-    io_led[0] = myGame.display[7:0];
+    io_led[1][7] = myGame.x0;
+    io_led[1][6] = myGame.x1;
+    io_led[1][5] = myGame.x2;
+    io_led[1][4] = myGame.x3;
+    io_led[1][3] = myGame.x4;
+    io_led[1][2] = myGame.x5;
+    io_led[1][1] = myGame.x6;
+    io_led[1][0] = myGame.x7;
+    io_led[0][7] = myGame.y0;
+    io_led[0][6] = myGame.y1;
+    io_led[0][5] = myGame.y2;
+    io_led[0][4] = myGame.y3;
+    io_led[0][3] = myGame.y4;
+    io_led[0][2] = myGame.y5;
+    io_led[0][1] = myGame.y6;
+    io_led[0][0] = myGame.y7;
     io_led[2] = c{myGame.lvl, myGame.sqc};
+    io_led[2] = c{myGame.lvl, myGame.sqc};
+    led = myGame.eq[7:0];
     
     case (state.q) {
       state.IDLE:
@@ -193,10 +209,12 @@ module mojo_top (
         myGame.asel = 3b0;
         myGame.bsel = 0;
         myGame.alufn = 6b110011;
-        if (myGame.eq == 16b1) {
-          state.d = state.DF;
-        } else {
-          state.d = state.INCR;
+        if (counter.q[25] == 1) {
+          if (myGame.eq == 16b1) {
+            state.d = state.INCR;
+          } else {
+            state.d = state.DF;
+          }
         }
       state.INCR:
         // increment the sequence and continue the game state
@@ -325,6 +343,7 @@ module mojo_top (
         myGame.wb = 1;
       state.L1_P1:
         if (o.out) {
+          counter.d = 0;
           state.d = state.CHECK;
         }
         if (u.out) {
@@ -798,7 +817,7 @@ module mojo_top (
           state.d = state.IDLE;
         }
       default:
-        led = 8b11111111;
+        led = 8b00000000;
         myGame.wb = 0;
         myGame.wl = 0;
         myGame.ws = 0;
@@ -808,8 +827,22 @@ module mojo_top (
         myGame.bsel = 0;
         myGame.asel = 3b0;
         myGame.alufn = 6b0;
-        io_led[1] = myGame.display[15:8];
-        io_led[0] = myGame.display[7:0];
+        io_led[1][7] = myGame.x0;
+        io_led[1][6] = myGame.x1;
+        io_led[1][5] = myGame.x2;
+        io_led[1][4] = myGame.x3;
+        io_led[1][3] = myGame.x4;
+        io_led[1][2] = myGame.x5;
+        io_led[1][1] = myGame.x6;
+        io_led[1][0] = myGame.x7;
+        io_led[2][7] = myGame.y0;
+        io_led[2][6] = myGame.y1;
+        io_led[2][5] = myGame.y2;
+        io_led[2][4] = myGame.y3;
+        io_led[2][3] = myGame.y4;
+        io_led[2][2] = myGame.y5;
+        io_led[2][1] = myGame.y6;
+        io_led[2][0] = myGame.y7;
         io_led[2] = c{myGame.lvl, myGame.sqc};
     }
     

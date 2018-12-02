@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module add_21 (
+module add_22 (
     input [5:0] alufn,
     input [15:0] a,
     input [15:0] b,
@@ -27,17 +27,14 @@ module add_21 (
     sum = 16'h0000;
     led[6+1-:2] = 2'h0;
     
-    case (alufn[0+1-:2])
-      2'h0: begin
+    case (alufn[0+0-:1])
+      1'h0: begin
         sum = a + b;
         v = (a[15+0-:1] & b[15+0-:1] & (~sum[15+0-:1])) | ((~a[15+0-:1]) & (~b[15+0-:1]) & sum[15+0-:1]);
       end
-      2'h1: begin
+      1'h1: begin
         sum = a - b;
         v = (~a[15+0-:1] & b[15+0-:1] & sum[15+0-:1]) | ((a[15+0-:1]) & (~b[15+0-:1]) & ~sum[15+0-:1]);
-      end
-      2'h2: begin
-        sum = a * b;
       end
       default: begin
         sum = 16'h0000;

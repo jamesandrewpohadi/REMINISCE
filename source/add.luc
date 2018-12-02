@@ -17,19 +17,19 @@ module add (
     n=0;
     sum = 16b0;
     led[7:6] = 2b0;
-    case (alufn[1:0]) {
-      b00: // addition
+    case (alufn[0]) {
+      b0: // addition
         sum = a+b;
         // overflow if (A and B positive but the result is negative) or
         // (A and B negative but the result is positive)
         v = (a[15] & b[15] & (~sum[15])) | ((~a[15]) & (~b[15]) & sum[15]);
-      b01: // substraction
+      b1: // substraction
         sum = a-b;
         // overflow if (A (positive) minus B (negative) become negative) or
         // (A (negative) minus B (positive) become positive)
         v = (~a[15] & b[15] & sum[15]) | ((a[15]) & (~b[15]) & ~sum[15]);
-      b10: // multiplication
-        sum = a*b;
+      //b10: // multiplication
+        //sum = a*b;
         
       default:
         sum = 16b0;

@@ -16,10 +16,26 @@ module emulator_10 (
     input rsts,
     input bsel,
     input [2:0] asel,
-    output reg [15:0] display,
     output reg [3:0] sqc,
     output reg [1:0] lvl,
-    output reg [15:0] eq
+    output reg [15:0] eq,
+    output reg x0,
+    output reg x1,
+    output reg x2,
+    output reg x3,
+    output reg x4,
+    output reg x5,
+    output reg x6,
+    output reg x7,
+    output reg y0,
+    output reg y1,
+    output reg y2,
+    output reg y3,
+    output reg y4,
+    output reg y5,
+    output reg y6,
+    output reg y7,
+    output reg [15:0] display
   );
   
   
@@ -100,6 +116,43 @@ module emulator_10 (
     .out(M_myRom_out)
   );
   
+  wire [1-1:0] M_bm_x0;
+  wire [1-1:0] M_bm_x1;
+  wire [1-1:0] M_bm_x2;
+  wire [1-1:0] M_bm_x3;
+  wire [1-1:0] M_bm_x4;
+  wire [1-1:0] M_bm_x5;
+  wire [1-1:0] M_bm_x6;
+  wire [1-1:0] M_bm_x7;
+  wire [1-1:0] M_bm_y0;
+  wire [1-1:0] M_bm_y1;
+  wire [1-1:0] M_bm_y2;
+  wire [1-1:0] M_bm_y3;
+  wire [1-1:0] M_bm_y4;
+  wire [1-1:0] M_bm_y5;
+  wire [1-1:0] M_bm_y6;
+  wire [1-1:0] M_bm_y7;
+  reg [16-1:0] M_bm_b;
+  board_17 bm (
+    .b(M_bm_b),
+    .x0(M_bm_x0),
+    .x1(M_bm_x1),
+    .x2(M_bm_x2),
+    .x3(M_bm_x3),
+    .x4(M_bm_x4),
+    .x5(M_bm_x5),
+    .x6(M_bm_x6),
+    .x7(M_bm_x7),
+    .y0(M_bm_y0),
+    .y1(M_bm_y1),
+    .y2(M_bm_y2),
+    .y3(M_bm_y3),
+    .y4(M_bm_y4),
+    .y5(M_bm_y5),
+    .y6(M_bm_y6),
+    .y7(M_bm_y7)
+  );
+  
   wire [16-1:0] M_myalu_c;
   wire [1-1:0] M_myalu_z;
   wire [1-1:0] M_myalu_v;
@@ -107,7 +160,7 @@ module emulator_10 (
   reg [16-1:0] M_myalu_a;
   reg [16-1:0] M_myalu_b;
   reg [6-1:0] M_myalu_alufn;
-  alu_17 myalu (
+  alu_18 myalu (
     .a(M_myalu_a),
     .b(M_myalu_b),
     .alufn(M_myalu_alufn),
@@ -120,7 +173,7 @@ module emulator_10 (
   wire [16-1:0] M_board_out;
   reg [16-1:0] M_board_write;
   reg [16-1:0] M_board_value;
-  register_18 board (
+  register_19 board (
     .clk(clk),
     .rst(rst),
     .write(M_board_write),
@@ -130,7 +183,7 @@ module emulator_10 (
   wire [16-1:0] M_level_out;
   reg [16-1:0] M_level_write;
   reg [16-1:0] M_level_value;
-  register_18 level (
+  register_19 level (
     .clk(clk),
     .rst(rst),
     .write(M_level_write),
@@ -140,7 +193,7 @@ module emulator_10 (
   wire [16-1:0] M_sequence_out;
   reg [16-1:0] M_sequence_write;
   reg [16-1:0] M_sequence_value;
-  register_18 sequence (
+  register_19 sequence (
     .clk(clk),
     .rst(rst),
     .write(M_sequence_write),
@@ -185,5 +238,22 @@ module emulator_10 (
     sqc = M_sequence_out[0+3-:4];
     M_myRom_address = {M_level_out[0+1-:2], M_sequence_out[0+3-:4]};
     display = M_board_out;
+    M_bm_b = M_board_out;
+    x0 = M_bm_x0;
+    x1 = M_bm_x1;
+    x2 = M_bm_x2;
+    x3 = M_bm_x3;
+    x4 = M_bm_x4;
+    x5 = M_bm_x5;
+    x6 = M_bm_x6;
+    x7 = M_bm_x7;
+    y0 = M_bm_y0;
+    y1 = M_bm_y1;
+    y2 = M_bm_y2;
+    y3 = M_bm_y3;
+    y4 = M_bm_y4;
+    y5 = M_bm_y5;
+    y6 = M_bm_y6;
+    y7 = M_bm_y7;
   end
 endmodule

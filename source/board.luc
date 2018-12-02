@@ -1,39 +1,135 @@
 module board (
     input b[16],
-    output p0,
-    output p1,
-    output p2,
-    output p3,
-    output p4,
-    output p5,
-    output p6,
-    output p7,
-    output p8,
-    output p9,
-    output p10,
-    output p11,
-    output p12,
-    output p13,
-    output p14,
-    output p15
+    output x0,
+    output x1,
+    output x2,
+    output x3,
+    output x4,
+    output x5,
+    output x6,
+    output x7,
+    output y0,
+    output y1,
+    output y2,
+    output y3,
+    output y4,
+    output y5,
+    output y6,
+    output y7
   ) {
 
   always {
-    p0 = b[0];
-    p1 = b[1];
-    p2 = b[2];
-    p3 = b[3];
-    p4 = b[4];
-    p5 = b[5];
-    p6 = b[6];
-    p7 = b[7];
-    p8 = b[8] ^ 1;
-    p9 = b[9] ^ 1;
-    p10 = b[10] ^ 1;
-    p11 = b[11] ^ 1;
-    p12 = b[12] ^ 1;
-    p13 = b[13] ^ 1;
-    p14 = b[14] ^ 1;
-    p15 = b[15] ^ 1;
+    x0 = 1b1;
+    x1 = 1b1;
+    x2 = 1b1;
+    x3 = 1b1;
+    x4 = 1b1;
+    x5 = 1b1;
+    x6 = 1b1;
+    x7 = 1b1;
+    y0 = 1b0;
+    y1 = 1b0;
+    y2 = 1b0;
+    y3 = 1b0;
+    y4 = 1b0;
+    y5 = 1b0;
+    y6 = 1b0;
+    y7 = 1b0;
+    if (b[15]) {
+      x0 = 1b0;
+      x1 = 1b0;
+      y6 = 1b1;
+      y7 = 1b1;
+    }
+    if (b[14]) {
+      x2 = 1b0;
+      x3 = 1b0;
+      y6 = 1b1;
+      y7 = 1b1;
+    }
+    if (b[13]) {
+      x4 = 1b0;
+      x5 = 1b0;
+      y6 = 1b1;
+      y7 = 1b1;
+    }
+    if (b[12]) {
+      x6 = 1b0;
+      x7 = 1b0;
+      y6 = 1b1;
+      y7 = 1b1;
+    }
+    if (b[11]) {
+      x0 = 1b0;
+      x1 = 1b0;
+      y4 = 1b1;
+      y5 = 1b1;
+    }
+    if (b[10]) {
+      x2 = 1b0;
+      x3 = 1b0;
+      y4 = 1b1;
+      y5 = 1b1;
+    }
+    if (b[9]) {
+      x4 = 1b0;
+      x5 = 1b0;
+      y4 = 1b1;
+      y5 = 1b1;
+    }
+    if (b[8]) {
+      x6 = 1b0;
+      x7 = 1b0;
+      y4 = 1b1;
+      y5 = 1b1;
+    }
+    if (b[7]) {
+      x0 = 1b0;
+      x1 = 1b0;
+      y2 = 1b1;
+      y3 = 1b1;
+    }
+    if (b[6]) {
+      x2 = 1b0;
+      x3 = 1b0;
+      y2 = 1b1;
+      y3 = 1b1;
+    }
+    if (b[5]) {
+      x4 = 1b0;
+      x5 = 1b0;
+      y2 = 1b1;
+      y3 = 1b1;
+    }
+    if (b[4]) {
+      x6 = 1b0;
+      x7 = 1b0;
+      y2 = 1b1;
+      y3 = 1b1;
+    }
+    if (b[3]) {
+      x0 = 1b0;
+      x1 = 1b0;
+      y0 = 1b1;
+      y1 = 1b1;
+    }
+    if (b[2]) {
+      x2 = 1b0;
+      x3 = 1b0;
+      y0 = 1b1;
+      y1 = 1b1;
+    }
+    if (b[1]) {
+      x4 = 1b0;
+      x5 = 1b0;
+      y0 = 1b1;
+      y1 = 1b1;
+    }
+    if (b[0]) {
+      x6 = 1b0;
+      x7 = 1b0;
+      y0 = 1b1;
+      y1 = 1b1;
+    }
   }
 }

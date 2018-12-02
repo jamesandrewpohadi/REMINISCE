@@ -91,10 +91,26 @@ module mojo_top_0 (
     .in(M_l3_in),
     .out(M_l3_out)
   );
-  wire [16-1:0] M_myGame_display;
   wire [4-1:0] M_myGame_sqc;
   wire [2-1:0] M_myGame_lvl;
   wire [16-1:0] M_myGame_eq;
+  wire [1-1:0] M_myGame_x0;
+  wire [1-1:0] M_myGame_x1;
+  wire [1-1:0] M_myGame_x2;
+  wire [1-1:0] M_myGame_x3;
+  wire [1-1:0] M_myGame_x4;
+  wire [1-1:0] M_myGame_x5;
+  wire [1-1:0] M_myGame_x6;
+  wire [1-1:0] M_myGame_x7;
+  wire [1-1:0] M_myGame_y0;
+  wire [1-1:0] M_myGame_y1;
+  wire [1-1:0] M_myGame_y2;
+  wire [1-1:0] M_myGame_y3;
+  wire [1-1:0] M_myGame_y4;
+  wire [1-1:0] M_myGame_y5;
+  wire [1-1:0] M_myGame_y6;
+  wire [1-1:0] M_myGame_y7;
+  wire [16-1:0] M_myGame_display;
   reg [6-1:0] M_myGame_alufn;
   reg [1-1:0] M_myGame_wb;
   reg [1-1:0] M_myGame_wl;
@@ -116,10 +132,26 @@ module mojo_top_0 (
     .rsts(M_myGame_rsts),
     .bsel(M_myGame_bsel),
     .asel(M_myGame_asel),
-    .display(M_myGame_display),
     .sqc(M_myGame_sqc),
     .lvl(M_myGame_lvl),
-    .eq(M_myGame_eq)
+    .eq(M_myGame_eq),
+    .x0(M_myGame_x0),
+    .x1(M_myGame_x1),
+    .x2(M_myGame_x2),
+    .x3(M_myGame_x3),
+    .x4(M_myGame_x4),
+    .x5(M_myGame_x5),
+    .x6(M_myGame_x6),
+    .x7(M_myGame_x7),
+    .y0(M_myGame_y0),
+    .y1(M_myGame_y1),
+    .y2(M_myGame_y2),
+    .y3(M_myGame_y3),
+    .y4(M_myGame_y4),
+    .y5(M_myGame_y5),
+    .y6(M_myGame_y6),
+    .y7(M_myGame_y7),
+    .display(M_myGame_display)
   );
   localparam IDLE_state = 6'd0;
   localparam RETURN_state = 6'd1;
@@ -220,9 +252,25 @@ module mojo_top_0 (
     M_myGame_bsel = 1'h0;
     M_myGame_asel = 3'h0;
     M_myGame_alufn = 6'h00;
-    io_led[8+7-:8] = M_myGame_display[8+7-:8];
-    io_led[0+7-:8] = M_myGame_display[0+7-:8];
+    io_led[8+7+0-:1] = M_myGame_x0;
+    io_led[8+6+0-:1] = M_myGame_x1;
+    io_led[8+5+0-:1] = M_myGame_x2;
+    io_led[8+4+0-:1] = M_myGame_x3;
+    io_led[8+3+0-:1] = M_myGame_x4;
+    io_led[8+2+0-:1] = M_myGame_x5;
+    io_led[8+1+0-:1] = M_myGame_x6;
+    io_led[8+0+0-:1] = M_myGame_x7;
+    io_led[0+7+0-:1] = M_myGame_y0;
+    io_led[0+6+0-:1] = M_myGame_y1;
+    io_led[0+5+0-:1] = M_myGame_y2;
+    io_led[0+4+0-:1] = M_myGame_y3;
+    io_led[0+3+0-:1] = M_myGame_y4;
+    io_led[0+2+0-:1] = M_myGame_y5;
+    io_led[0+1+0-:1] = M_myGame_y6;
+    io_led[0+0+0-:1] = M_myGame_y7;
     io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
+    io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
+    led = M_myGame_eq[0+7-:8];
     
     case (M_state_q)
       IDLE_state: begin
@@ -348,10 +396,12 @@ module mojo_top_0 (
         M_myGame_asel = 3'h0;
         M_myGame_bsel = 1'h0;
         M_myGame_alufn = 6'h33;
-        if (M_myGame_eq == 16'h0001) begin
-          M_state_d = DF_state;
-        end else begin
-          M_state_d = INCR_state;
+        if (M_counter_q[25+0-:1] == 1'h1) begin
+          if (M_myGame_eq == 16'h0001) begin
+            M_state_d = INCR_state;
+          end else begin
+            M_state_d = DF_state;
+          end
         end
       end
       INCR_state: begin
@@ -477,6 +527,7 @@ module mojo_top_0 (
       end
       L1_P1_state: begin
         if (M_o_out) begin
+          M_counter_d = 1'h0;
           M_state_d = CHECK_state;
         end
         if (M_u_out) begin
@@ -955,7 +1006,7 @@ module mojo_top_0 (
         end
       end
       default: begin
-        led = 8'hff;
+        led = 8'h00;
         M_myGame_wb = 1'h0;
         M_myGame_wl = 1'h0;
         M_myGame_ws = 1'h0;
@@ -965,8 +1016,22 @@ module mojo_top_0 (
         M_myGame_bsel = 1'h0;
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h00;
-        io_led[8+7-:8] = M_myGame_display[8+7-:8];
-        io_led[0+7-:8] = M_myGame_display[0+7-:8];
+        io_led[8+7+0-:1] = M_myGame_x0;
+        io_led[8+6+0-:1] = M_myGame_x1;
+        io_led[8+5+0-:1] = M_myGame_x2;
+        io_led[8+4+0-:1] = M_myGame_x3;
+        io_led[8+3+0-:1] = M_myGame_x4;
+        io_led[8+2+0-:1] = M_myGame_x5;
+        io_led[8+1+0-:1] = M_myGame_x6;
+        io_led[8+0+0-:1] = M_myGame_x7;
+        io_led[16+7+0-:1] = M_myGame_y0;
+        io_led[16+6+0-:1] = M_myGame_y1;
+        io_led[16+5+0-:1] = M_myGame_y2;
+        io_led[16+4+0-:1] = M_myGame_y3;
+        io_led[16+3+0-:1] = M_myGame_y4;
+        io_led[16+2+0-:1] = M_myGame_y5;
+        io_led[16+1+0-:1] = M_myGame_y6;
+        io_led[16+0+0-:1] = M_myGame_y7;
         io_led[16+7-:8] = {M_myGame_lvl, M_myGame_sqc};
       end
     endcase
@@ -974,18 +1039,18 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
+      M_counter_q <= 1'h0;
     end else begin
-      M_state_q <= M_state_d;
+      M_counter_q <= M_counter_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_counter_q <= 1'h0;
+      M_state_q <= 1'h0;
     end else begin
-      M_counter_q <= M_counter_d;
+      M_state_q <= M_state_d;
     end
   end
   

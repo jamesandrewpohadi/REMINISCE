@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module alu_17 (
+module alu_18 (
     input [15:0] a,
     input [15:0] b,
     input [5:0] alufn,
@@ -24,7 +24,7 @@ module alu_17 (
   reg [6-1:0] M_myAdd_alufn;
   reg [16-1:0] M_myAdd_a;
   reg [16-1:0] M_myAdd_b;
-  add_21 myAdd (
+  add_22 myAdd (
     .alufn(M_myAdd_alufn),
     .a(M_myAdd_a),
     .b(M_myAdd_b),
@@ -40,7 +40,7 @@ module alu_17 (
   reg [1-1:0] M_myCmp_z;
   reg [1-1:0] M_myCmp_v;
   reg [1-1:0] M_myCmp_n;
-  cmp_22 myCmp (
+  cmp_23 myCmp (
     .alufn(M_myCmp_alufn),
     .z(M_myCmp_z),
     .v(M_myCmp_v),
@@ -52,7 +52,7 @@ module alu_17 (
   reg [6-1:0] M_myBoole_alufn;
   reg [16-1:0] M_myBoole_a;
   reg [16-1:0] M_myBoole_b;
-  boole_23 myBoole (
+  boole_24 myBoole (
     .alufn(M_myBoole_alufn),
     .a(M_myBoole_a),
     .b(M_myBoole_b),
@@ -63,7 +63,7 @@ module alu_17 (
   reg [6-1:0] M_myShift_alufn;
   reg [16-1:0] M_myShift_a;
   reg [16-1:0] M_myShift_b;
-  shift_24 myShift (
+  shift_25 myShift (
     .alufn(M_myShift_alufn),
     .a(M_myShift_a),
     .b(M_myShift_b),
