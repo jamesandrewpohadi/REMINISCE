@@ -23,7 +23,7 @@ Elaborating module <mojo_top_0>.
 Elaborating module <reset_conditioner_1>.
 
 Elaborating module <edge_detector_2>.
-WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 224: Assignment to M_tr_q ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 233: Assignment to M_tr_q ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -32,12 +32,12 @@ WARNING:HDLCompiler:1127 - "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/pl
 Synthesizing Unit <mojo_top_0>.
     Related source file is "C:/Users/PERSONAL/Documents/mojo/compstruc1D/work/planAhead/compstruc1D/compstruc1D.srcs/sources_1/imports/verilog/mojo_top_0.v".
     Found 1-bit register for signal <M_tl3_q>.
-    Found 1-bit register for signal <M_td_q>.
-    Found 1-bit register for signal <M_tl_q>.
     Found 1-bit register for signal <M_tl2_q>.
     Found 1-bit register for signal <M_tl1_q>.
     Found 1-bit register for signal <M_tu_q>.
     Found 1-bit register for signal <M_to_q>.
+    Found 1-bit register for signal <M_td_q>.
+    Found 1-bit register for signal <M_tl_q>.
     Found 1-bit tristate buffer for signal <spi_miso> created at line 124
     Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 124
     Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 124

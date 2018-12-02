@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-22D1SSU::  Sun Dec 02 19:32:20 2018
+DESKTOP-22D1SSU::  Sun Dec 02 20:23:20 2018
 
 par -intstyle pa -w -mt on mojo_top_0.ncd mojo_top_0_routed.ncd 
 
@@ -162,7 +162,7 @@ All signals are completely routed.
 Total REAL time to PAR completion: 3 secs 
 Total CPU time to PAR completion (all processors): 3 secs 
 
-Peak Memory Usage:  274 MB
+Peak Memory Usage:  275 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

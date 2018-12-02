@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sun Dec 02 19:32:19 2018
+// Written by: Map P.20131013 on Sun Dec 02 20:23:19 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -38,8 +38,8 @@ COMP "x7" LOCATE = SITE "P92" LEVEL 1;
 COMP "y6" LOCATE = SITE "P98" LEVEL 1;
 COMP "y7" LOCATE = SITE "P97" LEVEL 1;
 COMP "d" LOCATE = SITE "P111" LEVEL 1;
-TIMEGRP clk = BEL "M_tl3_q_0" BEL "M_td_q_0" BEL "M_tl1_q_0" BEL "M_tl_q_0"
-        BEL "M_tl2_q_0" BEL "M_tu_q_0" BEL "M_to_q_0" BEL "ud/M_last_q" BEL
+TIMEGRP clk = BEL "M_tl3_q_0" BEL "M_tl2_q_0" BEL "M_to_q_0" BEL "M_tl1_q_0"
+        BEL "M_tu_q_0" BEL "M_td_q_0" BEL "M_tl_q_0" BEL "ud/M_last_q" BEL
         "clk_BUFGP/BUFG" BEL "dd/M_last_q" BEL "reset_cond/M_stage_q_3" BEL
         "reset_cond/M_stage_q_2" BEL "reset_cond/M_stage_q_1" BEL
         "reset_cond/M_stage_q_0" BEL "ld/M_last_q" BEL "od/M_last_q" BEL

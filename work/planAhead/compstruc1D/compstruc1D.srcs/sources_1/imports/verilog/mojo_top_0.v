@@ -196,9 +196,9 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_to_q <= 1'h0;
+      M_tl_q <= 1'h0;
     end else begin
-      M_to_q <= M_to_d;
+      M_tl_q <= M_tl_d;
     end
   end
   
@@ -208,33 +208,6 @@ module mojo_top_0 (
       M_tl3_q <= 1'h0;
     end else begin
       M_tl3_q <= M_tl3_d;
-    end
-  end
-  
-  
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_td_q <= 1'h0;
-    end else begin
-      M_td_q <= M_td_d;
-    end
-  end
-  
-  
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_tr_q <= 1'h0;
-    end else begin
-      M_tr_q <= M_tr_d;
-    end
-  end
-  
-  
-  always @(posedge clk) begin
-    if (rst == 1'b1) begin
-      M_tl_q <= 1'h0;
-    end else begin
-      M_tl_q <= M_tl_d;
     end
   end
   
@@ -259,9 +232,36 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
+      M_tr_q <= 1'h0;
+    end else begin
+      M_tr_q <= M_tr_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
       M_tu_q <= 1'h0;
     end else begin
       M_tu_q <= M_tu_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_to_q <= 1'h0;
+    end else begin
+      M_to_q <= M_to_d;
+    end
+  end
+  
+  
+  always @(posedge clk) begin
+    if (rst == 1'b1) begin
+      M_td_q <= 1'h0;
+    end else begin
+      M_td_q <= M_td_d;
     end
   end
   
