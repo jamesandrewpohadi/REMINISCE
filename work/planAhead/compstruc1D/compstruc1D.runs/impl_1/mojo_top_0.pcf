@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sun Dec 02 16:32:15 2018
+// Written by: Map P.20131013 on Sun Dec 02 20:12:46 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -12,22 +12,22 @@ COMP "u" LOCATE = SITE "P104" LEVEL 1;
 COMP "l1" LOCATE = SITE "P117" LEVEL 1;
 COMP "l2" LOCATE = SITE "P119" LEVEL 1;
 COMP "l3" LOCATE = SITE "P121" LEVEL 1;
-COMP "x0" LOCATE = SITE "P58" LEVEL 1;
-COMP "x1" LOCATE = SITE "P57" LEVEL 1;
-COMP "y0" LOCATE = SITE "P75" LEVEL 1;
-COMP "x2" LOCATE = SITE "P67" LEVEL 1;
-COMP "y1" LOCATE = SITE "P74" LEVEL 1;
-COMP "x3" LOCATE = SITE "P66" LEVEL 1;
-COMP "y2" LOCATE = SITE "P79" LEVEL 1;
-COMP "x4" LOCATE = SITE "P95" LEVEL 1;
-COMP "y3" LOCATE = SITE "P78" LEVEL 1;
-COMP "x5" LOCATE = SITE "P94" LEVEL 1;
-COMP "y4" LOCATE = SITE "P88" LEVEL 1;
-COMP "x6" LOCATE = SITE "P98" LEVEL 1;
-COMP "y5" LOCATE = SITE "P87" LEVEL 1;
-COMP "x7" LOCATE = SITE "P97" LEVEL 1;
-COMP "y6" LOCATE = SITE "P93" LEVEL 1;
-COMP "y7" LOCATE = SITE "P92" LEVEL 1;
+COMP "x0" LOCATE = SITE "P75" LEVEL 1;
+COMP "x1" LOCATE = SITE "P74" LEVEL 1;
+COMP "y0" LOCATE = SITE "P58" LEVEL 1;
+COMP "x2" LOCATE = SITE "P79" LEVEL 1;
+COMP "y1" LOCATE = SITE "P57" LEVEL 1;
+COMP "x3" LOCATE = SITE "P78" LEVEL 1;
+COMP "y2" LOCATE = SITE "P67" LEVEL 1;
+COMP "x4" LOCATE = SITE "P88" LEVEL 1;
+COMP "y3" LOCATE = SITE "P66" LEVEL 1;
+COMP "x5" LOCATE = SITE "P87" LEVEL 1;
+COMP "y4" LOCATE = SITE "P95" LEVEL 1;
+COMP "x6" LOCATE = SITE "P93" LEVEL 1;
+COMP "y5" LOCATE = SITE "P94" LEVEL 1;
+COMP "x7" LOCATE = SITE "P92" LEVEL 1;
+COMP "y6" LOCATE = SITE "P98" LEVEL 1;
+COMP "y7" LOCATE = SITE "P97" LEVEL 1;
 COMP "clk" LOCATE = SITE "P56" LEVEL 1;
 COMP "rst_n" LOCATE = SITE "P38" LEVEL 1;
 COMP "led[0]" LOCATE = SITE "P134" LEVEL 1;
@@ -66,14 +66,21 @@ TIMEGRP clk = BEL "dd/M_last_q" BEL "clk_BUFGP/BUFG" BEL
         "M_state_q_FSM_FFd36" BEL "M_state_q_FSM_FFd42" BEL
         "M_state_q_FSM_FFd37" BEL "M_state_q_FSM_FFd43" BEL
         "M_state_q_FSM_FFd38" BEL "M_state_q_FSM_FFd44" BEL
-        "M_state_q_FSM_FFd39" BEL "M_counter_q_10" BEL "M_counter_q_11" BEL
+        "M_state_q_FSM_FFd39" BEL "M_state_q_FSM_FFd50" BEL
+        "M_state_q_FSM_FFd45" BEL "M_state_q_FSM_FFd51" BEL
+        "M_state_q_FSM_FFd46" BEL "M_state_q_FSM_FFd52" BEL
+        "M_state_q_FSM_FFd47" BEL "M_state_q_FSM_FFd53" BEL
+        "M_state_q_FSM_FFd48" BEL "M_state_q_FSM_FFd54" BEL
+        "M_state_q_FSM_FFd49" BEL "M_state_q_FSM_FFd55" BEL
+        "M_state_q_FSM_FFd56" BEL "M_state_q_FSM_FFd57" BEL
+        "M_state_q_FSM_FFd58" BEL "M_counter_q_10" BEL "M_counter_q_11" BEL
         "M_counter_q_12" BEL "M_counter_q_13" BEL "M_counter_q_14" BEL
         "M_counter_q_15" BEL "M_counter_q_20" BEL "M_counter_q_16" BEL
         "M_counter_q_21" BEL "M_counter_q_17" BEL "M_counter_q_22" BEL
-        "M_counter_q_18" BEL "M_state_q_FSM_FFd41_1" BEL "M_counter_q_23" BEL
-        "M_counter_q_19" BEL "M_counter_q_24" BEL "M_counter_q_25" BEL
-        "M_counter_q_26" BEL "M_counter_q_27" BEL "l1d/M_last_q" BEL
-        "l2d/M_last_q" BEL "l3d/M_last_q" BEL "myGame/board/M_reg_q_15" BEL
+        "M_counter_q_18" BEL "M_counter_q_23" BEL "M_counter_q_19" BEL
+        "M_counter_q_24" BEL "M_counter_q_25" BEL "M_counter_q_26" BEL
+        "M_counter_q_27" BEL "l1d/M_last_q" BEL "l2d/M_last_q" BEL
+        "l3d/M_last_q" BEL "myGame/board/M_reg_q_15" BEL
         "myGame/board/M_reg_q_14" BEL "myGame/board/M_reg_q_13" BEL
         "myGame/board/M_reg_q_12" BEL "myGame/board/M_reg_q_11" BEL
         "myGame/board/M_reg_q_10" BEL "myGame/board/M_reg_q_9" BEL
@@ -89,9 +96,8 @@ TIMEGRP clk = BEL "dd/M_last_q" BEL "clk_BUFGP/BUFG" BEL
         "myGame/sequence/M_reg_q_6" BEL "myGame/sequence/M_reg_q_5" BEL
         "myGame/sequence/M_reg_q_4" BEL "myGame/sequence/M_reg_q_3" BEL
         "myGame/sequence/M_reg_q_2" BEL "myGame/sequence/M_reg_q_1" BEL
-        "myGame/sequence/M_reg_q_0" BEL "myGame/sequence/M_reg_q_2_1" BEL
-        "myGame/level/M_reg_q_1" BEL "myGame/level/M_reg_q_0" BEL
-        "M_state_q_FSM_FFd17_1";
+        "myGame/sequence/M_reg_q_0" BEL "myGame/sequence/M_reg_q_1_1" BEL
+        "myGame/level/M_reg_q_1" BEL "myGame/level/M_reg_q_0";
 TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 

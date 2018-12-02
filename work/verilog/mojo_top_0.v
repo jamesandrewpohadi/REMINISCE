@@ -210,7 +210,7 @@ module mojo_top_0 (
   localparam L3_DS2_state = 6'd41;
   localparam L3_DS3_state = 6'd42;
   localparam L3_DS4_state = 6'd43;
-  localparam L3DS5_state = 6'd44;
+  localparam L3_DS5_state = 6'd44;
   localparam L3_DS6_state = 6'd45;
   localparam L3_DS7_state = 6'd46;
   localparam L3_DS8_state = 6'd47;
@@ -286,16 +286,19 @@ module mojo_top_0 (
           M_myGame_rstl = 3'h1;
           M_myGame_wl = 1'h1;
           M_state_d = L1_state;
+          M_counter_d = 1'h0;
         end
         if (M_l2d_out) begin
           M_myGame_rstl = 3'h2;
           M_myGame_wl = 1'h1;
           M_state_d = L2_state;
+          M_counter_d = 1'h0;
         end
         if (M_l3d_out) begin
           M_myGame_rstl = 3'h3;
           M_myGame_wl = 1'h1;
           M_state_d = L3_state;
+          M_counter_d = 1'h0;
         end
       end
       RETURN_state: begin
@@ -310,6 +313,9 @@ module mojo_top_0 (
         end
         if ({M_myGame_lvl, M_myGame_sqc} == 6'h13) begin
           M_state_d = L1_P4_state;
+        end
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h14) begin
+          M_state_d = L1_PW_state;
         end
         if ({M_myGame_lvl, M_myGame_sqc} == 6'h20) begin
           M_state_d = L2_P1_state;
@@ -328,6 +334,9 @@ module mojo_top_0 (
         end
         if ({M_myGame_lvl, M_myGame_sqc} == 6'h25) begin
           M_state_d = L2_P6_state;
+        end
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h26) begin
+          M_state_d = L2_PW_state;
         end
         if ({M_myGame_lvl, M_myGame_sqc} == 6'h30) begin
           M_state_d = L3_P1_state;
@@ -358,6 +367,9 @@ module mojo_top_0 (
         end
         if ({M_myGame_lvl, M_myGame_sqc} == 6'h39) begin
           M_state_d = L3_P10_state;
+        end
+        if ({M_myGame_lvl, M_myGame_sqc} == 6'h3a) begin
+          M_state_d = L3_PW_state;
         end
       end
       U_state: begin
@@ -845,7 +857,7 @@ module mojo_top_0 (
           M_myGame_ws = 1'h1;
           M_myGame_rsts = 1'h0;
           M_counter_d = 1'h0;
-          M_state_d = L1_DS1_state;
+          M_state_d = L3_DS1_state;
         end
       end
       L3_DS1_state: begin
@@ -861,7 +873,7 @@ module mojo_top_0 (
           M_myGame_ws = 1'h1;
           M_myGame_rsts = 1'h0;
           M_counter_d = 1'h0;
-          M_state_d = L1_DS2_state;
+          M_state_d = L3_DS2_state;
         end
       end
       L3_DS2_state: begin
@@ -878,7 +890,7 @@ module mojo_top_0 (
           M_myGame_ws = 1'h1;
           M_myGame_rsts = 1'h0;
           M_counter_d = 1'h0;
-          M_state_d = L1_DS3_state;
+          M_state_d = L3_DS3_state;
         end
       end
       L3_DS3_state: begin
@@ -895,7 +907,7 @@ module mojo_top_0 (
           M_myGame_ws = 1'h1;
           M_myGame_rsts = 1'h0;
           M_counter_d = 1'h0;
-          M_state_d = L1_DS4_state;
+          M_state_d = L3_DS4_state;
         end
       end
       L3_DS4_state: begin
@@ -911,7 +923,107 @@ module mojo_top_0 (
           M_myGame_ws = 1'h1;
           M_myGame_rsts = 1'h0;
           M_counter_d = 1'h0;
-          M_state_d = L1_DSW_state;
+          M_state_d = L3_DS5_state;
+        end
+      end
+      L3_DS5_state: begin
+        M_myGame_asel = 3'h0;
+        M_myGame_bsel = 1'h0;
+        M_myGame_alufn = 6'h1a;
+        M_myGame_rstb = 2'h0;
+        M_myGame_wb = 1'h1;
+        if (M_counter_q[27+0-:1] == 1'h1) begin
+          M_myGame_alufn = 6'h00;
+          M_myGame_asel = 3'h1;
+          M_myGame_bsel = 1'h1;
+          M_myGame_ws = 1'h1;
+          M_myGame_rsts = 1'h0;
+          M_counter_d = 1'h0;
+          M_state_d = L3_DS6_state;
+        end
+      end
+      L3_DS6_state: begin
+        M_myGame_asel = 3'h0;
+        M_myGame_bsel = 1'h0;
+        M_myGame_alufn = 6'h1a;
+        M_myGame_rstb = 2'h0;
+        M_myGame_wb = 1'h1;
+        M_myGame_ws = 1'h0;
+        if (M_counter_q[27+0-:1] == 1'h1) begin
+          M_myGame_alufn = 6'h00;
+          M_myGame_asel = 3'h1;
+          M_myGame_bsel = 1'h1;
+          M_myGame_ws = 1'h1;
+          M_myGame_rsts = 1'h0;
+          M_counter_d = 1'h0;
+          M_state_d = L3_DS7_state;
+        end
+      end
+      L3_DS7_state: begin
+        M_myGame_asel = 3'h0;
+        M_myGame_bsel = 1'h0;
+        M_myGame_alufn = 6'h1a;
+        M_myGame_rstb = 2'h0;
+        M_myGame_wb = 1'h1;
+        M_myGame_ws = 1'h0;
+        if (M_counter_q[27+0-:1] == 1'h1) begin
+          M_myGame_alufn = 6'h00;
+          M_myGame_asel = 3'h1;
+          M_myGame_bsel = 1'h1;
+          M_myGame_ws = 1'h1;
+          M_myGame_rsts = 1'h0;
+          M_counter_d = 1'h0;
+          M_state_d = L3_DS8_state;
+        end
+      end
+      L3_DS8_state: begin
+        M_myGame_asel = 3'h0;
+        M_myGame_bsel = 1'h0;
+        M_myGame_alufn = 6'h1a;
+        M_myGame_rstb = 2'h0;
+        M_myGame_wb = 1'h1;
+        if (M_counter_q[27+0-:1] == 1'h1) begin
+          M_myGame_alufn = 6'h00;
+          M_myGame_asel = 3'h1;
+          M_myGame_bsel = 1'h1;
+          M_myGame_ws = 1'h1;
+          M_myGame_rsts = 1'h0;
+          M_counter_d = 1'h0;
+          M_state_d = L3_DS9_state;
+        end
+      end
+      L3_DS9_state: begin
+        M_myGame_asel = 3'h0;
+        M_myGame_bsel = 1'h0;
+        M_myGame_alufn = 6'h1a;
+        M_myGame_rstb = 2'h0;
+        M_myGame_wb = 1'h1;
+        M_myGame_ws = 1'h0;
+        if (M_counter_q[27+0-:1] == 1'h1) begin
+          M_myGame_alufn = 6'h00;
+          M_myGame_asel = 3'h1;
+          M_myGame_bsel = 1'h1;
+          M_myGame_ws = 1'h1;
+          M_myGame_rsts = 1'h0;
+          M_counter_d = 1'h0;
+          M_state_d = L3_DS10_state;
+        end
+      end
+      L3_DS10_state: begin
+        M_myGame_asel = 3'h0;
+        M_myGame_bsel = 1'h0;
+        M_myGame_alufn = 6'h1a;
+        M_myGame_rstb = 2'h0;
+        M_myGame_wb = 1'h1;
+        M_myGame_ws = 1'h0;
+        if (M_counter_q[27+0-:1] == 1'h1) begin
+          M_myGame_alufn = 6'h00;
+          M_myGame_asel = 3'h1;
+          M_myGame_bsel = 1'h1;
+          M_myGame_ws = 1'h1;
+          M_myGame_rsts = 1'h0;
+          M_counter_d = 1'h0;
+          M_state_d = L3_DSW_state;
         end
       end
       L3_DSW_state: begin
@@ -979,6 +1091,108 @@ module mojo_top_0 (
         end
       end
       L3_P4_state: begin
+        if (M_od_out) begin
+          M_state_d = CHECK_state;
+        end
+        if (M_ud_out) begin
+          M_state_d = U_state;
+        end
+        if (M_dd_out) begin
+          M_state_d = D_state;
+        end
+        if (M_ld_out) begin
+          M_state_d = L_state;
+        end
+        if (M_rd_out) begin
+          M_state_d = R_state;
+        end
+      end
+      L3_P5_state: begin
+        if (M_od_out) begin
+          M_state_d = CHECK_state;
+        end
+        if (M_ud_out) begin
+          M_state_d = U_state;
+        end
+        if (M_dd_out) begin
+          M_state_d = D_state;
+        end
+        if (M_ld_out) begin
+          M_state_d = L_state;
+        end
+        if (M_rd_out) begin
+          M_state_d = R_state;
+        end
+      end
+      L3_P6_state: begin
+        if (M_od_out) begin
+          M_state_d = CHECK_state;
+        end
+        if (M_ud_out) begin
+          M_state_d = U_state;
+        end
+        if (M_dd_out) begin
+          M_state_d = D_state;
+        end
+        if (M_ld_out) begin
+          M_state_d = L_state;
+        end
+        if (M_rd_out) begin
+          M_state_d = R_state;
+        end
+      end
+      L3_P7_state: begin
+        if (M_od_out) begin
+          M_state_d = CHECK_state;
+        end
+        if (M_ud_out) begin
+          M_state_d = U_state;
+        end
+        if (M_dd_out) begin
+          M_state_d = D_state;
+        end
+        if (M_ld_out) begin
+          M_state_d = L_state;
+        end
+        if (M_rd_out) begin
+          M_state_d = R_state;
+        end
+      end
+      L3_P8_state: begin
+        if (M_od_out) begin
+          M_state_d = CHECK_state;
+        end
+        if (M_ud_out) begin
+          M_state_d = U_state;
+        end
+        if (M_dd_out) begin
+          M_state_d = D_state;
+        end
+        if (M_ld_out) begin
+          M_state_d = L_state;
+        end
+        if (M_rd_out) begin
+          M_state_d = R_state;
+        end
+      end
+      L3_P9_state: begin
+        if (M_od_out) begin
+          M_state_d = CHECK_state;
+        end
+        if (M_ud_out) begin
+          M_state_d = U_state;
+        end
+        if (M_dd_out) begin
+          M_state_d = D_state;
+        end
+        if (M_ld_out) begin
+          M_state_d = L_state;
+        end
+        if (M_rd_out) begin
+          M_state_d = R_state;
+        end
+      end
+      L3_P10_state: begin
         if (M_od_out) begin
           M_state_d = CHECK_state;
         end
