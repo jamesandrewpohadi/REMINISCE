@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module board_17 (
+module board_33 (
     input [15:0] b,
     output reg x0,
     output reg x1,

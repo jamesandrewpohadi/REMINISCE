@@ -4,36 +4,23 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module mux_5_12 (
+module mux_2_29 (
     input [15:0] a,
     input [15:0] b,
-    input [15:0] c,
-    input [15:0] d,
-    input [15:0] e,
-    input [2:0] sel,
+    input sel,
     output reg [15:0] out
   );
   
   
   
   always @* begin
-    out = 1'h0;
     
     case (sel)
-      3'h0: begin
+      1'h0: begin
         out = a;
       end
-      3'h1: begin
+      1'h1: begin
         out = b;
-      end
-      3'h2: begin
-        out = c;
-      end
-      3'h3: begin
-        out = d;
-      end
-      3'h4: begin
-        out = e;
       end
       default: begin
         out = 16'h0000;

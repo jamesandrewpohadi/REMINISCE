@@ -55,12 +55,26 @@ module mojo_top_0 (
     .in(M_ud_in),
     .out(M_ud_out)
   );
+  wire [1-1:0] M_uc_out;
+  reg [1-1:0] M_uc_in;
+  button_conditioner_3 uc (
+    .clk(clk),
+    .in(M_uc_in),
+    .out(M_uc_out)
+  );
   wire [1-1:0] M_dd_out;
   reg [1-1:0] M_dd_in;
   edge_detector_2 dd (
     .clk(clk),
     .in(M_dd_in),
     .out(M_dd_out)
+  );
+  wire [1-1:0] M_dc_out;
+  reg [1-1:0] M_dc_in;
+  button_conditioner_3 dc (
+    .clk(clk),
+    .in(M_dc_in),
+    .out(M_dc_out)
   );
   wire [1-1:0] M_ld_out;
   reg [1-1:0] M_ld_in;
@@ -69,12 +83,26 @@ module mojo_top_0 (
     .in(M_ld_in),
     .out(M_ld_out)
   );
+  wire [1-1:0] M_lc_out;
+  reg [1-1:0] M_lc_in;
+  button_conditioner_3 lc (
+    .clk(clk),
+    .in(M_lc_in),
+    .out(M_lc_out)
+  );
   wire [1-1:0] M_rd_out;
   reg [1-1:0] M_rd_in;
   edge_detector_2 rd (
     .clk(clk),
     .in(M_rd_in),
     .out(M_rd_out)
+  );
+  wire [1-1:0] M_rc_out;
+  reg [1-1:0] M_rc_in;
+  button_conditioner_3 rc (
+    .clk(clk),
+    .in(M_rc_in),
+    .out(M_rc_out)
   );
   wire [1-1:0] M_od_out;
   reg [1-1:0] M_od_in;
@@ -83,12 +111,26 @@ module mojo_top_0 (
     .in(M_od_in),
     .out(M_od_out)
   );
+  wire [1-1:0] M_oc_out;
+  reg [1-1:0] M_oc_in;
+  button_conditioner_3 oc (
+    .clk(clk),
+    .in(M_oc_in),
+    .out(M_oc_out)
+  );
   wire [1-1:0] M_l1d_out;
   reg [1-1:0] M_l1d_in;
   edge_detector_2 l1d (
     .clk(clk),
     .in(M_l1d_in),
     .out(M_l1d_out)
+  );
+  wire [1-1:0] M_l1c_out;
+  reg [1-1:0] M_l1c_in;
+  button_conditioner_3 l1c (
+    .clk(clk),
+    .in(M_l1c_in),
+    .out(M_l1c_out)
   );
   wire [1-1:0] M_l2d_out;
   reg [1-1:0] M_l2d_in;
@@ -97,12 +139,26 @@ module mojo_top_0 (
     .in(M_l2d_in),
     .out(M_l2d_out)
   );
+  wire [1-1:0] M_l2c_out;
+  reg [1-1:0] M_l2c_in;
+  button_conditioner_3 l2c (
+    .clk(clk),
+    .in(M_l2c_in),
+    .out(M_l2c_out)
+  );
   wire [1-1:0] M_l3d_out;
   reg [1-1:0] M_l3d_in;
   edge_detector_2 l3d (
     .clk(clk),
     .in(M_l3d_in),
     .out(M_l3d_out)
+  );
+  wire [1-1:0] M_l3c_out;
+  reg [1-1:0] M_l3c_in;
+  button_conditioner_3 l3c (
+    .clk(clk),
+    .in(M_l3c_in),
+    .out(M_l3c_out)
   );
   wire [4-1:0] M_myGame_sqc;
   wire [2-1:0] M_myGame_lvl;
@@ -133,7 +189,7 @@ module mojo_top_0 (
   reg [1-1:0] M_myGame_rsts;
   reg [1-1:0] M_myGame_bsel;
   reg [3-1:0] M_myGame_asel;
-  emulator_10 myGame (
+  emulator_18 myGame (
     .clk(clk),
     .rst(rst),
     .alufn(M_myGame_alufn),
@@ -244,14 +300,22 @@ module mojo_top_0 (
     spi_miso = 1'bz;
     spi_channel = 4'bzzzz;
     avr_rx = 1'bz;
-    M_ud_in = u;
-    M_dd_in = d;
-    M_ld_in = l;
-    M_rd_in = r;
-    M_od_in = o;
-    M_l1d_in = l1;
-    M_l2d_in = l2;
-    M_l3d_in = l3;
+    M_uc_in = u;
+    M_ud_in = M_uc_out;
+    M_dc_in = d;
+    M_dd_in = M_dc_out;
+    M_lc_in = l;
+    M_ld_in = M_lc_out;
+    M_rc_in = r;
+    M_rd_in = M_rc_out;
+    M_oc_in = o;
+    M_od_in = M_oc_out;
+    M_l1c_in = l1;
+    M_l1d_in = M_l1c_out;
+    M_l2c_in = l2;
+    M_l2d_in = M_l2c_out;
+    M_l3c_in = l3;
+    M_l3d_in = M_l3c_out;
     M_counter_d = M_counter_q + 1'h1;
     M_myGame_wb = 1'h0;
     M_myGame_wl = 1'h0;
@@ -416,12 +480,10 @@ module mojo_top_0 (
         M_myGame_asel = 3'h0;
         M_myGame_bsel = 1'h0;
         M_myGame_alufn = 6'h33;
-        if (M_counter_q[25+0-:1] == 1'h1) begin
-          if (M_myGame_eq == 16'h0001) begin
-            M_state_d = INCR_state;
-          end else begin
-            M_state_d = DF_state;
-          end
+        if (M_myGame_eq == 16'h0001) begin
+          M_state_d = INCR_state;
+        end else begin
+          M_state_d = DF_state;
         end
       end
       INCR_state: begin
@@ -437,6 +499,9 @@ module mojo_top_0 (
         M_myGame_asel = 3'h3;
         M_myGame_alufn = 6'h1a;
         if (M_od_out) begin
+          M_myGame_wb = 1'h1;
+          M_myGame_ws = 1'h1;
+          M_myGame_rsts = 1'h1;
           M_myGame_rstb = 2'h2;
           M_state_d = IDLE_state;
         end
@@ -529,7 +594,7 @@ module mojo_top_0 (
           M_myGame_wb = 1'h1;
           M_myGame_rsts = 1'h1;
           M_myGame_ws = 1'h1;
-          M_state_d = L1_P1_state;
+          M_state_d = L2_P1_state;
         end
         M_myGame_asel = 3'h0;
         M_myGame_alufn = 6'h1a;
@@ -605,7 +670,14 @@ module mojo_top_0 (
         end
       end
       L1_PW_state: begin
+        M_myGame_wb = 1'h1;
+        M_myGame_asel = 3'h0;
+        M_myGame_alufn = 6'h1a;
         if (M_od_out) begin
+          M_myGame_wb = 1'h1;
+          M_myGame_ws = 1'h1;
+          M_myGame_rsts = 1'h1;
+          M_myGame_rstb = 2'h2;
           M_state_d = IDLE_state;
         end
       end
@@ -840,7 +912,14 @@ module mojo_top_0 (
         end
       end
       L2_PW_state: begin
+        M_myGame_wb = 1'h1;
+        M_myGame_asel = 3'h0;
+        M_myGame_alufn = 6'h1a;
         if (M_od_out) begin
+          M_myGame_wb = 1'h1;
+          M_myGame_ws = 1'h1;
+          M_myGame_rsts = 1'h1;
+          M_myGame_rstb = 2'h2;
           M_state_d = IDLE_state;
         end
       end
@@ -1210,7 +1289,14 @@ module mojo_top_0 (
         end
       end
       L3_PW_state: begin
+        M_myGame_wb = 1'h1;
+        M_myGame_asel = 3'h0;
+        M_myGame_alufn = 6'h1a;
         if (M_od_out) begin
+          M_myGame_wb = 1'h1;
+          M_myGame_ws = 1'h1;
+          M_myGame_rsts = 1'h1;
+          M_myGame_rstb = 2'h2;
           M_state_d = IDLE_state;
         end
       end
@@ -1231,18 +1317,18 @@ module mojo_top_0 (
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_counter_q <= 1'h0;
+      M_state_q <= 1'h0;
     end else begin
-      M_counter_q <= M_counter_d;
+      M_state_q <= M_state_d;
     end
   end
   
   
   always @(posedge clk) begin
     if (rst == 1'b1) begin
-      M_state_q <= 1'h0;
+      M_counter_q <= 1'h0;
     end else begin
-      M_state_q <= M_state_d;
+      M_counter_q <= M_counter_d;
     end
   end
   

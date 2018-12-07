@@ -4,7 +4,7 @@
    This is a temporary file and any changes made to it will be destroyed.
 */
 
-module rom_16 (
+module rom_32 (
     input [5:0] address,
     output reg [15:0] out
   );

@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Sun Dec 02 20:12:46 2018
+// Written by: Map P.20131013 on Mon Dec 03 01:53:10 2018
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -38,49 +38,39 @@ COMP "led[4]" LOCATE = SITE "P127" LEVEL 1;
 COMP "led[5]" LOCATE = SITE "P126" LEVEL 1;
 COMP "led[6]" LOCATE = SITE "P124" LEVEL 1;
 COMP "led[7]" LOCATE = SITE "P123" LEVEL 1;
-TIMEGRP clk = BEL "dd/M_last_q" BEL "clk_BUFGP/BUFG" BEL
-        "reset_cond/M_stage_q_3" BEL "reset_cond/M_stage_q_2" BEL
+TIMEGRP clk = BEL "reset_cond/M_stage_q_3" BEL "reset_cond/M_stage_q_2" BEL
         "reset_cond/M_stage_q_1" BEL "reset_cond/M_stage_q_0" BEL
-        "M_counter_q_0" BEL "M_counter_q_1" BEL "M_counter_q_2" BEL
-        "M_counter_q_3" BEL "M_counter_q_4" BEL "M_counter_q_5" BEL
-        "M_counter_q_6" BEL "M_counter_q_7" BEL "M_counter_q_8" BEL
-        "M_counter_q_9" BEL "ld/M_last_q" BEL "od/M_last_q" BEL "rd/M_last_q"
-        BEL "M_state_q_FSM_FFd1" BEL "M_state_q_FSM_FFd2" BEL
-        "M_state_q_FSM_FFd3" BEL "M_state_q_FSM_FFd4" BEL "M_state_q_FSM_FFd5"
-        BEL "M_state_q_FSM_FFd10" BEL "M_state_q_FSM_FFd6" BEL
-        "M_state_q_FSM_FFd11" BEL "M_state_q_FSM_FFd7" BEL
-        "M_state_q_FSM_FFd12" BEL "M_state_q_FSM_FFd8" BEL
-        "M_state_q_FSM_FFd13" BEL "M_state_q_FSM_FFd9" BEL
-        "M_state_q_FSM_FFd14" BEL "M_state_q_FSM_FFd20" BEL
-        "M_state_q_FSM_FFd15" BEL "M_state_q_FSM_FFd21" BEL "ud/M_last_q" BEL
-        "M_state_q_FSM_FFd16" BEL "M_state_q_FSM_FFd22" BEL
-        "M_state_q_FSM_FFd17" BEL "M_state_q_FSM_FFd23" BEL
-        "M_state_q_FSM_FFd18" BEL "M_state_q_FSM_FFd24" BEL
-        "M_state_q_FSM_FFd19" BEL "M_state_q_FSM_FFd30" BEL
-        "M_state_q_FSM_FFd25" BEL "M_state_q_FSM_FFd31" BEL
-        "M_state_q_FSM_FFd26" BEL "M_state_q_FSM_FFd32" BEL
-        "M_state_q_FSM_FFd27" BEL "M_state_q_FSM_FFd33" BEL
-        "M_state_q_FSM_FFd28" BEL "M_state_q_FSM_FFd34" BEL
-        "M_state_q_FSM_FFd29" BEL "M_state_q_FSM_FFd40" BEL
-        "M_state_q_FSM_FFd35" BEL "M_state_q_FSM_FFd41" BEL
-        "M_state_q_FSM_FFd36" BEL "M_state_q_FSM_FFd42" BEL
-        "M_state_q_FSM_FFd37" BEL "M_state_q_FSM_FFd43" BEL
-        "M_state_q_FSM_FFd38" BEL "M_state_q_FSM_FFd44" BEL
-        "M_state_q_FSM_FFd39" BEL "M_state_q_FSM_FFd50" BEL
-        "M_state_q_FSM_FFd45" BEL "M_state_q_FSM_FFd51" BEL
-        "M_state_q_FSM_FFd46" BEL "M_state_q_FSM_FFd52" BEL
-        "M_state_q_FSM_FFd47" BEL "M_state_q_FSM_FFd53" BEL
-        "M_state_q_FSM_FFd48" BEL "M_state_q_FSM_FFd54" BEL
-        "M_state_q_FSM_FFd49" BEL "M_state_q_FSM_FFd55" BEL
-        "M_state_q_FSM_FFd56" BEL "M_state_q_FSM_FFd57" BEL
-        "M_state_q_FSM_FFd58" BEL "M_counter_q_10" BEL "M_counter_q_11" BEL
-        "M_counter_q_12" BEL "M_counter_q_13" BEL "M_counter_q_14" BEL
-        "M_counter_q_15" BEL "M_counter_q_20" BEL "M_counter_q_16" BEL
-        "M_counter_q_21" BEL "M_counter_q_17" BEL "M_counter_q_22" BEL
-        "M_counter_q_18" BEL "M_counter_q_23" BEL "M_counter_q_19" BEL
-        "M_counter_q_24" BEL "M_counter_q_25" BEL "M_counter_q_26" BEL
-        "M_counter_q_27" BEL "l1d/M_last_q" BEL "l2d/M_last_q" BEL
-        "l3d/M_last_q" BEL "myGame/board/M_reg_q_15" BEL
+        "M_state_q_FSM_FFd10" BEL "M_counter_q_0" BEL "M_state_q_FSM_FFd11"
+        BEL "M_counter_q_1" BEL "M_state_q_FSM_FFd12" BEL "M_counter_q_2" BEL
+        "M_state_q_FSM_FFd13" BEL "M_counter_q_3" BEL "M_state_q_FSM_FFd14"
+        BEL "M_counter_q_4" BEL "M_state_q_FSM_FFd15" BEL
+        "M_state_q_FSM_FFd20" BEL "M_counter_q_5" BEL "M_state_q_FSM_FFd16"
+        BEL "M_state_q_FSM_FFd21" BEL "M_counter_q_6" BEL
+        "M_state_q_FSM_FFd17" BEL "M_state_q_FSM_FFd22" BEL "M_counter_q_7"
+        BEL "M_state_q_FSM_FFd18" BEL "M_state_q_FSM_FFd23" BEL
+        "M_counter_q_8" BEL "M_state_q_FSM_FFd19" BEL "M_state_q_FSM_FFd24"
+        BEL "M_counter_q_9" BEL "M_state_q_FSM_FFd30" BEL
+        "M_state_q_FSM_FFd25" BEL "M_state_q_FSM_FFd26" BEL
+        "M_state_q_FSM_FFd31" BEL "M_state_q_FSM_FFd27" BEL
+        "M_state_q_FSM_FFd11_1" BEL "M_state_q_FSM_FFd32" BEL
+        "M_state_q_FSM_FFd28" BEL "M_state_q_FSM_FFd33" BEL
+        "M_state_q_FSM_FFd29" BEL "M_state_q_FSM_FFd34" BEL
+        "M_state_q_FSM_FFd35" BEL "M_state_q_FSM_FFd40" BEL
+        "M_state_q_FSM_FFd36" BEL "M_state_q_FSM_FFd41" BEL
+        "M_state_q_FSM_FFd37" BEL "M_state_q_FSM_FFd42" BEL
+        "M_state_q_FSM_FFd38" BEL "M_state_q_FSM_FFd43" BEL
+        "M_state_q_FSM_FFd39" BEL "M_state_q_FSM_FFd44" BEL
+        "M_state_q_FSM_FFd45" BEL "M_state_q_FSM_FFd50" BEL
+        "M_state_q_FSM_FFd46" BEL "M_state_q_FSM_FFd51" BEL
+        "M_state_q_FSM_FFd47" BEL "M_state_q_FSM_FFd52" BEL
+        "M_state_q_FSM_FFd48" BEL "M_state_q_FSM_FFd53" BEL
+        "M_state_q_FSM_FFd49" BEL "M_state_q_FSM_FFd54" BEL
+        "M_state_q_FSM_FFd55" BEL "M_state_q_FSM_FFd56" BEL
+        "M_state_q_FSM_FFd57" BEL "M_state_q_FSM_FFd58" BEL
+        "M_state_q_FSM_FFd13_1" BEL "M_state_q_FSM_FFd1" BEL
+        "M_state_q_FSM_FFd2" BEL "M_state_q_FSM_FFd3" BEL "M_state_q_FSM_FFd4"
+        BEL "M_state_q_FSM_FFd5" BEL "M_state_q_FSM_FFd6" BEL
+        "M_state_q_FSM_FFd7" BEL "myGame/board/M_reg_q_15" BEL
         "myGame/board/M_reg_q_14" BEL "myGame/board/M_reg_q_13" BEL
         "myGame/board/M_reg_q_12" BEL "myGame/board/M_reg_q_11" BEL
         "myGame/board/M_reg_q_10" BEL "myGame/board/M_reg_q_9" BEL
@@ -96,8 +86,78 @@ TIMEGRP clk = BEL "dd/M_last_q" BEL "clk_BUFGP/BUFG" BEL
         "myGame/sequence/M_reg_q_6" BEL "myGame/sequence/M_reg_q_5" BEL
         "myGame/sequence/M_reg_q_4" BEL "myGame/sequence/M_reg_q_3" BEL
         "myGame/sequence/M_reg_q_2" BEL "myGame/sequence/M_reg_q_1" BEL
-        "myGame/sequence/M_reg_q_0" BEL "myGame/sequence/M_reg_q_1_1" BEL
-        "myGame/level/M_reg_q_1" BEL "myGame/level/M_reg_q_0";
+        "myGame/sequence/M_reg_q_0" BEL "myGame/level/M_reg_q_1" BEL
+        "myGame/level/M_reg_q_0" BEL "M_state_q_FSM_FFd8" BEL
+        "M_state_q_FSM_FFd9" BEL "dc/M_ctr_q_0" BEL "dc/M_ctr_q_1" BEL
+        "dc/M_ctr_q_2" BEL "dc/M_ctr_q_3" BEL "dc/M_ctr_q_4" BEL
+        "dc/M_ctr_q_5" BEL "dc/M_ctr_q_6" BEL "dc/M_ctr_q_7" BEL
+        "dc/M_ctr_q_8" BEL "dc/M_ctr_q_9" BEL "dc/M_ctr_q_10" BEL
+        "dc/M_ctr_q_11" BEL "dc/M_ctr_q_12" BEL "dc/M_ctr_q_13" BEL
+        "dc/M_ctr_q_14" BEL "dc/M_ctr_q_15" BEL "dc/M_ctr_q_16" BEL
+        "dc/M_ctr_q_17" BEL "dc/M_ctr_q_18" BEL "dc/M_ctr_q_19" BEL
+        "dc/sync/M_pipe_q_1" BEL "dc/sync/Mshreg_M_pipe_q_1" BEL "dd/M_last_q"
+        BEL "lc/M_ctr_q_0" BEL "lc/M_ctr_q_1" BEL "lc/M_ctr_q_2" BEL
+        "lc/M_ctr_q_3" BEL "lc/M_ctr_q_4" BEL "lc/M_ctr_q_5" BEL
+        "lc/M_ctr_q_6" BEL "lc/M_ctr_q_7" BEL "lc/M_ctr_q_8" BEL
+        "lc/M_ctr_q_9" BEL "lc/M_ctr_q_10" BEL "lc/M_ctr_q_11" BEL
+        "lc/M_ctr_q_12" BEL "lc/M_ctr_q_13" BEL "lc/M_ctr_q_14" BEL
+        "lc/M_ctr_q_15" BEL "lc/M_ctr_q_16" BEL "lc/M_ctr_q_17" BEL
+        "lc/M_ctr_q_18" BEL "lc/M_ctr_q_19" BEL "lc/sync/M_pipe_q_1" BEL
+        "lc/sync/Mshreg_M_pipe_q_1" BEL "ld/M_last_q" BEL "oc/M_ctr_q_0" BEL
+        "oc/M_ctr_q_1" BEL "oc/M_ctr_q_2" BEL "oc/M_ctr_q_3" BEL
+        "oc/M_ctr_q_4" BEL "oc/M_ctr_q_5" BEL "oc/M_ctr_q_6" BEL
+        "oc/M_ctr_q_7" BEL "oc/M_ctr_q_8" BEL "oc/M_ctr_q_9" BEL
+        "oc/M_ctr_q_10" BEL "oc/M_ctr_q_11" BEL "oc/M_ctr_q_12" BEL
+        "oc/M_ctr_q_13" BEL "oc/M_ctr_q_14" BEL "oc/M_ctr_q_15" BEL
+        "oc/M_ctr_q_16" BEL "oc/M_ctr_q_17" BEL "oc/M_ctr_q_18" BEL
+        "oc/M_ctr_q_19" BEL "oc/sync/M_pipe_q_1" BEL
+        "oc/sync/Mshreg_M_pipe_q_1" BEL "od/M_last_q" BEL "rc/M_ctr_q_0" BEL
+        "rc/M_ctr_q_1" BEL "rc/M_ctr_q_2" BEL "rc/M_ctr_q_3" BEL
+        "rc/M_ctr_q_4" BEL "rc/M_ctr_q_5" BEL "rc/M_ctr_q_6" BEL
+        "rc/M_ctr_q_7" BEL "rc/M_ctr_q_8" BEL "rc/M_ctr_q_9" BEL
+        "rc/M_ctr_q_10" BEL "rc/M_ctr_q_11" BEL "rc/M_ctr_q_12" BEL
+        "rc/M_ctr_q_13" BEL "rc/M_ctr_q_14" BEL "rc/M_ctr_q_15" BEL
+        "rc/M_ctr_q_16" BEL "rc/M_ctr_q_17" BEL "rc/M_ctr_q_18" BEL
+        "rc/M_ctr_q_19" BEL "rc/sync/M_pipe_q_1" BEL
+        "rc/sync/Mshreg_M_pipe_q_1" BEL "rd/M_last_q" BEL "uc/M_ctr_q_0" BEL
+        "uc/M_ctr_q_1" BEL "uc/M_ctr_q_2" BEL "uc/M_ctr_q_3" BEL
+        "uc/M_ctr_q_4" BEL "uc/M_ctr_q_5" BEL "uc/M_ctr_q_6" BEL
+        "uc/M_ctr_q_7" BEL "uc/M_ctr_q_8" BEL "uc/M_ctr_q_9" BEL
+        "uc/M_ctr_q_10" BEL "uc/M_ctr_q_11" BEL "uc/M_ctr_q_12" BEL
+        "uc/M_ctr_q_13" BEL "uc/M_ctr_q_14" BEL "uc/M_ctr_q_15" BEL
+        "uc/M_ctr_q_16" BEL "uc/M_ctr_q_17" BEL "uc/M_ctr_q_18" BEL
+        "uc/M_ctr_q_19" BEL "uc/sync/M_pipe_q_1" BEL
+        "uc/sync/Mshreg_M_pipe_q_1" BEL "ud/M_last_q" BEL "l1c/M_ctr_q_0" BEL
+        "l1c/M_ctr_q_1" BEL "l1c/M_ctr_q_2" BEL "l1c/M_ctr_q_3" BEL
+        "l1c/M_ctr_q_4" BEL "l1c/M_ctr_q_5" BEL "l1c/M_ctr_q_6" BEL
+        "l1c/M_ctr_q_7" BEL "l1c/M_ctr_q_8" BEL "l1c/M_ctr_q_9" BEL
+        "l1c/M_ctr_q_10" BEL "l1c/M_ctr_q_11" BEL "l1c/M_ctr_q_12" BEL
+        "l1c/M_ctr_q_13" BEL "l1c/M_ctr_q_14" BEL "l1c/M_ctr_q_15" BEL
+        "l1c/M_ctr_q_16" BEL "l1c/M_ctr_q_17" BEL "l1c/M_ctr_q_18" BEL
+        "l1c/M_ctr_q_19" BEL "l1c/sync/M_pipe_q_1" BEL
+        "l1c/sync/Mshreg_M_pipe_q_1" BEL "l1d/M_last_q" BEL "M_counter_q_27_1"
+        BEL "l2c/M_ctr_q_0" BEL "l2c/M_ctr_q_1" BEL "l2c/M_ctr_q_2" BEL
+        "l2c/M_ctr_q_3" BEL "l2c/M_ctr_q_4" BEL "l2c/M_ctr_q_5" BEL
+        "l2c/M_ctr_q_6" BEL "l2c/M_ctr_q_7" BEL "l2c/M_ctr_q_8" BEL
+        "l2c/M_ctr_q_9" BEL "l2c/M_ctr_q_10" BEL "l2c/M_ctr_q_11" BEL
+        "l2c/M_ctr_q_12" BEL "l2c/M_ctr_q_13" BEL "l2c/M_ctr_q_14" BEL
+        "l2c/M_ctr_q_15" BEL "l2c/M_ctr_q_16" BEL "l2c/M_ctr_q_17" BEL
+        "l2c/M_ctr_q_18" BEL "l2c/M_ctr_q_19" BEL "l2c/sync/M_pipe_q_1" BEL
+        "l2c/sync/Mshreg_M_pipe_q_1" BEL "l2d/M_last_q" BEL "l3c/M_ctr_q_0"
+        BEL "l3c/M_ctr_q_1" BEL "l3c/M_ctr_q_2" BEL "l3c/M_ctr_q_3" BEL
+        "l3c/M_ctr_q_4" BEL "l3c/M_ctr_q_5" BEL "l3c/M_ctr_q_6" BEL
+        "l3c/M_ctr_q_7" BEL "l3c/M_ctr_q_8" BEL "l3c/M_ctr_q_9" BEL
+        "l3c/M_ctr_q_10" BEL "l3c/M_ctr_q_11" BEL "l3c/M_ctr_q_12" BEL
+        "l3c/M_ctr_q_13" BEL "l3c/M_ctr_q_14" BEL "l3c/M_ctr_q_15" BEL
+        "l3c/M_ctr_q_16" BEL "l3c/M_ctr_q_17" BEL "l3c/M_ctr_q_18" BEL
+        "l3c/M_ctr_q_19" BEL "l3c/sync/M_pipe_q_1" BEL
+        "l3c/sync/Mshreg_M_pipe_q_1" BEL "l3d/M_last_q" BEL "M_counter_q_10"
+        BEL "M_counter_q_11" BEL "M_counter_q_12" BEL "clk_BUFGP/BUFG" BEL
+        "M_counter_q_13" BEL "M_counter_q_14" BEL "M_counter_q_20" BEL
+        "M_counter_q_15" BEL "M_counter_q_21" BEL "M_counter_q_16" BEL
+        "M_counter_q_22" BEL "M_counter_q_17" BEL "M_counter_q_23" BEL
+        "M_counter_q_18" BEL "M_counter_q_24" BEL "M_counter_q_19" BEL
+        "M_counter_q_25" BEL "M_counter_q_26" BEL "M_counter_q_27";
 TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 

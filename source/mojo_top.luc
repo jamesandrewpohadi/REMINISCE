@@ -37,13 +37,21 @@ module mojo_top (
     // clock. This ensures the entire FPGA comes out of reset at the same time.
     reset_conditioner reset_cond;
     edge_detector ud(#RISE(1), #FALL(0));
+    button_conditioner uc;
     edge_detector dd(#RISE(1), #FALL(0));
+    button_conditioner dc;
     edge_detector ld(#RISE(1), #FALL(0));
+    button_conditioner lc;
     edge_detector rd(#RISE(1), #FALL(0));
+    button_conditioner rc;
     edge_detector od(#RISE(1), #FALL(0));
+    button_conditioner oc;
     edge_detector l1d(#RISE(1), #FALL(0));
+    button_conditioner l1c;
     edge_detector l2d(#RISE(1), #FALL(0));
+    button_conditioner l2c;
     edge_detector l3d(#RISE(1), #FALL(0));
+    button_conditioner l3c;
     .rst(rst) {
       emulator myGame; // define our device
       fsm state(#INIT(IDLE)) = {IDLE, RETURN, CHECK, INCR, PRE_L, PRE_R, PRE_U, PRE_D, L, R, U, D, PRE_L1, L1, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, L2, L2_DS1, L2_DS2, L2_DS3, L2_DS4, L2_DS5, L2_DS6, L2_DSW, L2_P1, L2_P2, L2_P3, L2_P4, L2_P5, L2_P6, L2_PW, L3, L3_DS1, L3_DS2, L3_DS3, L3_DS4, L3_DS5, L3_DS6, L3_DS7, L3_DS8, L3_DS9, L3_DS10, L3_DSW, L3_P1, L3_P2, L3_P3, L3_P4, L3_P5, L3_P6, L3_P7, L3_P8, L3_P9, L3_P10, L3_PW, DF};
@@ -61,14 +69,22 @@ module mojo_top (
     spi_miso = bz;          // not using SPI
     spi_channel = bzzzz;    // not using flags
     avr_rx = bz;            // not using serial port
-    ud.in = u;
-    dd.in = d;
-    ld.in = l;
-    rd.in = r;
-    od.in = o;
-    l1d.in = l1;
-    l2d.in = l2;
-    l3d.in = l3;
+    uc.in = u;
+    ud.in = uc.out;
+    dc.in = d;
+    dd.in = dc.out;
+    lc.in = l;
+    ld.in = lc.out;
+    rc.in = r;
+    rd.in = rc.out;
+    oc.in = o;
+    od.in = oc.out;
+    l1c.in = l1;
+    l1d.in = l1c.out;
+    l2c.in = l2;
+    l2d.in = l2c.out;
+    l3c.in = l3;
+    l3d.in = l3c.out;
     counter.d = counter.q+1;
     myGame.wb = 0;
     myGame.wl = 0;
@@ -228,12 +244,10 @@ module mojo_top (
         myGame.asel = 3b0;
         myGame.bsel = 0;
         myGame.alufn = 6b110011;
-        if (counter.q[25] == 1) {
-          if (myGame.eq == 16b1) {
-            state.d = state.INCR;
-          } else {
-            state.d = state.DF;
-          }
+        if (myGame.eq == 16b1) {
+          state.d = state.INCR;
+        } else {
+          state.d = state.DF;
         }
       state.INCR:
         // increment the sequence and continue the game state
@@ -248,6 +262,9 @@ module mojo_top (
         myGame.asel = 3b11;
         myGame.alufn = 6b011010;
         if (od.out) {
+          myGame.wb = 1b1;
+          myGame.ws = 1b1;
+          myGame.rsts = 1b1;
           myGame.rstb = 2b10;
           state.d = state.IDLE;
         }
@@ -345,7 +362,7 @@ module mojo_top (
           myGame.wb = 1;
           myGame.rsts = 1;
           myGame.ws = 1;
-          state.d = state.L1_P1;
+          state.d = state.L2_P1;
         }
         myGame.asel = 3b0;
         myGame.alufn = 6b011010;
@@ -416,7 +433,14 @@ module mojo_top (
           state.d = state.R;
         }
       state.L1_PW:
+        myGame.wb = 1;
+        myGame.asel = 3b0;
+        myGame.alufn = 6b011010;
         if (od.out) {
+          myGame.wb = 1b1;
+          myGame.ws = 1b1;
+          myGame.rsts = 1b1;
+          myGame.rstb = 2b10;
           state.d = state.IDLE;
         }
       state.L2:
@@ -651,7 +675,14 @@ module mojo_top (
           state.d = state.R;
         }
       state.L2_PW:
+        myGame.wb = 1;
+        myGame.asel = 3b0;
+        myGame.alufn = 6b011010;
         if (od.out) {
+          myGame.wb = 1b1;
+          myGame.ws = 1b1;
+          myGame.rsts = 1b1;
+          myGame.rstb = 2b10;
           state.d = state.IDLE;
         }
       state.L3:
@@ -1021,7 +1052,14 @@ module mojo_top (
           state.d = state.R;
         }
       state.L3_PW:
+        myGame.wb = 1;
+        myGame.asel = 3b0;
+        myGame.alufn = 6b011010;
         if (od.out) {
+          myGame.wb = 1b1;
+          myGame.ws = 1b1;
+          myGame.rsts = 1b1;
+          myGame.rstb = 2b10;
           state.d = state.IDLE;
         }
       default:
