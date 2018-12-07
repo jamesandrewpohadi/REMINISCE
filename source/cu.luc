@@ -1,10 +1,1015 @@
 module cu (
     input clk,  // clock
     input rst,  // reset
-    output out
+    input l1dout,
+    input l2dout,
+    input l3dout,
+    input odout,
+    input udout,
+    input ddout,
+    input ldout,
+    input rdout,
+    input lvl[2],
+    input sqc[4],
+    input eq,
+    input display[16],
+    output wb,
+    output wl,
+    output ws,
+	  output rstb[2],
+	  output rstl,
+	  output rsts,
+	  output bsel,
+	  output asel[3],
+	  output alufn[6]
+    
   ) {
-
+ 
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    .rst(rst) {
+      fsm state(#INIT(IDLE)) = {IDLE, RETURN, CHECK, INCR, PRE_L, PRE_R, PRE_U, PRE_D, L, R, U, D, PRE_L1, L1, L1_DS1, L1_DS2, L1_DS3, L1_DS4, L1_DSW, L1_P1, L1_P2, L1_P3, L1_P4, L1_PW, L2, L2_DS1, L2_DS2, L2_DS3, L2_DS4, L2_DS5, L2_DS6, L2_DSW, L2_P1, L2_P2, L2_P3, L2_P4, L2_P5, L2_P6, L2_PW, L3, L3_DS1, L3_DS2, L3_DS3, L3_DS4, L3_DS5, L3_DS6, L3_DS7, L3_DS8, L3_DS9, L3_DS10, L3_DSW, L3_P1, L3_P2, L3_P3, L3_P4, L3_P5, L3_P6, L3_P7, L3_P8, L3_P9, L3_P10, L3_PW, DF};
+    }
+  }
+  
+  dff counter[28](.clk(clk), .rst(rst)); // Define the counter
+  
+  
   always {
-    out = 0;
+    counter.d = counter.q+1;
+    wb = 0;
+    wl = 0;
+    ws = 0;
+    rstb = 2b0;
+    rstl = 0;
+    rsts = 0;
+    bsel = 0;
+    asel = 3b0;
+    alufn = 6b0;
+    //led = eq[7:0];
+    
+    case (state.q) {
+      state.IDLE:
+        if (l1dout) {
+          rstl = 3b001;
+          wl = 1;
+          state.d = state.L1;
+          counter.d = 0;
+        }
+        if (l2dout) {
+          rstl = 3b010;
+          wl = 1;
+          state.d = state.L2;
+          counter.d = 0;
+        }
+        if (l3dout) {
+          rstl = 3b011;
+          wl = 1;
+          state.d = state.L3;
+          counter.d = 0;
+        }
+      state.RETURN:
+        if (c{lvl,sqc} == 6b010000) {
+          state.d = state.L1_P1;
+        }
+        if (c{lvl,sqc} == 6b010001) {
+          state.d = state.L1_P2;
+        }
+        if (c{lvl,sqc} == 6b010010) {
+          state.d = state.L1_P3;
+        }
+        if (c{lvl,sqc} == 6b010011) {
+          state.d = state.L1_P4;
+        }
+        if (c{lvl,sqc} == 6b010100) {
+          state.d = state.L1_PW;
+        }
+        if (c{lvl,sqc} == 6b100000) {
+          state.d = state.L2_P1;
+        }
+        if (c{lvl,sqc} == 6b100001) {
+          state.d = state.L2_P2;
+        }
+        if (c{lvl,sqc} == 6b100010) {
+          state.d = state.L2_P3;
+        }
+        if (c{lvl,sqc} == 6b100011) {
+          state.d = state.L2_P4;
+        }
+        if (c{lvl,sqc} == 6b100100) {
+          state.d = state.L2_P5;
+        }
+        if (c{lvl,sqc} == 6b100101) {
+          state.d = state.L2_P6;
+        }
+        if (c{lvl,sqc} == 6b100110) {
+          state.d = state.L2_PW;
+        }
+        if (c{lvl,sqc} == 6b110000) {
+          state.d = state.L3_P1;
+        }
+        if (c{lvl,sqc} == 6b110001) {
+          state.d = state.L3_P2;
+        }
+        if (c{lvl,sqc} == 6b110010) {
+          state.d = state.L3_P3;
+        }
+        if (c{lvl,sqc} == 6b110011) {
+          state.d = state.L3_P4;
+        }
+        if (c{lvl,sqc} == 6b110100) {
+          state.d = state.L3_P5;
+        }
+        if (c{lvl,sqc} == 6b110101) {
+          state.d = state.L3_P6;
+        }
+        if (c{lvl,sqc} == 6b110110) {
+          state.d = state.L3_P7;
+        }
+        if (c{lvl,sqc} == 6b110111) {
+          state.d = state.L3_P8;
+        }
+        if (c{lvl,sqc} == 6b111000) {
+          state.d = state.L3_P9;
+        }
+        if (c{lvl,sqc} == 6b111001) {
+          state.d = state.L3_P10;
+        }
+        if (c{lvl,sqc} == 6b111010) {
+          state.d = state.L3_PW;
+        }
+      state.U:
+        if (display[15] != 1 && display[14] != 1 && display[13] != 1 && display[12] != 1) {
+          wb = 1; // write = true
+          rstb = 2b0; // reset=false
+          asel = 3b010; // a=1
+          bsel = 0; // b=board
+          alufn = 6b100000; // shl
+        }
+        state.d = state.RETURN;
+      state.D:
+        if (display[3] != 1 && display[2] != 1 && display[1] != 1 && display[0] != 1) {
+          wb = 1; // write = true
+          rstb = 2b0; // reset=false
+          asel = 3b010; // a=4
+          bsel = 0; // b=board
+          alufn = 6b100001; // shr
+        }
+        state.d = state.RETURN;
+      state.L:
+        if (display[15] != 1 && display[11] != 1 && display[7] != 1 && display[3] != 1) {
+          wb = 1; // write = true
+          rstb = 2b0; // reset=false
+          asel = 3b001; // a=1
+          bsel = 0; // b=board
+          alufn = 6b100000; // shl
+        }
+        state.d = state.RETURN;
+      state.R:
+        if (display[0] != 1 && display[4] != 1 && display[8] != 1 && display[12] != 1) {
+          wb = 1; // write = true
+          rstb = 2b0; // reset=false
+          asel = 3b001; // a=1
+          bsel = 0; // b=board
+          alufn = 6b100001; // shr
+        }
+        state.d = state.RETURN;
+      state.CHECK:
+        // check the board and sequence. If equal, go to INCR, else go to DF
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b110011;
+        if (eq == 16b1) {
+          state.d = state.INCR;
+        } else {
+          state.d = state.DF;
+        }
+      state.INCR:
+        // increment the sequence and continue the game state
+        alufn = 6b0; // add
+        asel = 3b001; // a=1
+        bsel = 1; // b=sequence
+        ws = 1; // write = true
+        rsts = 0; // reset = false
+        state.d = state.RETURN;
+      state.DF:
+        wb = 1;
+        asel = 3b11;
+        alufn = 6b011010;
+        if (odout) {
+          wb = 1b1;
+          ws = 1b1;
+          rsts = 1b1;
+          rstb = 2b10;
+          state.d = state.IDLE;
+        }
+      state.L1:
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS1
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L1_DS1;
+        }
+      state.L1_DS1:
+      // load sequence 1
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS2
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L1_DS2;
+        }
+      state.L1_DS2:
+      // load sequence 2
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1b1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS3
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L1_DS3;
+        }
+      state.L1_DS3:
+      // load sequence 3
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1b1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS4
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L1_DS4;
+        }
+      state.L1_DS4:
+        // load sequence 4
+        asel = 3b0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DSW
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L1_DSW;
+        }
+      state.L1_DSW:
+      // load sequence win
+        if (counter.q[27]==1) {
+          // reset sequence, the next state is L1_P1
+          rstb = 2b1;
+          wb = 1;
+          rsts = 1;
+          ws = 1;
+          state.d = state.L2_P1;
+        }
+        asel = 3b0;
+        alufn = 6b011010;
+        rstb = 2b1;
+        wb = 1;
+      state.L1_P1:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L1_P2:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L1_P3:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L1_P4:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L1_PW:
+        wb = 1;
+        asel = 3b0;
+        alufn = 6b011010;
+        if (odout) {
+          wb = 1b1;
+          ws = 1b1;
+          rsts = 1b1;
+          rstb = 2b10;
+          state.d = state.IDLE;
+        }
+      state.L2:
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b00;
+        wb = 1;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS1
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L2_DS1;
+        }
+      state.L2_DS1:
+      // load sequence 1
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS2
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L2_DS2;
+        }
+      state.L2_DS2:
+      // load sequence 2
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1b1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS3
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L2_DS3;
+        }
+      state.L2_DS3:
+      // load sequence 3
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1b1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS4
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L2_DS4;
+        }
+      state.L2_DS4:
+        // load sequence 4
+        asel = 3b0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DSW
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L2_DS5;
+        }
+      state.L2_DS5:
+      // load sequence 3
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1b1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS4
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L2_DS6;
+        }
+      state.L2_DS6:
+        // load sequence 4
+        asel = 3b0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DSW
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L2_DSW;
+        }
+      state.L2_DSW:
+      // load sequence win
+        if (counter.q[27]==1) {
+          // reset sequence, the next state is L1_P1
+          rstb = 2b1;
+          wb = 1;
+          rsts = 1;
+          ws = 1;
+          state.d = state.L2_P1;
+        }
+        asel = 3b0;
+        alufn = 6b011010;
+        rstb = 2b1;
+        wb = 1;
+      state.L2_P1:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L2_P2:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L2_P3:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L2_P4:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L2_P5:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L2_P6:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L2_PW:
+        wb = 1;
+        asel = 3b0;
+        alufn = 6b011010;
+        if (odout) {
+          wb = 1b1;
+          ws = 1b1;
+          rsts = 1b1;
+          rstb = 2b10;
+          state.d = state.IDLE;
+        }
+      state.L3:
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS1
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L3_DS1;
+        }
+      state.L3_DS1:
+      // load sequence 1
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS2
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L3_DS2;
+        }
+      state.L3_DS2:
+      // load sequence 2
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1b1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS3
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L3_DS3;
+        }
+      state.L3_DS3:
+      // load sequence 3
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1b1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS4
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L3_DS4;
+        }
+      state.L3_DS4:
+        // load sequence 4
+        asel = 3b0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DSW
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L3_DS5;
+        }
+      state.L3_DS5:
+      // load sequence 1
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS2
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L3_DS6;
+        }
+      state.L3_DS6:
+      // load sequence 2
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1b1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS3
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L3_DS7;
+        }
+      state.L3_DS7:
+      // load sequence 3
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1b1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS4
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L3_DS8;
+        }
+      state.L3_DS8:
+      // load sequence 1
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS2
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L3_DS9;
+        }
+      state.L3_DS9:
+      // load sequence 2
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1b1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS3
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L3_DS10;
+        }
+      state.L3_DS10:
+      // load sequence 3
+        asel = 3b0;
+        bsel = 0;
+        alufn = 6b011010;
+        rstb = 2b0;
+        wb = 1b1;
+        ws = 0;
+        if (counter.q[27]==1) {
+          // increment sequence by 1, the next state is L1_DS4
+          alufn = 6b0; // add
+          asel = 3b001; // a=1
+          bsel = 1; // b=sequence
+          ws = 1; // write = true
+          rsts = 0; // reset = false
+          counter.d = 0;
+          state.d = state.L3_DSW;
+        }
+      state.L3_DSW:
+      // load sequence win
+        if (counter.q[27]==1) {
+          // reset sequence, the next state is L1_P1
+          rstb = 2b1;
+          wb = 1;
+          rsts = 1;
+          ws = 1;
+          state.d = state.L1_P1;
+        }
+        asel = 3b0;
+        alufn = 6b011010;
+        rstb = 2b1;
+        wb = 1;
+      state.L3_P1:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L3_P2:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L3_P3:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L3_P4:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L3_P5:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L3_P6:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L3_P7:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L3_P8:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L3_P9:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L3_P10:
+        if (odout) {
+          state.d = state.CHECK;
+        }
+        if (udout) {
+          state.d = state.U;
+        }
+        if (ddout) {
+          state.d = state.D;
+        }
+        if (ldout) {
+          state.d = state.L;
+        }
+        if (rdout) {
+          state.d = state.R;
+        }
+      state.L3_PW:
+        wb = 1;
+        asel = 3b0;
+        alufn = 6b011010;
+        if (odout) {
+          wb = 1b1;
+          ws = 1b1;
+          rsts = 1b1;
+          rstb = 2b10;
+          state.d = state.IDLE;
+        }
+      default:
+        //led = 8b00000000;
+        wb = 0;
+        wl = 0;
+        ws = 0;
+        rstb = 2b0;
+        rstl = 0;
+        rsts = 0;
+        bsel = 0;
+        asel = 3b0;
+        alufn = 6b0;
+    }
+    
   }
 }
