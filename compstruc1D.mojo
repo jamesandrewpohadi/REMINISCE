@@ -14,8 +14,8 @@
     <src>testBoard.luc</src>
     <src>board.luc</src>
     <src>emulator.luc</src>
-    <src>boole.luc</src>
     <src>cu.luc</src>
+    <src>boole.luc</src>
     <src>mux_2.luc</src>
     <src>mux_3.luc</src>
     <src>rom.luc</src>
@@ -26,9 +26,9 @@
     <component>uart_rx.luc</component>
     <component>cclk_detector.luc</component>
     <component>reset_conditioner.luc</component>
-    <component>uart_tx.luc</component>
-    <component>avr_interface.luc</component>
     <component>pipeline.luc</component>
+    <component>avr_interface.luc</component>
+    <component>uart_tx.luc</component>
     <component>button_conditioner.luc</component>
     <component>edge_detector.luc</component>
   </files>

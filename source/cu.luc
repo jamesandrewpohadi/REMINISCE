@@ -11,7 +11,7 @@ module cu (
     input rdout,
     input lvl[2],
     input sqc[4],
-    input eq,
+    input eq[16],
     input display[16],
     output wb,
     output wl,
