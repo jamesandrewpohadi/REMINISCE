@@ -23,10 +23,12 @@ The cursor appears at the bottom-right corner. You can start after waiting for o
 6. Press OK to restart the game.
 
 
-## 2. Game description, design, test scenarios
+## 2. Game description, design, beta architechture
 ### 2.1 Game description:
 The game built is a game to test player’s memory capacity and challenge them to remember different number of patterns in a short amount of time. The goal of the game is to match the pattern of the LEDs with the pattern shown at the start of the game. 
 The goal of the game is very simple and as such we have added additional challenge to the game by adding different levels of difficulty to further challenge the mind. The game will have three levels of difficulty with three different lengths of light pattern shown on the board. 
+
+## 2.2 Design
 
 ## Components
 - MOJO FPGA
@@ -36,6 +38,14 @@ The goal of the game is very simple and as such we have added additional challen
 - Bread Board
 - Wires
 - Wooden Board
+
+## Appendix
+
+### ALU Design and Test
+
+### Schematics
+
+### LED Matrix Specs
 
 ## Team
 - Ivan Christian
