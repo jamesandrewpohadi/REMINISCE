@@ -1,7 +1,7 @@
 # compstruc1D
 
 <p align='center'>
-  <img src='images/reminisce.jpg'/>
+  <img src='images/reminisce.jpg' width=500px/>
 </p>
 
 ## Introduction
