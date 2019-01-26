@@ -1,7 +1,7 @@
 # compstruc1D
 
 <p align='center'>
-  <img src='images/reminisce.jpg' width=500px/>
+  <img src='images/reminisce.jpg' width=500px style="transform: rotate(90)"/>
 </p>
 
 ## Introduction
@@ -90,7 +90,7 @@ The goal of the game is very simple and as such we have added additional challen
 ### LED Matrix Specs
 
 <p align='center'>
-  <img src='images/ledmatrix_specs.png' width=500px/>
+  <img src='images/ledmatrix_specs.png' width=200px/>
 </p>
 
 ## Team
