@@ -1,4 +1,4 @@
-# compstruc1D
+# Reminisce
 
 <p align='center'>
   <img src='images/reminisce.jpg' width=500px/>
